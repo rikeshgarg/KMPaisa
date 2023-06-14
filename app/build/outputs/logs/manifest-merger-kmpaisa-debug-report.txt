@@ -1,0 +1,1811 @@
+-- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:395:9-405:20
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:58:9-66:20
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:58:9-66:20
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:14:9-22:20
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:14:9-22:20
+	android:grantUriPermissions
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:399:13-47
+	android:authorities
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:397:13-60
+		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:60:13-72
+		REJECTED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:16:13-60
+	android:exported
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:398:13-37
+	tools:replace
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:400:13-48
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:396:13-62
+manifest
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:2:1-69:12
+MERGED from [androidx.databinding:databinding-adapters:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\13fed12992d0625f2c7a8d2dd707412a\transformed\databinding-adapters-7.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.databinding:databinding-ktx:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\219e79169c1fdb95b4b927ee02e6725f\transformed\jetified-databinding-ktx-7.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.databinding:databinding-runtime:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\4da0a38a56ab42a9fb3900799ad8da01\transformed\databinding-runtime-7.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.databinding:viewbinding:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\deda5eefa58a312066273ff29f46e459\transformed\jetified-viewbinding-7.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\600d8f400c27d8f4fda7f14721db52dc\transformed\jetified-lifecycle-runtime-ktx-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:17:1-32:12
+MERGED from [com.github.krokyze:ucropnedit:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\13cc3ee4a994008288c4d8f43e5b1a4e\transformed\jetified-ucropnedit-2.2.6\AndroidManifest.xml:2:1-11:12
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:2:1-25:12
+MERGED from [com.airbnb.android:lottie:5.2.0] C:\Users\dell\.gradle\caches\transforms-3\157238e1f37cb69495b96ec09233a6f6\transformed\jetified-lottie-5.2.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.GrenderG:Toasty:1.4.2] C:\Users\dell\.gradle\caches\transforms-3\860cebf2de819580b9c9c1129d48e38e\transformed\jetified-Toasty-1.4.2\AndroidManifest.xml:2:1-11:12
+MERGED from [com.chaos.view:pinview:1.4.4] C:\Users\dell\.gradle\caches\transforms-3\5505ea2992e8266ea34049d13f029e62\transformed\jetified-pinview-1.4.4\AndroidManifest.xml:17:1-24:12
+MERGED from [com.mikhaellopez:circularimageview:4.3.0] C:\Users\dell\.gradle\caches\transforms-3\290671a1d0308861a07f784c6fc35013\transformed\jetified-circularimageview-4.3.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] C:\Users\dell\.gradle\caches\transforms-3\308d1fe2e595e86284f63fc963daec88\transformed\jetified-ImageSlideshow-0.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\dell\.gradle\caches\transforms-3\f79bb98a83d9276a24ff21f16923b1b8\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dell\.gradle\caches\transforms-3\70745214d595475105c1abdfe2aa48a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:2:1-21:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\2aae50fa7c2350784359cd1026f2ee17\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:2:1-17:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\d9fdd6bba6a7245d14bce7f2c684e9ab\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9d06b2efbb19baf11f528642ff4bbe77\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:17:1-61:12
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:15:1-32:12
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:15:1-33:12
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:2:1-23:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\dell\.gradle\caches\transforms-3\f7db22afff895a1d089b53a9b79b5483\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\dell\.gradle\caches\transforms-3\2f138f0a63c256db847f4fc3c55debdf\transformed\jetified-play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\dell\.gradle\caches\transforms-3\3458e872a85143bc7be7ce22d62da757\transformed\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\2c19c4c1a097dace0cc4a825e661a988\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\f58d308a52dd392bbdf542e26c747624\transformed\jetified-firebase-installations-interop-17.1.0\AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\dell\.gradle\caches\transforms-3\220c72698b2f82184d57559fbab363f4\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\dell\.gradle\caches\transforms-3\eff6778dc98615d56addd25c940af180\transformed\jetified-activity-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\911d732486127f637030911c7c2c7824\transformed\gridlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\b04324217ccb9ad0168e810dca787dba\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\a228fea9c7e8165c3f1278d676032b0b\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\6fa09c78e4d57ebfd592214546705b71\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\f3633cc43cbd7192154c88cb860d0908\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\e0c4133b8e9d83ff26684c006b2e19b4\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\a0b560aad381cc984c7714bb72607c3b\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:2:1-15:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\871d75ff38ab6cd7b98e4fc250188355\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\6c24e36c9004dad719254ac1e7384d24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\8c236e5072264904979b47286f6563bd\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\2ac95d03530563158882aefa30530495\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\8fa59df5f68a03ff109baca156476a31\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\d73df448404e58552ac2a2666517d027\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\bbe83a18797393fbc4f615cc34474291\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\37c82f64fcfdec98f730f97078baf42e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\09c60a2188af564c070166d237245bda\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\08c08df8ea096281377ad4082159fb7e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5638745054b54ff563c35e4774182586\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\b015207cd36488621ec85f60c5ff929b\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\c5cbaec881a490f6d7cd80aec939d9ff\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:2:1-7:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\dell\.gradle\caches\transforms-3\fa79ba3206d05bae41e34c4b110acc8c\transformed\jetified-rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
+MERGED from [com.asksira.android:webviewsuite:1.0.3] C:\Users\dell\.gradle\caches\transforms-3\4891af8c23de463c9401349cd92ea258\transformed\jetified-webviewsuite-1.0.3\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\4a0b30c05b74a11d6df651ff588f4289\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.f0ris.sweetalert:library:1.6.2] C:\Users\dell\.gradle\caches\transforms-3\8e246691b7938362c81d8d04cd9dd1e7\transformed\jetified-library-1.6.2\AndroidManifest.xml:2:1-13:12
+MERGED from [me.grantland:autofittextview:0.2.1] C:\Users\dell\.gradle\caches\transforms-3\675d278b8daeb2ac872f61e234023000\transformed\jetified-autofittextview-0.2.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\dell\.gradle\caches\transforms-3\b7da77edce996b0f96dee47f6d713134\transformed\jetified-volley-1.2.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.budiyev.android:code-scanner:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\347fbd76ea8cc44d8b1b9eebfe28f7e0\transformed\jetified-code-scanner-2.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:2:1-46:12
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\dell\.gradle\caches\transforms-3\625d2d888c94b74078abe4865071f43b\transformed\jetified-android-gif-drawable-1.2.22\AndroidManifest.xml:2:1-9:12
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:2:1-32:12
+MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\a509877802732fef220d953dc87b0d98\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\dell\.gradle\caches\transforms-3\4cc14c78ff974d75199bc19e8946eefe\transformed\jetified-transport-api-3.0.0\AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\dell\.gradle\caches\transforms-3\c16112a8f37909e0f478c4b140f37c6f\transformed\jetified-firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\b6c758c43f975c0d08f79f925fa4f2e7\transformed\jetified-lifecycle-service-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\1346d42ecdf64023d7fd4a6bdba605f9\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9a7953515f1a64245f9af9ad26893211\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\54f9f98a90886965882c2a3f3560a9b2\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\253738e855cb0d6e0bbab26303a2226d\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1abcd217ede9f978738fd3eb1ebfb17f\transformed\exifinterface-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\80d93c12985bdd7558cd55e0ef599b0c\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\00f64cb32d3d212f10602adbb7c8ccd2\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\378b8db748a6883e92ca2196ad46f8fd\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\82f726a2ca802cabb336031f0c9842ee\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\3c697dd80ee3e6689242243ac2ecdd06\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\6bac3134c7b17042573c302a56247648\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\6e2322961c63bf73738cb856219b4db2\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\b59a9bb54f5ff865e4aa299145b95963\transformed\sqlite-2.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\541a06dbe3de5f962b5a98a42b064b9d\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\762c96b40ebeee0f2cf85f183dc94a4b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5f3bbc3a5fa1fdedf2d0d3a054b6da97\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\dell\.gradle\caches\transforms-3\3f8d4fd8875ccc99b29719ab900eccc7\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:2:1-13:12
+MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\dell\.gradle\caches\transforms-3\ae2ba79bd4a933f9f9aff3d46eb64ad5\transformed\jetified-relinker-1.4.1\AndroidManifest.xml:2:1-7:12
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+	package
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:4:5-39
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-486:12
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:11-69
+queries
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:5:5-14:15
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:15:5-25:15
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:15:5-25:15
+intent#action:name:android.intent.action.VIEW+data:host:pay+data:scheme:upi
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:6:9-11:18
+action#android.intent.action.VIEW
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:7:13-65
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:7:21-62
+data
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:8:13-10:40
+	android:host
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:9:17-35
+	android:scheme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:10:17-37
+	android:pathPrefix
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:61:21-51
+package#com.android.chrome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:12:9-54
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:12:18-51
+package#com.codunite.rechargeapp.WebViewActivity
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:13:9-76
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:13:18-73
+uses-permission#android.permission.INTERNET
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:15:5-67
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:10:5-67
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:10:5-67
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:10:5-67
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:10:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:8:5-67
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:11:5-67
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:11:5-67
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:9:5-67
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:15:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:16:5-76
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:12:5-76
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:12:5-76
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:11:5-76
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:16:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:17:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:9:5-79
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:9:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:7:5-79
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:13:5-79
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:13:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:12:5-79
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:17:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:18:5-80
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:11:5-80
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:18:22-77
+uses-permission#android.permission.READ_CONTACTS
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:19:5-72
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:19:22-69
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:20:5-82
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:28:5-82
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:11:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:20:22-79
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:21:5-81
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:21:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:22:22-76
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:23:5-75
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:13:5-75
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:13:5-75
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:23:22-72
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:24:5-26:48
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:37:5-40:40
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:37:5-40:40
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:11:5-81
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:11:5-81
+	android:maxSdkVersion
+		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:39:9-35
+	tools:ignore
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:40:9-37
+	tools:remove
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:26:9-45
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:25:9-65
+uses-permission#android.permission.CAMERA
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:27:5-65
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:27:22-62
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:28:5-81
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:28:22-78
+application
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:30:5-485:19
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:42:5-67:19
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:42:5-67:19
+MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:26:5-30:19
+MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:26:5-30:19
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:13:5-23:19
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:13:5-23:19
+MERGED from [com.airbnb.android:lottie:5.2.0] C:\Users\dell\.gradle\caches\transforms-3\157238e1f37cb69495b96ec09233a6f6\transformed\jetified-lottie-5.2.0\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.2.0] C:\Users\dell\.gradle\caches\transforms-3\157238e1f37cb69495b96ec09233a6f6\transformed\jetified-lottie-5.2.0\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\dell\.gradle\caches\transforms-3\f79bb98a83d9276a24ff21f16923b1b8\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\dell\.gradle\caches\transforms-3\f79bb98a83d9276a24ff21f16923b1b8\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dell\.gradle\caches\transforms-3\70745214d595475105c1abdfe2aa48a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dell\.gradle\caches\transforms-3\70745214d595475105c1abdfe2aa48a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:9:5-19:19
+MERGED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:9:5-19:19
+MERGED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:9:5-15:19
+MERGED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:9:5-15:19
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:10:5-20
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:22:5-30:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:22:5-30:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\dell\.gradle\caches\transforms-3\f7db22afff895a1d089b53a9b79b5483\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\dell\.gradle\caches\transforms-3\f7db22afff895a1d089b53a9b79b5483\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:24:5-37:19
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:24:5-37:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\dell\.gradle\caches\transforms-3\2f138f0a63c256db847f4fc3c55debdf\transformed\jetified-play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\dell\.gradle\caches\transforms-3\2f138f0a63c256db847f4fc3c55debdf\transformed\jetified-play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\dell\.gradle\caches\transforms-3\3458e872a85143bc7be7ce22d62da757\transformed\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\dell\.gradle\caches\transforms-3\3458e872a85143bc7be7ce22d62da757\transformed\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\2c19c4c1a097dace0cc4a825e661a988\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\2c19c4c1a097dace0cc4a825e661a988\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:28:5-89
+MERGED from [com.github.f0ris.sweetalert:library:1.6.2] C:\Users\dell\.gradle\caches\transforms-3\8e246691b7938362c81d8d04cd9dd1e7\transformed\jetified-library-1.6.2\AndroidManifest.xml:11:5-20
+MERGED from [com.github.f0ris.sweetalert:library:1.6.2] C:\Users\dell\.gradle\caches\transforms-3\8e246691b7938362c81d8d04cd9dd1e7\transformed\jetified-library-1.6.2\AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:15:5-44:19
+MERGED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:15:5-44:19
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:11:5-30:19
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:11:5-30:19
+MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:27:5-20
+MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\253738e855cb0d6e0bbab26303a2226d\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\253738e855cb0d6e0bbab26303a2226d\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:9:5-20
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:11:5-20
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:11:5-20
+	android:requestLegacyExternalStorage
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:35:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:37:9-35
+	android:label
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:34:9-41
+	android:roundIcon
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:36:9-51
+	android:icon
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:33:9-47
+	android:allowBackup
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:32:9-35
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:38:9-52
+	android:usesCleartextTraffic
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:39:9-44
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:31:9-56
+meta-data#com.google.android.gms.version
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:40:9-42:69
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:42:13-66
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:41:13-58
+meta-data#com.google.android.geo.API_KEY
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:43:9-45:61
+	android:value
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:45:13-58
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:44:13-58
+activity#com.codunite.rechargeapp.activity.ActivitySplash
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:47:9-64:20
+	android:launchMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:49:13-44
+	android:exported
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:50:13-36
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:48:13-52
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:51:13-54:29
+action#android.intent.action.MAIN
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:52:17-69
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:52:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:53:17-77
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:53:27-74
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:https://www.vsidigital.in+data:pathPrefix:/register+data:scheme:https
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:55:13-63:29
+	android:label
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:55:28-57
+category#android.intent.category.DEFAULT
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:57:17-76
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:57:27-73
+category#android.intent.category.BROWSABLE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:58:17-78
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:58:27-75
+activity#com.codunite.rechargeapp.activity.ActivityWithdrawalRequest
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:65:9-69:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:67:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:68:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:69:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:66:13-87
+activity#com.codunite.rechargeapp.activity.geneology.ActivityRankList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:70:9-74:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:72:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:73:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:74:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:71:13-88
+activity#com.codunite.rechargeapp.activity.geneology.ActivityRankAchieverList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:75:9-79:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:77:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:78:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:79:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:76:13-96
+activity#com.codunite.rechargeapp.activity.search.ActivityCompleteSearch
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:80:9-84:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:82:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:83:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:84:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:81:13-91
+activity#com.codunite.rechargeapp.activity.ActivityNotification
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:85:9-89:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:87:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:88:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:89:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:86:13-82
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityRechargeIncome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:90:9-94:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:92:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:93:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:94:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:91:13-101
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityCashbackIncome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:96:9-100:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:98:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:99:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:100:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:97:13-101
+activity#com.codunite.rechargeapp.activity.ActivitySignUp
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:101:9-106:20
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:103:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:105:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:104:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:102:13-76
+activity#com.codunite.rechargeapp.activity.ActivityMain
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:107:9-111:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:109:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:111:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:110:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:108:13-74
+activity#com.codunite.rechargeapp.activity.bbps.ActivityBBPSLiveCommision
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:112:9-116:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:114:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:116:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:115:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:113:13-68
+activity#com.codunite.rechargeapp.activity.ActivityPlansOffer
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:117:9-121:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:119:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:121:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:120:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:118:13-80
+activity#com.codunite.rechargeapp.activity.support.ActivityHelpFeedback
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:122:9-126:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:124:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:126:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:125:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:123:13-90
+activity#com.codunite.rechargeapp.activity.support.ActivityTicketList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:127:9-131:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:129:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:131:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:130:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:128:13-88
+activity#com.codunite.rechargeapp.activity.pointwallet.ActivityPointWalletHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:132:9-136:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:134:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:136:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:135:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:133:13-100
+activity#com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSBankingService
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:137:9-141:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:139:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:141:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:140:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:138:13-76
+activity#com.codunite.rechargeapp.activity.reports.ActivityComisionWalletHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:142:9-146:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:144:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:146:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:145:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:143:13-99
+activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:147:9-151:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:149:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:151:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:150:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:148:13-62
+activity#com.codunite.rechargeapp.activity.pin.ActivityPinList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:152:9-156:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:154:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:156:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:155:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:153:13-81
+activity#com.codunite.rechargeapp.activity.pin.ActivityTransferPin
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:157:9-161:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:159:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:161:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:160:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:158:13-85
+activity#com.codunite.rechargeapp.activity.geneology.ActivityLevelList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:162:9-166:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:164:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:166:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:165:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:163:13-89
+activity#com.codunite.rechargeapp.activity.geneology.ActivityLevelWiseTeamList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:167:9-171:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:169:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:171:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:170:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:168:13-97
+activity#com.codunite.rechargeapp.activity.pin.ActivityRequestPin
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:172:9-176:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:174:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:176:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:175:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:173:13-84
+activity#com.codunite.rechargeapp.activity.profile.ActivityKyc
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:177:9-181:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:179:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:181:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:180:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:178:13-81
+activity#com.codunite.rechargeapp.activity.profile.ActivityChangeAccount
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:182:9-186:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:184:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:186:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:185:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:183:13-91
+activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsAllServices
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:187:9-191:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:189:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:191:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:190:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:188:13-66
+activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsElectricity
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:192:9-196:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:194:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:196:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:195:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:193:13-66
+activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsTollTax
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:197:9-201:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:199:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:201:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:200:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:198:13-62
+activity#com.codunite.rechargeapp.activity.ActivityCompletion
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:202:9-206:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:204:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:206:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:205:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:203:13-80
+activity#com.codunite.rechargeapp.activity.reports.ActivityBillPayHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:207:9-211:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:209:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:211:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:210:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:208:13-92
+activity#com.codunite.rechargeapp.activity.ActivityBrowseProfileImage
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:212:9-216:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:214:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:216:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:215:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:213:13-88
+activity#com.codunite.rechargeapp.activity.reports.ActivityRequestHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:217:9-221:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:219:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:221:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:220:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:218:13-92
+activity#com.codunite.rechargeapp.activity.ActivityPlansOfferDth
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:222:9-226:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:224:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:226:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:225:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:223:13-83
+activity#com.codunite.rechargeapp.activity.support.ActivityContact
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:227:9-231:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:229:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:231:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:230:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:228:13-85
+activity#com.codunite.rechargeapp.activity.ActivityLogin
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:232:9-236:57
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:234:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:236:13-54
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:235:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:233:13-75
+activity#com.codunite.rechargeapp.activity.profile.ActivityForgotPassword
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:237:9-241:57
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:239:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:241:13-54
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:240:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:238:13-92
+activity#com.codunite.rechargeapp.activity.ActivityRecharge
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:242:9-246:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:244:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:246:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:245:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:243:13-78
+activity#com.codunite.rechargeapp.activity.support.ActivityComplaintList
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:247:9-251:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:249:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:251:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:250:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:248:13-91
+activity#com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:252:9-256:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:254:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:256:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:255:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:253:13-93
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityLevelincome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:257:9-261:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:259:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:261:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:260:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:258:13-98
+activity#com.codunite.rechargeapp.activity.geneology.ActivityUpline
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:262:9-266:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:264:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:266:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:265:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:263:13-86
+activity#com.codunite.rechargeapp.activity.commissionwallet.ActivityCommissionWalletPayoutTransfer
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:267:9-271:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:269:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:271:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:270:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:268:13-117
+activity#com.codunite.rechargeapp.activity.mainwallet.ActivityMainWalletTransfer
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:273:9-277:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:275:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:277:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:276:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:274:13-99
+activity#com.codunite.rechargeapp.activity.commissionwallet.ActivityCommisionWalletTransfer
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:278:9-282:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:280:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:282:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:281:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:279:13-110
+activity#com.codunite.rechargeapp.activity.ActivityRechargeCommision
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:283:9-287:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:285:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:287:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:286:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:284:13-87
+activity#com.codunite.rechargeapp.activity.bbps.ActivityBBPSCommision
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:288:9-292:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:290:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:292:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:291:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:289:13-64
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:293:9-297:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:295:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:297:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:296:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:294:13-99
+activity#com.codunite.rechargeapp.activity.ActivityPrivacyPolicy
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:298:9-302:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:300:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:302:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:301:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:299:13-83
+activity#com.codunite.rechargeapp.activity.support.ActivityRaiseComplaint
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:303:9-307:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:305:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:307:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:306:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:304:13-92
+activity#com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:308:9-312:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:310:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:312:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:311:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:309:13-92
+activity#com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequestHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:313:9-317:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:315:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:317:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:316:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:314:13-99
+activity#com.codunite.rechargeapp.activity.ActivityShare
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:318:9-322:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:320:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:322:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:321:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:319:13-75
+activity#com.codunite.rechargeapp.activity.geneology.ActivityDownLine
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:323:9-327:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:325:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:327:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:326:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:324:13-88
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityDirectIncome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:328:9-332:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:330:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:332:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:331:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:329:13-99
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityBbpsincome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:333:9-337:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:335:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:337:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:336:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:334:13-97
+activity#com.codunite.rechargeapp.WebViewActivity
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:338:9-342:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:340:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:342:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:341:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:339:13-68
+activity#com.codunite.rechargeapp.activity.profile.ActivityChangePassword
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:343:9-347:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:345:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:347:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:346:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:344:13-92
+activity#com.codunite.rechargeapp.activity.reports.ActivityWalletHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:348:9-352:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:350:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:352:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:351:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:349:13-91
+activity#com.codunite.rechargeapp.activity.profile.ActivityChangeTPassword
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:353:9-357:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:355:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:357:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:356:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:354:13-93
+activity#com.codunite.rechargeapp.activity.profile.ActivityProfile
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:358:9-362:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:360:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:362:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:361:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:359:13-85
+activity#com.codunite.commonutility.spinner.ActivitySpinner
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:363:9-367:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:365:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:367:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:366:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:364:13-78
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:368:9-372:72
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:53:9-56:50
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:53:9-56:50
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:370:13-49
+		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:55:13-49
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:371:13-69
+		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:56:13-47
+	tools:replace
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:372:13-69
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:369:13-60
+activity#com.codunite.rechargeapp.activity.ActivityIntro
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:374:9-377:58
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:376:13-49
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:377:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:375:13-75
+meta-data#com.google.firebase.messaging.default_notification_icon
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:379:9-381:55
+	android:resource
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:381:13-52
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:380:13-83
+meta-data#com.google.firebase.messaging.default_notification_color
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:382:9-384:53
+	android:resource
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:384:13-50
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:383:13-84
+service#com.codunite.commonutility.firebase.FirebaseMessageReceiver
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:386:9-393:19
+	android:exported
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:388:13-37
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:387:13-87
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:389:13-392:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:390:17-78
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:390:25-75
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:391:17-81
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:391:25-78
+receiver#com.razorpay.RzpTokenReceiver
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:407:9-415:20
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:12:9-16:20
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:12:9-16:20
+	android:exported
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:409:13-36
+	android:permission
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:410:13-61
+	tools:replace
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:411:13-45
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:408:13-57
+intent-filter#action:name:rzp.device_token.share
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:412:13-414:29
+action#rzp.device_token.share
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:413:17-65
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:413:25-62
+activity#com.razorpay.CheckoutActivity
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:417:9-420:52
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:18:9-29:20
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:18:9-29:20
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:420:13-49
+	android:exported
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:419:13-36
+	android:configChanges
+		ADDED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:20:13-83
+	android:theme
+		ADDED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:21:13-49
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:418:13-57
+uses-library#org.apache.http.legacy
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:422:9-424:40
+	android:required
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:424:13-37
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:423:13-50
+meta-data#com.razorpay.ApiKey
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:426:9-428:55
+	android:value
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:428:13-52
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:427:13-47
+activity#com.codunite.rechargeapp.activity.nsdlpan.ActivityActivateNsdlPan
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:430:9-434:69
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:432:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:434:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:433:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:431:13-69
+activity#com.codunite.rechargeapp.activity.mainwallet.ActivityTopupWalletRazorpay
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:435:9-439:69
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:437:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:439:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:438:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:436:13-76
+activity#com.codunite.rechargeapp.activity.aepsnew.finoaepspayout.ActivityNewAepsPayoutAddBene
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:440:9-444:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:442:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:444:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:443:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:441:13-89
+activity#com.codunite.rechargeapp.activity.aepsnew.finoaepspayout.ActivityNewAepsWalletPayoutTransfer
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:445:9-449:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:447:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:449:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:448:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:446:13-96
+activity#com.codunite.rechargeapp.activity.aepsnew.finoaepspayout.ActivityNewPayoutVerifyDoc
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:450:9-454:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:452:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:454:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:453:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:451:13-87
+activity#com.codunite.rechargeapp.activity.ActivityQrcode
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:455:9-459:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:457:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:459:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:458:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:456:13-76
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityAepsCommission
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:460:9-464:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:462:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:464:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:463:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:461:13-101
+activity#com.codunite.rechargeapp.activity.commissionwallet.ActivityCommissionTransferReport
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:465:9-469:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:467:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:469:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:468:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:466:13-111
+activity#com.codunite.rechargeapp.activity.commissionincome.ActivityAepsIncome
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:470:9-474:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:472:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:474:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:473:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:471:13-97
+activity#com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:475:9-479:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:477:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:479:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:478:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:476:13-95
+activity#com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:480:9-484:70
+	android:screenOrientation
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:482:13-49
+	android:windowSoftInputMode
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:484:13-67
+	android:theme
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:483:13-56
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:481:13-65
+uses-sdk
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:6:5-8:41
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.databinding:databinding-adapters:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\13fed12992d0625f2c7a8d2dd707412a\transformed\databinding-adapters-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:databinding-adapters:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\13fed12992d0625f2c7a8d2dd707412a\transformed\databinding-adapters-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:databinding-ktx:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\219e79169c1fdb95b4b927ee02e6725f\transformed\jetified-databinding-ktx-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:databinding-ktx:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\219e79169c1fdb95b4b927ee02e6725f\transformed\jetified-databinding-ktx-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:databinding-runtime:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\4da0a38a56ab42a9fb3900799ad8da01\transformed\databinding-runtime-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:databinding-runtime:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\4da0a38a56ab42a9fb3900799ad8da01\transformed\databinding-runtime-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\deda5eefa58a312066273ff29f46e459\transformed\jetified-viewbinding-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\deda5eefa58a312066273ff29f46e459\transformed\jetified-viewbinding-7.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\600d8f400c27d8f4fda7f14721db52dc\transformed\jetified-lifecycle-runtime-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\600d8f400c27d8f4fda7f14721db52dc\transformed\jetified-lifecycle-runtime-ktx-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.github.krokyze:ucropnedit:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\13cc3ee4a994008288c4d8f43e5b1a4e\transformed\jetified-ucropnedit-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.krokyze:ucropnedit:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\13cc3ee4a994008288c4d8f43e5b1a4e\transformed\jetified-ucropnedit-2.2.6\AndroidManifest.xml:7:5-9:41
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:7:5-9:41
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.airbnb.android:lottie:5.2.0] C:\Users\dell\.gradle\caches\transforms-3\157238e1f37cb69495b96ec09233a6f6\transformed\jetified-lottie-5.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.2.0] C:\Users\dell\.gradle\caches\transforms-3\157238e1f37cb69495b96ec09233a6f6\transformed\jetified-lottie-5.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.GrenderG:Toasty:1.4.2] C:\Users\dell\.gradle\caches\transforms-3\860cebf2de819580b9c9c1129d48e38e\transformed\jetified-Toasty-1.4.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:Toasty:1.4.2] C:\Users\dell\.gradle\caches\transforms-3\860cebf2de819580b9c9c1129d48e38e\transformed\jetified-Toasty-1.4.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.chaos.view:pinview:1.4.4] C:\Users\dell\.gradle\caches\transforms-3\5505ea2992e8266ea34049d13f029e62\transformed\jetified-pinview-1.4.4\AndroidManifest.xml:20:5-22:41
+MERGED from [com.chaos.view:pinview:1.4.4] C:\Users\dell\.gradle\caches\transforms-3\5505ea2992e8266ea34049d13f029e62\transformed\jetified-pinview-1.4.4\AndroidManifest.xml:20:5-22:41
+MERGED from [com.mikhaellopez:circularimageview:4.3.0] C:\Users\dell\.gradle\caches\transforms-3\290671a1d0308861a07f784c6fc35013\transformed\jetified-circularimageview-4.3.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mikhaellopez:circularimageview:4.3.0] C:\Users\dell\.gradle\caches\transforms-3\290671a1d0308861a07f784c6fc35013\transformed\jetified-circularimageview-4.3.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] C:\Users\dell\.gradle\caches\transforms-3\308d1fe2e595e86284f63fc963daec88\transformed\jetified-ImageSlideshow-0.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.1.0] C:\Users\dell\.gradle\caches\transforms-3\308d1fe2e595e86284f63fc963daec88\transformed\jetified-ImageSlideshow-0.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\dell\.gradle\caches\transforms-3\f79bb98a83d9276a24ff21f16923b1b8\transformed\material-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\dell\.gradle\caches\transforms-3\f79bb98a83d9276a24ff21f16923b1b8\transformed\material-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dell\.gradle\caches\transforms-3\70745214d595475105c1abdfe2aa48a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\dell\.gradle\caches\transforms-3\70745214d595475105c1abdfe2aa48a3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\2aae50fa7c2350784359cd1026f2ee17\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\2aae50fa7c2350784359cd1026f2ee17\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:5:5-7:41
+MERGED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\d9fdd6bba6a7245d14bce7f2c684e9ab\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\d9fdd6bba6a7245d14bce7f2c684e9ab\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9d06b2efbb19baf11f528642ff4bbe77\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9d06b2efbb19baf11f528642ff4bbe77\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\dell\.gradle\caches\transforms-3\f7db22afff895a1d089b53a9b79b5483\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\dell\.gradle\caches\transforms-3\f7db22afff895a1d089b53a9b79b5483\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\dell\.gradle\caches\transforms-3\2f138f0a63c256db847f4fc3c55debdf\transformed\jetified-play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\dell\.gradle\caches\transforms-3\2f138f0a63c256db847f4fc3c55debdf\transformed\jetified-play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\dell\.gradle\caches\transforms-3\3458e872a85143bc7be7ce22d62da757\transformed\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\dell\.gradle\caches\transforms-3\3458e872a85143bc7be7ce22d62da757\transformed\jetified-firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\2c19c4c1a097dace0cc4a825e661a988\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\2c19c4c1a097dace0cc4a825e661a988\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\f58d308a52dd392bbdf542e26c747624\transformed\jetified-firebase-installations-interop-17.1.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\f58d308a52dd392bbdf542e26c747624\transformed\jetified-firebase-installations-interop-17.1.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\dell\.gradle\caches\transforms-3\220c72698b2f82184d57559fbab363f4\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\dell\.gradle\caches\transforms-3\220c72698b2f82184d57559fbab363f4\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\dell\.gradle\caches\transforms-3\eff6778dc98615d56addd25c940af180\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\dell\.gradle\caches\transforms-3\eff6778dc98615d56addd25c940af180\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\911d732486127f637030911c7c2c7824\transformed\gridlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\911d732486127f637030911c7c2c7824\transformed\gridlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\b04324217ccb9ad0168e810dca787dba\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\b04324217ccb9ad0168e810dca787dba\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\a228fea9c7e8165c3f1278d676032b0b\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\a228fea9c7e8165c3f1278d676032b0b\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\6fa09c78e4d57ebfd592214546705b71\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\6fa09c78e4d57ebfd592214546705b71\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\f3633cc43cbd7192154c88cb860d0908\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\f3633cc43cbd7192154c88cb860d0908\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\e0c4133b8e9d83ff26684c006b2e19b4\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\e0c4133b8e9d83ff26684c006b2e19b4\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\a0b560aad381cc984c7714bb72607c3b\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\a0b560aad381cc984c7714bb72607c3b\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\871d75ff38ab6cd7b98e4fc250188355\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\871d75ff38ab6cd7b98e4fc250188355\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\6c24e36c9004dad719254ac1e7384d24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\6c24e36c9004dad719254ac1e7384d24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\8c236e5072264904979b47286f6563bd\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\8c236e5072264904979b47286f6563bd\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\2ac95d03530563158882aefa30530495\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\2ac95d03530563158882aefa30530495\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\8fa59df5f68a03ff109baca156476a31\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\8fa59df5f68a03ff109baca156476a31\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\d73df448404e58552ac2a2666517d027\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\d73df448404e58552ac2a2666517d027\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\bbe83a18797393fbc4f615cc34474291\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\bbe83a18797393fbc4f615cc34474291\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\37c82f64fcfdec98f730f97078baf42e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\37c82f64fcfdec98f730f97078baf42e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\09c60a2188af564c070166d237245bda\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\09c60a2188af564c070166d237245bda\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\08c08df8ea096281377ad4082159fb7e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\08c08df8ea096281377ad4082159fb7e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5638745054b54ff563c35e4774182586\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5638745054b54ff563c35e4774182586\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\b015207cd36488621ec85f60c5ff929b\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\b015207cd36488621ec85f60c5ff929b\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\c5cbaec881a490f6d7cd80aec939d9ff\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\c5cbaec881a490f6d7cd80aec939d9ff\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:5:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\dell\.gradle\caches\transforms-3\fa79ba3206d05bae41e34c4b110acc8c\transformed\jetified-rxandroid-2.1.1\AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\dell\.gradle\caches\transforms-3\fa79ba3206d05bae41e34c4b110acc8c\transformed\jetified-rxandroid-2.1.1\AndroidManifest.xml:18:5-43
+MERGED from [com.asksira.android:webviewsuite:1.0.3] C:\Users\dell\.gradle\caches\transforms-3\4891af8c23de463c9401349cd92ea258\transformed\jetified-webviewsuite-1.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.asksira.android:webviewsuite:1.0.3] C:\Users\dell\.gradle\caches\transforms-3\4891af8c23de463c9401349cd92ea258\transformed\jetified-webviewsuite-1.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\4a0b30c05b74a11d6df651ff588f4289\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\4a0b30c05b74a11d6df651ff588f4289\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
+MERGED from [com.github.f0ris.sweetalert:library:1.6.2] C:\Users\dell\.gradle\caches\transforms-3\8e246691b7938362c81d8d04cd9dd1e7\transformed\jetified-library-1.6.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.f0ris.sweetalert:library:1.6.2] C:\Users\dell\.gradle\caches\transforms-3\8e246691b7938362c81d8d04cd9dd1e7\transformed\jetified-library-1.6.2\AndroidManifest.xml:7:5-9:41
+MERGED from [me.grantland:autofittextview:0.2.1] C:\Users\dell\.gradle\caches\transforms-3\675d278b8daeb2ac872f61e234023000\transformed\jetified-autofittextview-0.2.1\AndroidManifest.xml:7:5-9:41
+MERGED from [me.grantland:autofittextview:0.2.1] C:\Users\dell\.gradle\caches\transforms-3\675d278b8daeb2ac872f61e234023000\transformed\jetified-autofittextview-0.2.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\dell\.gradle\caches\transforms-3\b7da77edce996b0f96dee47f6d713134\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\dell\.gradle\caches\transforms-3\b7da77edce996b0f96dee47f6d713134\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.budiyev.android:code-scanner:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\347fbd76ea8cc44d8b1b9eebfe28f7e0\transformed\jetified-code-scanner-2.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.budiyev.android:code-scanner:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\347fbd76ea8cc44d8b1b9eebfe28f7e0\transformed\jetified-code-scanner-2.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:7:5-9:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\dell\.gradle\caches\transforms-3\625d2d888c94b74078abe4865071f43b\transformed\jetified-android-gif-drawable-1.2.22\AndroidManifest.xml:5:5-7:41
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\dell\.gradle\caches\transforms-3\625d2d888c94b74078abe4865071f43b\transformed\jetified-android-gif-drawable-1.2.22\AndroidManifest.xml:5:5-7:41
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:5:5-7:41
+MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:23:5-25:41
+MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:23:5-25:41
+MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\a509877802732fef220d953dc87b0d98\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\a509877802732fef220d953dc87b0d98\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\dell\.gradle\caches\transforms-3\4cc14c78ff974d75199bc19e8946eefe\transformed\jetified-transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:3.0.0] C:\Users\dell\.gradle\caches\transforms-3\4cc14c78ff974d75199bc19e8946eefe\transformed\jetified-transport-api-3.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\dell\.gradle\caches\transforms-3\c16112a8f37909e0f478c4b140f37c6f\transformed\jetified-firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\dell\.gradle\caches\transforms-3\c16112a8f37909e0f478c4b140f37c6f\transformed\jetified-firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\b6c758c43f975c0d08f79f925fa4f2e7\transformed\jetified-lifecycle-service-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\b6c758c43f975c0d08f79f925fa4f2e7\transformed\jetified-lifecycle-service-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\1346d42ecdf64023d7fd4a6bdba605f9\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\1346d42ecdf64023d7fd4a6bdba605f9\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9a7953515f1a64245f9af9ad26893211\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9a7953515f1a64245f9af9ad26893211\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\54f9f98a90886965882c2a3f3560a9b2\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\54f9f98a90886965882c2a3f3560a9b2\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\253738e855cb0d6e0bbab26303a2226d\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\253738e855cb0d6e0bbab26303a2226d\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1abcd217ede9f978738fd3eb1ebfb17f\transformed\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1abcd217ede9f978738fd3eb1ebfb17f\transformed\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\80d93c12985bdd7558cd55e0ef599b0c\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\80d93c12985bdd7558cd55e0ef599b0c\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\00f64cb32d3d212f10602adbb7c8ccd2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\00f64cb32d3d212f10602adbb7c8ccd2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\378b8db748a6883e92ca2196ad46f8fd\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\378b8db748a6883e92ca2196ad46f8fd\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\82f726a2ca802cabb336031f0c9842ee\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\82f726a2ca802cabb336031f0c9842ee\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\3c697dd80ee3e6689242243ac2ecdd06\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\3c697dd80ee3e6689242243ac2ecdd06\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\6bac3134c7b17042573c302a56247648\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\6bac3134c7b17042573c302a56247648\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\6e2322961c63bf73738cb856219b4db2\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\6e2322961c63bf73738cb856219b4db2\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\b59a9bb54f5ff865e4aa299145b95963\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\b59a9bb54f5ff865e4aa299145b95963\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\541a06dbe3de5f962b5a98a42b064b9d\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\541a06dbe3de5f962b5a98a42b064b9d\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\762c96b40ebeee0f2cf85f183dc94a4b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\762c96b40ebeee0f2cf85f183dc94a4b\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5f3bbc3a5fa1fdedf2d0d3a054b6da97\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5f3bbc3a5fa1fdedf2d0d3a054b6da97\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\dell\.gradle\caches\transforms-3\3f8d4fd8875ccc99b29719ab900eccc7\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\dell\.gradle\caches\transforms-3\3f8d4fd8875ccc99b29719ab900eccc7\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:7:5-9:41
+MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:7:5-9:41
+MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\dell\.gradle\caches\transforms-3\ae2ba79bd4a933f9f9aff3d46eb64ad5\transformed\jetified-relinker-1.4.1\AndroidManifest.xml:5:5-43
+MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\dell\.gradle\caches\transforms-3\ae2ba79bd4a933f9f9aff3d46eb64ad5\transformed\jetified-relinker-1.4.1\AndroidManifest.xml:5:5-43
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:401:13-404:52
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:63:13-65:54
+MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:63:13-65:54
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:19:13-21:58
+MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:19:13-21:58
+	android:resource
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:403:17-55
+		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:65:17-51
+		REJECTED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:21:17-55
+	tools:replace
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:404:17-49
+	android:name
+		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:402:17-67
+uses-permission#android.permission.WRITE_INTERNAL_STORAGE
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:12:22-78
+package#com.mantra.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:16:9-56
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:16:18-53
+package#com.scl.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:17:9-53
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:17:18-50
+package#com.precision.pb510.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:18:9-65
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:18:18-62
+package#com.secugen.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:19:9-57
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:19:18-54
+package#com.nextbiometrics.onetouchrdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:20:9-72
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:20:18-69
+package#com.acpl.registersdk
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:21:9-56
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:21:18-53
+package#co.aratek.asix_gms.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:22:9-64
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:22:18-61
+package#com.evolute.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:23:9-57
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:23:18-54
+package#com.mantra.mis100v2.rdservice
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:24:9-65
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:24:18-62
+uses-feature#android.hardware.camera
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:27:5-29:35
+	android:required
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:29:9-32
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:28:9-47
+uses-permission#android.permission.READ_PRECISE_PHONE_STATE
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:31:5-33:47
+	tools:ignore
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:33:9-44
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:32:9-67
+uses-permission#android.permission.READ_PRIVILEGED_PHONE_STATE
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:34:5-36:47
+	tools:ignore
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:36:9-44
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:35:9-70
+activity#com.paysprint.onboardinglib.activities.AadhaarVerification
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:43:9-95
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:43:19-92
+activity#com.paysprint.onboardinglib.activities.PanImageUpload
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:44:9-46:56
+	android:screenOrientation
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:46:13-53
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:45:13-81
+activity#com.paysprint.onboardinglib.activities.AddressUpdateActivity
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:47:9-97
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:47:19-94
+activity#com.paysprint.onboardinglib.activities.AadhaarEKYCActivity
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:48:9-95
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:48:19-92
+activity#com.paysprint.onboardinglib.activities.AadhaarVerificationActivity
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:49:9-103
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:49:19-100
+activity#com.paysprint.onboardinglib.activities.PanImageActivity
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:50:9-92
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:50:19-89
+activity#com.paysprint.onboardinglib.activities.PanActivity
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:51:9-87
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:51:19-84
+activity#com.paysprint.onboardinglib.activities.HostActivity
+ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:52:9-88
+	android:name
+		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:52:19-85
+activity#com.karumi.dexter.DexterActivity
+ADDED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:27:9-29:72
+	android:theme
+		ADDED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:28:13-60
+activity#cat.ereza.customactivityoncrash.activity.DefaultErrorActivity
+ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:10:9-12:49
+	android:process
+		ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:12:13-46
+	android:name
+		ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:11:13-89
+provider#cat.ereza.customactivityoncrash.provider.CaocInitProvider
+ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:14:9-18:39
+	android:authorities
+		ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:16:13-85
+	android:exported
+		ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:17:13-37
+	android:initOrder
+		ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:18:13-36
+	android:name
+		ADDED from [cat.ereza:customactivityoncrash:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\988b4879b6cab8f7322d2939926467cc\transformed\jetified-customactivityoncrash-2.4.0\AndroidManifest.xml:15:13-85
+activity#com.gun0912.tedonactivityresult.ProxyActivity
+ADDED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:10:9-14:75
+	android:screenOrientation
+		ADDED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:13:13-52
+	android:configChanges
+		ADDED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:12:13-144
+	android:theme
+		ADDED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:14:13-72
+	android:name
+		ADDED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches\transforms-3\8bb4ffc51383c9c3ec2593a434e88395\transformed\jetified-tedonactivityresult-1.0.6\AndroidManifest.xml:11:13-73
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:25:5-77
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:25:22-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:26:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:26:22-65
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:31:9-38:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:33:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:34:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:32:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:35:13-37:29
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:44:9-51:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:47:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:46:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:45:13-82
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:48:13-50:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:48:28-51
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:52:9-58:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:23:9-29:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:23:9-29:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:14:9-20:19
+MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:14:9-20:19
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:32:9-36:35
+MERGED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:32:9-36:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:54:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:36:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:34:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:53:13-84
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:55:13-57:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:57:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:56:17-119
+meta-data#com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar
+ADDED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:26:13-28:85
+	android:value
+		ADDED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:28:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:27:17-133
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:27:13-29:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:29:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:28:17-115
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:18:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:25:9-30:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:27:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:29:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:28:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.3.1] C:\Users\dell\.gradle\caches\transforms-3\8ec215bb0ccf8f84342d3d34f29051ba\transformed\jetified-firebase-common-20.3.1\AndroidManifest.xml:26:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\dell\.gradle\caches\transforms-3\8844995483f3259b208cbc3d7b47a085\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\1124611a7a3bc4ff3d34d5366939404f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+permission#com.codunite.kmpaisa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+uses-permission#com.codunite.kmpaisa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:26:22-94
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:13:22-74
+activity#com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity
+ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:18:9-24:45
+	android:process
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:23:13-64
+	android:enabled
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:20:13-36
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:24:13-42
+	android:launchMode
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:22:13-48
+	android:exported
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:19:13-100
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:25:9-29:65
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:28:13-42
+	android:exported
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:27:13-37
+	android:theme
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:29:13-62
+	android:name
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:26:13-93
+service#com.google.android.play.core.assetpacks.AssetPackExtractionService
+ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:32:9-39:19
+	android:enabled
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:34:13-36
+	android:exported
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:35:13-36
+	android:name
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:33:13-94
+meta-data#com.google.android.play.core.assetpacks.versionCode
+ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:36:13-38:41
+	android:value
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:38:17-38
+	android:name
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:37:17-83
+service#com.google.android.play.core.assetpacks.ExtractionForegroundService
+ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:40:9-43:40
+	android:enabled
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:42:13-36
+	android:exported
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\transforms-3\df56cbd884dfff5902b91df4322db255\transformed\jetified-core-1.10.3\AndroidManifest.xml:41:13-95
+intent-filter#action:name:android.intent.action.MAIN+data:host:rzp.io+data:scheme:io.rzp
+ADDED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:22:13-28:29
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\dell\.gradle\caches\transforms-3\5639c1fa85d5a7b28757489efbcf563b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:26:13-74

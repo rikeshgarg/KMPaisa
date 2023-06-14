@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mylayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/fifteen"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/appbackcolor"
+                android:paddingBottom="@dimen/twelve"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/menuheader_dp"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_90"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/users"
+                    app:civ_border_color="@color/c_white"
+                    app:civ_border_width="@dimen/five"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/menuheader_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:text="User name"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_17" />
+
+                    <TextView
+                        android:id="@+id/menuheader_memberid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:text="User memberid"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_15" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fifteen"
+                android:background="@color/appbackcolor"
+                android:paddingBottom="@dimen/thirty"
+                android:paddingRight="@dimen/fifteen"
+                android:paddingTop="@dimen/twenty">
+
+                <RelativeLayout
+                    android:id="@+id/lay_callcompany"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/two"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fifty"
+                        android:layout_alignParentStart="true"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/c_white"
+                        app:cardCornerRadius="@dimen/twentyfive">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/back_lay_setting"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/icon_callcompany"
+                                android:layout_width="@dimen/forty"
+                                android:layout_height="@dimen/forty"
+                                android:layout_alignParentLeft="true"
+                                android:background="@drawable/back_img_setting"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/phonecall"
+                                app:tint="@color/colorPrimary"
+                                android:layout_marginLeft="@dimen/ten"
+                                android:padding="@dimen/seven" />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/icon_callcompany"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:layout_toLeftOf="@+id/img_play"
+                                android:layout_marginLeft="@dimen/five"
+                                android:gravity="center"
+                                android:text="Call To\nCompany"
+                                android:textSize="@dimen/ts_fifteen"
+                                android:textColor="@color/colorPrimary" />
+
+                            <ImageView
+                                android:id="@+id/img_play"
+                                android:layout_width="@dimen/thirtyfive"
+                                android:layout_height="@dimen/thirtyfive"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/seven"
+                                app:tint="@color/grey_20"
+                                android:padding="@dimen/seven"
+                                android:src="@drawable/ic_arrow_drop" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lay_callsponsor"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/two"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fifty"
+                        android:layout_alignParentStart="true"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/c_white"
+                        app:cardCornerRadius="@dimen/twentyfive">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/back_lay_setting"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/icon_callsponser"
+                                android:layout_width="@dimen/forty"
+                                android:layout_height="@dimen/forty"
+                                android:layout_alignParentLeft="true"
+                                android:background="@drawable/back_img_setting"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/phonecall"
+                                app:tint="@color/colorPrimary"
+                                android:layout_marginLeft="@dimen/ten"
+                                android:padding="@dimen/seven" />
+
+                            <TextView
+                                android:layout_toRightOf="@+id/icon_callsponser"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:layout_toLeftOf="@+id/img_play1"
+                                android:layout_marginLeft="@dimen/five"
+                                android:gravity="center"
+                                android:text="Call To\nSponser"
+                                android:textSize="@dimen/ts_fifteen"
+                                android:textColor="@color/colorPrimary" />
+
+                            <ImageView
+                                android:id="@+id/img_play1"
+                                android:layout_width="@dimen/thirtyfive"
+                                android:layout_height="@dimen/thirtyfive"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/seven"
+                                app:tint="@color/grey_20"
+                                android:padding="@dimen/seven"
+                                android:src="@drawable/ic_arrow_drop" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_setting_menu"
+                android:layout_width="match_parent"
+                android:layout_marginTop="-20dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                tools:itemCount="8"
+                tools:listitem="@layout/item_setting" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
