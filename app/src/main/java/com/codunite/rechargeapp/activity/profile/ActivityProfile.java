@@ -58,9 +58,9 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
     private ImageView imgAvatar;
     private int[] allViewWithClickId = {R.id.btn_PI_Update, R.id.avatar};
 
-    private EditText[] edTexts = {edName, edEmail, edPhone, edAddress, edPincode, edBlockName};
-    private String[] edTextsError = {"Enter name", "Enter email", "Enter mobile", "Enter full address", "Enter pincode", "Enter block"};
-    private int[] editTextsClickId = {R.id.edt_PI_name, R.id.edt_PI_mail, R.id.edt_PI_mobnumber, R.id.ed_address, R.id.ed_pincode, R.id.ed_block};
+    private EditText[] edTexts = {edName, edEmail, edPhone};
+    private String[] edTextsError = {"Enter name", "Enter email", "Enter mobile"};
+    private int[] editTextsClickId = {R.id.edt_PI_name, R.id.edt_PI_mail, R.id.edt_PI_mobnumber};
 
     private SpinnerModel selectedFranchSpinnerDistrict, selectedFranchSpinnerState;
     private List<SpinnerModel> listFranchSpinnerDistrict, listFranchSpinnerState;
@@ -79,25 +79,25 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
         OnClickCombineDeclare(allViewWithClickId);
         EditTextDeclare(edTexts);
 
-        RelativeLayout laySelectDistrict = findViewById(R.id.lay_district);
-        laySelectDistrict.setOnClickListener(v -> {
-            if (listFranchSpinnerDistrict!=null) {
-                ActivitySpinner.showSpinner(svContext, listFranchSpinnerDistrict, "Select District", REQUEST_CODE_SELECT_DISTRICT);
-            }
-        });
-        RelativeLayout laySelectState = findViewById(R.id.lay_state);
-        laySelectState.setOnClickListener(v -> {
-            if (listFranchSpinnerState!=null) {
-                ActivitySpinner.showSpinner(svContext, listFranchSpinnerState, "Select State", REQUEST_CODE_SELECT_STATE);
-            }
-        });
-
-        tvSelectState = findViewById(R.id.txt_state);
-        tvSelectDistrict = findViewById(R.id.txt_district);
-
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("IN");
-        callWebService(ApiInterface.GetFranchiseStateList, lstUploadData);
+//        RelativeLayout laySelectDistrict = findViewById(R.id.lay_district);
+//        laySelectDistrict.setOnClickListener(v -> {
+//            if (listFranchSpinnerDistrict!=null) {
+//                ActivitySpinner.showSpinner(svContext, listFranchSpinnerDistrict, "Select District", REQUEST_CODE_SELECT_DISTRICT);
+//            }
+//        });
+//        RelativeLayout laySelectState = findViewById(R.id.lay_state);
+//        laySelectState.setOnClickListener(v -> {
+//            if (listFranchSpinnerState!=null) {
+//                ActivitySpinner.showSpinner(svContext, listFranchSpinnerState, "Select State", REQUEST_CODE_SELECT_STATE);
+//            }
+//        });
+//
+//        tvSelectState = findViewById(R.id.txt_state);
+//        tvSelectDistrict = findViewById(R.id.txt_district);
+//
+//        lstUploadData = new LinkedList<>();
+//        lstUploadData.add("IN");
+//        callWebService(ApiInterface.GetFranchiseStateList, lstUploadData);
 
         NestedScrollView layMainLay = findViewById(R.id.scrollView2);
         if(PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISPROFILEUPDATED, false)){
@@ -129,40 +129,40 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
 
     private void UpdatePI() {
         int response = 0;
-        response = CheckValidation.emptyEditTextError(new EditText[]{edName, edAddress, edPincode, edBlockName},
-                new String[]{"Enter name", "Enter full address", "Enter pincode", "Enter block name",});
+        response = CheckValidation.emptyEditTextError(new EditText[]{edName, edEmail, edPhone},
+                new String[]{"Enter name", "Enter email", "Enter mobile"});
 
-        if (response == 0 && selectedFranchSpinnerDistrict == null) {
-            response++;
-            customToast.showCustomToast(svContext, "Please select district", customToast.ToastyError);
-        }
-
-        if (response == 0 && selectedFranchSpinnerState == null) {
-            response++;
-            customToast.showCustomToast(svContext, "Please select state", customToast.ToastyError);
-        }
+//        if (response == 0 && selectedFranchSpinnerDistrict == null) {
+//            response++;
+//            customToast.showCustomToast(svContext, "Please select district", customToast.ToastyError);
+//        }
+//
+//        if (response == 0 && selectedFranchSpinnerState == null) {
+//            response++;
+//            customToast.showCustomToast(svContext, "Please select state", customToast.ToastyError);
+//        }
 
         if (response == 0) {
             if (imageDpUri == null) {
                 lstUploadData = new LinkedList<>();
                 lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                 lstUploadData.add(edName.getText().toString().trim());
-                lstUploadData.add(edAddress.getText().toString().trim());
-                lstUploadData.add(edPincode.getText().toString().trim());
-                lstUploadData.add(selectedFranchSpinnerDistrict.getId());
-                lstUploadData.add(selectedFranchSpinnerState.getId());
-                lstUploadData.add(edBlockName.getText().toString().trim());
+//                lstUploadData.add(edAddress.getText().toString().trim());
+//                lstUploadData.add(edPincode.getText().toString().trim());
+//                lstUploadData.add(selectedFranchSpinnerDistrict.getId());
+//                lstUploadData.add(selectedFranchSpinnerState.getId());
+//                lstUploadData.add(edBlockName.getText().toString().trim());
                 lstUploadData.add("photo");
                 callWebService(ApiInterface.UPADATEUSERDATA, lstUploadData);
             } else {
                 lstUploadData = new LinkedList<>();
                 lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                 lstUploadData.add(edName.getText().toString().trim());
-                lstUploadData.add(edAddress.getText().toString().trim());
-                lstUploadData.add(edPincode.getText().toString().trim());
-                lstUploadData.add(selectedFranchSpinnerDistrict.getId());
-                lstUploadData.add(selectedFranchSpinnerState.getId());
-                lstUploadData.add(edBlockName.getText().toString().trim());
+//                lstUploadData.add(edAddress.getText().toString().trim());
+//                lstUploadData.add(edPincode.getText().toString().trim());
+//                lstUploadData.add(selectedFranchSpinnerDistrict.getId());
+//                lstUploadData.add(selectedFranchSpinnerState.getId());
+//                lstUploadData.add(edBlockName.getText().toString().trim());
                 lstUploadData.add(encodeImage(imageDpUri));
                 callWebService(ApiInterface.UPADATEUSERDATA, lstUploadData);
             }
@@ -224,16 +224,16 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
         edName = (EditText) editTexts[0];
         edEmail = (EditText) editTexts[1];
         edPhone = (EditText) editTexts[2];
-        edAddress = (EditText) editTexts[3];
-        edPincode = (EditText) editTexts[4];
-        edBlockName = (EditText) editTexts[5];
+//        edAddress = (EditText) editTexts[3];
+//        edPincode = (EditText) editTexts[4];
+//        edBlockName = (EditText) editTexts[5];
 
         edName.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERNAME, ""));
         edPhone.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERPHONE, ""));
         edEmail.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSEREMAIL, ""));
-        edAddress.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINADDRESS, ""));
-        edPincode.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINPINCODE, ""));
-        edBlockName.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINBLOCKID, ""));
+//        edAddress.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINADDRESS, ""));
+//        edPincode.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINPINCODE, ""));
+//        edBlockName.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINBLOCKID, ""));
     }
 
     @Override
@@ -431,40 +431,40 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
         super.onBackPressed();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
-        if (resultCode == RESULT_OK) {
-            Bundle extras = intent.getExtras();
-            if (extras == null) return;
-            switch (requestCode) {
-                case REQUEST_CODE_SELECT_DISTRICT:
-                    int pos1 = intent.getIntExtra(ActivitySpinner.EXTRA_SPINNER_POSITION, 0);
-                    selectedFranchSpinnerDistrict = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
-
-                    if (selectedFranchSpinnerDistrict == null) {
-                        tvSelectDistrict.setText("Select City");
-                    } else {
-                        tvSelectDistrict.setText(selectedFranchSpinnerDistrict.getTitle());
-                    }
-                    break;
-                case REQUEST_CODE_SELECT_STATE:
-                    selectedFranchSpinnerState = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
-                    if (selectedFranchSpinnerState == null) {
-                        tvSelectState.setText("Select State");
-                    } else {
-                        tvSelectState.setText(selectedFranchSpinnerState.getTitle());
-
-                        lstUploadData = new LinkedList<>();
-                        lstUploadData.add(selectedFranchSpinnerState.getId());
-                        callWebService(ApiInterface.GetFranchiseDistrictList, lstUploadData);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+//        super.onActivityResult(requestCode, resultCode, intent);
+//        if (resultCode == RESULT_OK) {
+//            Bundle extras = intent.getExtras();
+//            if (extras == null) return;
+//            switch (requestCode) {
+//                case REQUEST_CODE_SELECT_DISTRICT:
+//                    int pos1 = intent.getIntExtra(ActivitySpinner.EXTRA_SPINNER_POSITION, 0);
+//                    selectedFranchSpinnerDistrict = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
+//
+//                    if (selectedFranchSpinnerDistrict == null) {
+//                        tvSelectDistrict.setText("Select City");
+//                    } else {
+//                        tvSelectDistrict.setText(selectedFranchSpinnerDistrict.getTitle());
+//                    }
+//                    break;
+//                case REQUEST_CODE_SELECT_STATE:
+//                    selectedFranchSpinnerState = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
+//                    if (selectedFranchSpinnerState == null) {
+//                        tvSelectState.setText("Select State");
+//                    } else {
+//                        tvSelectState.setText(selectedFranchSpinnerState.getTitle());
+//
+//                        lstUploadData = new LinkedList<>();
+//                        lstUploadData.add(selectedFranchSpinnerState.getId());
+//                        callWebService(ApiInterface.GetFranchiseDistrictList, lstUploadData);
+//                    }
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
+//    }
 
 
 }

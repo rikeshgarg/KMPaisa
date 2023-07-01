@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.codunite.rechargeapp-mergeKmpaisaDebugResources-62:/values-lo/values-lo.xml",
+            "outputFile": "com.codunite.rechargeapp-mergeKmpaisaDebugResources-63:/values-lo/values-lo.xml",
             "map": [
                 {
                     "source": "C:\\Users\\dell\\.gradle\\caches\\transforms-3\\cf9056b6c615ada306d0e0b0a27ce93b\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-lo\\values.xml",

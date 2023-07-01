@@ -20,6 +20,8 @@ public class PreferenceConnector {
 
     public static final String LOGINEDUSERID = "logineduserid";
     public static final String DASHNEWS = "dashnews";
+
+    public static final String TOKEN = "token";
     public static final String LOGINUSERNAME = "loginusername";
     public static final String WALLETBAL = "walletbal";
     public static final String ZOOM_MEETING_TIME = "zoom_meeting_time";
@@ -46,7 +48,7 @@ public class PreferenceConnector {
 
     public static final String MEMBERSHIP = "membership";
     public static final String RANK = "rank";
-
+    public static final String ISTRANSFERACTIVE = "istransferactive";
     public static final String LOGINUSERPHONE = "loginuserphone";
     public static final String LOGINUSEREMAIL = "loginuseremail";
     public static final String LOGINUSERPROFILEPIC = "loginuserprofilepic";
@@ -70,6 +72,11 @@ public class PreferenceConnector {
 
     public static final String ISAEPSACTIVE = "isaepsactive";
     public static final String ISAEPSKYCDONE = "isaepskycactive";
+
+    public static final String ISDMTACTIVE = "is_dmt_active";
+    public static final String VIRTUALACCOUNT_ACTIVE_STATUS = "virtual_account_status";
+    public static final String ISXPRESSPAYOUTACTIVE = "isxpresspayout";
+    public static final String ISVIRTUALACCOUNT = "is_virtual_account";
     public static final String ISNEWAEPSACTIVE = "is_newaepsactive";    // for new icici apes
     public static final String ISNEWAEPSKYCDONE = "isnewaepskycactive"; // for new icici apes
     public static final String ISICICIAEPSKYCDONE = "isiciciaepskycactive";    // for new icici apes

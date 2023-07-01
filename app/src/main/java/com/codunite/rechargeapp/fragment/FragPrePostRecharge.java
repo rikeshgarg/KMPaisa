@@ -161,12 +161,16 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
     private void LoadOperatorList(String rechargeType) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(rechargeType);
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        pbLoadOperator.setVisibility(View.VISIBLE);
         callWebServiceWithoutLoader(ApiInterface.OPERATORLIST, lstUploadData);
     }
 
     private void LoadCircleList() {
         lstUploadData = new LinkedList<>();
-        lstUploadData.add("");
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+
+        pbLoadCircle.setVisibility(View.VISIBLE);
         callWebServiceWithoutLoader(ApiInterface.CIRCLELIST, lstUploadData);
     }
 
@@ -281,10 +285,10 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
             customToast.showCustomToast(svContext, "Please select operator", customToast.ToastyError);
         }
 
-        if (spinnerCircleList.getSelectedItemPosition() == 0) {
-            response++;
-            customToast.showCustomToast(svContext, "Please select circle", customToast.ToastyError);
-        }
+//        if (spinnerCircleList.getSelectedItemPosition() == 0) {
+//            response++;
+//            customToast.showCustomToast(svContext, "Please select circle", customToast.ToastyError);
+//        }
 
         if ((edPhoneNumber.getText().toString().trim()).length() != 10) {
             response++;
@@ -296,19 +300,19 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
             customToast.showCustomToast(svContext, "Please enter at least 10 Rs", customToast.ToastyError);
         }
 
-        int genid = rgMobileGroupRechargeType.getCheckedRadioButtonId();
-        RadioButton radioButton = (RadioButton) aiView.findViewById(genid);
-        String rgSelection = radioButton.getText().toString();
+//        int genid = rgMobileGroupRechargeType.getCheckedRadioButtonId();
+//        RadioButton radioButton = (RadioButton) aiView.findViewById(genid);
+//        String rgSelection = radioButton.getText().toString();
 
         type = "1";
         strRechargePostType = "1";
-        if (rgSelection.equalsIgnoreCase("Prepaid")) {
-            type = "1";
-            strRechargePostType = "1";
-        } else if (rgSelection.equalsIgnoreCase("Postpaid")) {
-            type = "1";
-            strRechargePostType = "2";
-        }
+//        if (rgSelection.equalsIgnoreCase("Prepaid")) {
+//            type = "1";
+//            strRechargePostType = "1";
+//        } else if (rgSelection.equalsIgnoreCase("Postpaid")) {
+//            type = "1";
+//            strRechargePostType = "2";
+//        }
 
         String strMessage = "Prepaid Recharge\nMobile Number: " + edPhoneNumber.getText().toString().trim() + "\nOperator: " +
                 (listSpinnerOperatorList.get(spinnerOperatorList.getSelectedItemPosition()).split("#:#")[1]) +
@@ -324,11 +328,8 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add((edPhoneNumber.getText().toString().trim()));
         lstUploadData.add((listSpinnerOperatorList.get(spinnerOperatorList.getSelectedItemPosition()).split("#:#")[0]));
-        lstUploadData.add((listSpinnerCircleList.get(spinnerCircleList.getSelectedItemPosition()).split("#:#")[0]));
+        lstUploadData.add("");
         lstUploadData.add(edRechargeAmount.getText().toString().trim());
-        lstUploadData.add("1");
-        lstUploadData.add(strRechargePostType);
-        lstUploadData.add(edtOtp.getText().toString().trim());
         callWebService(ApiInterface.RECHARGEAUTH, lstUploadData);
     }
 
@@ -365,6 +366,7 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
         if (url.contains(ApiInterface.OPERATORLIST)) {
+            pbLoadOperator.setVisibility(View.GONE);
             try {
                 listSpinnerOperatorList = new ArrayList<>();
                 JSONObject json = new JSONObject(result);
@@ -380,8 +382,8 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("operator_id");
+                        String str_name = data_obj.getString("operator_name");
 
                         listSpinnerOperatorList.add(str_code + "#:#" + str_name);
                     }
@@ -394,7 +396,9 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
                 e.printStackTrace();
             }
         } else if (url.contains(ApiInterface.CIRCLELIST)) {
+            pbLoadCircle.setVisibility(View.GONE);
             try {
+
                 listSpinnerCircleList = new ArrayList<>();
                 JSONObject json = new JSONObject(result);
 
@@ -409,8 +413,8 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("circle_id");
+                        String str_name = data_obj.getString("circle_name");
 
                         listSpinnerCircleList.add(str_code + "#:#" + str_name);
                     }
@@ -500,7 +504,6 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
 
     private void PopulateOperatorList() {
         spinnerOperatorList = (Spinner) aiView.findViewById(R.id.spinner_operatorlist);
-
         SpinnerPopulateAdapter spindapter = new SpinnerPopulateAdapter(svContext, listSpinnerOperatorList, true);
         spinnerOperatorList.setAdapter(spindapter);
     }
@@ -542,6 +545,14 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
     @Override
     public void onWebServiceError(String result, String url) {
         customToast.showToast(result, svContext);
+    }
+
+    public void ConfirmRecharge() {
+        int amount = Integer.parseInt(edRechargeAmount.getText().toString().trim());
+        boolean isWalletLoading = ((ActivityRecharge) getActivity()).checkRWalletAndAddWallet(amount, "prepost");
+        if (!isWalletLoading) {
+            RechargeProcess();
+        }
     }
 
 //    ArrayList<ContactModel> lstContact = new ArrayList<>();

@@ -2,7 +2,7 @@ package com.codunite.rechargeapp.model;
 
 public class PayoutTransferReportModel {
     private String str_member_id, str_txn_id, str_amount, str_datetime,
-            str_status, str_rrn, mobile,str_name,str_ifsc;
+            str_status, str_rrn, mobile,str_name,str_ifsc,str_acc_no;
 
     public PayoutTransferReportModel(String str_member_id, String str_txn_id, String str_amount,
                                      String str_datetime, String str_status, String str_rrn, String mobile, String str_name, String str_ifsc) {
@@ -15,6 +15,20 @@ public class PayoutTransferReportModel {
         this.mobile = mobile;
         this.str_name = str_name;
         this.str_ifsc = str_ifsc;
+    }
+
+    public PayoutTransferReportModel(String str_member_id, String str_txn_id, String str_amount,
+                                     String str_datetime, String str_status, String str_rrn, String mobile, String str_name, String str_ifsc, String str_acc_no) {
+        this.str_member_id = str_member_id;
+        this.str_txn_id = str_txn_id;
+        this.str_amount = str_amount;
+        this.str_datetime = str_datetime;
+        this.str_status = str_status;
+        this.str_rrn = str_rrn;
+        this.mobile = mobile;
+        this.str_name = str_name;
+        this.str_ifsc = str_ifsc;
+        this.str_acc_no = str_acc_no;
     }
 
     public String getStr_member_id() {
@@ -89,4 +103,13 @@ public class PayoutTransferReportModel {
     public void setStr_ifsc(String str_ifsc) {
         this.str_ifsc = str_ifsc;
     }
+
+    public String getStr_acc_no() {
+        return str_acc_no;
+    }
+
+    public void setStr_acc_no(String str_acc_no) {
+        this.str_acc_no = str_acc_no;
+    }
+
 }

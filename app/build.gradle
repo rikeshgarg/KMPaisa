@@ -187,4 +187,5 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
     implementation 'com.razorpay:checkout:1.5.16'
     implementation 'com.github.joaquimley:faboptions:1.2.0'
+    implementation 'com.github.salehyarahmadi:AndExAlertDialog:v1.0.1'
 }

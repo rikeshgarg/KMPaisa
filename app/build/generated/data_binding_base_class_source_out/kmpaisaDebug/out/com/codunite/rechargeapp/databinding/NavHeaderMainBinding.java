@@ -36,15 +36,20 @@ public final class NavHeaderMainBinding implements ViewBinding {
   @NonNull
   public final TextView menuheaderName;
 
+  @NonNull
+  public final TextView userType;
+
   private NavHeaderMainBinding(@NonNull RelativeLayout rootView, @NonNull LinearLayout llClose,
       @NonNull LinearLayout llProfileImage, @NonNull ImageView menuheaderDp,
-      @NonNull TextView menuheaderMemberid, @NonNull TextView menuheaderName) {
+      @NonNull TextView menuheaderMemberid, @NonNull TextView menuheaderName,
+      @NonNull TextView userType) {
     this.rootView = rootView;
     this.llClose = llClose;
     this.llProfileImage = llProfileImage;
     this.menuheaderDp = menuheaderDp;
     this.menuheaderMemberid = menuheaderMemberid;
     this.menuheaderName = menuheaderName;
+    this.userType = userType;
   }
 
   @Override
@@ -104,8 +109,14 @@ public final class NavHeaderMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.user_type;
+      TextView userType = ViewBindings.findChildViewById(rootView, id);
+      if (userType == null) {
+        break missingId;
+      }
+
       return new NavHeaderMainBinding((RelativeLayout) rootView, llClose, llProfileImage,
-          menuheaderDp, menuheaderMemberid, menuheaderName);
+          menuheaderDp, menuheaderMemberid, menuheaderName, userType);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

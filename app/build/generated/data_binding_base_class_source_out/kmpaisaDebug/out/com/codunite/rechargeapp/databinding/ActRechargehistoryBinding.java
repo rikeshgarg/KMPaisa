@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
@@ -20,7 +21,6 @@ import com.codunite.rechargeapp.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
-import me.grantland.widget.AutofitTextView;
 
 public final class ActRechargehistoryBinding implements ViewBinding {
   @NonNull
@@ -36,7 +36,7 @@ public final class ActRechargehistoryBinding implements ViewBinding {
   public final TextView datePickerTo;
 
   @NonNull
-  public final AutofitTextView ewalletbal;
+  public final TextView ewalletbal;
 
   @NonNull
   public final ImageView filterSearch;
@@ -66,16 +66,19 @@ public final class ActRechargehistoryBinding implements ViewBinding {
   public final RecyclerView rvPagination;
 
   @NonNull
-  public final AutofitTextView walletbal;
+  public final SearchView searchview;
+
+  @NonNull
+  public final TextView walletbal;
 
   private ActRechargehistoryBinding(@NonNull ConstraintLayout rootView,
       @NonNull CardView cardWallbal, @NonNull TextView datePickerFrom,
-      @NonNull TextView datePickerTo, @NonNull AutofitTextView ewalletbal,
-      @NonNull ImageView filterSearch, @NonNull ConstraintLayout headlayout,
-      @NonNull RecyclerView historyRv, @NonNull IncludeActionbarBinding layActionbar,
-      @NonNull LinearLayout layFilter, @NonNull NestedScrollView layNestedscroll,
-      @NonNull SwipeRefreshLayout layrefrsh, @NonNull LinearLayout linearLayout,
-      @NonNull RecyclerView rvPagination, @NonNull AutofitTextView walletbal) {
+      @NonNull TextView datePickerTo, @NonNull TextView ewalletbal, @NonNull ImageView filterSearch,
+      @NonNull ConstraintLayout headlayout, @NonNull RecyclerView historyRv,
+      @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout layFilter,
+      @NonNull NestedScrollView layNestedscroll, @NonNull SwipeRefreshLayout layrefrsh,
+      @NonNull LinearLayout linearLayout, @NonNull RecyclerView rvPagination,
+      @NonNull SearchView searchview, @NonNull TextView walletbal) {
     this.rootView = rootView;
     this.cardWallbal = cardWallbal;
     this.datePickerFrom = datePickerFrom;
@@ -90,6 +93,7 @@ public final class ActRechargehistoryBinding implements ViewBinding {
     this.layrefrsh = layrefrsh;
     this.linearLayout = linearLayout;
     this.rvPagination = rvPagination;
+    this.searchview = searchview;
     this.walletbal = walletbal;
   }
 
@@ -139,7 +143,7 @@ public final class ActRechargehistoryBinding implements ViewBinding {
       }
 
       id = R.id.ewalletbal;
-      AutofitTextView ewalletbal = ViewBindings.findChildViewById(rootView, id);
+      TextView ewalletbal = ViewBindings.findChildViewById(rootView, id);
       if (ewalletbal == null) {
         break missingId;
       }
@@ -195,15 +199,21 @@ public final class ActRechargehistoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.searchview;
+      SearchView searchview = ViewBindings.findChildViewById(rootView, id);
+      if (searchview == null) {
+        break missingId;
+      }
+
       id = R.id.walletbal;
-      AutofitTextView walletbal = ViewBindings.findChildViewById(rootView, id);
+      TextView walletbal = ViewBindings.findChildViewById(rootView, id);
       if (walletbal == null) {
         break missingId;
       }
 
       return new ActRechargehistoryBinding((ConstraintLayout) rootView, cardWallbal, datePickerFrom,
           datePickerTo, ewalletbal, filterSearch, headlayout, historyRv, binding_layActionbar,
-          layFilter, layNestedscroll, layrefrsh, linearLayout, rvPagination, walletbal);
+          layFilter, layNestedscroll, layrefrsh, linearLayout, rvPagination, searchview, walletbal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

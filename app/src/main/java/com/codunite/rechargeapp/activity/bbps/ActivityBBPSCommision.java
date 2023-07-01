@@ -108,7 +108,7 @@ public class ActivityBBPSCommision extends AppCompatActivity implements View.OnC
         imgToolBarBack.setOnClickListener(this);
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("Bill Pay Commission");
+        txtHeading.setText("BBPS Commission");
 
     }
 

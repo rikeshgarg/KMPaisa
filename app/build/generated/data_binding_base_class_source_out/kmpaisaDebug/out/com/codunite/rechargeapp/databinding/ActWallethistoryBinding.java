@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
@@ -66,6 +67,9 @@ public final class ActWallethistoryBinding implements ViewBinding {
   public final RecyclerView rvPagination;
 
   @NonNull
+  public final SearchView searchview;
+
+  @NonNull
   public final AutofitTextView walletbal;
 
   @NonNull
@@ -78,7 +82,8 @@ public final class ActWallethistoryBinding implements ViewBinding {
       @NonNull ConstraintLayout headlayout, @NonNull IncludeActionbarBinding layActionbar,
       @NonNull LinearLayout layFilter, @NonNull NestedScrollView layNestedscroll,
       @NonNull LinearLayout linearLayout, @NonNull RecyclerView rvPagination,
-      @NonNull AutofitTextView walletbal, @NonNull RecyclerView wallethistoryRv) {
+      @NonNull SearchView searchview, @NonNull AutofitTextView walletbal,
+      @NonNull RecyclerView wallethistoryRv) {
     this.rootView = rootView;
     this.btnAddwallet = btnAddwallet;
     this.cardAddwallet = cardAddwallet;
@@ -93,6 +98,7 @@ public final class ActWallethistoryBinding implements ViewBinding {
     this.layNestedscroll = layNestedscroll;
     this.linearLayout = linearLayout;
     this.rvPagination = rvPagination;
+    this.searchview = searchview;
     this.walletbal = walletbal;
     this.wallethistoryRv = wallethistoryRv;
   }
@@ -199,6 +205,12 @@ public final class ActWallethistoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.searchview;
+      SearchView searchview = ViewBindings.findChildViewById(rootView, id);
+      if (searchview == null) {
+        break missingId;
+      }
+
       id = R.id.walletbal;
       AutofitTextView walletbal = ViewBindings.findChildViewById(rootView, id);
       if (walletbal == null) {
@@ -213,8 +225,8 @@ public final class ActWallethistoryBinding implements ViewBinding {
 
       return new ActWallethistoryBinding((ConstraintLayout) rootView, btnAddwallet, cardAddwallet,
           cardWallbal, datePickerFrom, datePickerTo, ewalletbal, filterSearch, headlayout,
-          binding_layActionbar, layFilter, layNestedscroll, linearLayout, rvPagination, walletbal,
-          wallethistoryRv);
+          binding_layActionbar, layFilter, layNestedscroll, linearLayout, rvPagination, searchview,
+          walletbal, wallethistoryRv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

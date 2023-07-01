@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.codunite.rechargeapp.model.RechargeCommisionModel;
 import com.codunite.rechargeapp.model.RechargeIncomeModel;
 import com.codunite.rechargeapp.R;
 import com.codunite.commonutility.ItemAnimation;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RechargeCommisionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<RechargeIncomeModel> items = new ArrayList<>();
+    private List<RechargeCommisionModel> items = new ArrayList<>();
     private Context ctx;
     private OnItemClickListener mOnItemClickListener;
     private int animation_type = 0;
@@ -32,24 +33,25 @@ public class RechargeCommisionAdapter extends RecyclerView.Adapter<RecyclerView.
         this.mOnItemClickListener = mItemClickListener;
     }
 
-    public RechargeCommisionAdapter(Context context, List<RechargeIncomeModel> items, int animation_type) {
+    public RechargeCommisionAdapter(Context context, List<RechargeCommisionModel> items, int animation_type) {
         this.items = items;
         ctx = context;
         this.animation_type = animation_type;
     }
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtrecharge, txtamount,txtcommision,txtdate;
+        public TextView txtOperator, txtcode, txtType, txtcommision,txtflat,txtsurcharge;
         public CardView cardView;
         public View lyt_parent;
 
         public OriginalViewHolder(View v) {
             super(v);
-            txtrecharge = (TextView) v.findViewById(R.id.reachrgeid);
-            txtamount = (TextView) v.findViewById(R.id.rechrgeamount);
-            txtcommision = (TextView) v.findViewById(R.id.commisionamount);
-            txtdate = (TextView) v.findViewById(R.id.date);
-
+            txtOperator = (TextView) v.findViewById(R.id.operator_re_commision);
+            txtcode = (TextView) v.findViewById(R.id.code_re_commision);
+            txtType = (TextView) v.findViewById(R.id.type_re_commision);
+            txtcommision = (TextView) v.findViewById(R.id.commision_re_commision);
+            txtflat = (TextView) v.findViewById(R.id.flat_re_commision);
+            txtsurcharge= (TextView) v.findViewById(R.id.surcharge_re_commision);
             cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
         }
@@ -58,7 +60,7 @@ public class RechargeCommisionAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rechargeincome, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rechargecommision, parent, false);
         vh = new OriginalViewHolder(v);
         return vh;
     }
@@ -69,24 +71,18 @@ public class RechargeCommisionAdapter extends RecyclerView.Adapter<RecyclerView.
         if (holder instanceof OriginalViewHolder) {
             OriginalViewHolder view = (OriginalViewHolder) holder;
 
-            view.txtrecharge.setText(items.get(position).getStrrecharge());
-            view.txtamount.setText(items.get(position).getStramount());
+            view.txtOperator.setText(items.get(position).getStrOperator());
+            view.txtcode.setText(items.get(position).getStrcode());
+            view.txtType.setText(items.get(position).getStrType());
             view.txtcommision.setText(items.get(position).getStrcommision());
-            view.txtdate.setText(items.get(position).getStrdate());
-
-
-
-//            if ((items.get(position).getStr_status()).equalsIgnoreCase("1")) {
-//                view.cardView.setCardBackgroundColor(Color.parseColor(strColors[0]));
-//            } else {
-//                view.cardView.setCardBackgroundColor(Color.parseColor(strColors[1]));
-//            }
+            view.txtflat.setText(items.get(position).getStrflat());
+            view.txtsurcharge.setText(items.get(position).getStrsurcharge());
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onItemClick(view, items.get(position).getStramount(), position);
+                        mOnItemClickListener.onItemClick(view, items.get(position).getStrType(), position);
                     }
                 }
             });

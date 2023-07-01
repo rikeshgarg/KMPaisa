@@ -74,9 +74,6 @@ public final class FragHomeBinding implements ViewBinding {
   public final LinearLayout layActiveDownline;
 
   @NonNull
-  public final LinearLayout layAepsWallet;
-
-  @NonNull
   public final LinearLayout layDeactiveDownline;
 
   @NonNull
@@ -92,13 +89,16 @@ public final class FragHomeBinding implements ViewBinding {
   public final LinearLayout layDirectIncome;
 
   @NonNull
+  public final LinearLayout layEWallet;
+
+  @NonNull
   public final LinearLayout layIsfundrequest;
 
   @NonNull
   public final LinearLayout layLevelIncome;
 
   @NonNull
-  public final LinearLayout layMainWallet;
+  public final LinearLayout layRWallet;
 
   @NonNull
   public final LinearLayout layTotalDownline;
@@ -114,6 +114,9 @@ public final class FragHomeBinding implements ViewBinding {
 
   @NonNull
   public final RecyclerView rvAnimLay;
+
+  @NonNull
+  public final RecyclerView rvBbps;
 
   @NonNull
   public final RecyclerView rvDashboard;
@@ -182,16 +185,17 @@ public final class FragHomeBinding implements ViewBinding {
       @NonNull ImageSlider imageSlider, @NonNull LinearLayout imgBackground,
       @NonNull LinearLayout imgBackground1, @NonNull ImageView imgdrawable1,
       @NonNull ImageView imgdrawable2, @NonNull ImageView imgdrawable3,
-      @NonNull LinearLayout layActiveDownline, @NonNull LinearLayout layAepsWallet,
-      @NonNull LinearLayout layDeactiveDownline, @NonNull LinearLayout layDirectActive,
-      @NonNull LinearLayout layDirectDeactive, @NonNull LinearLayout layDirectDownline,
-      @NonNull LinearLayout layDirectIncome, @NonNull LinearLayout layIsfundrequest,
-      @NonNull LinearLayout layLevelIncome, @NonNull LinearLayout layMainWallet,
+      @NonNull LinearLayout layActiveDownline, @NonNull LinearLayout layDeactiveDownline,
+      @NonNull LinearLayout layDirectActive, @NonNull LinearLayout layDirectDeactive,
+      @NonNull LinearLayout layDirectDownline, @NonNull LinearLayout layDirectIncome,
+      @NonNull LinearLayout layEWallet, @NonNull LinearLayout layIsfundrequest,
+      @NonNull LinearLayout layLevelIncome, @NonNull LinearLayout layRWallet,
       @NonNull LinearLayout layTotalDownline, @NonNull SwipeRefreshLayout layrefrsh,
       @NonNull LinearLayout mylayout, @NonNull NestedScrollView nestedScrollView,
-      @NonNull RecyclerView rvAnimLay, @NonNull RecyclerView rvDashboard,
-      @NonNull RecyclerView rvDashboardAeps, @NonNull RecyclerView rvDashboardAffiliate,
-      @NonNull TextView textMarquee, @NonNull TextView txtActiveDownline, @NonNull TextView txtAeps,
+      @NonNull RecyclerView rvAnimLay, @NonNull RecyclerView rvBbps,
+      @NonNull RecyclerView rvDashboard, @NonNull RecyclerView rvDashboardAeps,
+      @NonNull RecyclerView rvDashboardAffiliate, @NonNull TextView textMarquee,
+      @NonNull TextView txtActiveDownline, @NonNull TextView txtAeps,
       @NonNull TextView txtBbpsIncome, @NonNull TextView txtCashbackIncome,
       @NonNull TextView txtDeactiveDownline, @NonNull TextView txtDirectActive,
       @NonNull TextView txtDirectDeactive, @NonNull TextView txtDirectDownline,
@@ -215,20 +219,21 @@ public final class FragHomeBinding implements ViewBinding {
     this.imgdrawable2 = imgdrawable2;
     this.imgdrawable3 = imgdrawable3;
     this.layActiveDownline = layActiveDownline;
-    this.layAepsWallet = layAepsWallet;
     this.layDeactiveDownline = layDeactiveDownline;
     this.layDirectActive = layDirectActive;
     this.layDirectDeactive = layDirectDeactive;
     this.layDirectDownline = layDirectDownline;
     this.layDirectIncome = layDirectIncome;
+    this.layEWallet = layEWallet;
     this.layIsfundrequest = layIsfundrequest;
     this.layLevelIncome = layLevelIncome;
-    this.layMainWallet = layMainWallet;
+    this.layRWallet = layRWallet;
     this.layTotalDownline = layTotalDownline;
     this.layrefrsh = layrefrsh;
     this.mylayout = mylayout;
     this.nestedScrollView = nestedScrollView;
     this.rvAnimLay = rvAnimLay;
+    this.rvBbps = rvBbps;
     this.rvDashboard = rvDashboard;
     this.rvDashboardAeps = rvDashboardAeps;
     this.rvDashboardAffiliate = rvDashboardAffiliate;
@@ -368,12 +373,6 @@ public final class FragHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lay_aeps_wallet;
-      LinearLayout layAepsWallet = ViewBindings.findChildViewById(rootView, id);
-      if (layAepsWallet == null) {
-        break missingId;
-      }
-
       id = R.id.lay_deactive_downline;
       LinearLayout layDeactiveDownline = ViewBindings.findChildViewById(rootView, id);
       if (layDeactiveDownline == null) {
@@ -404,6 +403,12 @@ public final class FragHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.lay_e_wallet;
+      LinearLayout layEWallet = ViewBindings.findChildViewById(rootView, id);
+      if (layEWallet == null) {
+        break missingId;
+      }
+
       id = R.id.lay_isfundrequest;
       LinearLayout layIsfundrequest = ViewBindings.findChildViewById(rootView, id);
       if (layIsfundrequest == null) {
@@ -416,9 +421,9 @@ public final class FragHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lay_main_wallet;
-      LinearLayout layMainWallet = ViewBindings.findChildViewById(rootView, id);
-      if (layMainWallet == null) {
+      id = R.id.lay_r_wallet;
+      LinearLayout layRWallet = ViewBindings.findChildViewById(rootView, id);
+      if (layRWallet == null) {
         break missingId;
       }
 
@@ -445,6 +450,12 @@ public final class FragHomeBinding implements ViewBinding {
       id = R.id.rv_anim_lay;
       RecyclerView rvAnimLay = ViewBindings.findChildViewById(rootView, id);
       if (rvAnimLay == null) {
+        break missingId;
+      }
+
+      id = R.id.rv_bbps;
+      RecyclerView rvBbps = ViewBindings.findChildViewById(rootView, id);
+      if (rvBbps == null) {
         break missingId;
       }
 
@@ -571,13 +582,13 @@ public final class FragHomeBinding implements ViewBinding {
       return new FragHomeBinding((LinearLayout) rootView, activityLanding, activityLanding1,
           btnFundrequest, cardAffiliate, cardMarque, cvRecharge1, cvRecharge2, cvRecharge3,
           imageSlider, imgBackground, imgBackground1, imgdrawable1, imgdrawable2, imgdrawable3,
-          layActiveDownline, layAepsWallet, layDeactiveDownline, layDirectActive, layDirectDeactive,
-          layDirectDownline, layDirectIncome, layIsfundrequest, layLevelIncome, layMainWallet,
-          layTotalDownline, layrefrsh, mylayout, nestedScrollView, rvAnimLay, rvDashboard,
-          rvDashboardAeps, rvDashboardAffiliate, textMarquee, txtActiveDownline, txtAeps,
-          txtBbpsIncome, txtCashbackIncome, txtDeactiveDownline, txtDirectActive, txtDirectDeactive,
-          txtDirectDownline, txtDirectIncome, txtLevelIncome, txtMainWallet, txtMembership, txtRank,
-          txtRechargeIncome, txtTotalDownline, txtTotalIncome);
+          layActiveDownline, layDeactiveDownline, layDirectActive, layDirectDeactive,
+          layDirectDownline, layDirectIncome, layEWallet, layIsfundrequest, layLevelIncome,
+          layRWallet, layTotalDownline, layrefrsh, mylayout, nestedScrollView, rvAnimLay, rvBbps,
+          rvDashboard, rvDashboardAeps, rvDashboardAffiliate, textMarquee, txtActiveDownline,
+          txtAeps, txtBbpsIncome, txtCashbackIncome, txtDeactiveDownline, txtDirectActive,
+          txtDirectDeactive, txtDirectDownline, txtDirectIncome, txtLevelIncome, txtMainWallet,
+          txtMembership, txtRank, txtRechargeIncome, txtTotalDownline, txtTotalIncome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

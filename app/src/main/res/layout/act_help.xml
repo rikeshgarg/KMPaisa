@@ -5,7 +5,7 @@
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,9 +41,13 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:background="@drawable/bg_round_corner_white"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/ts_twentyfive"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="@dimen/ten"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -102,10 +106,8 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/twenty"
                             android:orientation="vertical"
-                            android:paddingLeft="@dimen/spacing_xlarge"
-                            android:paddingRight="@dimen/spacing_xlarge">
+                            >
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -116,45 +118,45 @@
                                 <RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/fortyfive"
-                                    android:layout_marginTop="9dp"
-                                    android:background="@drawable/back_spinner">
+                                    android:layout_marginLeft="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/fifteen"
+                                    android:layout_marginTop="@dimen/twenty"
+                                    android:background="@drawable/back_edittext_default">
 
                                     <Spinner
                                         android:id="@+id/spinner_countrylist"
                                         android:layout_width="fill_parent"
                                         android:layout_height="match_parent"
-                                        android:layout_toLeftOf="@+id/img_drop_1"
                                         android:gravity="center_vertical"
+                                        android:theme="@style/mySpinnerItemStyle"
                                         tools:listitem="@layout/item_spinner" />
 
                                     <ImageView
                                         android:id="@+id/img_drop_1"
                                         android:layout_width="@dimen/twentyfive"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
                                         android:layout_centerVertical="true"
                                         android:layout_gravity="center"
-                                        android:layout_marginRight="@dimen/three"
+                                        android:layout_marginRight="@dimen/ten"
+                                        android:padding="@dimen/two"
                                         android:src="@drawable/ic_arrow_drop"
-                                        app:tint="@color/colorPrimary" />
+                                         />
                                 </RelativeLayout>
 
                                 <EditText
                                     android:id="@+id/et_title"
                                     android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_height="45dp"
+                                    android:layout_marginLeft="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/fifteen"
+                                    android:layout_marginTop="@dimen/ten"
                                     android:background="@drawable/back_edittext_default"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="2dp"
                                     android:gravity="center_vertical"
                                     android:hint="Subject"
                                     android:inputType="text"
                                     android:maxLines="1"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
+                                    android:paddingLeft="15dp"
                                     android:singleLine="true"
                                     android:textColor="@color/c_black"
                                     android:textColorHighlight="@color/white"
@@ -165,17 +167,17 @@
                                     android:id="@+id/et_desc"
                                     android:layout_width="fill_parent"
                                     android:layout_height="100dp"
-                                    android:layout_marginTop="10dp"
-                                    android:background="@drawable/back_edittext_login"
+                                    android:layout_marginLeft="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/fifteen"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/edittext_multiline"
                                     android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="2dp"
                                     android:gravity="top"
                                     android:hint="Enter Message"
                                     android:inputType="text"
                                     android:maxLines="5"
                                     android:minLines="5"
-                                    android:padding="5dp"
+                                    android:padding="@dimen/ten"
                                     android:paddingLeft="@dimen/fifteen"
                                     android:paddingTop="@dimen/twentyfive"
                                     android:paddingBottom="@dimen/ten"
@@ -188,9 +190,10 @@
                                 <ImageView
                                     android:id="@+id/imgae_dp"
                                     android:layout_width="@dimen/ninty"
-                                    android:layout_height="@dimen/fifty"
-                                    android:layout_marginTop="@dimen/ten"
-                                    android:scaleType="fitCenter"
+                                    android:layout_height="@dimen/ninty"
+                                    android:layout_marginLeft="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/fifteen"
+                                    android:layout_marginTop="@dimen/ten"                                    android:scaleType="centerCrop"
                                     android:visibility="visible" />
 
                                 <LinearLayout
@@ -198,6 +201,9 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
+                                    android:layout_marginLeft="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/fifteen"
+                                    android:layout_marginTop="@dimen/ten"
                                     android:visibility="visible">
 
                                     <TextView
@@ -250,7 +256,12 @@
                                     android:id="@+id/submit_ticket"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/spacing_large"
+                                    android:layout_marginLeft="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/fifteen"
+                                    android:layout_marginTop="@dimen/twenty"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="@dimen/twenty"
                                     android:background="@drawable/btn_rect_primary"
                                     android:text="@string/comp_sbmtbtn"
                                     android:textColor="@android:color/white" />
@@ -259,6 +270,8 @@
                     </LinearLayout>
 
                     <include
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/ten"
                         android:id="@+id/include_demourl"
                         layout="@layout/include_demourl"
                         android:layout_width="match_parent"

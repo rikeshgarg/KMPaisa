@@ -9,11 +9,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.codunite.commonutility.PreferenceConnector;
+import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest;
 import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityMainWalletTransfer;
@@ -28,6 +33,10 @@ import com.codunite.commonutility.ShowCustomToast;
 import com.codunite.commonutility.WebService;
 import com.codunite.commonutility.WebServiceListener;
 import com.codunite.commonutility.customfont.FontUtils;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.interfaces.ItemClickListener;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -38,11 +47,9 @@ public class FragProfile extends Fragment implements OnClickListener, WebService
     private boolean mAlreadyLoaded = false;
     private List<DashboardModel> lstDashBoard = new ArrayList<>();
     private List<DashboardModel> lstDashBoardwallet = new ArrayList<>();
-
-    public static String[] selectedItem = {"My QR Code", "Personal Profile", "Change Password", "Change T-Pin",
-    "Add Nominee", "Change Account"};
-    private int[] allDrawable = {R.drawable.per_qr,R.drawable.per_profile, R.drawable.per_change_pass,
-            R.drawable.per_change_pin, R.drawable.per_change_pin, R.drawable.per_change_pin};
+    private TextView totalSuccess, totalPending, totalFailed;
+    public static String[] selectedItem = {"Personal Profile", "Change Password","View Ticket"};
+    private int[] allDrawable = {R.drawable.ic_profile, R.drawable.ic_password,R.drawable.ic_profile};
 
     public static String[] walletTransferItemList = {"Add Money", "Withdraw", "Wallet Transfer", "Report"};
     private int[] allDrawablewallet = {R.drawable.ic_addfund, R.drawable.ic_withdraw, R.drawable.ic_wallettransfer, R.drawable.ic_report};
@@ -91,6 +98,14 @@ public class FragProfile extends Fragment implements OnClickListener, WebService
     }
 
     public void resumeApp() {
+        totalSuccess = (TextView) aiView.findViewById(R.id.total_success);
+        totalPending = (TextView) aiView.findViewById(R.id.total_pending);
+        totalFailed = (TextView) aiView.findViewById(R.id.total_failed);
+
+        totalSuccess.setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALSUCCESS, ""));
+        totalPending.setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALPENDING, ""));
+        totalFailed.setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALFAILED, ""));
+
         RecyclerView recyclerViewWallet = aiView.findViewById(R.id.rv_dashboard_wallet);
         lstDashBoardwallet = new ArrayList<>();
         for (int j = 0; j < walletTransferItemList.length; j++) {
@@ -144,6 +159,7 @@ public class FragProfile extends Fragment implements OnClickListener, WebService
         mAdapter.setOnItemClickListener((view, obj, position) -> {
             ActivityMain.onDrawerItemClick(obj, svContext);
         });
+        LoadSlider();
     }
 
     private Context svContext;
@@ -178,5 +194,36 @@ public class FragProfile extends Fragment implements OnClickListener, WebService
     @Override
     public void onWebServiceError(String result, String url) {
         customToast.showToast(result, svContext);
+    }
+
+    private void LoadSlider() {
+        ImageSlider sliderView = aiView.findViewById(R.id.image_slider);
+        List<SlideModel> imageList = new ArrayList<>();
+
+        CardView cardSlider = aiView.findViewById(R.id.card_slider);
+        if (FragHomeDashBoard.lstSlider != null && FragHomeDashBoard.lstSlider.size() > 0) {
+            cardSlider.setVisibility(View.VISIBLE);
+        } else {
+            cardSlider.setVisibility(View.GONE);
+            return;
+        }
+
+        for (int j = 0; j < FragHomeDashBoard.lstSlider.size(); j++) {
+            imageList.add(new SlideModel((FragHomeDashBoard.lstSlider.get(j).getBanner_img()).replaceAll("\\/", "/"), ScaleTypes.FIT));
+        }
+
+        sliderView.setImageList(imageList, ScaleTypes.FIT);
+        sliderView.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemSelected(int i) {
+                PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING,
+                        FragHomeDashBoard.lstSlider.get(i).getBanner_name());
+                PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL,
+                        FragHomeDashBoard.lstSlider.get(i).getBanner_url());
+
+                Intent svIntent = new Intent(svContext, WebViewActivity.class);
+                svContext.startActivity(svIntent);
+            }
+        });
     }
 }

@@ -177,20 +177,22 @@ public class WebService {
 
     public Call<String> callReturn() {
         GlobalVariables.DEVICEID = PreferenceConnector.readString(context, PreferenceConnector.DEVICE_ID, "");
-        GlobalVariables.TOKEN = PreferenceConnector.readString(context, PreferenceConnector.H1, "");
+        GlobalVariables.TOKEN = PreferenceConnector.readString(context, PreferenceConnector.TOKEN, "");
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
         switch (postUrl) {
             case ApiInterface.UPDATEFCM:
                 return apiService.UpdateFcm(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
-            case ApiInterface.LOGIN:
-                return apiService.Login(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
+            case ApiInterface.LOGNUSER:
+                return apiService.Login(lstUploadData.get(0), lstUploadData.get(1));
+            case ApiInterface.LOGINOTPVERIFY:
+                return apiService.LoginOTPVerify(lstUploadData.get(0), lstUploadData.get(1));
             case ApiInterface.SIGNUP:
                 return apiService.Register(lstUploadData.get(0), lstUploadData.get(1),
                         lstUploadData.get(2), lstUploadData.get(3),
-                        lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6));
-            case ApiInterface.LOGNUSER:
-                return apiService.LoginAttempt(lstUploadData.get(0), lstUploadData.get(1));
+                        lstUploadData.get(4));
+//            case ApiInterface.LOGNUSER:
+//                return apiService.LoginAttempt(lstUploadData.get(0), lstUploadData.get(1));
             case ApiInterface.GETCOMPLAINTLIST:
                 return apiService.GetComplaintList(lstUploadData.get(0));
             case ApiInterface.GETBBSPSERVICEOPERATOR:
@@ -323,7 +325,7 @@ public class WebService {
                         lstUploadData.get(7), lstUploadData.get(8));
             case ApiInterface.ADDTRANSFERBENEFICERY:
                 return apiService.addBeneficiary(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
-                        lstUploadData.get(3), lstUploadData.get(4));
+                        lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6), lstUploadData.get(7));
             case ApiInterface.GETMONEYTRANSFERHISTORY:
                 return apiService.getMoneyTransferHistory(lstUploadData.get(0));
             case ApiInterface.GETBBPSOPERATORLIST:
@@ -350,7 +352,7 @@ public class WebService {
             case ApiInterface.GETMEMBERBYMOBILE:
                 return apiService.GetMemberByMobile(lstUploadData.get(0));
             case ApiInterface.OPERATORLIST:
-                return apiService.GetOperator(lstUploadData.get(0));
+                return apiService.GetOperator(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.GETCOUNTRYLIST:
                 return apiService.GETCOUNTRYLIST();
 
@@ -424,11 +426,11 @@ public class WebService {
                 return apiService.electricityBillPayAuth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6));
             case ApiInterface.GETTICKETTYPELIST:
-                return apiService.GetTicketTypelist();
+                return apiService.GetTicketTypelist(lstUploadData.get(0));
             case ApiInterface.CIRCLELIST:
-                return apiService.GetCircleList();
+                return apiService.GetCircleList(lstUploadData.get(0));
             case ApiInterface.GetSTATELIST:
-                return apiService.GetSTATELIST(lstUploadData.get(0));
+                return apiService.getStateList(lstUploadData.get(0));
             case ApiInterface.GetCITYLIST:
                 return apiService.getCityList();
             case ApiInterface.GETOPERATORID:
@@ -460,8 +462,7 @@ public class WebService {
                         lstUploadData.get(3), lstUploadData.get(4));
             case ApiInterface.RECHARGEAUTH:
                 return apiService.RECHARGEAUTH(lstUploadData.get(0), lstUploadData.get(1),
-                        lstUploadData.get(2), lstUploadData.get(3),
-                        lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6), lstUploadData.get(7));
+                        lstUploadData.get(2), lstUploadData.get(3),lstUploadData.get(4));
             case ApiInterface.GETUSERNAME:
                 return apiService.GetUsername(lstUploadData.get(0));
             case ApiInterface.REQUESTAMOUNT:
@@ -498,7 +499,7 @@ public class WebService {
             case ApiInterface.WALLETHISTORY:
                 return apiService.GetWalletHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.EWALLETHISTORY:
-                return apiService.GetEWalletHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
+                return apiService.GetEWalletHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.REQUESTHISTORY:
                 return apiService.GetRequestHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.GETPOINTWALLETHISTORY:
@@ -521,7 +522,7 @@ public class WebService {
                 return apiService.MtransferHistory(lstUploadData.get(0));
             case ApiInterface.MOBILETRANSFER:
                 return apiService.TransferMwalletAmount(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
-                        lstUploadData.get(3));
+                        lstUploadData.get(3),lstUploadData.get(4), lstUploadData.get(5));
             case ApiInterface.MOBILETRANSFERVERIFY:
                 return apiService.VerifyMwalletAmount(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.UPGRADE:
@@ -555,7 +556,7 @@ public class WebService {
             case ApiInterface.RECHARGEHISTORY:
                 return apiService.GetRechargeHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.RECHARGECOMMISIONHISTORY:
-                return apiService.GetRechargeCommisionHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
+                return apiService.GetRechargeCommisionHistory(lstUploadData.get(0));
             case ApiInterface.GETCREDITCARDHISTORY:
                 return apiService.GetCreditCardHistory(lstUploadData.get(0));
             case ApiInterface.GETLOAN:
@@ -738,8 +739,20 @@ public class WebService {
                 return apiService.OrderTokenAuth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.ADD_TOPUP_WALLET:
                 return apiService.PaymentReceiveFreecash(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
-
-            default:
+            case ApiInterface.VIRTUAL_ACCOUNT_AUTH:
+                return apiService.virtualAccountAuth(lstUploadData.get(0));
+            case ApiInterface.VIRTUAL_ACTIVE_AUTH:
+                return apiService.activeVirtualAuth(lstUploadData.get(0));
+            case ApiInterface.VIRTUAL_ACCOUNT_REPORT:
+                return apiService.virtualAccountList(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
+            case ApiInterface.DMT_BANK_LIST:
+                return apiService.dmtBankList();
+            case ApiInterface.GET_SENDER_DETAILS:
+                return apiService.getSenderDetail(lstUploadData.get(0), lstUploadData.get(1));
+            case ApiInterface.UPDATE_SENDER_DETAILS:
+                return apiService.updateSenderDetailAuth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
+                        lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6));
+                default:
                 new ShowCustomToast(context).showToast("Please decalre Url in webservice file", context);
                 break;
         }

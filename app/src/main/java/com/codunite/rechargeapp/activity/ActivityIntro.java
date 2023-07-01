@@ -13,7 +13,7 @@ public class ActivityIntro extends AppCompatActivity {
         GlobalData.Fullscreen(ActivityIntro.this);
         setContentView(R.layout.act_intro);
         (findViewById(R.id.ll_get_start)).setOnClickListener(view -> {
-            Intent intent=new Intent(ActivityIntro.this, ActivityMain.class);
+            Intent intent=new Intent(ActivityIntro.this, ActivityLogin.class);
             startActivity(intent);
         });
     }

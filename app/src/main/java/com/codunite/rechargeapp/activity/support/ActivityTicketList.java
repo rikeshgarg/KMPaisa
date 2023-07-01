@@ -160,7 +160,7 @@ public class ActivityTicketList extends AppCompatActivity implements View.OnClic
                         String str_type = data_obj.getString(TAG_TYPE);
                         String str_data_status = data_obj.getString(TAG_STATUS);
                         String str_msg = data_obj.getString("message");
-                        String str_imgurl = data_obj.getString("attachment");
+                        String str_imgurl = data_obj.getString("attachment");//attachment
 
                         lstItems.add(new TicketListModel(str_ticket_id, str_msg, str_subject,
                                 str_datetime, str_type, str_data_status, str_imgurl));

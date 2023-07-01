@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -79,9 +80,10 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="12dp"
                         android:layout_marginBottom="15dp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:cardCornerRadius="2dp"
-                        app:cardElevation="2dp">
+                        app:cardElevation="2dp"
+                        >
 
 
                         <LinearLayout
@@ -120,23 +122,20 @@
                     </androidx.cardview.widget.CardView>
 
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_middle"
-                        android:layout_marginTop="@dimen/spacing_medium"
-                        android:layout_marginRight="@dimen/spacing_middle"
-                        android:layout_marginBottom="@dimen/spacing_medium"
-                        android:visibility="visible"
-                        app:cardCornerRadius="2dp"
-                        app:cardElevation="2dp">
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/bg_round_corner_white"
+                            android:layout_marginLeft="@dimen/spacing_middle"
+                            android:layout_marginTop="@dimen/spacing_middle"
+                            android:layout_marginRight="@dimen/spacing_middle"
+                            android:layout_marginBottom="@dimen/spacing_medium"
                             android:orientation="vertical">
 
                             <include
+                                android:visibility="gone"
                                 layout="@layout/include_demourl"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -144,6 +143,7 @@
                                 android:padding="@dimen/twenty" />
 
                             <TextView
+                                android:visibility="gone"
                                 android:id="@+id/tv_machinetype"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -155,6 +155,7 @@
                                 android:textStyle="bold" />
 
                             <RadioGroup
+                                android:visibility="gone"
                                 android:id="@+id/device_type"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -185,7 +186,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
                                 android:gravity="center_vertical"
                                 android:minHeight="?attr/actionBarSize"
                                 android:orientation="horizontal">
@@ -199,10 +199,13 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:layout_marginLeft="@dimen/five"
+                                    android:layout_marginTop="@dimen/five"
+                                    android:textColor="@color/grey_80"
+                                    android:textStyle="bold"
                                     android:text="Personal Details"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                                    android:textColor="@color/grey_80"
-                                    android:textStyle="bold" />
+                                    />
 
                             </LinearLayout>
 
@@ -211,109 +214,291 @@
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
 
-                                <EditText
-                                    android:id="@+id/ed_first_name"
-                                    android:layout_width="fill_parent"
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="1dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
 
-                                    android:drawableLeft="@drawable/ic_person"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Enter first name"
-                                    android:inputType="text"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+                                    <ImageView
+                                        android:id="@+id/iv_fname"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:visibility="gone"
+                                        android:src="@drawable/ic_user_name"
+                                        app:tint="@color/colorAccent" />
 
-                                <EditText
-                                    android:id="@+id/ed_last_name"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Enter last name"
-                                    android:inputType="text"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_fname"
+                                        android:hint="Enter first name"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
 
-                                <EditText
-                                    android:id="@+id/ed_mobile"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Enter mobile number"
-                                    android:inputType="phone"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+                                        <EditText
+                                            android:id="@+id/ed_first_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="text"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
 
+                                    </com.google.android.material.textfield.TextInputLayout>
 
-                                <EditText
-                                    android:id="@+id/ed_shopname"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Enter shop name"
-                                    android:inputType="text"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+                                </RelativeLayout>
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_first_name"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="1dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_person"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Enter first name"-->
+<!--                                    android:inputType="text"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="@dimen/fortyfive"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_spinner">
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_lname"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_user_name"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_lname"
+                                        android:hint="Enter last name"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_last_name"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="text"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_last_name"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Enter last name"-->
+<!--                                    android:inputType="text"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_mobile"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_mobile"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_mobile"
+                                        android:hint="Enter mobile number"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_mobile"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="phone"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
+
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_mobile"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_lock_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Enter mobile number"-->
+<!--                                    android:inputType="phone"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_shop"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_mobile"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_shop"
+                                        android:hint="Enter shop name"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_shopname"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="text"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
+
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_shopname"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_lock_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Enter shop name"-->
+<!--                                    android:inputType="text"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/fifty"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:background="@drawable/back_edittext_default">
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/img_drawable"
+                                        android:layout_width="@dimen/twentyfive"
+                                        android:layout_height="@dimen/thirtyfive"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:padding="@dimen/two"
+                                        android:src="@drawable/region"
+                                        app:tint="@color/colorAccent" />
 
                                     <Spinner
+                                        android:layout_toRightOf="@+id/img_drawable"
+                                        android:background="@android:color/transparent"
                                         android:id="@+id/spinner_statelist"
                                         android:layout_width="fill_parent"
                                         android:layout_height="match_parent"
@@ -330,18 +515,31 @@
                                         android:layout_gravity="center"
                                         android:layout_marginRight="@dimen/five"
                                         android:src="@drawable/ic_arrow_drop"
-                                        app:tint="@color/colorPrimary" />
+                                         />
                                 </RelativeLayout>
 
                                 <RelativeLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="@dimen/fortyfive"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_spinner">
-
+                                    android:layout_height="@dimen/fifty"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:background="@drawable/back_edittext_default">
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/img_drawable1"
+                                        android:layout_width="@dimen/twentyfive"
+                                        android:layout_height="@dimen/thirtyfive"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:padding="@dimen/two"
+                                        android:src="@drawable/region"
+                                        app:tint="@color/colorAccent" />
                                     <Spinner
+                                        android:layout_toRightOf="@+id/img_drawable1"
+                                        android:background="@android:color/transparent"
                                         android:id="@+id/spinner_citylist"
                                         android:layout_width="fill_parent"
                                         android:layout_height="match_parent"
@@ -358,118 +556,284 @@
                                         android:layout_gravity="center"
                                         android:layout_marginRight="@dimen/five"
                                         android:src="@drawable/ic_arrow_drop"
-                                        app:tint="@color/colorPrimary" />
+                                        />
                                 </RelativeLayout>
 
-                                <EditText
-                                    android:id="@+id/ed_address"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Enter address"
-                                    android:inputType="text"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
 
-                                <EditText
-                                    android:id="@+id/ed_pincode"
-                                    android:layout_width="fill_parent"
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Enter pincode"
-                                    android:inputType="number"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_address"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_mobile"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_address"
+                                        android:hint="Enter address"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_address"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="text"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_address"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_lock_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Enter address"-->
+<!--                                    android:inputType="text"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_pincode"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_mobile"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_pincode"
+                                        android:hint="Enter pincode"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_pincode"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="number"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
 
 
-                                <EditText
-                                    android:id="@+id/ed_adhar_no"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Aadhar Card Number"
-                                    android:inputType="number"
-                                    android:maxLength="12"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_pincode"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_lock_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Enter pincode"-->
+<!--                                    android:inputType="number"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
 
-                                <EditText
-                                    android:id="@+id/ed_pancard_no"
-                                    android:layout_width="fill_parent"
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="9dp"
-                                    android:layout_marginRight="20.0dip"
-                                    android:background="@drawable/back_edittext_noborder_dark"
-                                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                                    android:drawablePadding="10dp"
-                                    android:drawableTint="@color/colorPrimary"
-                                    android:elevation="1dp"
-                                    android:hint="Pan Card Number"
-                                    android:inputType="text"
-                                    android:maxLength="12"
-                                    android:paddingLeft="10dp"
-                                    android:paddingTop="9dp"
-                                    android:paddingBottom="9dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
-                                    android:textSize="@dimen/ts_fifteen" />
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_adhar_no"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_mobile"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_adhar_no"
+                                        android:hint="Aadhar Card Number"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_adhar_no"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="number"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_adhar_no"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_lock_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Aadhar Card Number"-->
+<!--                                    android:inputType="number"-->
+<!--                                    android:maxLength="12"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:layout_marginBottom="@dimen/twenty"
+                                    android:background="@drawable/back_edittext_default"
+                                    >
+
+                                    <ImageView
+                                        android:visibility="gone"
+                                        android:id="@+id/iv_pancard_no"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/twenty"
+                                        android:src="@drawable/ic_mobile"
+                                        app:tint="@color/colorAccent" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/iv_pancard_no"
+                                        android:hint="Pan Card Number"
+                                        android:textColorHint="@color/colorAccent"
+                                        app:boxStrokeWidth="0dp"
+                                        app:boxStrokeWidthFocused="0dp">
+
+                                        <EditText
+                                            android:id="@+id/ed_pancard_no"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@android:color/transparent"
+                                            android:inputType="text"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black" />
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </RelativeLayout>
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/ed_pancard_no"-->
+<!--                                    android:layout_width="fill_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginLeft="20.0dip"-->
+<!--                                    android:layout_marginBottom="9dip"-->
+<!--                                    android:layout_marginTop="9dp"-->
+<!--                                    android:layout_marginRight="20.0dip"-->
+<!--                                    android:background="@drawable/back_edittext_noborder_dark"-->
+<!--                                    android:drawableLeft="@drawable/ic_baseline_lock_24"-->
+<!--                                    android:drawablePadding="10dp"-->
+<!--                                    android:drawableTint="@color/colorPrimary"-->
+<!--                                    android:elevation="1dp"-->
+<!--                                    android:hint="Pan Card Number"-->
+<!--                                    android:inputType="text"-->
+<!--                                    android:maxLength="12"-->
+<!--                                    android:paddingLeft="10dp"-->
+<!--                                    android:paddingTop="9dp"-->
+<!--                                    android:paddingBottom="9dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/c_black"-->
+<!--                                    android:textColorHighlight="@color/white"-->
+<!--                                    android:textColorHint="@color/c_gray2"-->
+<!--                                    android:textSize="@dimen/ts_fifteen" />-->
                             </LinearLayout>
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/spacing_middle"
-                        android:layout_marginTop="@dimen/spacing_medium"
-                        android:layout_marginRight="@dimen/spacing_middle"
-                        android:layout_marginBottom="@dimen/spacing_medium"
-                        app:cardCornerRadius="2dp"
-                        app:cardElevation="2dp">
 
                         <LinearLayout
+                            android:background="@drawable/bg_round_corner_white"
+                            android:elevation="@dimen/card_item_elevation"
+                            android:layout_marginLeft="@dimen/spacing_middle"
+                            android:layout_marginTop="@dimen/spacing_middle"
+                            android:layout_marginRight="@dimen/spacing_middle"
+                            android:layout_marginBottom="@dimen/spacing_medium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -477,7 +841,6 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
                                 android:gravity="center_vertical"
                                 android:minHeight="?attr/actionBarSize"
                                 android:orientation="horizontal">
@@ -492,7 +855,10 @@
                                     android:layout_weight="1"
                                     android:text="Document Details"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                                    android:textColor="@color/grey_80" />
+                                    android:layout_marginLeft="@dimen/five"
+                                    android:layout_marginTop="@dimen/five"
+                                    android:textColor="@color/grey_80"
+                                    android:textStyle="bold" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -543,22 +909,22 @@
 
                                         <Button
                                             android:id="@+id/choose_aadharfront"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="20.0dip"
-                                            android:layout_marginTop="1dp"
-                                            android:layout_marginRight="10.0dip"
-                                            android:elevation="1dp"
+                                            android:layout_width="@dimen/onehundredfifty"
+                                            android:layout_height="@dimen/forty"
+                                            android:layout_marginLeft="@dimen/twenty"
+                                            android:layout_marginTop="@dimen/one"
+                                            android:layout_marginRight="@dimen/ten"
+                                            android:background="@drawable/blue_button_background"
                                             android:text="Choose File" />
 
 
                                         <Button
                                             android:id="@+id/remove_aadharfront"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginTop="1dp"
-                                            android:layout_marginRight="10.0dip"
-                                            android:elevation="1dp"
+                                            android:layout_width="@dimen/onehundredfifty"
+                                            android:layout_height="@dimen/forty"
+                                            android:layout_marginTop="@dimen/one"
+                                            android:layout_marginRight="@dimen/ten"
+                                            android:background="@drawable/blue_button_background"
                                             android:text="Remove" />
                                     </LinearLayout>
 
@@ -720,21 +1086,21 @@
 
                                         <Button
                                             android:id="@+id/choose_pancard"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="20.0dip"
-                                            android:layout_marginTop="1dp"
-                                            android:layout_marginRight="10.0dip"
-                                            android:elevation="1dp"
+                                            android:layout_width="@dimen/onehundredfifty"
+                                            android:layout_height="@dimen/forty"
+                                            android:background="@drawable/blue_button_background"
+                                            android:layout_marginLeft="@dimen/twenty"
+                                            android:layout_marginTop="@dimen/one"
+                                            android:layout_marginRight="@dimen/ten"
                                             android:text="Choose File" />
 
                                         <Button
                                             android:id="@+id/remove_pancard"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginTop="1dp"
-                                            android:layout_marginRight="10.0dip"
-                                            android:elevation="1dp"
+                                            android:layout_width="@dimen/onehundredfifty"
+                                            android:layout_height="@dimen/forty"
+                                            android:background="@drawable/blue_button_background"
+                                            android:layout_marginTop="@dimen/one"
+                                            android:layout_marginRight="@dimen/ten"
                                             android:text="Remove" />
 
                                     </LinearLayout>
@@ -767,18 +1133,17 @@
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
-
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20.0dip"
-                                    android:layout_marginTop="17dp"
-                                    android:layout_marginRight="20.0dip"
-
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginBottom="@dimen/twenty"
                                     android:gravity="center"
                                     android:orientation="horizontal"
                                     android:visibility="visible">
 
                                     <Button
+                                        android:background="@drawable/blue_button_background"
                                         android:id="@+id/bt_save_input"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
@@ -787,7 +1152,8 @@
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -815,7 +1181,6 @@
                 android:layout_margin="25dp"
                 android:layout_marginBottom="15dp"
                 android:elevation="15dp"
-                app:cardBackgroundColor="#a00da5e9"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="9dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -824,22 +1189,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.45">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    app:cardCornerRadius="@dimen/ts_fifteen"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.45">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentBottom="true"
-                        android:background="#ffffff"
                         android:foregroundGravity="center"
                         android:gravity="center"
                         android:orientation="vertical"
@@ -857,7 +1211,7 @@
                             android:layout_marginTop="25dp"
                             android:layout_marginBottom="4dp"
                             android:background="@drawable/forget"
-                            android:backgroundTint="@color/colorPrimary"
+                            android:backgroundTint="@color/colorAccent"
                             android:padding="@dimen/fifteen"
                             android:src="@drawable/ic_baseline_lock_24"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -870,19 +1224,18 @@
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
                             android:text="Enter OTP you can on mobile?"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/colorAccent" />
 
                         <EditText
                             android:id="@+id/edt_transactionpassword"
                             android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/fortyfive"
                             android:layout_marginLeft="20.0dip"
                             android:layout_marginTop="25dp"
                             android:layout_marginRight="20.0dip"
-                            android:background="@drawable/back_edittext_noborder_dark"
+                            android:background="@drawable/back_edittext_default"
                             android:drawablePadding="10dp"
                             android:drawableTint="@color/colorPrimary"
-                            android:elevation="1dp"
                             android:gravity="center_horizontal"
                             android:hint="Enter OTP!"
                             android:inputType="numberPassword"
@@ -893,7 +1246,7 @@
                             android:textColor="@color/c_black"
                             android:textColorHighlight="@color/white"
                             android:textColorHint="@color/c_gray2"
-                            android:textSize="17dp" />
+                            android:textSize="@dimen/seventeen" />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -910,7 +1263,7 @@
                                 android:layout_marginTop="@dimen/ten"
                                 android:layout_marginBottom="@dimen/four"
                                 android:text="Back"
-                                android:textColor="@color/colorPrimary" />
+                                android:textColor="@color/colorAccent" />
 
                             <TextView
                                 android:id="@+id/resendotp"
@@ -921,7 +1274,7 @@
                                 android:layout_marginTop="@dimen/ten"
                                 android:layout_marginBottom="@dimen/four"
                                 android:text="Resend OTP"
-                                android:textColor="@color/colorPrimary" />
+                                android:textColor="@color/colorAccent" />
 
                             <TextView
                                 android:id="@+id/check_finger_machine"
@@ -939,19 +1292,18 @@
                         <Button
                             android:id="@+id/btn_transaction_password"
                             android:layout_width="@dimen/hundred"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/forty"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="@dimen/ten"
                             android:layout_marginBottom="@dimen/fifteen"
                             android:background="@drawable/blue_button_background"
-                            android:backgroundTint="@color/them_color"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
                             android:text="Verify"
                             android:textColor="#ffffffff" />
 
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </RelativeLayout>

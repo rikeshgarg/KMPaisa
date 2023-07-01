@@ -316,8 +316,36 @@
                         android:textColor="#ffffffff" />
                 </LinearLayout>
 
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/twelve"
+                    android:layout_marginTop="@dimen/five"
+                    android:layout_marginRight="@dimen/twelve"
+                    android:layout_marginBottom="@dimen/seven"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="@dimen/card_item_corner">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_dash_menuone"
+                        android:orientation="vertical">
+
+                        <com.denzcoskun.imageslider.ImageSlider
+                            android:id="@+id/image_slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/onetwenty"
+                            app:iss_auto_cycle="true"
+                            app:iss_delay="0"
+                            app:iss_period="1000" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <LinearLayout
-                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginTop="@dimen/five"
                     android:layout_marginLeft="@dimen/ten"
                     android:layout_marginRight="@dimen/ten"
                     android:weightSum="2"
@@ -334,9 +362,8 @@
                         android:layout_height="wrap_content">
 
                             <LinearLayout
-                                android:id="@+id/lay_main_wallet"
+                                android:id="@+id/lay_r_wallet"
                                 android:layout_width="155dp"
-
                                 android:layout_height="100dp"
                                 android:gravity="center_vertical"
                                 android:background="@drawable/img_card_main_wallet"
@@ -416,7 +443,7 @@
                         android:layout_height="wrap_content">
 
                     <LinearLayout
-                                android:id="@+id/lay_aeps_wallet"
+                                android:id="@+id/lay_e_wallet"
                                 android:layout_width="155dp"
                                 android:layout_marginLeft="@dimen/ten"
                                 android:layout_height="100dp"
@@ -666,7 +693,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/dp_4"
-                            android:background="@drawable/back_dash_menuone_inner"
                             android:orientation="vertical">
 
                             <TextView
@@ -695,34 +721,9 @@
                 </RelativeLayout>
 
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twelve"
-                    android:layout_marginTop="@dimen/twenty"
-                    android:layout_marginRight="@dimen/twelve"
-                    android:layout_marginBottom="@dimen/seven"
-                    android:orientation="vertical"
-                    app:cardCornerRadius="@dimen/card_item_corner">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/back_dash_menuone"
-                        android:orientation="vertical">
-
-                        <com.denzcoskun.imageslider.ImageSlider
-                            android:id="@+id/image_slider"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/onetwenty"
-                            app:iss_auto_cycle="true"
-                            app:iss_delay="0"
-                            app:iss_period="1000" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <FrameLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/twelve"
@@ -763,6 +764,54 @@
                             tools:listitem="@layout/item_dashboard" />
                     </LinearLayout>
                 </FrameLayout>
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/twelve"
+                        android:layout_marginTop="@dimen/twelve"
+                        android:layout_marginRight="@dimen/twelve"
+                        android:layout_marginBottom="@dimen/seven"
+                        android:background="@drawable/back_dash_menuone"
+                        android:elevation="@dimen/card_item_elevation">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp_4"
+                            android:background="@drawable/back_dash_menuone_inner"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/five"
+                                android:foregroundGravity="center|left"
+                                android:gravity="left"
+                                android:padding="@dimen/seven"
+                                android:text="BBPS Live"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/ts_fifteen"
+                                android:textStyle="bold" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_bbps"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                app:spanCount="4"
+                                tools:itemCount="3"
+                                tools:listitem="@layout/item_dashboard" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
 
                 <FrameLayout
                     android:id="@+id/card_affiliate"
@@ -808,6 +857,7 @@
                 </FrameLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/twelve"
@@ -1039,6 +1089,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/twelve"

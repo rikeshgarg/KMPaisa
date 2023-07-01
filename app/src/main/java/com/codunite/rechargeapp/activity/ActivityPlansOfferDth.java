@@ -440,6 +440,7 @@ public class ActivityPlansOfferDth extends AppCompatActivity implements View.OnC
     private void LoadOperatorList(String rechargeType) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(rechargeType);
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebService(ApiInterface.OPERATORLIST, lstUploadData);
     }
 }

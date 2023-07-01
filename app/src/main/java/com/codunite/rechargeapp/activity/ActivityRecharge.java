@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.ContentResolver;
@@ -38,6 +39,7 @@ import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.rechargeapp.adapter.ContactAdapter;
 import com.codunite.rechargeapp.adapter.TopRechargeHistoryAdapter;
+import com.codunite.rechargeapp.fragment.FragMtransfer;
 import com.codunite.rechargeapp.model.ContactModel;
 import com.codunite.rechargeapp.fragment.FragDatacard;
 import com.codunite.rechargeapp.fragment.FragDth;
@@ -58,6 +60,7 @@ import com.codunite.rechargeapp.utility.CustomViewPager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
+import com.razorpay.Checkout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,6 +70,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
+
+import ir.androidexception.andexalertdialog.AndExAlertDialog;
+import ir.androidexception.andexalertdialog.AndExAlertDialogListener;
+import ir.androidexception.andexalertdialog.Font;
 
 public class ActivityRecharge extends AppCompatActivity implements View.OnClickListener, WebServiceListener{
     private ImageView imgBack;
@@ -82,8 +89,8 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
     private TabLayout tabLayout;
     private CustomViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
-    public String[] selectedItem = {"Mobile", "DTH", "Datacard"};
-
+    public String[] selectedItem = {"Mobile", "DTH", "Datacard","LandLine"};
+    private String addAmountToWallet;
     TextView tv_heading;
 
     @Override
@@ -115,6 +122,8 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
             tv_heading.setText("DTH Recharge");
         else if(pageIndex==2)
             tv_heading.setText("Data Card Recharge");
+        else if(pageIndex==3)
+            tv_heading.setText("Landline Bill Payment");
         viewPager.setPagingEnabled(false);
         //tabLayout.setupWithViewPager(viewPager);
 
@@ -135,8 +144,8 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         mBehavior = BottomSheetBehavior.from(bottomSheet);
 
         pageNumber = 1;
-        LoadRechargeHistory("", "");
-        OpenDemoLink();
+        //LoadRechargeHistory("", "");
+        //OpenDemoLink();
     }
 
     private void LoadRechargeHistory(String fromDate, String toDate) {
@@ -348,13 +357,13 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" +
                 R.id.viewPager + ":" + viewPager.getCurrentItem());
         if (actReferTo.equalsIgnoreCase("prepost")) {
-            ((FragPrePostRecharge) page).ShowOtpLayout();
+            ((FragPrePostRecharge) page).RechargeProcess();
         }
         if (actReferTo.equalsIgnoreCase("dth")) {
-            ((FragDth) page).ShowOtpLayout();
+            ((FragDth) page).RechargeProcess();
         }
         if (actReferTo.equalsIgnoreCase("datacard")) {
-            ((FragDatacard) page).ShowOtpLayout();
+            ((FragDatacard) page).RechargeProcess();
         }
     }
 
@@ -405,37 +414,40 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
     }
 
     public void ShowConfirmDialog(Context context, String message, String strScreen) {
-//        new AndExAlertDialog.Builder(context)
-//                .setTitle("Do you want to confirm your Recharge")
-//                .setMessage(message)
-//                .setPositiveBtnText("Confirm")
-//                .setNegativeBtnText("Cancel")
-//                .setCancelableOnTouchOutside(false)
-//                .setFont(Font.IRAN_SANS)
-//                .setImage(R.drawable.logo, 35)
-//                .OnPositiveClicked(input -> {
-//                    Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" +
-//                            R.id.viewPager + ":" + viewPager.getCurrentItem());
-//                    if (strScreen.equalsIgnoreCase("mobile")) {
-//                        ((FragPrePostRecharge) page).ConfirmRecharge();
-//                    } else if (strScreen.equalsIgnoreCase("dth")) {
-//                        ((FragDth) page).ConfirmRecharge();
-//                    } else if (strScreen.equalsIgnoreCase("landline")) {
-//                        ((FragLandline) page).ConfirmRecharge();
-//                    } else if (strScreen.equalsIgnoreCase("datacard")) {
-//                        ((FragDatacard) page).ConfirmRecharge();
-//                    }
-//                })
-//                .OnNegativeClicked(new AndExAlertDialogListener() {
-//                    @Override
-//                    public void OnClick(String input) {
-//
-//                    }
-//                })
-//                .setTitleTextColor(R.color.green_900)
-//                .setMessageTextColor(R.color.black)
-//                .setButtonTextColor(R.color.colorPrimary)
-//                .build();
+
+            new AndExAlertDialog.Builder(context)
+                    .setTitle("Do you want to confirm your Recharge")
+                    .setMessage(message)
+                    .setPositiveBtnText("Confirm")
+                    .setNegativeBtnText("Cancel")
+                    .setCancelableOnTouchOutside(false)
+                    .setFont(Font.IRAN_SANS)
+                    .setImage(R.drawable.app_logo, 35)
+                    .OnPositiveClicked(new AndExAlertDialogListener() {
+                        @Override
+                        public void OnClick(String input) {
+                            Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" +
+                                    R.id.viewPager + ":" + viewPager.getCurrentItem());
+                            if (strScreen.equalsIgnoreCase("mobile")) {
+                                ((FragPrePostRecharge) page).ConfirmRecharge();
+                            } else if (strScreen.equalsIgnoreCase("dth")) {
+                                ((FragDth) page).ConfirmRecharge();
+                            } else if (strScreen.equalsIgnoreCase("transfer")) {
+                                ((FragMtransfer) page).ConfirmRecharge();
+                            }
+                        }
+                    })
+                    .OnNegativeClicked(new AndExAlertDialogListener() {
+                        @Override
+                        public void OnClick(String input) {
+
+                        }
+                    })
+                    .setTitleTextColor(R.color.green_900)
+                    .setMessageTextColor(R.color.black)
+                    .setButtonTextColor(R.color.colorPrimary)
+                    .build();
+
     }
 
     String actReferTo = "";
@@ -455,7 +467,7 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         return isWalletToLoad;
     }
 
-    public boolean checkEWalletAndAddWallet(int rechargeAmount, String actRefer) {
+    public boolean checkEWalletAndAddWallet(float rechargeAmount, String actRefer) {
         actReferTo = actRefer;
         boolean isWalletToLoad = false;
         float requiredAmountToAdd = 0;
@@ -466,6 +478,15 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         } else {
             requiredAmountToAdd = 0;
             isWalletToLoad = false;
+        }
+        if (isWalletToLoad) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRAZORPAYACTIVE, false)) {
+                startPayment(requiredAmountToAdd);
+            } else {
+                ProcessRecharge();
+            }
+        } else {
+
         }
         return isWalletToLoad;
     }
@@ -686,5 +707,37 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
             Intent svIntent = new Intent(svContext, WebViewActivity.class);
             svContext.startActivity(svIntent);
         });
+    }
+
+    public void startPayment(float strAmount) {
+        addAmountToWallet = strAmount + "";
+        final Activity activity = this;
+        String strRazorPayId = PreferenceConnector.readString(svContext, PreferenceConnector.RAZORPAYID, "");
+        final Checkout co = new Checkout();
+        co.setKeyID(strRazorPayId);
+        if (strRazorPayId.length() == 0) {
+            customToast.showCustomToast(svContext, "Razorpay Key Not Available", customToast.ToastyError);
+        } else {
+            try {
+                JSONObject options = new JSONObject();
+                options.put("name", getResources().getString(R.string.app_name));
+                options.put("description", "Add amount to wallet");
+                //You can omit the image option to fetch the image from dashboard
+                options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+                options.put("currency", "INR");
+                options.put("amount", (strAmount * 100) + "");
+
+                JSONObject preFill = new JSONObject();
+                preFill.put("email", PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSEREMAIL, ""));
+                preFill.put("contact", PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERPHONE, ""));
+
+                options.put("prefill", preFill);
+
+                co.open(activity, options);
+            } catch (Exception e) {
+                customToast.showCustomToast(svContext, "Error in payment: " + e.getMessage(), customToast.ToastyError);
+                e.printStackTrace();
+            }
+        }
     }
 }

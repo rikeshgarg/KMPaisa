@@ -55,7 +55,7 @@ public class FragDatacard extends Fragment implements OnClickListener, WebServic
     private EditText edCardNumber;
     public static EditText edDthRechargeAmount;
     private EditText[] edDthRecharge = {edCardNumber, edDthRechargeAmount};
-    private String[] edDthTextsError = {"Enter card number", "Enter amount"};
+    private String[] edDthTextsError = {"Enter Card Number", "Enter Amount"};
     private int[] editTextDthClickId = {R.id.dth_cardnumber, R.id.dth_amount};
 
     private View[] allViewWithClick = {btnDthrecharge, layOperator, layCircle, txtViewAllPlans, txtROffers, btnCancelOtp, btnOtpVerify};
@@ -122,6 +122,7 @@ public class FragDatacard extends Fragment implements OnClickListener, WebServic
     private void LoadOperatorList(String rechargeType) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(rechargeType);
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebServiceWithoutLoader(ApiInterface.OPERATORLIST, lstUploadData);
     }
 
@@ -138,6 +139,7 @@ public class FragDatacard extends Fragment implements OnClickListener, WebServic
 
         edCardNumber = (EditText) editTexts[0];
         edDthRechargeAmount = (EditText) editTexts[1];
+        edCardNumber.setHint("Enter Card Number");
     }
 
     private void OnClickCombineDeclare(View[] allViewWithClick) {
@@ -271,8 +273,8 @@ public class FragDatacard extends Fragment implements OnClickListener, WebServic
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("operator_id");
+                        String str_name = data_obj.getString("operator_name");
 
                         listSpinnerOperatorList.add(str_code + "#:#" + str_name);
                     }
@@ -321,8 +323,8 @@ public class FragDatacard extends Fragment implements OnClickListener, WebServic
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("circle_id");
+                        String str_name = data_obj.getString("circle_name");
 
                         listSpinnerCircleList.add(str_code + "#:#" + str_name);
                     }

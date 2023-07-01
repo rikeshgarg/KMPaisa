@@ -66,7 +66,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="@dimen/five"
-                                    android:text="Wallet Balance"
+                                    android:text="R-Wallet Balance"
                                     android:textColor="@color/gray_dimtextcolor"
                                     android:textSize="@dimen/ts_forteen" />
 
@@ -74,7 +74,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/fortyfive"
                                     android:layout_marginLeft="20dp"
-                                    android:layout_marginRight="@dimen/twenty">
+                                    android:layout_marginRight="@dimen/five">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -82,19 +82,19 @@
                                         android:layout_gravity="center"
                                         android:src="@drawable/rupee" />
 
-                                    <me.grantland.widget.AutofitTextView
+                                    <TextView
+                                        android:layout_gravity="center"
                                         android:id="@+id/walletbal"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:gravity="center"
                                         android:singleLine="true"
                                         android:textColor="@color/fontcolortextview"
-                                        android:textSize="@dimen/ts_thirty" />
+                                        android:textSize="@dimen/ts_twentyfive" />
                                 </LinearLayout>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:visibility="gone"
+                                android:visibility="visible"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -121,14 +121,14 @@
                                         android:layout_gravity="center"
                                         android:src="@drawable/rupee" />
 
-                                    <me.grantland.widget.AutofitTextView
+                                    <TextView
                                         android:id="@+id/ewalletbal"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:gravity="center"
                                         android:singleLine="true"
+                                        android:layout_gravity="center"
                                         android:textColor="@color/fontcolortextview"
-                                        android:textSize="@dimen/ts_thirty" />
+                                        android:textSize="@dimen/ts_twentyfive" />
                                 </LinearLayout>
                             </LinearLayout>
 
@@ -176,11 +176,27 @@
                             android:text="Search" />
                     </LinearLayout>
 
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/searchview"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fortyfive"
+                        android:layout_below="@+id/lay_filter"
+                        android:layout_marginStart="@dimen/twenty"
+                        android:layout_marginTop="@dimen/ten"
+                        android:layout_marginEnd="@dimen/twenty"
+                        android:background="@drawable/back_searchview_spinner"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/three"
+                        app:iconifiedByDefault="false"
+                        app:queryHint="Search"
+                        app:searchHintIcon="@drawable/ic_baseline_search_24" />
+
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/history_rv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@+id/lay_filter"
+                        android:layout_below="@+id/searchview"
                         android:layout_marginLeft="@dimen/ten"
                         android:layout_marginTop="@dimen/ten"
                         android:layout_marginRight="@dimen/ten"

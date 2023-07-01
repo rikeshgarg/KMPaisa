@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.codunite.rechargeapp.R;
@@ -25,8 +28,8 @@ public class BbpsDashboardAdapter extends RecyclerView.Adapter<RecyclerView.View
     private Context ctx;
     private OnItemClickListener mOnItemClickListener;
     private int animation_type = 0;
-    private String[] strColors = {"#e91e63", "#9c27b0","#673ab7", "#E53935", "#5677fc", "#689F38", "#03a9f4", "#00bcd4",
-            "#009688", "#259b24", "#ff5722", "#795548", "#607d8b", "#ff9800"};
+    private int[] strColors = {R.color.bg_datacard, R.color.bg_fasttag, R.color.bg_metro, R.color.bg_metro,R.color.bg_postpaid,R.color.bg_postpaid, R.color.bg_fasttag,R.color.bg_fasttag,
+            R.color.bg_metro,R.color.bg_datacard, R.color.bg_dth, R.color.bg_prepaid, R.color.bg_fasttag, R.color.bg_postpaid,R.color.bg_fasttag, R.color.bg_postpaid,R.color.bg_postpaid, R.color.bg_postpaid,R.color.bg_prepaid, R.color.bg_postpaid,R.color.bg_datacard, R.color.bg_prepaid,R.color.bg_prepaid};
 
     public interface OnItemClickListener {
         void onItemClick(View view, String obj, int position);
@@ -44,6 +47,7 @@ public class BbpsDashboardAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
+        CardView cardview_item;
         public ImageView imgDrawable;
         public RelativeLayout lyt_parent;
 
@@ -52,7 +56,7 @@ public class BbpsDashboardAdapter extends RecyclerView.Adapter<RecyclerView.View
             name = (TextView) v.findViewById(R.id.name);
             imgDrawable = (ImageView) v.findViewById(R.id.imgdrawable);
             lyt_parent = (RelativeLayout) v.findViewById(R.id.cardview);
-
+            cardview_item = (CardView)v.findViewById(R.id.cardview_item);
             if (!GlobalVariables.CUSTOMFONTNAME.equals("")) {
                 Typeface font = Typeface.createFromAsset(ctx.getAssets(), GlobalVariables.CUSTOMFONTNAME);
                 FontUtils.setFont(lyt_parent, font);
@@ -81,7 +85,10 @@ public class BbpsDashboardAdapter extends RecyclerView.Adapter<RecyclerView.View
 //            }else {
 //                view.cardView.setCardBackgroundColor(Color.parseColor(strColors[position]));
 //            }
-
+            //view.cardview_item.setBackgroundColor(strColors[position]);
+            //if(items.get(position).getColorName()!=0) {
+                view.cardview_item.setCardBackgroundColor(ResourcesCompat.getColor(ctx.getResources(), strColors[position], null));
+            //}
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

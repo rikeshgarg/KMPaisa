@@ -4,8 +4,8 @@ package com.codunite.rechargeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
+import com.denzcoskun.imageslider.ImageSlider;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,7 +25,13 @@ public final class FragReportBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final CardView cardAddwallet;
+  public final FrameLayout cardRecharge;
+
+  @NonNull
+  public final CardView cardSlider;
+
+  @NonNull
+  public final ImageSlider imageSlider;
 
   @NonNull
   public final LinearLayout mylayout;
@@ -33,16 +40,7 @@ public final class FragReportBinding implements ViewBinding {
   public final NestedScrollView nestedScrollView;
 
   @NonNull
-  public final RecyclerView rvDashIncome;
-
-  @NonNull
   public final RecyclerView rvDashReports;
-
-  @NonNull
-  public final TextView todayBalTxt;
-
-  @NonNull
-  public final TextView totalBalTxt;
 
   @NonNull
   public final AutofitTextView totalFailed;
@@ -53,20 +51,18 @@ public final class FragReportBinding implements ViewBinding {
   @NonNull
   public final AutofitTextView totalSuccess;
 
-  private FragReportBinding(@NonNull LinearLayout rootView, @NonNull CardView cardAddwallet,
+  private FragReportBinding(@NonNull LinearLayout rootView, @NonNull FrameLayout cardRecharge,
+      @NonNull CardView cardSlider, @NonNull ImageSlider imageSlider,
       @NonNull LinearLayout mylayout, @NonNull NestedScrollView nestedScrollView,
-      @NonNull RecyclerView rvDashIncome, @NonNull RecyclerView rvDashReports,
-      @NonNull TextView todayBalTxt, @NonNull TextView totalBalTxt,
-      @NonNull AutofitTextView totalFailed, @NonNull AutofitTextView totalPending,
-      @NonNull AutofitTextView totalSuccess) {
+      @NonNull RecyclerView rvDashReports, @NonNull AutofitTextView totalFailed,
+      @NonNull AutofitTextView totalPending, @NonNull AutofitTextView totalSuccess) {
     this.rootView = rootView;
-    this.cardAddwallet = cardAddwallet;
+    this.cardRecharge = cardRecharge;
+    this.cardSlider = cardSlider;
+    this.imageSlider = imageSlider;
     this.mylayout = mylayout;
     this.nestedScrollView = nestedScrollView;
-    this.rvDashIncome = rvDashIncome;
     this.rvDashReports = rvDashReports;
-    this.todayBalTxt = todayBalTxt;
-    this.totalBalTxt = totalBalTxt;
     this.totalFailed = totalFailed;
     this.totalPending = totalPending;
     this.totalSuccess = totalSuccess;
@@ -99,9 +95,21 @@ public final class FragReportBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.card_addwallet;
-      CardView cardAddwallet = ViewBindings.findChildViewById(rootView, id);
-      if (cardAddwallet == null) {
+      id = R.id.card_recharge;
+      FrameLayout cardRecharge = ViewBindings.findChildViewById(rootView, id);
+      if (cardRecharge == null) {
+        break missingId;
+      }
+
+      id = R.id.card_slider;
+      CardView cardSlider = ViewBindings.findChildViewById(rootView, id);
+      if (cardSlider == null) {
+        break missingId;
+      }
+
+      id = R.id.image_slider;
+      ImageSlider imageSlider = ViewBindings.findChildViewById(rootView, id);
+      if (imageSlider == null) {
         break missingId;
       }
 
@@ -113,27 +121,9 @@ public final class FragReportBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rv_dash_income;
-      RecyclerView rvDashIncome = ViewBindings.findChildViewById(rootView, id);
-      if (rvDashIncome == null) {
-        break missingId;
-      }
-
       id = R.id.rv_dash_reports;
       RecyclerView rvDashReports = ViewBindings.findChildViewById(rootView, id);
       if (rvDashReports == null) {
-        break missingId;
-      }
-
-      id = R.id.today_bal_txt;
-      TextView todayBalTxt = ViewBindings.findChildViewById(rootView, id);
-      if (todayBalTxt == null) {
-        break missingId;
-      }
-
-      id = R.id.total_bal_txt;
-      TextView totalBalTxt = ViewBindings.findChildViewById(rootView, id);
-      if (totalBalTxt == null) {
         break missingId;
       }
 
@@ -155,9 +145,8 @@ public final class FragReportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragReportBinding((LinearLayout) rootView, cardAddwallet, mylayout,
-          nestedScrollView, rvDashIncome, rvDashReports, todayBalTxt, totalBalTxt, totalFailed,
-          totalPending, totalSuccess);
+      return new FragReportBinding((LinearLayout) rootView, cardRecharge, cardSlider, imageSlider,
+          mylayout, nestedScrollView, rvDashReports, totalFailed, totalPending, totalSuccess);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

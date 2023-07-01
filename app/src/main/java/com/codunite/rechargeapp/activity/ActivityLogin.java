@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -31,19 +32,40 @@ import com.codunite.commonutility.GlobalVariables;
 
 import com.codunite.commonutility.ShowCustomToast;
 import com.codunite.rechargeapp.activity.profile.ActivityForgotPassword;
+import com.codunite.rechargeapp.fragment.FragHomeDashBoard;
+import com.codunite.rechargeapp.model.SliderModel;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ActivityLogin extends AppCompatActivity implements WebServiceListener {
+    public static final String TAG_USER_DETAIL = "user_detail";
+    public static final String TAG_PROFILE_PHOTO = "profile_photo";
+    public static final String TAG_NAME = "name";
+    public static final String TAG_MOBILE = "mobile";
+    public static final String TAG_CM_POINTS = "cm_points";
+    public static final String TAG_USERID = "user_id";
+
+    public static final String TAG_EMAIL = "email";
+    public static final String TAG_FCM_ID = "fcm_id";
+    public static final String TAG_MESSAGE = "message";
+    public static final String TAG_STATUS = "status";
+    public static final String TAG_USER_TYPE = "user_type";
+    public static final String TAG_USER_CODE = "user_code";
+    public static final String TAG_IS_TRANSFER_ACTIVE = "is_transfer_active";
+    public static final String TAG_IS_RECHARGE_ACTIVE = "is_recharge_active";
+    public static final String TAG_WALLET_BALANCE = "wallet_balance";
+    public static final String TAG_EWALLET_BALANCE = "e_wallet_balance";
     private Context svContext;
     private ShowCustomToast customToast;
     private EditText edUsername, edPassword;
@@ -56,8 +78,6 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
 
     RelativeLayout layoutLoginBg;
 
-    public static final String TAG_MESSAGE = "message";
-    public static final String TAG_STATUS = "status";
 
     private boolean flagPassword = false;
     ImageView iv_eye;
@@ -127,8 +147,8 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
             lstUploadData = new LinkedList<>();
             lstUploadData.add(getEditextValue(edUsername));
             lstUploadData.add(getEditextValue(edPassword));
-            lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-            callWebService(ApiInterface.LOGIN, lstUploadData);
+            //lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+            callWebService(ApiInterface.LOGNUSER, lstUploadData);
         }
     }
 
@@ -144,7 +164,8 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
             lstUploadData = new LinkedList<>();
             lstUploadData.add(edTranPwd.getText().toString().trim());
             lstUploadData.add(strEncodeLoginCode);
-            callWebService(ApiInterface.LOGNUSER, lstUploadData);
+            //lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+            callWebService(ApiInterface.LOGINOTPVERIFY, lstUploadData);
         }
     }
     private String getEditextValue(EditText editText) {
@@ -240,7 +261,7 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-        if (url.contains(ApiInterface.LOGIN)) {
+        if (url.contains(ApiInterface.LOGNUSER)) {
             try {
                 JSONObject json = new JSONObject(result);
                 String str_status = json.getString("status");
@@ -255,27 +276,10 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
                     }
 
                     if (str_isOtp.equalsIgnoreCase("1")) {
-                        strEncodeLoginCode = json.getString("encode_login_id");
+                        strEncodeLoginCode = json.getString("encode_otp_code");
                         ShowTranscationScreen();
                     } else {
-                        JSONObject data = json.getJSONObject("user_data");
-                        String str_name = data.getString("name");
-                        String str_user_code = data.getString("user_code");
-                        String str_userID = data.getString("user_id");
-
-                        if (data.has("token")) {
-                            PreferenceConnector.writeString(svContext, PreferenceConnector.H1, data.getString("token"));
-                        }
-                        PreferenceConnector.writeBoolean(svContext, PreferenceConnector.AUTOLOGIN, true);
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.LOGINUSERNAME, str_name);
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.LOGINMEMBERID, str_user_code);
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.LOGINEDUSERID, str_userID);
-
-                        lstUploadData = new LinkedList<>();
-                        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-                        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
-                        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-                        callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+                        ActivitySplash.LoadUserData(result, svContext, true);
                     }
 
                 }
@@ -283,39 +287,23 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        } else if (url.contains(ApiInterface.LOGNUSER)) {
+        } else if (url.contains(ApiInterface.LOGINOTPVERIFY)) {
             try {
                 JSONObject json = new JSONObject(result);
                 String str_status = json.getString("status");
                 String str_msg = json.getString("message");
-
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
+                if (str_status.equalsIgnoreCase("1")) {
+                    ActivitySplash.LoadUserData(result, svContext, true);
                 } else {
-                    JSONObject user_data_obj = json.getJSONObject(TAG_USER_DATA);
-                    String str_user_id = user_data_obj.getString(TAG_USER_ID);
-
-                    if (user_data_obj.has("token")) {
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, user_data_obj.getString("token"));
-                    }
-
-                    PreferenceConnector.writeBoolean(svContext, PreferenceConnector.AUTOLOGIN, true);
-                    PreferenceConnector.writeString(svContext, PreferenceConnector.LOGINEDUSERID, str_user_id);
-
-                    lstUploadData = new LinkedList<>();
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-                    callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        } else if (url.contains(ApiInterface.UPDATEFCM)) {
-            ActivitySplash.LoadUserData(result, svContext, true);
         }
     }
+
 
     @Override
     public void onWebServiceError(String result, String url) {

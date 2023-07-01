@@ -20,6 +20,7 @@ import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory;
 import com.codunite.rechargeapp.adapter.RechargeCommisionAdapter;
+import com.codunite.rechargeapp.model.RechargeCommisionModel;
 import com.codunite.rechargeapp.model.RechargeIncomeModel;
 import com.codunite.commonutility.GlobalVariables;
 import com.codunite.commonutility.ItemAnimation;
@@ -147,7 +148,7 @@ public class ActivityRechargeCommision extends AppCompatActivity implements View
         webService.LoadDataRetrofit(webService.callReturn());
     }
 
-    private List<RechargeIncomeModel> lstItems = new ArrayList<>();
+    private List<RechargeCommisionModel> lstItems = new ArrayList<>();
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
@@ -164,12 +165,15 @@ public class ActivityRechargeCommision extends AppCompatActivity implements View
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < ((JSONArray) data).length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String strrecharge = data_obj.getString("recharge_display_id");
-                        String strdate = data_obj.getString("date");
-                        String stramount = data_obj.getString("recharge_amount");
-                        String strcommision = data_obj.getString("commission_amount");
+                        String strOperator = data_obj.getString("operator_name");
+                        String strcode = data_obj.getString("operator_code");
+                        String strType = data_obj.getString("type");
+                        String strcommision = data_obj.getString("commision");
+                        String strflat = data_obj.getString("is_flat");
+                        String strsurcharge = data_obj.getString("is_surcharge");
+                        lstItems.add(new RechargeCommisionModel(strOperator, strcode, strType, strcommision,strflat,strsurcharge));
 
-                        lstItems.add(new RechargeIncomeModel(strrecharge, strdate, strcommision,stramount));
+                        //lstItems.add(new RechargeIncomeModel(strrecharge, strdate, strcommision,stramount));
                     }
                 }
             } catch (JSONException e) {

@@ -46,11 +46,9 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
     private Button btnSignIn, btnSignUp;
     private View viewOtp, layoutLogin;
     private int[] allViewWithClickId = {R.id.btn_loginIn, R.id.btnSignUp, R.id.goback, R.id.btn_transaction_password};
-    private EditText[] edTexts = {edName, edEmail, edPhone, edPassword, edRePassword, edTranscationPassword, edReferCode, edtPanCard};
-    private String[] edTextsError = {"Enter name", "Enter email", "Enter mobile", "Enter password", "Enter password again", "Enter transcation password", "Enter refer code",
-            "Enter Pan Card"};
-    private int[] editTextsClickId = {R.id.edt_name, R.id.edtEmail, R.id.edtMobile, R.id.edt_password, R.id.edt_repassword, R.id.edt_transaction_password,
-            R.id.edt_refercode, R.id.edt_pancard};
+    private EditText[] edTexts = {edName, edEmail, edPhone, edPassword, edRePassword, edTranscationPassword};
+    private String[] edTextsError = {"Enter name", "Enter email", "Enter mobile", "Enter password", "Enter password again"};
+    private int[] editTextsClickId = {R.id.edt_name, R.id.edtEmail, R.id.edtMobile, R.id.edt_password, R.id.edt_repassword, R.id.edt_transaction_password};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,18 +73,18 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
         hideKeyboard();
     }
     public void resumeApp() {
-        viewOtp = findViewById(R.id.layout_transactionpassword);
-        layoutLogin = findViewById(R.id.layoutLogin);
+        edReferCode = (EditText)findViewById(R.id.edt_refercode);
         setFocus(getEditext(edName));
-        //layoutLogin.setVisibility(View.VISIBLE);
-        //viewOtp.setVisibility(View.GONE);
-        txtUsername = (TextView) findViewById(R.id.member_username);
-        pbLoadOperator = (ProgressBar) findViewById(R.id.progressbar_load_two);
-        pbLoadOperator.setVisibility(View.GONE);
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            edReferCode.setText(extras.getString("refercode"));
-        }
+//        viewOtp = findViewById(R.id.layout_transactionpassword);
+//        layoutLogin = findViewById(R.id.layoutLogin);
+//
+//        txtUsername = (TextView) findViewById(R.id.member_username);
+//        pbLoadOperator = (ProgressBar) findViewById(R.id.progressbar_load_two);
+//        pbLoadOperator.setVisibility(View.GONE);
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//            edReferCode.setText(extras.getString("refercode"));
+//        }
     }
 
     private void setFocus(EditText edTxt) {
@@ -108,14 +106,6 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
             edEmail.setError("Invalid email id");
         }
 
-        if ((edReferCode.getText().toString().trim()).length() == 0) {
-            response++;
-//            ShowConfirmWithoutReferCode("", "You don't entered refer code ",
-//                    "Are you sure you want to register account without refer code? Cancel if you want " +
-//                            "to enter refer code or register if you don't have refer code");
-            edReferCode.setError("Please enter refer code");
-        }
-
         if (!(edPassword.getText().toString().trim()).equals(edRePassword.getText().toString().trim())) {
             response++;
             edRePassword.setError("Password not matching");
@@ -130,10 +120,9 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
         lstUploadData.add(getEditextValue(edName));
         lstUploadData.add(getEditextValue(edPhone));
         lstUploadData.add(getEditextValue(edEmail));
-        lstUploadData.add(edReferCode.getText().toString().trim());
+        //lstUploadData.add(edReferCode.getText().toString().trim());
         lstUploadData.add(getEditextValue(edPassword));
         lstUploadData.add(getEditextValue(edTranscationPassword));
-        lstUploadData.add(getEditextValue(edtPanCard));
         callWebService(ApiInterface.SIGNUP, lstUploadData);
     }
 
@@ -186,20 +175,20 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
                         case R.id.btnSignUp:
                             SubmitSignUpForm();
                             break;
-                        case R.id.goback:
-                            layoutLogin.setVisibility(View.VISIBLE);
-                            viewOtp.setVisibility(View.GONE);
-                            break;
-                        case R.id.btn_transaction_password:
-                            if ((edOtp.getText().toString().trim()).length() == 0) {
-                                edOtp.setError("Please enter otp");
-                            } else {
-                                lstUploadData = new LinkedList<>();
-                                lstUploadData.add(edOtp.getText().toString().trim());
-                                lstUploadData.add(encodedTPin);
-                                callWebService(ApiInterface.VERIFYSIGNUPOTP, lstUploadData);
-                            }
-                            break;
+//                        case R.id.goback:
+//                            layoutLogin.setVisibility(View.VISIBLE);
+//                            viewOtp.setVisibility(View.GONE);
+//                            break;
+//                        case R.id.btn_transaction_password:
+//                            if ((edOtp.getText().toString().trim()).length() == 0) {
+//                                edOtp.setError("Please enter otp");
+//                            } else {
+//                                lstUploadData = new LinkedList<>();
+//                                lstUploadData.add(edOtp.getText().toString().trim());
+//                                lstUploadData.add(encodedTPin);
+//                                callWebService(ApiInterface.VERIFYSIGNUPOTP, lstUploadData);
+//                            }
+//                            break;
                     }
                 }
             });
@@ -303,88 +292,89 @@ public class ActivitySignUp extends AppCompatActivity implements View.OnClickLis
                     txtMemberId.setText(str_msg);
                     EmptyData(edTexts);
 
-                    if (json.has("token")) {
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, json.getString("token"));
-                    }
-                    JSONObject data = json.getJSONObject("user_data");
-                    String str_name = data.getString("name");
-                    String str_user_code = data.getString("user_code");
-                    String str_userID = data.getString("user_id");
-
-                    if (data.has("token")) {
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, data.getString("token"));
-                    }
-
-                    lstUploadData = new LinkedList<>();
-                    lstUploadData.add(str_userID);
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-                    callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+//                    if (json.has("token")) {
+//                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, json.getString("token"));
+//                    }
+//                    JSONObject data = json.getJSONObject("user_data");
+//                    String str_name = data.getString("name");
+//                    String str_user_code = data.getString("user_code");
+//                    String str_userID = data.getString("user_id");
+//
+//                    if (data.has("token")) {
+//                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, data.getString("token"));
+//                    }
+//
+//                    lstUploadData = new LinkedList<>();
+//                    lstUploadData.add(str_userID);
+//                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+//                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+//                    callWebService(ApiInterface.UPDATEFCM, lstUploadData);
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        } else if (url.contains(ApiInterface.GETUSERNAME)) {
-            try {
-                JSONObject json = new JSONObject(result);
-
-                String str_message = json.getString(TAG_MESSAGE);
-                String str_status = json.getString(TAG_STATUS);
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
-                } else {
-                    pbLoadOperator.setVisibility(View.GONE);
-                    txtUsername.setVisibility(View.VISIBLE);
-                    if (json.has("member_name")) {
-                        txtUsername.setText(json.getString("member_name"));
-                        txtUsername.setTextColor(getResources().getColor(R.color.c_black));
-                    } else {
-                        txtUsername.setText(str_message);
-                        txtUsername.setTextColor(getResources().getColor(R.color.red_400));
-                    }
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
-        } else if (url.contains(ApiInterface.VERIFYSIGNUPOTP)) {
-            try {
-                JSONObject json = new JSONObject(result);
-
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastySuccess);
-                    TextView txtMemberId = (TextView) findViewById(R.id.txt_loginerror);
-                    txtMemberId.setText(str_msg);
-                    EmptyData(edTexts);
-
-                    JSONObject data = json.getJSONObject("user_data");
-                    String str_name = data.getString("name");
-                    String str_user_code = data.getString("user_code");
-                    String str_userID = data.getString("user_id");
-
-                    if (data.has("token")) {
-                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, data.getString("token"));
-                    }
-
-                    lstUploadData = new LinkedList<>();
-                    lstUploadData.add(str_userID);
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-                    callWebService(ApiInterface.UPDATEFCM, lstUploadData);
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
-        } else if (url.contains(ApiInterface.UPDATEFCM)) {
-            ActivitySplash.LoadUserData(result, svContext, true);
-            onBackPressed();
         }
+//        else if (url.contains(ApiInterface.GETUSERNAME)) {
+//            try {
+//                JSONObject json = new JSONObject(result);
+//
+//                String str_message = json.getString(TAG_MESSAGE);
+//                String str_status = json.getString(TAG_STATUS);
+//                if (str_status.equalsIgnoreCase("0")) {
+//                    customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
+//                } else {
+//                    pbLoadOperator.setVisibility(View.GONE);
+//                    txtUsername.setVisibility(View.VISIBLE);
+//                    if (json.has("member_name")) {
+//                        txtUsername.setText(json.getString("member_name"));
+//                        txtUsername.setTextColor(getResources().getColor(R.color.c_black));
+//                    } else {
+//                        txtUsername.setText(str_message);
+//                        txtUsername.setTextColor(getResources().getColor(R.color.red_400));
+//                    }
+//                }
+//            } catch (JSONException e) {
+//                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
+//                e.printStackTrace();
+//            }
+//        } else if (url.contains(ApiInterface.VERIFYSIGNUPOTP)) {
+//            try {
+//                JSONObject json = new JSONObject(result);
+//
+//                String str_status = json.getString("status");
+//                String str_msg = json.getString("message");
+//                if (str_status.equalsIgnoreCase("0")) {
+//                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
+//                } else {
+//                    customToast.showCustomToast(svContext, str_msg, customToast.ToastySuccess);
+//                    TextView txtMemberId = (TextView) findViewById(R.id.txt_loginerror);
+//                    txtMemberId.setText(str_msg);
+//                    EmptyData(edTexts);
+//
+//                    JSONObject data = json.getJSONObject("user_data");
+//                    String str_name = data.getString("name");
+//                    String str_user_code = data.getString("user_code");
+//                    String str_userID = data.getString("user_id");
+//
+//                    if (data.has("token")) {
+//                        PreferenceConnector.writeString(svContext, PreferenceConnector.H1, data.getString("token"));
+//                    }
+//
+//                    lstUploadData = new LinkedList<>();
+//                    lstUploadData.add(str_userID);
+//                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+//                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+//                    callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+//                }
+//            } catch (JSONException e) {
+//                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
+//                e.printStackTrace();
+//            }
+//        } else if (url.contains(ApiInterface.UPDATEFCM)) {
+//            ActivitySplash.LoadUserData(result, svContext, true);
+//            onBackPressed();
+//        }
     }
 
     private void EmptyData(EditText[] edTexts) {

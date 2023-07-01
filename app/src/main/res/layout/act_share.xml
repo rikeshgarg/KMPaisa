@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -159,26 +160,28 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/ts_twelve" />
                     </LinearLayout>
+
+
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/txt_refreealcode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/referallink"
+                    android:layout_above="@+id/refer_code"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="20.0dip"
                     android:layout_marginRight="20.0dip"
                     android:padding="@dimen/five"
-                    android:text="Just Copy below refer url and share"
+                    android:text="REFERRAL CODE"
                     android:textColor="@color/checkboxcolor"
                     android:textSize="@dimen/ts_seventeen" />
 
                 <TextView
-                    android:id="@+id/referallink"
+                    android:id="@+id/refer_code"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@+id/btn_copy_share"
+                    android:layout_height="@dimen/forty"
+                    android:layout_above="@+id/btn_submit"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="20.0dip"
                     android:layout_marginRight="20.0dip"
@@ -188,19 +191,19 @@
                     android:textSize="@dimen/ts_twenty" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_copy_share"
+                    android:id="@+id/btn_submit"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/fifty"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
+                    android:background="#f4ac47"
                     android:layout_marginLeft="40.0dip"
+                    android:textSize="@dimen/ts_twenty"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="40.0dip"
-                    android:background="@drawable/btn_rect_primary"
-                    android:text="Copy and Share App"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/ts_twenty" />
+                    android:text="Refer Now" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

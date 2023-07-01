@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.activity.aepsnew;
 
 import android.app.DatePickerDialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -12,12 +13,16 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.codunite.commonutility.CheckInternet;
+import com.codunite.commonutility.GlobalData;
 import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.R;
 import com.codunite.commonutility.GetFormattedDateTime;
@@ -29,6 +34,9 @@ import com.codunite.commonutility.ShowCustomToast;
 import com.codunite.commonutility.WebService;
 import com.codunite.commonutility.WebServiceListener;
 import com.codunite.commonutility.customfont.FontUtils;
+import com.codunite.rechargeapp.WebViewActivity;
+import com.codunite.rechargeapp.activity.ActivityMain;
+import com.codunite.rechargeapp.activity.ActivitySplash;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,9 +50,6 @@ import java.util.List;
 public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
-    private Button btnAddWallet;
-    private TextView txtWalletbal;
-    private EditText edKeyWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +65,9 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
     TextView txtFrom, txtTo;
 
     public void resumeApp() {
-//        btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
-//        txtWalletbal = (TextView) findViewById(R.id.walletbal);
-        edKeyWord = (EditText) findViewById(R.id.edt_keyword);
-//
-//        btnAddWallet.setOnClickListener(this);
-//        wallethistoryrv = (RecyclerView) findViewById(R.id.history_rv);
-//
-//        txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
-        txtWalletbal = (TextView) findViewById(R.id.walletbal);
         wallethistoryrv = (RecyclerView) findViewById(R.id.history_rv);
 
+        TextView txtWalletbal = (TextView) findViewById(R.id.walletbal);
         TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
         txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
@@ -81,8 +78,8 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
 
         txtFrom.setText(GetFormattedDateTime.getcurrentcalDate());
         txtTo.setText(GetFormattedDateTime.getcurrentcalDate());
-
-        LoadRechargeHistory("", "", "");
+        LoadRechargeHistory(txtFrom.getText().toString(), txtTo.getText().toString());
+        setSearchView();
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -97,8 +94,8 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
                     txtTo.setText(selectedDate);
                 }
             }
-
         };
+
 
         txtTo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,7 +108,6 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
                         Integer.parseInt(strDate[2])).show();
             }
         });
-
         txtFrom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,41 +129,70 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
                 } else if ((txtTo.getText().toString().trim()).equalsIgnoreCase("Select to date")) {
                     customToast.showCustomToast(svContext, "Please select to date first", customToast.ToastyInfo);
                 } else {
-                    LoadRechargeHistory(txtFrom.getText().toString().trim(),
-                            txtTo.getText().toString().trim(),
-                            edKeyWord.getText().toString().trim());
+                    LoadRechargeHistory(txtFrom.getText().toString().trim(), txtTo.getText().toString().trim());
                 }
             }
         });
     }
 
-    private void LoadRechargeHistory(String fromDate, String toDate, String searchedKeyword) {
+    private void LoadRechargeHistory(String fromDate, String toDate) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
-        callWebService(ApiInterface.NEW_AEPSHISTORY, lstUploadData);
+        lstUploadData.add(strSearchKey);
+        callWebService(ApiInterface.AEPSHISTORY, lstUploadData);
+    }
+
+    private String strSearchKey = "";
+    private void setSearchView() {
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) findViewById(R.id.searchview);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+
+        // listening to search query text change
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+        });
     }
 
     private Context svContext;
     private ShowCustomToast customToast;
-    
-    
+    private CheckInternet checkNetwork;
+    private NoInternetScreen errrorScreen;
 
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
-        
+        checkNetwork = new CheckInternet(svContext);
         ViewGroup root = (ViewGroup) findViewById(R.id.headlayout);
-        new NoInternetScreen(svContext, root, ActivityFinoAEPSHistory.this);
+        errrorScreen = new NoInternetScreen(svContext, root, ActivityFinoAEPSHistory.this);
         if (!GlobalVariables.CUSTOMFONTNAME.equals("")) {
             Typeface font = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAME);
             FontUtils.setFont(root, font);
         }
-        
+        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDARKTHEME, false)) {
+            // FontUtils.setThemeColor(root, svContext, true);
+        } else {
+            // FontUtils.setThemeColor(root, svContext, false);
+        }
 
         hideKeyboard();
-        
+        GlobalData.SetLanguage(svContext);
 //        if (checkNetwork.isConnectingToInternet()) {
 //            errrorScreen.hideError();
 //        } else {
@@ -182,19 +207,35 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
         imgToolBarBack.setOnClickListener(this);
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("Fino AEPS History");
+        txtHeading.setText("AEPS History");
+//        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
+//        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
+//
+//        TextView toolbar_txt_ewalletbal = (TextView) findViewById(R.id.toolbar_txt_ewalletbal);
+//        toolbar_txt_ewalletbal.setText(ActivityMain.ShoweBalance(svContext));
+
+//        LinearLayout imgToolBarWallet = (LinearLayout) findViewById(R.id.img_wallet);
+//        imgToolBarWallet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ActivitySplash.OpenWalletActivity(svContext);
+//            }
+//        });
+//
+//        LinearLayout imgToolBareWallet = (LinearLayout) findViewById(R.id.img_ewallet);
+//        imgToolBareWallet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ActivitySplash.OpeneWalletActivity(svContext);
+//            }
+//        });
     }
-    
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_back:
                 onBackPressed();
-                break;
-            case R.id.btn_addwallet:
-                Intent svIntent = new Intent(svContext, ActivityFinoAEPSHistory.class);
-                startActivity(svIntent);
-                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 break;
             default:
                 break;
@@ -233,7 +274,7 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-        if (url.contains(ApiInterface.NEW_AEPSHISTORY)) {
+        if (url.contains(ApiInterface.AEPSHISTORY)) {
             try {
                 lstItems = new ArrayList<>();
 
@@ -256,14 +297,15 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
                         String str_status = data_obj.getString("status");
                         String datetime = data_obj.getString("datetime");
 
-                        String bank_name = "";
-                        if (data_obj.has("bank_name")) {
-                            bank_name = data_obj.getString("bank_name");
-                        }
-
                         String memberDeatil = member_name + " (" + member_code + ")";
 
-                        lstItems.add(new FinoAEPSHistoryModel(memberDeatil, service, txnID, aadhar_no, str_status, amount, mobile, datetime, bank_name));
+                        String strInvoiceUrl = "";
+                        if (data_obj.has("invoiceUrl")) {
+                            strInvoiceUrl = data_obj.getString("invoiceUrl");
+                        }
+
+                        lstItems.add(new FinoAEPSHistoryModel(memberDeatil, service, txnID, aadhar_no, str_status,
+                                amount, mobile, datetime, strInvoiceUrl));
                     }
                 }
             } catch (JSONException e) {
@@ -274,11 +316,17 @@ public class ActivityFinoAEPSHistory extends AppCompatActivity implements View.O
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
-            int animation_type = ItemAnimation.LEFT_RIGHT;
-            AEPStHistoryAdapter mAdapter = new AEPStHistoryAdapter(this, lstItems, animation_type);
+            AEPStHistoryAdapter mAdapter = new AEPStHistoryAdapter(this, lstItems, ItemAnimation.NONE);
             wallethistoryrv.setAdapter(mAdapter);
-            mAdapter.setOnItemClickListener((view, obj, position) -> {
+            mAdapter.setOnItemClickListener(new AEPStHistoryAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, FinoAEPSHistoryModel obj, int position) {
+                }
 
+                @Override
+                public void onInvoiceClick(View view, FinoAEPSHistoryModel obj, int position) {
+                    //WebViewActivity.OpenWebView(svContext, "Invoice", obj.getInvoiceUrl(), true);
+                }
             });
         }
     }

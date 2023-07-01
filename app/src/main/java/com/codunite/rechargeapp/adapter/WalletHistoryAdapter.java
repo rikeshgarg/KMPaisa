@@ -42,7 +42,7 @@ public class WalletHistoryAdapter extends RecyclerView.Adapter<RecyclerView.View
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public TextView amountRecharge, recharegDate, desc,openamount,closeamount;
         public CardView cardView;
-        public View lyt_parent;
+        public View lyt_parent,view_color;
 
         public OriginalViewHolder(View v) {
             super(v);
@@ -53,6 +53,7 @@ public class WalletHistoryAdapter extends RecyclerView.Adapter<RecyclerView.View
             desc = (TextView) v.findViewById(R.id.rechargedesc);
             cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
+            view_color = (View) v.findViewById(R.id.view_color);
         }
     }
 
@@ -80,8 +81,10 @@ public class WalletHistoryAdapter extends RecyclerView.Adapter<RecyclerView.View
 
             if ((items.get(position).getStr_type()).equalsIgnoreCase("CR")) {
                 view.amountRecharge.setTextColor(Color.parseColor(strColors[0]));
+                view.view_color.setBackgroundColor(Color.parseColor(strColors[0]));
             } else {
                 view.amountRecharge.setTextColor(Color.parseColor(strColors[1]));
+                view.view_color.setBackgroundColor(Color.parseColor(strColors[1]));
             }
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {

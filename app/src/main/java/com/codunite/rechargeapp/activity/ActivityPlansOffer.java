@@ -196,8 +196,8 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("operator_id");
+                        String str_name = data_obj.getString("operator_name");
 
                         listSpinnerOperatorList.add(str_code + "#:#" + str_name);
                         listSpinnerOperatorListId.add(str_code);
@@ -226,8 +226,8 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("circle_id");
+                        String str_name = data_obj.getString("circle_name");
 
                         listSpinnerCircleList.add(str_code + "#:#" + str_name);
                         listSpinnerCircleListID.add(str_code);
@@ -501,12 +501,13 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
     private void LoadOperatorList(String rechargeType) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(rechargeType);
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebService(ApiInterface.OPERATORLIST, lstUploadData);
     }
 
     private void LoadCircleList() {
         lstUploadData = new LinkedList<>();
-        lstUploadData.add("");
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebService(ApiInterface.CIRCLELIST, lstUploadData);
     }
 

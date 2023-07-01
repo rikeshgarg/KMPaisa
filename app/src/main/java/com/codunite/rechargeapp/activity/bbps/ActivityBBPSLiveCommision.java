@@ -181,7 +181,7 @@ public class ActivityBBPSLiveCommision extends AppCompatActivity implements View
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
             int animation_type = ItemAnimation.LEFT_RIGHT;
-            RechargeCommisionAdapter mAdapter = new RechargeCommisionAdapter(this, lstItems, animation_type);
+            RechargeCommisionAdapter mAdapter = new RechargeCommisionAdapter(this, null, animation_type);
             wallethistoryrv.setNestedScrollingEnabled(false);
             wallethistoryrv.setAdapter(mAdapter);
             mAdapter.setOnItemClickListener(new RechargeCommisionAdapter.OnItemClickListener() {

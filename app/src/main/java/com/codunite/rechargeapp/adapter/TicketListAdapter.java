@@ -79,8 +79,10 @@ public class TicketListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             view.status.setText(items.get(position).getStr_data_status());
             view.datetime.setText(items.get(position).getStr_datetime());
 
-            String strImgUrl = items.get(position).getImgUrl();
-            ImageLoading.loadImages(strImgUrl, view.imgTicket, 0);
+            if(items.get(position).getImgUrl()!="") {
+                String strImgUrl = items.get(position).getImgUrl();
+                ImageLoading.loadImages(strImgUrl, view.imgTicket, 0);
+            }
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -21,13 +21,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.codunite.commonutility.FragmentTAG;
+import com.codunite.rechargeapp.activity.ActivityLoginTransfer;
+import com.codunite.rechargeapp.activity.bbps.ActivityBBPSDashBoardActivity;
+import com.codunite.rechargeapp.activity.bbps.ActivityBbpsElectricity;
 import com.codunite.rechargeapp.activity.bbps.FragBBPSDashBoard;
 import com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory;
+import com.codunite.rechargeapp.activity.wallet.ActivityEWalletHistory;
+import com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory;
 import com.codunite.rechargeapp.adapter.DashboardAdapter;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest;
 import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.activity.reports.ActivityComisionWalletHistory;
-import com.codunite.rechargeapp.activity.reports.ActivityWalletHistory;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsAllServices;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsTollTax;
 import com.codunite.rechargeapp.activity.ActivityRecharge;
@@ -52,21 +57,24 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
     private List<DashboardModel> lstDashBoardMain = new ArrayList<>();
+    private List<DashboardModel> lstDashBoardBbps = new ArrayList<>();
     private List<DashboardModel> lstDashBoardAeps = new ArrayList<>();
     private List<DashboardModel> lstDashBoardMainAnim = new ArrayList<>();
 
-    public static String[] selectedItemItemList = {"Postpaid","Prepaid", "DTH", "Data Card", "Broadband", "Landline", "Water", "Fasttag"};
-    private int[] allDrawable = {R.drawable.postpaid, R.drawable.prepaid, R.drawable.dth, R.drawable.datacard,
-            R.drawable.broadband, R.drawable.landline, R.drawable.water, R.drawable.fastag};
+    public static String[] selectedItemItemList = {"Prepaid", "DTH","Electricity", "Water","Gas","Insurance","Loan","More"};
+    //public static String[] selectedItemItemList = {"Postpaid","Prepaid", "DTH", "Data Card", "Landline"};
+    private int[] allDrawable = { R.drawable.prepaid, R.drawable.dth,R.drawable.bbps_electricity, R.drawable.bbps_water,R.drawable.bbps_lpg_gas,R.drawable.bbps_insurance,R.drawable.bbps_loan,R.drawable.ic_more};
 
-    private int[] allDrawableBgColor = {R.color.bg_postpaid, R.color.bg_prepaid, R.color.bg_dth, R.color.bg_datacard,
-            R.color.bg_prepaid, R.color.bg_landline, R.color.bg_dth,R.color.bg_fasttag};
+    private int[] allDrawableBgColor = { R.color.bg_prepaid, R.color.bg_dth,R.color.bg_postpaid, R.color.bg_prepaid,R.color.bg_metro,R.color.bg_prepaid,R.color.bg_landline,0};
 
-    public static String[] aepsliveItemList = {"AEPS", "Fino AEPS", "Add Money PG",
-            "Fund Request", "Notification", "Sonika Store", "Fino AEPS Settlement", "NSDL Pan"};
-    private int[] allDrawableaeps = {R.drawable.aeps, R.drawable.fino_aeps, R.drawable.add_money_pg,
-            R.drawable.fund_request, R.drawable.dash_notification, R.drawable.sonikastore, R.drawable.fino_aeps, R.drawable.pancard};
 
+    public static String[] selectedItemListBBPS = {"Broadband","Fasttag", "Electricity", "Water","Gas","Insurance","Loan","More"};
+    private int[] allDrawableBBPS = {R.drawable.bbps_boardband, R.drawable.fastag, R.drawable.bbps_electricity, R.drawable.bbps_water,R.drawable.bbps_lpg_gas,R.drawable.bbps_insurance,R.drawable.bbps_loan,R.drawable.ic_more};
+    private int[] allDrawableBgColorBBPS = {R.color.bg_datacard, R.color.bg_fasttag, R.color.bg_postpaid, R.color.bg_prepaid,R.color.bg_metro,R.color.bg_prepaid,R.color.bg_landline,0};
+
+    public static String[] aepsliveItemList = {"Money Transfer","Xpress IMPS","Micro ATM","AEPS", "Aadhar pay"};
+    private int[] allDrawableaeps = {R.drawable.ic_money_transfer, R.drawable.ic_express_imps, R.drawable.ic_microatm,R.drawable.ic_aeps, R.drawable.ic_aadhaar_pay};
+    private int[] allDrawableaepsColors = {R.color.bg_prepaid, R.color.bg_metro, R.color.bg_datacard, R.color.bg_dth,R.color.bg_postpaid};
 
     private CardView cardMarquee;
     private SwipeRefreshLayout layrefrsh;
@@ -182,16 +190,16 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
 
         root.setVisibility(View.VISIBLE);
 
-        LinearLayout mainwallet = aiView.findViewById(R.id.lay_main_wallet);
-        mainwallet.setOnClickListener(v -> {
+        LinearLayout lay_r_wallet = aiView.findViewById(R.id.lay_r_wallet);
+        lay_r_wallet.setOnClickListener(v -> {
             Intent svIntent = new Intent(svContext, ActivityWalletHistory.class);
             startActivity(svIntent);
         });
         ((TextView) aiView.findViewById(R.id.txt_main_wallet)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
 
-        LinearLayout aepswallet = aiView.findViewById(R.id.lay_aeps_wallet);
-        aepswallet.setOnClickListener(v -> {
-            Intent svIntent = new Intent(svContext, ActivityAepsWalletHistory.class);
+        LinearLayout lay_e_wallet = aiView.findViewById(R.id.lay_e_wallet);
+        lay_e_wallet.setOnClickListener(v -> {
+            Intent svIntent = new Intent(svContext, ActivityEWalletHistory.class);
             startActivity(svIntent);
         });
         ((TextView) aiView.findViewById(R.id.txt_aeps)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
@@ -273,37 +281,98 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
                 svContext.startActivity(svIntent);
             } else if (selectedItemItemList[1].equals(obj)) {
                 Intent svIntent = new Intent(svContext, ActivityRecharge.class);
-                svIntent.putExtra("selecteditem", 0);
-                svContext.startActivity(svIntent);
-            } else if (selectedItemItemList[2].equals(obj)) {
-                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
                 svIntent.putExtra("selecteditem", 1);
                 svContext.startActivity(svIntent);
-            } else if (selectedItemItemList[3].equals(obj)) {
-                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
-                svIntent.putExtra("selecteditem", 2);
-                svContext.startActivity(svIntent);
-            } else if (selectedItemItemList[4].equals(obj)) {
-                startNewActivity(ActivityBbpsAllServices.class, "BROADBAND POSTPAID", "14");
-            } else if (selectedItemItemList[5].equals(obj)) {
-                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
-                svIntent.putExtra("selecteditem", 2);
-                svContext.startActivity(svIntent);
-            } else if (selectedItemItemList[6].equals(obj)) {
+            } else if (selectedItemListBBPS[2].equals(obj)) {
+                startNewActivity(ActivityBbpsElectricity.class);
+            } else if (selectedItemListBBPS[3].equals(obj)) {
                 startNewActivity(ActivityBbpsAllServices.class, "WATER", "8");
-            } else if (selectedItemItemList[7].equals(obj)) {
-                startNewActivity(ActivityBbpsTollTax.class);
+            } else if (selectedItemListBBPS[4].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "GAS", "3");
+            } else if (selectedItemListBBPS[5].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "INSURANCE", "2");
+            } else if (selectedItemListBBPS[6].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "LOAN", "1");
+            } else if (selectedItemListBBPS[7].equals(obj)) {
+                startNewActivity(ActivityBBPSDashBoardActivity.class);
+                //switchContent(new FragBBPSDashBoard(), FragmentTAG.FragBBPSLiveDashBoard);
+                //startNewActivity(ActivityBbpsTollTax.class);
             }
+
+
+//            else if (selectedItemItemList[2].equals(obj)) {
+//                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
+//                svIntent.putExtra("selecteditem", 1);
+//                svContext.startActivity(svIntent);
+//            } else if (selectedItemItemList[3].equals(obj)) {
+//                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
+//                svIntent.putExtra("selecteditem", 2);
+//                svContext.startActivity(svIntent);
+//            } else if (selectedItemItemList[4].equals(obj)) {
+//                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
+//                svIntent.putExtra("selecteditem", 3);
+//                svContext.startActivity(svIntent);
+//                //startNewActivity(ActivityBbpsAllServices.class, "BROADBAND POSTPAID", "14");
+//            } else if (selectedItemItemList[5].equals(obj)) {
+//                Intent svIntent = new Intent(svContext, ActivityRecharge.class);
+//                svIntent.putExtra("selecteditem", 3);
+//                svContext.startActivity(svIntent);
+//            } else if (selectedItemItemList[6].equals(obj)) {
+//                startNewActivity(ActivityBbpsTollTax.class);
+//                //startNewActivity(ActivityBbpsAllServices.class, "WATER", "8");
+//            } else if (selectedItemItemList[7].equals(obj)) {
+//                //startNewActivity(ActivityBbpsTollTax.class);
+//            }
         });
 
         LoadBanking();
+        LoadBBPSMenu();
+    }
+
+    public void LoadBBPSMenu() {
+        RecyclerView recyclerView = aiView.findViewById(R.id.rv_bbps);
+
+        lstDashBoardBbps = new ArrayList<>();
+        for (int j = 0; j < selectedItemListBBPS.length; j++) {
+            lstDashBoardBbps.add(new DashboardModel(selectedItemListBBPS[j], allDrawableBBPS[j], false,allDrawableBgColorBBPS[j]));
+        }
+
+        GridLayoutManager layoutManager = new GridLayoutManager(svContext, 4);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
+        DashboardAdapter mAdapter = new DashboardAdapter(svContext, lstDashBoardBbps, animation_type);
+        recyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener((view, obj, position) -> {
+            if (selectedItemListBBPS[0].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "BROADBAND POSTPAID", "14");
+            } else if (selectedItemListBBPS[1].equals(obj)) {
+                startNewActivity(ActivityBbpsTollTax.class);
+            } else if (selectedItemListBBPS[2].equals(obj)) {
+                startNewActivity(ActivityBbpsElectricity.class);
+            } else if (selectedItemListBBPS[3].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "WATER", "8");
+            } else if (selectedItemListBBPS[4].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "GAS", "3");
+            } else if (selectedItemListBBPS[5].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "INSURANCE", "2");
+            } else if (selectedItemListBBPS[6].equals(obj)) {
+                startNewActivity(ActivityBbpsAllServices.class, "LOAN", "1");
+            } else if (selectedItemListBBPS[7].equals(obj)) {
+                startNewActivity(ActivityBBPSDashBoardActivity.class);
+                //switchContent(new FragBBPSDashBoard(), FragmentTAG.FragBBPSLiveDashBoard);
+                //startNewActivity(ActivityBbpsTollTax.class);
+            }
+        });
+
     }
 
     public void LoadBanking() {
         RecyclerView recyclerView = aiView.findViewById(R.id.rv_dashboard_aeps);
         lstDashBoardAeps = new ArrayList<>();
         for (int j = 0; j < aepsliveItemList.length; j++) {
-            lstDashBoardAeps.add(new DashboardModel(aepsliveItemList[j], allDrawableaeps[j], false,0));
+            lstDashBoardAeps.add(new DashboardModel(aepsliveItemList[j], allDrawableaeps[j], false,allDrawableaepsColors[j]));
         }
 
         GridLayoutManager layoutManager = new GridLayoutManager(svContext, 4);
@@ -314,7 +383,17 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
         recyclerView.setAdapter(mAdapter);
 
         mAdapter.setOnItemClickListener((view, obj, position) -> {
-
+            if (position == 0) {
+                Intent svIntent = new Intent(svContext, ActivityLoginTransfer.class);
+                startActivity(svIntent);
+                getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            } else if (position == 1) {
+                ActivityMain.onDrawerItemClick("Transfer", svContext);
+            } else if (position == 3 || position == 4) {
+                ActivityMain.OpenAeps(obj, svContext, customToast);
+            } else {
+                customToast.showCustomToast("Coming Soon", customToast.ToastyInfo);
+            }
         });
 
         LoadAFFLIATEManu();
@@ -362,6 +441,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
     public static List<SliderModel> lstSlider = new ArrayList<>();
 
     public void LoadSlider() {
+
         ImageSlider sliderView = aiView.findViewById(R.id.image_slider);
         List<SlideModel> imageList = new ArrayList<>();
         for (int j = 0; j < FragHomeDashBoard.lstSlider.size(); j++) {

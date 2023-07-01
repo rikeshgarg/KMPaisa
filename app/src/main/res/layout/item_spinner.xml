@@ -8,9 +8,9 @@
         android:id="@+id/txtitem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/seven"
+        android:padding="@dimen/ten"
         android:gravity="center_vertical"
         android:singleLine="true"
         android:textColor="@color/fontcolorspinner"
-        android:textSize="@dimen/ts_fifteen" />
+        android:textSize="@dimen/ts_seventeen" />
 </LinearLayout>

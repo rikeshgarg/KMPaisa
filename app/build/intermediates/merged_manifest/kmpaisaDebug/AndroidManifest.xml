@@ -109,32 +109,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="com.codunite.rechargeapp.activity.geneology.ActivityRankList"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.geneology.ActivityRankAchieverList"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.search.ActivityCompleteSearch"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:name="com.codunite.rechargeapp.activity.ActivityNotification"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityRechargeIncome"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityCashbackIncome"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -142,8 +117,7 @@
             android:name="com.codunite.rechargeapp.activity.ActivitySignUp"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" >
-        </activity>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.codunite.rechargeapp.activity.ActivityMain"
             android:screenOrientation="portrait"
@@ -170,11 +144,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="com.codunite.rechargeapp.activity.pointwallet.ActivityPointWalletHistory"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:name="com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSBankingService"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -186,31 +155,6 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.pin.ActivityPinList"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.pin.ActivityTransferPin"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.geneology.ActivityLevelList"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.geneology.ActivityLevelWiseTeamList"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.pin.ActivityRequestPin"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -295,27 +239,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityLevelincome"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.geneology.ActivityUpline"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionwallet.ActivityCommissionWalletPayoutTransfer"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:name="com.codunite.rechargeapp.activity.mainwallet.ActivityMainWalletTransfer"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionwallet.ActivityCommisionWalletTransfer"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -331,6 +255,11 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityAEPSCommision"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -356,21 +285,6 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.codunite.rechargeapp.activity.ActivityShare"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.geneology.ActivityDownLine"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityDirectIncome"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityBbpsincome"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -472,11 +386,6 @@
             android:value="rzp_test_GgYuaz3PoEkCE4" />
 
         <activity
-            android:name="com.codunite.rechargeapp.activity.nsdlpan.ActivityActivateNsdlPan"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:name="com.codunite.rechargeapp.activity.mainwallet.ActivityTopupWalletRazorpay"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -502,27 +411,112 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityAepsCommission"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionwallet.ActivityCommissionTransferReport"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.commissionincome.ActivityAepsIncome"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:name="com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.members.AddEditMember"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.members.AllMemberList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.ActivityLoginTransfer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.ActivityRegisterTransfer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.ActivityMoneyTransferHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequest"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityTopupWallet"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityWalletTransfer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityEWalletTransfer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityEWalletHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequestHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.bbps.ActivityBBPSDashBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.reports.ActivityRechargeCommisionHistory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.virtualaccount.ActivityVirtualAccount"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.virtualaccount.VirtualTransactionReport"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.ActivityBeneficiaryList"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.ActivityAddBeneficiary"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.ActivitySenderDetails"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />

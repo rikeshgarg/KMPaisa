@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lyt_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/five"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/card_item_corner"
+        app:cardElevation="@dimen/card_item_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/ten">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/two"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="4"
+                    android:text="User Code"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_forteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="123456"
+                    android:id="@+id/vm_memberid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="6"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/two"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="4"
+                    android:text="Name"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_forteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="Test user"
+                    android:id="@+id/vm_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="6"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_twelve"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/two"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="4"
+                    android:text="Mobile"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_forteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="123456"
+                    android:id="@+id/vm_wallbal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="6"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/two"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="4"
+                    android:text="Email"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_forteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="test@test.com"
+                    android:id="@+id/vm_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="6"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/two"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="4"
+                    android:text="Wallet balance"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_forteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="5475"
+                    android:id="@+id/wallet_bal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="6"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_twelve"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/lay_head_change"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:id="@+id/lay_amount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/thirty"-->
+<!--                android:layout_marginRight="@dimen/ten"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/currency_symbol"-->
+<!--                    android:textSize="@dimen/ts_twentyfive" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/amount"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginLeft="@dimen/five"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="1000"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/ts_twenty" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:id="@+id/lay_notification"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/ten"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_member_id"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:text="KMD123456"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/ts_seventeen"-->
+<!--                    android:textStyle="normal" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_name"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/three"-->
+<!--                    android:text="User"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/ts_thirteen" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_email"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/three"-->
+<!--                    android:text="test@test.com"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/ts_thirteen" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_mobile"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/three"-->
+<!--                    android:text="123456789"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/ts_thirteen" />-->
+
+<!--            </LinearLayout>-->
+
+<!--        </RelativeLayout>-->
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

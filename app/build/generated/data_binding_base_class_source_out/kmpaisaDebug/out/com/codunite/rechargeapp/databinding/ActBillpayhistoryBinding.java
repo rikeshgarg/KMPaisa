@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
@@ -61,6 +62,9 @@ public final class ActBillpayhistoryBinding implements ViewBinding {
   public final RecyclerView rvPagination;
 
   @NonNull
+  public final SearchView searchview;
+
+  @NonNull
   public final TextView walletbal;
 
   private ActBillpayhistoryBinding(@NonNull ConstraintLayout rootView,
@@ -69,7 +73,8 @@ public final class ActBillpayhistoryBinding implements ViewBinding {
       @NonNull ConstraintLayout headlayout, @NonNull RecyclerView historyRv,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout layFilter,
       @NonNull NestedScrollView layNestedscroll, @NonNull LinearLayout linearLayout,
-      @NonNull RecyclerView rvPagination, @NonNull TextView walletbal) {
+      @NonNull RecyclerView rvPagination, @NonNull SearchView searchview,
+      @NonNull TextView walletbal) {
     this.rootView = rootView;
     this.cardWallbal = cardWallbal;
     this.datePickerFrom = datePickerFrom;
@@ -83,6 +88,7 @@ public final class ActBillpayhistoryBinding implements ViewBinding {
     this.layNestedscroll = layNestedscroll;
     this.linearLayout = linearLayout;
     this.rvPagination = rvPagination;
+    this.searchview = searchview;
     this.walletbal = walletbal;
   }
 
@@ -182,6 +188,12 @@ public final class ActBillpayhistoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.searchview;
+      SearchView searchview = ViewBindings.findChildViewById(rootView, id);
+      if (searchview == null) {
+        break missingId;
+      }
+
       id = R.id.walletbal;
       TextView walletbal = ViewBindings.findChildViewById(rootView, id);
       if (walletbal == null) {
@@ -190,7 +202,7 @@ public final class ActBillpayhistoryBinding implements ViewBinding {
 
       return new ActBillpayhistoryBinding((ConstraintLayout) rootView, cardWallbal, datePickerFrom,
           datePickerTo, ewalletbal, filterSearch, headlayout, historyRv, binding_layActionbar,
-          layFilter, layNestedscroll, linearLayout, rvPagination, walletbal);
+          layFilter, layNestedscroll, linearLayout, rvPagination, searchview, walletbal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

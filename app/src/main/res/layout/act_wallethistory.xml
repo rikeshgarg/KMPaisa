@@ -60,7 +60,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="@dimen/onehundredfifty"
+                                android:layout_width="@dimen/onetwenty"
                                 android:layout_height="@dimen/forty"
                                 android:src="@drawable/logo_color" />
                         </LinearLayout>
@@ -107,7 +107,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginTop="@dimen/ten"
-                                android:text="Wallet Balance"
+                                android:text="R-Wallet Balance"
                                 android:textColor="@color/gray_dimtextcolor"
                                 android:textSize="@dimen/ts_forteen" />
 
@@ -139,13 +139,13 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:visibility="gone">
+                            android:visibility="visible">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:layout_marginTop="@dimen/twenty"
+                                android:layout_marginTop="@dimen/ten"
                                 android:text="E-Wallet Balance"
                                 android:textColor="@color/gray_dimtextcolor"
                                 android:textSize="@dimen/ts_forteen" />
@@ -218,12 +218,27 @@
                         android:text="Search" />
                 </LinearLayout>
 
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchview"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fortyfive"
+                    android:layout_below="@+id/lay_filter"
+                    android:layout_marginStart="@dimen/twenty"
+                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginEnd="@dimen/twenty"
+                    android:background="@drawable/back_edittext_default"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/three"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Search"
+                    app:searchHintIcon="@drawable/ic_baseline_search_24" />
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/wallethistory_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/lay_filter"
+                    android:layout_below="@+id/searchview"
                     android:layout_marginLeft="@dimen/five"
                     android:layout_marginTop="@dimen/ten"
                     android:layout_marginRight="@dimen/five"

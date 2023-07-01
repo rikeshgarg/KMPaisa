@@ -9,6 +9,8 @@
     <dimen name="ts_thirteen">13sp</dimen>
     <dimen name="ts_forteen">14sp</dimen>
     <dimen name="ts_fifteen">15sp</dimen>
+    <dimen name="ts_sixteen">16sp</dimen>
+
     <dimen name="ts_seventeen">17sp</dimen>
     <dimen name="ts_eighteen">18sp</dimen>
     <dimen name="ts_nineteen">19sp</dimen>
@@ -43,16 +45,19 @@
     <dimen name="twentyfive">25dp</dimen>
     <dimen name="thirty">30dp</dimen>
     <dimen name="thirtyfive">35dp</dimen>
+    <dimen name="thirtyseven">37dp</dimen>
     <dimen name="forty">40dp</dimen>
     <dimen name="fortyfive">45dp</dimen>
     <dimen name="fifty">50dp</dimen>
     <dimen name="fiftyfive">55dp</dimen>
     <dimen name="sixty">60dp</dimen>
+    <dimen name="seventy">70dp</dimen>
     <dimen name="seventyfive">75dp</dimen>
     <dimen name="hundred">100dp</dimen>
     <dimen name="onetwenty">120dp</dimen>
     <dimen name="onetwentyfive">125dp</dimen>
     <dimen name="onehundredfifty">150dp</dimen>
+    <dimen name="onehundredseventy">170dp</dimen>
     <dimen name="twohundred">200dp</dimen>
 
 

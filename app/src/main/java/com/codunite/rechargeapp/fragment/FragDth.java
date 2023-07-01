@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -47,6 +48,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FragDth extends Fragment implements OnClickListener, WebServiceListener {
+    public static String strDthMobile, strDthOperatorCode;
+    private Context svContext;
+    EditText edtOtp;
+    private ShowCustomToast customToast;
+    private Spinner spinnerDthCircleList, spinnerDthOperatorList;
+    LinkedList<String> lstUploadData = new LinkedList<>();
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
     private TextView txtViewAllPlans, txtROffers;
@@ -61,8 +68,12 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
     private View[] allViewWithClick = {btnDthrecharge, layOperator, layCircle, txtViewAllPlans, txtROffers, btnCancelOtp, btnOtpVerify};
     private int[] allViewWithClickId = {R.id.btn_dthrecharge, R.id.lay_operator,
             R.id.lay_circle, R.id.txt_viewallplans, R.id.txt_roffers, R.id.btn_otpcancel, R.id.btn_otpauth};
+    private List<String> listSpinnerCircleList = new ArrayList<>();
+    private List<String> listSpinnerOperatorList = new ArrayList<>();
+    private ProgressBar pbLoadOperator, pbLoadCircle;
 
-    public FragDth() {}
+    public FragDth() {
+    }
 
     public static final String TAG_DATA = "data";
     public static final String TAG_MESSAGE = "message";
@@ -109,9 +120,17 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
     public void resumeApp() {
         edDthRechargeAmount = (EditText) aiView.findViewById(R.id.dth_amount);
         spinnerDthOperatorList = (Spinner) aiView.findViewById(R.id.spinner_dthoperatorlist);
-
+        listSpinnerOperatorList.add("-1" + "#:#" + "Select Operator");
+        listSpinnerCircleList.add("-1" + "#:#" + "Select Circle");
         edtOtp = aiView.findViewById(R.id.edt_otp);
-
+        pbLoadOperator = (ProgressBar) aiView.findViewById(R.id.progressbar_load_two);
+        pbLoadCircle = (ProgressBar) aiView.findViewById(R.id.progressbar_load_one);
+        pbLoadOperator.setVisibility(View.GONE);
+        pbLoadCircle.setVisibility(View.GONE);
+        PopulateDthOperatorList();
+        PopulateDthCircleList();
+        pbLoadCircle.setVisibility(View.VISIBLE);
+        pbLoadOperator.setVisibility(View.VISIBLE);
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebServiceWithoutLoader(ApiInterface.CIRCLELIST, lstUploadData);
@@ -122,6 +141,8 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
     private void LoadOperatorList(String rechargeType) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(rechargeType);
+
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebServiceWithoutLoader(ApiInterface.OPERATORLIST, lstUploadData);
     }
 
@@ -220,11 +241,6 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         }
     }
 
-    public static String strDthMobile, strDthOperatorCode;
-
-    private Context svContext;
-    private ShowCustomToast customToast;
-
 
     private void StartApp() {
         svContext = getActivity();
@@ -241,8 +257,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
 //            FontUtils.setThemeColor(root, svContext, false);
         }
 
-        
-        
+
     }
 
     public static void hideFragmentkeyboard(Context meraContext, View meraView) {
@@ -250,18 +265,17 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         imm.hideSoftInputFromWindow(meraView.getWindowToken(), 0);
     }
 
-    LinkedList<String> lstUploadData = new LinkedList<>();
 
     private void callWebService(String postUrl, LinkedList<String> lstUploadData) {
         WebService webService = new WebService(svContext, postUrl, lstUploadData, this);
         webService.LoadDataRetrofit(webService.callReturn());
     }
 
-    private List<String> listSpinnerCircleList = new ArrayList<>();
-    private List<String> listSpinnerOperatorList = new ArrayList<>();
+
     @Override
     public void onWebServiceActionComplete(String result, String url) {
         if (url.contains(ApiInterface.OPERATORLIST)) {
+            pbLoadOperator.setVisibility(View.GONE);
             try {
                 listSpinnerOperatorList = new ArrayList<>();
                 JSONObject json = new JSONObject(result);
@@ -277,8 +291,8 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("operator_id");
+                        String str_name = data_obj.getString("operator_name");
 
                         listSpinnerOperatorList.add(str_code + "#:#" + str_name);
                     }
@@ -300,18 +314,19 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
                 } else {
                     TextView txtCustomerName, txtAvailBal;
-                    txtCustomerName = (TextView)aiView.findViewById(R.id.txt_name);
-                    txtAvailBal = (TextView)aiView.findViewById(R.id.txt_availbalance);
+                    txtCustomerName = (TextView) aiView.findViewById(R.id.txt_name);
+                    txtAvailBal = (TextView) aiView.findViewById(R.id.txt_availbalance);
 
                     edDthRechargeAmount.setText(json.getString("rechargeAmount"));
                     txtCustomerName.setText(json.getString("customerName"));
-                    txtAvailBal.setText("Available Bal - " +GlobalVariables.CURRENCYSYMBOL+json.getString("balance"));
+                    txtAvailBal.setText("Available Bal - " + GlobalVariables.CURRENCYSYMBOL + json.getString("balance"));
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        }else if (url.contains(ApiInterface.CIRCLELIST)) {
+        } else if (url.contains(ApiInterface.CIRCLELIST)) {
+            pbLoadCircle.setVisibility(View.GONE);
             try {
                 listSpinnerCircleList = new ArrayList<>();
                 JSONObject json = new JSONObject(result);
@@ -327,8 +342,8 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < data.length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_code = data_obj.getString("code");
-                        String str_name = data_obj.getString("name");
+                        String str_code = data_obj.getString("circle_id");
+                        String str_name = data_obj.getString("circle_name");
 
                         listSpinnerCircleList.add(str_code + "#:#" + str_name);
                     }
@@ -359,7 +374,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                     Intent svIntent = new Intent(svContext, ActivityCompletion.class);
                     svIntent.putExtra("from_act", "recharge");
                     startActivity(svIntent);
-                    ((Activity)svContext).finish();
+                    ((Activity) svContext).finish();
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
@@ -397,7 +412,6 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         ((LinearLayout) aiView.findViewById(R.id.card_otp)).setVisibility(View.GONE);
     }
 
-    private Spinner spinnerDthCircleList, spinnerDthOperatorList;
 
     private void PopulateDthCircleList() {
         spinnerDthCircleList = (Spinner) aiView.findViewById(R.id.spinner_dthcirclelist);
@@ -461,45 +475,30 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                 (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[1]) +
                 "\nAmount: " + edDthRechargeAmount.getText().toString().trim();
         if (response == 0) {
-            ((ActivityRecharge)getActivity()).ShowConfirmDialog(svContext, strMessage, "dth");
+            ((ActivityRecharge) getActivity()).ShowConfirmDialog(svContext, strMessage, "dth");
         }
     }
 
-    public void ConfirmRecharge(){
+    public void ConfirmRecharge() {
         int amount = Integer.parseInt(edDthRechargeAmount.getText().toString().trim());
-        boolean isWalletLoading = ((ActivityRecharge)getActivity()).checkRWalletAndAddWallet(amount, "dth");
+        boolean isWalletLoading = ((ActivityRecharge) getActivity()).checkRWalletAndAddWallet(amount, "dth");
         if (isWalletLoading) {
             customToast.showCustomToast(svContext, "Insufficient fund", customToast.SweetAlertFailed);
-        }else{
-            ShowOtpLayout();
-        }
+        } else {
+            RechargeProcess();
+         }
     }
 
-    EditText edtOtp;
+
     public void RechargeProcess() {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add((edCardNumber.getText().toString().trim()));
         lstUploadData.add((listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]));
-        lstUploadData.add((listSpinnerCircleList.get(spinnerDthCircleList.getSelectedItemPosition()).split("#:#")[0]));
-        lstUploadData.add(edDthRechargeAmount.getText().toString().trim());
-        lstUploadData.add("2");
         lstUploadData.add("");
-        lstUploadData.add(edtOtp.getText().toString().trim());
+        lstUploadData.add(edDthRechargeAmount.getText().toString().trim());
         callWebService(ApiInterface.RECHARGEAUTH, lstUploadData);
     }
-
-//    private void OtpVerify() {
-//        PinView edtOtp = (PinView) aiView.findViewById(R.id.edt_otp);
-//        if (edtOtp.length() == 0) {
-//            customToast.showCustomToast(svContext, "Please enter otp", customToast.ToastyError);
-//        } else {
-//            lstUploadData = new LinkedList<>();
-//            lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-//            lstUploadData.add(edtOtp.getText().toString().trim());
-//            callWebService(ApiInterface.RECHARGEOTPAUTH, lstUploadData);
-//        }
-//    }
 
     @Override
     public void onWebServiceError(String result, String url) {

@@ -105,7 +105,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
-                                android:src="@drawable/ic_baseline_person_24"
+                                android:src="@drawable/ic_user_name"
                                 app:tint="@color/colorAccent" />
 
                             <com.google.android.material.textfield.TextInputLayout
@@ -147,7 +147,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
-                                android:src="@drawable/ic_baseline_mail_outline_24"
+                                android:src="@drawable/ic_mail"
                                 app:tint="@color/colorAccent" />
 
                             <com.google.android.material.textfield.TextInputLayout
@@ -160,6 +160,7 @@
                                 app:boxStrokeWidthFocused="0dp">
 
                                 <EditText
+                                    android:enabled="false"
                                     android:id="@+id/edt_PI_mail"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -189,7 +190,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
-                                android:src="@drawable/ic_baseline_phone_iphone_24"
+                                android:src="@drawable/ic_mobile"
                                 app:tint="@color/colorAccent" />
 
                             <com.google.android.material.textfield.TextInputLayout
@@ -202,6 +203,7 @@
                                 app:boxStrokeWidthFocused="0dp">
 
                                 <EditText
+                                    android:enabled="false"
                                     android:id="@+id/edt_PI_mobnumber"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -215,6 +217,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/thirty"
@@ -231,7 +234,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
-                                android:src="@drawable/ic_baseline_phone_iphone_24"
+                                android:src="@drawable/ic_mobile"
                                 app:tint="@color/colorAccent" />
 
                             <com.google.android.material.textfield.TextInputLayout
@@ -257,6 +260,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/thirty"
@@ -273,7 +277,7 @@
                                 android:layout_alignParentLeft="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
-                                android:src="@drawable/ic_baseline_phone_iphone_24"
+                                android:src="@drawable/ic_mobile"
                                 app:tint="@color/colorAccent" />
 
                             <com.google.android.material.textfield.TextInputLayout
@@ -299,114 +303,16 @@
                         </RelativeLayout>
 
 
-                        <EditText
-                            android:id="@+id/edt_PI_name1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="@dimen/edittext_height"
-                            android:layout_marginTop="40dp"
-                            android:background="@drawable/back_edittext_default"
-                            android:drawableLeft="@drawable/ic_baseline_person_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorAccent"
-                            android:hint="Enter user fullname"
-                            android:inputType="text"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
-                            android:textSize="@dimen/ts_seventeen"
-                            android:visibility="gone" />
 
-                        <EditText
-                            android:id="@+id/edt_PI_mail1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="@dimen/edittext_height"
-                            android:layout_marginTop="@dimen/ten"
-                            android:background="@drawable/back_edittext_default"
-                            android:drawableLeft="@drawable/ic_baseline_mail_outline_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorAccent"
-                            android:enabled="false"
-                            android:hint="Enter email address"
-                            android:inputType="textEmailAddress"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
-                            android:textSize="@dimen/ts_seventeen"
-                            android:visibility="gone" />
 
-                        <EditText
-                            android:id="@+id/edt_PI_mobnumber1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="@dimen/edittext_height"
-                            android:layout_marginTop="@dimen/ten"
-                            android:background="@drawable/back_edittext_default"
-                            android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorAccent"
-                            android:enabled="false"
-                            android:hint="Enter mobile number"
-                            android:inputType="phone"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
-                            android:textSize="@dimen/ts_seventeen"
-                            android:visibility="gone" />
 
-                        <EditText
-                            android:id="@+id/ed_address1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="@dimen/edittext_height"
-                            android:layout_marginTop="@dimen/ten"
-                            android:background="@drawable/back_edittext_default"
-                            android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorAccent"
-                            android:hint="Enter full address"
-                            android:inputType="text"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
-                            android:textSize="@dimen/ts_seventeen"
-                            android:visibility="gone" />
 
-                        <EditText
-                            android:id="@+id/ed_pincode1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="@dimen/edittext_height"
-                            android:layout_marginTop="@dimen/ten"
-                            android:background="@drawable/back_edittext_default"
-                            android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorAccent"
-                            android:hint="Enter Pincode"
-                            android:inputType="number"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
-                            android:textSize="@dimen/ts_seventeen"
-                            android:visibility="gone" />
+
+
+
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:id="@+id/lay_state"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/edittext_height"
@@ -438,7 +344,6 @@
                                 android:layout_toRightOf="@+id/img_drawable"
                                 android:gravity="center_vertical"
                                 android:hint="Select State"
-                                android:textColor="@color/black"
                                 android:textColorHint="@color/colorAccent"
                                 android:textSize="@dimen/ts_seventeen" />
 
@@ -456,6 +361,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:id="@+id/lay_district"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/edittext_height"
@@ -506,6 +412,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/thirty"
@@ -547,26 +454,7 @@
 
                         </RelativeLayout>
 
-                        <EditText
-                            android:visibility="gone"
-                            android:id="@+id/ed_block1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/ten"
-                            android:background="@drawable/back_edittext_default"
-                            android:drawableLeft="@drawable/ic_baseline_person_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/colorAccent"
-                            android:hint="Enter block name"
-                            android:inputType="text"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
-                            android:textSize="@dimen/ts_seventeen" />
+
 
                         <LinearLayout
                             android:layout_width="match_parent"

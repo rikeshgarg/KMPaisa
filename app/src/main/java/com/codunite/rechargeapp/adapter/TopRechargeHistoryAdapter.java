@@ -148,7 +148,7 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             });
 
             if (isComplaint) {
-                view.btnComplain.setVisibility(View.GONE);
+                view.btnComplain.setVisibility(View.VISIBLE);
             }else{
                 view.btnComplain.setVisibility(View.GONE);
             }

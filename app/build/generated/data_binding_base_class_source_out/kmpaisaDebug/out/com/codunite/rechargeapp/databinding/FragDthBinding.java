@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -68,6 +69,12 @@ public final class FragDthBinding implements ViewBinding {
   public final NestedScrollView nestedScrollView;
 
   @NonNull
+  public final ProgressBar progressbarLoadOne;
+
+  @NonNull
+  public final ProgressBar progressbarLoadTwo;
+
+  @NonNull
   public final Spinner spinnerDthcirclelist;
 
   @NonNull
@@ -94,7 +101,8 @@ public final class FragDthBinding implements ViewBinding {
       @NonNull EditText dthCardnumber, @NonNull EditText edtOtp, @NonNull ImageView imgDrop1,
       @NonNull ImageView imgDrop2, @NonNull RelativeLayout layCircle,
       @NonNull RelativeLayout layOperator, @NonNull LinearLayout mylayout,
-      @NonNull NestedScrollView nestedScrollView, @NonNull Spinner spinnerDthcirclelist,
+      @NonNull NestedScrollView nestedScrollView, @NonNull ProgressBar progressbarLoadOne,
+      @NonNull ProgressBar progressbarLoadTwo, @NonNull Spinner spinnerDthcirclelist,
       @NonNull Spinner spinnerDthoperatorlist, @NonNull TextView txtAvailbalance,
       @NonNull TextView txtCurrency, @NonNull TextView txtName, @NonNull TextView txtRoffers,
       @NonNull TextView txtViewallplans) {
@@ -113,6 +121,8 @@ public final class FragDthBinding implements ViewBinding {
     this.layOperator = layOperator;
     this.mylayout = mylayout;
     this.nestedScrollView = nestedScrollView;
+    this.progressbarLoadOne = progressbarLoadOne;
+    this.progressbarLoadTwo = progressbarLoadTwo;
     this.spinnerDthcirclelist = spinnerDthcirclelist;
     this.spinnerDthoperatorlist = spinnerDthoperatorlist;
     this.txtAvailbalance = txtAvailbalance;
@@ -229,6 +239,18 @@ public final class FragDthBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressbar_load_one;
+      ProgressBar progressbarLoadOne = ViewBindings.findChildViewById(rootView, id);
+      if (progressbarLoadOne == null) {
+        break missingId;
+      }
+
+      id = R.id.progressbar_load_two;
+      ProgressBar progressbarLoadTwo = ViewBindings.findChildViewById(rootView, id);
+      if (progressbarLoadTwo == null) {
+        break missingId;
+      }
+
       id = R.id.spinner_dthcirclelist;
       Spinner spinnerDthcirclelist = ViewBindings.findChildViewById(rootView, id);
       if (spinnerDthcirclelist == null) {
@@ -273,8 +295,9 @@ public final class FragDthBinding implements ViewBinding {
 
       return new FragDthBinding((LinearLayout) rootView, btnDthrecharge, btnOtpauth, btnOtpcancel,
           cardDth, cardOtp, dthAmount, dthCardnumber, edtOtp, imgDrop1, imgDrop2, layCircle,
-          layOperator, mylayout, nestedScrollView, spinnerDthcirclelist, spinnerDthoperatorlist,
-          txtAvailbalance, txtCurrency, txtName, txtRoffers, txtViewallplans);
+          layOperator, mylayout, nestedScrollView, progressbarLoadOne, progressbarLoadTwo,
+          spinnerDthcirclelist, spinnerDthoperatorlist, txtAvailbalance, txtCurrency, txtName,
+          txtRoffers, txtViewallplans);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

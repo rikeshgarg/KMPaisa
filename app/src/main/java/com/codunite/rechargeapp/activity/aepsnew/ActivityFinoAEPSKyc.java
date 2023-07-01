@@ -141,7 +141,7 @@ public class ActivityFinoAEPSKyc extends AppCompatActivity implements View.OnCli
         callWebService(ApiInterface.GETFINOAEPSPIPELINE, lstUploadData);
 
         listSpinnerStateList.add("-1#:#Loading State");
-        listSpinnerCityList.add("-1#:#Select State");
+        listSpinnerCityList.add("-1#:#Select City");
         PopulateState();
         PopulateCity();
         LoadState();
@@ -793,7 +793,7 @@ public class ActivityFinoAEPSKyc extends AppCompatActivity implements View.OnCli
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
                 } else if (str_status.equalsIgnoreCase("2")) {
                     PreferenceConnector.writeBoolean(svContext, PreferenceConnector.ISICICIAEPSKYCDONE, true);
-                    ActivityMain.OpenNewAeps("Fino AEPS", svContext, customToast);
+                    //ActivityMain.OpenNewAeps("Fino AEPS", svContext, customToast);
                     finish();
                 } else {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastySuccess);

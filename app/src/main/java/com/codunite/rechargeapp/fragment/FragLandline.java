@@ -55,7 +55,7 @@ public class FragLandline extends Fragment implements OnClickListener, WebServic
     private EditText edCardNumber;
     public static EditText edDthRechargeAmount;
     private EditText[] edDthRecharge = {edCardNumber, edDthRechargeAmount};
-    private String[] edDthTextsError = {"Enter card number", "Enter amount"};
+    private String[] edDthTextsError = {"Enter Telephone Number", "Enter amount"};
     private int[] editTextDthClickId = {R.id.dth_cardnumber, R.id.dth_amount};
 
     private View[] allViewWithClick = {btnDthrecharge, layOperator, layCircle, txtViewAllPlans, txtROffers};
@@ -113,11 +113,13 @@ public class FragLandline extends Fragment implements OnClickListener, WebServic
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebServiceWithoutLoader(ApiInterface.CIRCLELIST, lstUploadData);
+        hideOtpLayout();
     }
 
     private void LoadOperatorList(String rechargeType) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(rechargeType);
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebServiceWithoutLoader(ApiInterface.OPERATORLIST, lstUploadData);
     }
 
@@ -134,6 +136,7 @@ public class FragLandline extends Fragment implements OnClickListener, WebServic
 
         edCardNumber = (EditText) editTexts[0];
         edDthRechargeAmount = (EditText) editTexts[1];
+        edCardNumber.setHint("Enter Telephone Number");
     }
 
     private void OnClickCombineDeclare(View[] allViewWithClick) {

@@ -81,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/fortyfive"
                     android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/ten"
                     android:layout_marginStart="4dp"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"

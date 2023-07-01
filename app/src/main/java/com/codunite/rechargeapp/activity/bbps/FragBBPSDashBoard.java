@@ -54,12 +54,12 @@ public class FragBBPSDashBoard extends Fragment implements OnClickListener, WebS
             "{\"service_id\":\"8\",\"title\":\"WATER\"}," +
             "{\"service_id\":\"25\",\"title\":\"OTT\"}" +
             "]}";
-    private int[] allDrawable = {R.drawable.bbps_landline, R.drawable.bbps_cable_tv, R.drawable.bbps_club_association,
+    private int[] allDrawable = {R.drawable.bbps_boardband, R.drawable.bbps_cable_tv, R.drawable.bbps_club_association,
             R.drawable.bbps_cradit_card, R.drawable.bbps_education,
-            R.drawable.bbps_electricity, R.drawable.bbps_entertainment, R.drawable.bbps_fastag,
+            R.drawable.bbps_electricity, R.drawable.bbps_entertainment, R.drawable.fastag,
             R.drawable.bbps_lpg_gas,
             R.drawable.bbps_hospital, R.drawable.bbps_housing, R.drawable.bbps_insurance, R.drawable.bbps_landline,
-            R.drawable.bbps_loan, R.drawable.bbps_gas, R.drawable.bbps_mobile_recharge,
+            R.drawable.bbps_loan, R.drawable.bbps_gas, R.drawable.postpaid,
             R.drawable.bbps_muncipal_tax, R.drawable.bbps_muncipal_tax, R.drawable.bbps_subscription,
             R.drawable.bbps_transit_card,
             R.drawable.bbps_travels, R.drawable.bbps_water, R.drawable.bbps_subscription};

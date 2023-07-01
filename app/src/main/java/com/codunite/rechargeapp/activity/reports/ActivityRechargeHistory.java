@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.activity.reports;
 
 import android.app.DatePickerDialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +24,7 @@ import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.activity.support.ActivityRaiseComplaint;
 import com.codunite.rechargeapp.activity.ActivitySplash;
 import com.codunite.rechargeapp.adapter.PaginationAdapter;
+import com.codunite.rechargeapp.adapter.TopRechargeHistoryAdapter;
 import com.codunite.rechargeapp.model.RechargeHistoryModel;
 import com.codunite.commonutility.GetFormattedDateTime;
 import com.codunite.commonutility.GlobalVariables;
@@ -45,13 +48,15 @@ import java.util.List;
 public class ActivityRechargeHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
     private ImageView imgToolBarBack;
     private TextView txtWalletbal;
+    private Context svContext;
+    private ShowCustomToast customToast;
 
     private RecyclerView wallethistoryrv, rvPagination;
     private boolean isFirstLoad = true;
     private NestedScrollView layNestedScroll;
     private int pageNumber = 1;
     private String strFromDate = "", strToDate = "";
-
+    private String strSearchKey = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +89,8 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
         txtTo = (TextView) findViewById(R.id.datePicker_to);
         layrefrsh = (SwipeRefreshLayout) findViewById(R.id.layrefrsh);
-
+        txtFrom.setText(GetFormattedDateTime.getcurrentcalDate());
+        txtTo.setText(GetFormattedDateTime.getcurrentcalDate());
         DatePickerDialog.OnDateSetListener date = (view, year, monthOfYear, dayOfMonth) -> {
             int month = monthOfYear + 1;
             String selectedDate = year + "-" + (month >= 10 ? month : "0" + month)
@@ -149,7 +155,7 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
         isFirstLoad = true;
         pageNumber = 1;
         LoadRechargeHistory(strFromDate, strToDate);
-
+        setSearchView();
         layrefrsh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -185,15 +191,10 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
-        lstUploadData.add("" + pageNumber);
+        lstUploadData.add(strSearchKey);
+        //lstUploadData.add("" + pageNumber);
         callWebService(ApiInterface.RECHARGEHISTORY, lstUploadData);
     }
-
-    private Context svContext;
-    private ShowCustomToast customToast;
-
-
-
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
@@ -207,8 +208,6 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
         hideKeyboard();
         loadToolBar();
     }
-
-
     private void loadToolBar() {
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
@@ -271,11 +270,11 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
                 String str_message = json.getString(TAG_MESSAGE);
                 String str_json_status = json.getString(TAG_STATUS);
 
-                try {
-                    strPageCount = Integer.parseInt(json.getString("pages"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    strPageCount = Integer.parseInt(json.getString("pages"));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
                 if (str_json_status.equalsIgnoreCase("0")) {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
@@ -307,6 +306,7 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
 
                         lstItems.add(new RechargeHistoryModel(str_recharge_id, memberDeatil, str_order_id, str_amount, str_datetime, str_status,
                                 operator, mobile, type, beforeBalance, afterBalance, txtId, operatorTranId));
+//
                     }
                 }
             } catch (JSONException e) {
@@ -318,12 +318,30 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
             int animation_type = ItemAnimation.LEFT_RIGHT;
+            TopRechargeHistoryAdapter mAdapter = new TopRechargeHistoryAdapter(this, lstItems, animation_type, true);
+            wallethistoryrv.setAdapter(mAdapter);
+            mAdapter.setOnItemClickListener(new TopRechargeHistoryAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, String obj, int position) {
 
-            layNestedScroll.scrollTo(0, 0);
-            if (isFirstLoad) {
-                isFirstLoad = false;
-                LoadPaginationView(strPageCount);
-            }
+                }
+            });
+
+            mAdapter.setOnComplaintItemClickListener(new TopRechargeHistoryAdapter.OnComplaintItemClickListener() {
+                @Override
+                public void onComplaintItemClick(View view, String obj, int position) {
+                    Intent intent = new Intent(svContext, ActivityRaiseComplaint.class);
+                    intent.putExtra("comp_from", false);
+                    intent.putExtra("rechg_id", lstItems.get(position).getStr_recharge_id());
+                    intent.putExtra("rechg_amount", lstItems.get(position).getStr_amount());
+                    startActivity(intent);
+                }
+            });
+//            layNestedScroll.scrollTo(0, 0);
+//            if (isFirstLoad) {
+//                isFirstLoad = false;
+//                LoadPaginationView(strPageCount);
+//            }
         } else if (url.contains(ApiInterface.UPDATEFCM)) {
             ActivitySplash.LoadUserData(result, svContext);
             loadToolBar();
@@ -360,5 +378,30 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
     public void onBackPressed() {
         hideKeyboard();
         super.onBackPressed();
+    }
+
+    private void setSearchView() {
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) findViewById(R.id.searchview);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+
+        // listening to search query text change
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+        });
     }
 }

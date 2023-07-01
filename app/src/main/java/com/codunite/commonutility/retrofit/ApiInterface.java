@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -20,11 +21,15 @@ public interface ApiInterface {
 
     String NSDLPAYCARD = "nsdlPanAuth";
     String UPDATEFCM = "userDetail";
-    String LOGIN = "userAuth"; //ok
+
     String LOGNUSER = "loginAuth"; //ok
+    String LOGINOTPVERIFY = "loginOtpAuth"; //ok
+
+    String LOGIN = "userAuth"; //ok
+
     String SIGNUP = "registerAuth"; //unused
-    String OPERATORLIST = "operatorList"; //ok
-    String CIRCLELIST = "circleList"; //ok
+    String OPERATORLIST = "getOperatorList"; //ok
+    String CIRCLELIST = "getCircleList"; //ok
     String FORGOTPWDAUTH = "forgotAuth";
     String FORGOTPWDOTPVERIFY = "forgotOTPAuth";
     String FORGOTUPDATEPWD = "updatePasswordAuth";
@@ -43,9 +48,11 @@ public interface ApiInterface {
     String GETCASHBACKINCOME = "getCashbackIncome";
 
     String GETMATCHINGBINARY = "getMatchingBinaryIncome";//unused
-    String WALLETHISTORY = "getMainWalletList";
+    String WALLETHISTORY = "getWalletList";
     String EWALLETHISTORY = "getEWalletList";
     String REQUESTHISTORY = "getRequestHistory";
+
+    String E_REQUESTHISTORY = "getEwalletRequestHistory";
     String RECHARGEHISTORY = "getRechargeHistory";
     String RECHARGECOMMISIONHISTORY = "getRechargeCommisionHistory";
     String GETELECTRICITYBILLERDETAIL = "getElectricityBillerDetail";//unused
@@ -53,7 +60,7 @@ public interface ApiInterface {
     String WALLETTRANSFER = "walletAuth";//unused
     String WALLETOTPAUTH = "walletsTransferOtpAuth";//unused
     String MTRANSFERHISTORY = "getFundTransferList";
-    String MOBILETRANSFER = "fundTransferAutho";//unused
+    String MOBILETRANSFER = "fundTransferAuth";//unused
     String MOBILETRANSFERVERIFY = "transferOTPAuth";//unused
     String UPGRADE = "upgrade";//unused
     String GETDASHBOARD = "dashboardAuth";//unused
@@ -81,6 +88,11 @@ public interface ApiInterface {
     String GETTICKETTYPELIST = "getTicketTypeList";
     String REQUESTAMOUNT = "requestwalletamount";
 
+    String VIRTUAL_ACCOUNT_AUTH = "virtualAccountAuth";
+    String VIRTUAL_ACTIVE_AUTH = "activeVirtualAuth";
+
+    String VIRTUAL_ACCOUNT_REPORT = "virtualAccountList";
+
     String GET_CONTACT_CONTENT = "getContactContent";
     String SUBMIT_CONTACT_CONTENT = "submitContactUsForm";
     String GET_PRIVACY_CONTENT = "getPrivacyContent";
@@ -93,7 +105,8 @@ public interface ApiInterface {
     String VIEWALLPLANS = "getPlanList";
     String VIEWALLDTHPLANS = "getDTHPlanList";
     String GETOPERATORID = "getOperatorId";
-    String GETRECHARGECOMMISIONLIST = "getRechargeCommission";
+    //String GETRECHARGECOMMISIONLIST = "getRechargeCommission";
+    String GETRECHARGECOMMISIONLIST = "getRechargeCommisionList";
     String GETBBPSCOMMISIONLIST = "getBBPSCommisionList";
     String GETBBPSLIVECOMMISIONLIST = "getBbpsCommission";
     String GETRECHARGEINCOME = "getRechargeIncome";
@@ -126,7 +139,7 @@ public interface ApiInterface {
     String PAYOUTAUTH = "payoutAuth";
     String GETPAYOUTTRANSFERREPORT = "fundTransferHistory";
     String MONEYTRANSFERlOGIN = "moneyTransferLogin";
-    String MONEYTRANSFERAUTH = "fundTransferAuth";
+    String MONEYTRANSFERAUTH = "fundTransferAuth0";
     String MONEYTRANSFEROTPAUTH = "fundTransferOtpAuth";
     String GETMONEYTRANSFERHISTORY = "getMoneyTransferHistory";
     String GETBBPSOPERATORLIST = "getBbpsOperatorList";
@@ -273,6 +286,13 @@ public interface ApiInterface {
     String WITHDRAWALREQUESTAMOUNT = "getWithdrawalRequest";
 
     String ADDWALLETRAZORPAY = "paymentCallback";
+
+
+    String GET_SENDER_DETAILS = "getSenderDetail";
+    String UPDATE_SENDER_DETAILS = "updateSenderDetailAuth";
+    String DELETE_DMT_BENEFICERY = "deleteDmtBen";
+    String DMT_BANK_LIST = "dmtBankList";
+
     @FormUrlEncoded
     @POST(ADDWALLETRAZORPAY)
     Call<String> AddWalletCallback(@Field("user_id") String user_id,
@@ -822,10 +842,13 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST(ADDTRANSFERBENEFICERY)
     Call<String> addBeneficiary(@Field("userID") String user_id,
+                                @Field("mobile") String mobile,
                                 @Field("account_holder_name") String accholdername,
-                                @Field("bank_name") String bnkname,
-                                @Field("account_number") String accno,
-                                @Field("ifsc") String ifsc);
+                                @Field("ben_mobile") String benmob,
+                                @Field("account_no") String accno,
+                                @Field("ifsc") String ifsc,
+                                @Field("bankID") String bankID,
+                                @Field("is_verify") String is_verify);
 
     @FormUrlEncoded
     @POST(BENEFICIARYOTPAUTH)
@@ -895,7 +918,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(MONEYTRANSFERREGISTEROTP)
-    Call<String> moneyTransferOtpRegister(@Field("userID") String user_id,
+    Call<String> moneyTransferOtpRegister(@Field("user_id") String user_id,
                                           @Field("token") String token,
                                           @Field("otp_code") String otp);
 
@@ -913,7 +936,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(REGISTERTRANSFER)
-    Call<String> moneyTransferRegister(@Field("userID") String user_id,
+    Call<String> moneyTransferRegister(@Field("user_id") String user_id,
                                        @Field("first_name") String fname,
                                        @Field("last_name") String lname,
                                        @Field("mobile") String mobile,
@@ -1110,8 +1133,9 @@ public interface ApiInterface {
     @GET(GETCOUNTRYLIST)
     Call<String> GETCOUNTRYLIST();
 
-    @GET(GETTICKETTYPELIST)
-    Call<String> GetTicketTypelist();
+    @FormUrlEncoded
+    @POST(GETTICKETTYPELIST)
+    Call<String> GetTicketTypelist(@Field("user_id") String userId);
 
     @FormUrlEncoded
     @POST(GETOPERATORID)
@@ -1119,7 +1143,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GetSTATELIST)
-    Call<String> GetSTATELIST(@Field("countryCode") String code);
+    Call<String> getStateList(@Field("user_id") String userId);
 
     @GET(GetCITYLIST)
     Call<String> getCityList();
@@ -1134,21 +1158,18 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(OPERATORLIST)
-    Call<String> GetOperator(@Field("type") String operatorType);
+    Call<String> GetOperator(@Field("type") String operatorType,@Field("user_id") String userId);
 
     @GET(CIRCLELIST)
     Call<String> CIRCLELIST();
 
     @FormUrlEncoded
     @POST(RECHARGEAUTH)
-    Call<String> RECHARGEAUTH(@Field("userID") String userid,
-                              @Field("number") String mob,
-                              @Field("operator") String coun,
-                              @Field("circle") String state,
-                              @Field("amount") String city,
-                              @Field("type") String type,
-                              @Field("rechargeType") String rechargeType,
-                              @Field("txn_pass") String txn_pass);
+    Call<String> RECHARGEAUTH(@Field("user_id") String user_id,
+                              @Field("mobile") String mobile,
+                              @Field("operator") String operator,
+                              @Field("circle") String circle,
+                              @Field("amount") String amount);
 
 
 
@@ -1203,23 +1224,26 @@ public interface ApiInterface {
                               @Field("encode_login_id") String password);
 
     @FormUrlEncoded
-    @POST(LOGIN)
+    @POST(LOGINOTPVERIFY)
+    Call<String> LoginOTPVerify(@Field("otp_code") String otp,
+                                @Field("encode_otp_code") String encode_otp_code);
+
+    @FormUrlEncoded
+    @POST(LOGNUSER)
     Call<String> Login(@Field("username") String username,
-                       @Field("password") String password,
-                       @Field("device_id") String device_id);
+                       @Field("password") String password);
 
     @FormUrlEncoded
     @POST(SIGNUP)
     Call<String> Register(@Field("name") String name,
                           @Field("mobile") String phone,
                           @Field("email") String email,
-                          @Field("refercode") String refercode,
                           @Field("password") String password,
-                          @Field("transaction_password") String tpassword,
-                          @Field("pan_card") String pancard);
+                          @Field("transaction_password") String tpassword);
 
-    @GET(CIRCLELIST)
-    Call<String> GetCircleList();
+    @FormUrlEncoded
+    @POST(CIRCLELIST)
+    Call<String> GetCircleList(@Field("user_id") String userId);
 
     @FormUrlEncoded
     @POST(FORGOTPWDAUTH)
@@ -1282,15 +1306,16 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST(WALLETHISTORY)
     Call<String> GetWalletHistory(@Field("user_id") String userId,
-                                  @Field("fromDate") String from,
-                                  @Field("toDate") String to,
-                                  @Field("page_no") String page_no);
+                                  @Field("startDate") String fromDate,
+                                  @Field("endDate") String toDate,
+                                  @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(EWALLETHISTORY)
     Call<String> GetEWalletHistory(@Field("user_id") String userId,
-                                   @Field("fromDate") String from,
-                                   @Field("toDate") String to);
+                                   @Field("startDate") String fromDate,
+                                   @Field("endDate") String toDate,
+                                   @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(GETAEPSWALLETHISTORY)
@@ -1320,6 +1345,10 @@ public interface ApiInterface {
                                    @Field("toDate") String to);
 
     @FormUrlEncoded
+    @POST(E_REQUESTHISTORY)
+    Call<String> GetERequestHistory(@Field("user_id") String userId);
+
+    @FormUrlEncoded
     @POST(ADDWALLET)
     Call<String> AddWallet(@Field("userID") String operatorType,
                            @Field("amount") String amount);
@@ -1343,10 +1372,12 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(MOBILETRANSFER)
-    Call<String> TransferMwalletAmount(@Field("userID") String userid,
-                                       @Field("bene_id") String mobilenumber,
-                                       @Field("txn_pass") String holderName,
-                                       @Field("amount") String accountNumber);
+    Call<String> TransferMwalletAmount(@Field("user_id") String userid,
+                                       @Field("mobile") String mobilenumber,
+                                       @Field("account_holder_name") String holderName,
+                                       @Field("account_no") String accountNumber,
+                                       @Field("ifsc") String ifsc,
+                                       @Field("amount") String amount);
 
     @FormUrlEncoded
     @POST(MOBILETRANSFERVERIFY)
@@ -1422,9 +1453,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(RECHARGECOMMISIONHISTORY)
-    Call<String> GetRechargeCommisionHistory(@Field("userID") String userId,
-                                             @Field("fromDate") String from,
-                                             @Field("toDate") String to);
+    Call<String> GetRechargeCommisionHistory(@Field("userID") String userId);
 
     @FormUrlEncoded
     @POST(GETCREDITCARDHISTORY)
@@ -1691,5 +1720,38 @@ public interface ApiInterface {
                                         @Field("order_id") String order_id,
                                         @Field("amount") String Amount,
                                         @Field("payment_status") String PaymentStatus);
+
+    @FormUrlEncoded
+    @POST(VIRTUAL_ACCOUNT_AUTH)
+    Call<String> virtualAccountAuth(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(VIRTUAL_ACTIVE_AUTH)
+    Call<String> activeVirtualAuth(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(VIRTUAL_ACCOUNT_REPORT)
+    Call<String> virtualAccountList(@Field("user_id") String user_id,
+                                    @Field("startDate") String fromDate,
+                                    @Field("endDate") String toDate,
+                                    @Field("keyword") String keyword);
+
+    @GET(DMT_BANK_LIST)
+    Call<String> dmtBankList();
+
+    @FormUrlEncoded
+    @POST(GET_SENDER_DETAILS)
+    Call<String> getSenderDetail(@Field("userID") String user_id,
+                                 @Field("mobile") String mobile);
+
+    @FormUrlEncoded
+    @POST(UPDATE_SENDER_DETAILS)
+    Call<String> updateSenderDetailAuth(@Field("userID") String user_id,
+                                        @Field("accountMobile") String mobile,
+                                        @Field("first_name") String first_name,
+                                        @Field("last_name") String last_name,
+                                        @Field("dob") String dob,
+                                        @Field("address") String address,
+                                        @Field("pin_code") String pin_code);
 
 }

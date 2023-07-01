@@ -391,10 +391,14 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
         lstEditext = new ArrayList<>();
         for (int i = 0; i < lstParam.size(); i++) {
             View child = getLayoutInflater().inflate(R.layout.item_dynamiclay, null);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int) getResources().getDimension(R.dimen.fortyfive));
+            lp.setMargins(0, 0, 0, (int) getResources().getDimension(R.dimen.fifteen));
+
             EditText edItem = (child).findViewById(R.id.param_name);
             edItem.setHint(lstParam.get(i).getParamName());
 
             edItem.setId(i);
+            edItem.setLayoutParams(lp);
             edItem.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {

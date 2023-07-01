@@ -95,7 +95,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebService(ApiInterface.GETTICKETTYPELIST, lstUploadData);
 
-        OpenDemoLink();
+        //OpenDemoLink();
     }
 
     private void PopulateSpinner(){
@@ -277,6 +277,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
                     imgProfilePic.setImageDrawable(null);
                     imgProfilePic.setBackgroundResource(R.drawable.users);
                     imgProfilePic.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                    txtNoFile.setVisibility(View.VISIBLE);
                 }
                 break;
         }
@@ -289,6 +290,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         if (ActivityBrowseProfileImage.imageUri != null) {
             imageUri = ActivityBrowseProfileImage.imageUri;
             imgProfilePic.setImageURI(null);
+            imgProfilePic.setBackgroundResource(0);
             imgProfilePic.setImageURI(imageUri);
             ActivityBrowseProfileImage.imageUri = null;
             txtNoFile.setVisibility(View.INVISIBLE);
@@ -317,7 +319,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
                 lstUploadData.add(edCompalintTitle.getText().toString().trim());
                 lstUploadData.add(listSpinner.get(ticketType.getSelectedItemPosition()).split("#:#")[0]);
                 lstUploadData.add(edCompalintDesc.getText().toString().trim());
-                lstUploadData.add("photo");
+                lstUploadData.add("");
                 callWebService(ApiInterface.SUBMITCOMPALINT, lstUploadData);
             } else {
                 lstUploadData = new LinkedList<>();

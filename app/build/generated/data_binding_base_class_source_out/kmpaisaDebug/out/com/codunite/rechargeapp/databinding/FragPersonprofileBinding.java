@@ -7,18 +7,27 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
+import com.denzcoskun.imageslider.ImageSlider;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
+import me.grantland.widget.AutofitTextView;
 
 public final class FragPersonprofileBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
+
+  @NonNull
+  public final CardView cardSlider;
+
+  @NonNull
+  public final ImageSlider imageSlider;
 
   @NonNull
   public final LinearLayout mylayout;
@@ -35,15 +44,32 @@ public final class FragPersonprofileBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvDashboardWallet;
 
-  private FragPersonprofileBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout mylayout,
+  @NonNull
+  public final AutofitTextView totalFailed;
+
+  @NonNull
+  public final AutofitTextView totalPending;
+
+  @NonNull
+  public final AutofitTextView totalSuccess;
+
+  private FragPersonprofileBinding(@NonNull LinearLayout rootView, @NonNull CardView cardSlider,
+      @NonNull ImageSlider imageSlider, @NonNull LinearLayout mylayout,
       @NonNull NestedScrollView nestedScrollView, @NonNull RecyclerView rvDashGeneology,
-      @NonNull RecyclerView rvDashboard, @NonNull RecyclerView rvDashboardWallet) {
+      @NonNull RecyclerView rvDashboard, @NonNull RecyclerView rvDashboardWallet,
+      @NonNull AutofitTextView totalFailed, @NonNull AutofitTextView totalPending,
+      @NonNull AutofitTextView totalSuccess) {
     this.rootView = rootView;
+    this.cardSlider = cardSlider;
+    this.imageSlider = imageSlider;
     this.mylayout = mylayout;
     this.nestedScrollView = nestedScrollView;
     this.rvDashGeneology = rvDashGeneology;
     this.rvDashboard = rvDashboard;
     this.rvDashboardWallet = rvDashboardWallet;
+    this.totalFailed = totalFailed;
+    this.totalPending = totalPending;
+    this.totalSuccess = totalSuccess;
   }
 
   @Override
@@ -73,6 +99,18 @@ public final class FragPersonprofileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.card_slider;
+      CardView cardSlider = ViewBindings.findChildViewById(rootView, id);
+      if (cardSlider == null) {
+        break missingId;
+      }
+
+      id = R.id.image_slider;
+      ImageSlider imageSlider = ViewBindings.findChildViewById(rootView, id);
+      if (imageSlider == null) {
+        break missingId;
+      }
+
       LinearLayout mylayout = (LinearLayout) rootView;
 
       id = R.id.nested_scroll_view;
@@ -99,8 +137,27 @@ public final class FragPersonprofileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragPersonprofileBinding((LinearLayout) rootView, mylayout, nestedScrollView,
-          rvDashGeneology, rvDashboard, rvDashboardWallet);
+      id = R.id.total_failed;
+      AutofitTextView totalFailed = ViewBindings.findChildViewById(rootView, id);
+      if (totalFailed == null) {
+        break missingId;
+      }
+
+      id = R.id.total_pending;
+      AutofitTextView totalPending = ViewBindings.findChildViewById(rootView, id);
+      if (totalPending == null) {
+        break missingId;
+      }
+
+      id = R.id.total_success;
+      AutofitTextView totalSuccess = ViewBindings.findChildViewById(rootView, id);
+      if (totalSuccess == null) {
+        break missingId;
+      }
+
+      return new FragPersonprofileBinding((LinearLayout) rootView, cardSlider, imageSlider,
+          mylayout, nestedScrollView, rvDashGeneology, rvDashboard, rvDashboardWallet, totalFailed,
+          totalPending, totalSuccess);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

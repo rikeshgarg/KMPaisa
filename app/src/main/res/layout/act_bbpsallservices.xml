@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,6 +47,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:background="@drawable/bg_round_corner_white"
                         android:id="@+id/card_electrical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -63,9 +65,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/fortyfive"
                             android:layout_marginTop="@dimen/fifteen"
-                            android:background="@drawable/back_spinner">
+                            android:background="@drawable/back_edittext_default">
 
                             <Spinner
+                                android:background="@android:color/transparent"
                                 android:id="@+id/spinner_serviceoperator"
                                 android:layout_width="fill_parent"
                                 android:layout_height="@dimen/fortyfive"
@@ -81,7 +84,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginRight="@dimen/five"
                                 android:src="@drawable/ic_arrow_drop"
-                                app:tint="@color/colorPrimary" />
+                                />
                         </RelativeLayout>
 
 
@@ -90,9 +93,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/fortyfive"
                             android:layout_marginTop="@dimen/fifteen"
-                            android:background="@drawable/back_spinner">
+                            android:background="@drawable/back_edittext_default">>
 
                             <Spinner
+                                android:background="@android:color/transparent"
                                 android:id="@+id/spinner_electricoperatorlist"
                                 android:layout_width="fill_parent"
                                 android:layout_height="@dimen/fortyfive"
@@ -108,10 +112,11 @@
                                 android:layout_gravity="center"
                                 android:layout_marginRight="@dimen/five"
                                 android:src="@drawable/ic_arrow_drop"
-                                app:tint="@color/colorPrimary" />
+                                />
                         </RelativeLayout>
 
                         <View
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="0.5dp"
                             android:background="@color/c_gray2" />
@@ -147,7 +152,8 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/fortyfive"
-                                android:layout_marginTop="@dimen/three">
+                                android:layout_marginTop="@dimen/three"
+                                android:background="@drawable/back_edittext_default">
 
                                 <TextView
                                     android:id="@+id/txt_currency"
@@ -168,7 +174,6 @@
                                     android:layout_toLeftOf="@+id/txt_viewallplans"
                                     android:layout_toRightOf="@+id/txt_currency"
                                     android:background="@drawable/back_edittext_noborder_light"
-                                    android:backgroundTint="#ffffff"
                                     android:foregroundTint="@color/colorPrimary"
                                     android:hint="Amount"
                                     android:inputType="numberDecimal"
@@ -195,6 +200,7 @@
                             </RelativeLayout>
 
                             <View
+                                android:visibility="gone"
                                 android:layout_width="match_parent"
                                 android:layout_height="0.5dp"
                                 android:background="@color/c_gray2" />
@@ -211,13 +217,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/fortyfive"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="3.0dip"
+                                android:layout_marginTop="@dimen/fifteen"
+                                android:layout_marginBottom="@dimen/ten"
                                 android:background="@drawable/blue_button_background"
                                 android:gravity="center"
-                                android:paddingStart="@dimen/twenty"
-                                android:paddingLeft="8dp"
-                                android:paddingRight="@dimen/twenty"
+                                android:paddingLeft="@dimen/thirty"
+                                android:paddingRight="@dimen/thirty"
                                 android:text="Confirm"
                                 android:textColor="#ffffffff" />
                         </LinearLayout>
@@ -262,21 +267,20 @@
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
                             android:text="Enter Transcation Password!"
-                            android:textColor="@color/colorPrimary" />
+                            android:textColor="@color/colorAccent" />
 
                         <EditText
                             android:id="@+id/edt_otp"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/forty"
+                            android:layout_height="@dimen/fortyfive"
                             android:layout_marginStart="@dimen/twentyfive"
                             android:layout_marginEnd="@dimen/twentyfive"
                             android:layout_toRightOf="@+id/txt_currency"
-                            android:background="@drawable/back_spinner"
-                            android:foregroundTint="@color/colorPrimary"
+                            android:background="@drawable/back_edittext_default"
                             android:hint="Enter Transcation Password"
                             android:inputType="number"
                             android:maxLength="4"
-                            android:paddingLeft="@dimen/five"
+                            android:paddingLeft="@dimen/fifteen"
                             android:textColor="@color/c_black"
                             android:textCursorDrawable="@drawable/color_cursor"
                             app:hintTextColor="?attr/colorPrimary" />

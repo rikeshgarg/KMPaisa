@@ -159,6 +159,7 @@
 
 
                 <include
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/five"
                     layout="@layout/include_demourl"
                     android:layout_width="match_parent"
@@ -168,6 +169,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/history_rv"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/ten"

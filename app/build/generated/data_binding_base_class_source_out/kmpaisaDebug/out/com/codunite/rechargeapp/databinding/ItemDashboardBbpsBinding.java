@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -24,16 +25,20 @@ public final class ItemDashboardBbpsBinding implements ViewBinding {
   public final RelativeLayout cardview;
 
   @NonNull
+  public final CardView cardviewItem;
+
+  @NonNull
   public final ImageView imgdrawable;
 
   @NonNull
   public final AutofitTextView name;
 
   private ItemDashboardBbpsBinding(@NonNull RelativeLayout rootView,
-      @NonNull RelativeLayout cardview, @NonNull ImageView imgdrawable,
-      @NonNull AutofitTextView name) {
+      @NonNull RelativeLayout cardview, @NonNull CardView cardviewItem,
+      @NonNull ImageView imgdrawable, @NonNull AutofitTextView name) {
     this.rootView = rootView;
     this.cardview = cardview;
+    this.cardviewItem = cardviewItem;
     this.imgdrawable = imgdrawable;
     this.name = name;
   }
@@ -67,6 +72,12 @@ public final class ItemDashboardBbpsBinding implements ViewBinding {
     missingId: {
       RelativeLayout cardview = (RelativeLayout) rootView;
 
+      id = R.id.cardview_item;
+      CardView cardviewItem = ViewBindings.findChildViewById(rootView, id);
+      if (cardviewItem == null) {
+        break missingId;
+      }
+
       id = R.id.imgdrawable;
       ImageView imgdrawable = ViewBindings.findChildViewById(rootView, id);
       if (imgdrawable == null) {
@@ -79,7 +90,8 @@ public final class ItemDashboardBbpsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemDashboardBbpsBinding((RelativeLayout) rootView, cardview, imgdrawable, name);
+      return new ItemDashboardBbpsBinding((RelativeLayout) rootView, cardview, cardviewItem,
+          imgdrawable, name);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

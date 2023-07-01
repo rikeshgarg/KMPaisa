@@ -23,7 +23,9 @@ public class AEPStHistoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private final String[] strColors = {"#388E3C", "#D32F2F"};
 
     public interface OnItemClickListener {
-        void onItemClick(View view, String obj, int position);
+        void onItemClick(View view, FinoAEPSHistoryModel obj, int position);
+
+        void onInvoiceClick(View view, FinoAEPSHistoryModel obj, int position);
     }
 
     public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
@@ -103,7 +105,7 @@ public class AEPStHistoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View view) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onItemClick(view, items.get(position).getTxnID(), position);
+                        mOnItemClickListener.onItemClick(view, items.get(position), position);
                     }
                 }
             });

@@ -10,14 +10,17 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.codunite.commonutility.CheckInternet;
+import com.codunite.commonutility.GlobalData;
 import com.codunite.commonutility.GlobalVariables;
 import com.codunite.commonutility.ItemAnimation;
 import com.codunite.commonutility.PreferenceConnector;
@@ -26,36 +29,36 @@ import com.codunite.commonutility.WebService;
 import com.codunite.commonutility.WebServiceListener;
 import com.codunite.commonutility.customfont.FontUtils;
 import com.codunite.rechargeapp.R;
+import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.rechargeapp.activity.ActivityMain;
+import com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory;
 import com.codunite.rechargeapp.adapter.DashboardAdapter;
 import com.codunite.rechargeapp.model.DashboardModel;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.interfaces.ItemClickListener;
+import com.denzcoskun.imageslider.models.SlideModel;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FragReport extends Fragment implements OnClickListener, WebServiceListener {
+public class FragReport extends Fragment implements OnClickListener {
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
-    private List<DashboardModel> lstDashBoardReports = new ArrayList<>();
-    private List<DashboardModel> lstDashBoardIncome = new ArrayList<>();
-    private TextView todayCollection, totalCollection;
-    public final String[] selectedItemReports = {"Main Wallet History", "AEPS Wallet History", "Commission Wallet History",
-            "Point Wallet History", "Recharge History", "BBPS History", "AEPS History", "Fino AEPS History",
-            "BBPS Live History", "Money Transfer History"};
-    private int[] allDrawableReports = {R.drawable.main_wallet_history, R.drawable.aeps_wallet_history, R.drawable.commission_wallet_history,
-            R.drawable.point_wallet_history, R.drawable.recharge_history, R.drawable.bbps_history,
-            R.drawable.aeps_history, R.drawable.fino_aeps_history, R.drawable.bbps_history, R.drawable.acc_money_trans
-    };
+    private List<DashboardModel> lstDashBoard = new ArrayList<>();
+    public static String[] selectedItem = {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History","Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"};
+    private int[] allDrawable = {R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history,
+            R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history};
 
-    public final String[] selectedItemIncome = {"Recharge Commission", "BBPS Commission", "Aeps Commission",
-            "Recharge Income", "BBPS Income", "AEPS Income", "Direct Income", "Level Income"};
-    private int[] allDrawableIncome = {R.drawable.recharge_commission_history, R.drawable.bbps_commission_history, R.drawable.aeps_commission_history,
-            R.drawable.recharge_commission_history, R.drawable.bbps_income_history, R.drawable.aeps,
-            R.drawable.direct_income, R.drawable.rep_level_income
-    };
+    private TextView totalSuccess, totalPending, totalFailed;
+    private FrameLayout cardRecharge;
+    private Context svContext;
+    private ShowCustomToast customToast;
+    private CheckInternet checkNetwork;
+    private ViewGroup root;
 
-    public FragReport() {
-    }
+    public FragReport() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,6 +78,7 @@ public class FragReport extends Fragment implements OnClickListener, WebServiceL
             mAlreadyLoaded = true;
             aiView = getView();
         }
+
         resumeApp();
     }
 
@@ -83,81 +87,87 @@ public class FragReport extends Fragment implements OnClickListener, WebServiceL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
-            default:
+            case R.id.img_back:
+                break;
+              default:
                 break;
         }
     }
 
+    public void switchContent(Fragment fragment) {
+        hideFragmentkeyboard(svContext, aiView);
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+    }
     public void resumeApp() {
-        todayCollection = aiView.findViewById(R.id.today_bal_txt);
-        totalCollection = aiView.findViewById(R.id.total_bal_txt);
+        cardRecharge = (FrameLayout) aiView.findViewById(R.id.card_recharge);
 
-        RecyclerView rvDashReports = (RecyclerView) aiView.findViewById(R.id.rv_dash_reports);
-        RecyclerView rvDashIncome = (RecyclerView) aiView.findViewById(R.id.rv_dash_income);
+        totalSuccess = (TextView) aiView.findViewById(R.id.total_success);
+        totalPending = (TextView) aiView.findViewById(R.id.total_pending);
+        totalFailed = (TextView) aiView.findViewById(R.id.total_failed);
 
+        totalSuccess.setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALSUCCESS, ""));
+        totalPending.setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALPENDING, ""));
+        totalFailed.setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALFAILED, ""));
+
+
+        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRECHARGEACTIVE, false)) {
+            cardRecharge.setVisibility(View.VISIBLE);
+        } else {
+            cardRecharge.setVisibility(View.GONE);
+        }
+
+        for (int j = 0; j < selectedItem.length; j++) {
+            if ((selectedItem[j]).equals("M Transfer")) {
+                if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISTRANSFERACTIVE, false)) {
+                    lstDashBoard.add(new DashboardModel(selectedItem[j], allDrawable[j], false,0));
+                }
+            } else {
+                lstDashBoard.add(new DashboardModel(selectedItem[j], allDrawable[j], false,0));
+            }
+
+        }
+        RecyclerView recyclerView = (RecyclerView) aiView.findViewById(R.id.rv_dash_reports);
+
+        LoadSlider();
         root.setVisibility(View.VISIBLE);
 
-        ((TextView) aiView.findViewById(R.id.total_success)).setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALSUCCESS, "")+"/-");
-        ((TextView) aiView.findViewById(R.id.total_pending)).setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALPENDING, "")+"/-");
-        ((TextView) aiView.findViewById(R.id.total_failed)).setText(GlobalVariables.CURRENCYSYMBOL + PreferenceConnector.readString(svContext, PreferenceConnector.TOTALFAILED, "")+"/-");
+        GridLayoutManager layoutManager = new GridLayoutManager(svContext, 3);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
 
+        DashboardAdapter mAdapter = new DashboardAdapter(svContext, lstDashBoard, animation_type);
+        recyclerView.setAdapter(mAdapter);
 
-        String todayBal = getFormatBalance(PreferenceConnector.readString(svContext, PreferenceConnector.TODAYINCOME, "0"));
-        String totalBal = getFormatBalance(PreferenceConnector.readString(svContext, PreferenceConnector.TOTALINCOME, "0"));
-        todayCollection.setText(GlobalVariables.CURRENCYSYMBOL + todayBal);
-        totalCollection.setText(GlobalVariables.CURRENCYSYMBOL + totalBal);
-
-        GridLayoutManager layoutManagerReports = new GridLayoutManager(svContext, 3);
-        for (int j = 0; j < selectedItemReports.length; j++) {
-            lstDashBoardReports.add(new DashboardModel(selectedItemReports[j], allDrawableReports[j], false,0));
-        }
-        rvDashReports.setLayoutManager(layoutManagerReports);
-        rvDashReports.setHasFixedSize(true);
-        DashboardAdapter mAdapterReports = new DashboardAdapter(svContext, lstDashBoardReports, animation_type);
-        rvDashReports.setAdapter(mAdapterReports);
-        mAdapterReports.setOnItemClickListener((view, obj, position) -> {
-            ActivityMain.onDrawerItemClick(obj, svContext);
-        });
-
-        GridLayoutManager layoutManagerIncome = new GridLayoutManager(svContext, 3);
-        for (int j = 0; j < selectedItemIncome.length; j++) {
-            lstDashBoardIncome.add(new DashboardModel(selectedItemIncome[j], allDrawableIncome[j], false,0));
-        }
-        rvDashIncome.setLayoutManager(layoutManagerIncome);
-        rvDashIncome.setHasFixedSize(true);
-        DashboardAdapter mAdapterIncome = new DashboardAdapter(svContext, lstDashBoardIncome, animation_type);
-        rvDashIncome.setAdapter(mAdapterIncome);
-        mAdapterIncome.setOnItemClickListener((view, obj, position) -> {
-            ActivityMain.onDrawerItemClick(obj, svContext);
+        mAdapter.setOnItemClickListener(new DashboardAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, String obj, int position) {
+                ActivityMain.onDrawerItemClick(obj,view.getContext());
+            }
         });
     }
 
-    private String getFormatBalance(String bal) {
-        try {
-            double total = Double.parseDouble(bal);
-            String strTotalBal = String.format("%.2f", total);
-            return strTotalBal;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return bal;
-        }
-    }
-
-    private Context svContext;
-    private ShowCustomToast customToast;
-    private ViewGroup root;
 
     private void StartApp() {
         svContext = getActivity();
         customToast = new ShowCustomToast(svContext);
-        
+        checkNetwork = new CheckInternet(svContext);
         root = (ViewGroup) aiView.findViewById(R.id.mylayout);
         if (!GlobalVariables.CUSTOMFONTNAME.equals("")) {
             Typeface font = Typeface.createFromAsset(getActivity().getAssets(), GlobalVariables.CUSTOMFONTNAME);
             FontUtils.setFont(root, font);
         }
+        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDARKTHEME, false)) {
+//            FontUtils.setThemeColor(root, svContext, true);
+        } else {
+//            FontUtils.setThemeColor(root, svContext, false);
+        }
+
         root.setVisibility(View.INVISIBLE);
+
+        GlobalData.SetLanguage(svContext);
     }
 
     public static void hideFragmentkeyboard(Context meraContext, View meraView) {
@@ -165,19 +175,34 @@ public class FragReport extends Fragment implements OnClickListener, WebServiceL
         imm.hideSoftInputFromWindow(meraView.getWindowToken(), 0);
     }
 
-    LinkedList<String> lstUploadData = new LinkedList<>();
-    private void callWebService(String postUrl, LinkedList<String> lstUploadData) {
-        WebService webService = new WebService(svContext, postUrl, lstUploadData, this);
-        webService.LoadDataRetrofit(webService.callReturn());
-    }
+    private void LoadSlider() {
+        ImageSlider sliderView = aiView.findViewById(R.id.image_slider);
+        List<SlideModel> imageList = new ArrayList<>();
 
-    @Override
-    public void onWebServiceActionComplete(String result, String url) {
+        CardView cardSlider = aiView.findViewById(R.id.card_slider);
+        if (FragHomeDashBoard.lstSlider != null && FragHomeDashBoard.lstSlider.size() > 0) {
+            cardSlider.setVisibility(View.VISIBLE);
+        } else {
+            cardSlider.setVisibility(View.GONE);
+            return;
+        }
 
-    }
+        for (int j = 0; j < FragHomeDashBoard.lstSlider.size(); j++) {
+            imageList.add(new SlideModel((FragHomeDashBoard.lstSlider.get(j).getBanner_img()).replaceAll("\\/", "/"), ScaleTypes.FIT));
+        }
 
-    @Override
-    public void onWebServiceError(String result, String url) {
-        customToast.showToast(result, svContext);
+        sliderView.setImageList(imageList, ScaleTypes.FIT);
+        sliderView.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemSelected(int i) {
+                PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING,
+                        FragHomeDashBoard.lstSlider.get(i).getBanner_name());
+                PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL,
+                        FragHomeDashBoard.lstSlider.get(i).getBanner_url());
+
+                Intent svIntent = new Intent(svContext, WebViewActivity.class);
+                svContext.startActivity(svIntent);
+            }
+        });
     }
 }

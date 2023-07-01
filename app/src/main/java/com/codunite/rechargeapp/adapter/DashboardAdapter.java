@@ -24,8 +24,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private Context ctx;
     private OnItemClickListener mOnItemClickListener;
     private int animation_type = 0;
-    private String[] strColors = {"#e91e63", "#9c27b0","#673ab7", "#E53935", "#5677fc", "#689F38", "#03a9f4", "#00bcd4",
-            "#009688", "#259b24", "#ff5722", "#795548", "#607d8b", "#ff9800"};
+    private int[] strColors = {R.color.bg_prepaid, R.color.bg_metro, R.color.bg_datacard, R.color.bg_dth,R.color.bg_postpaid};
 
     public interface OnItemClickListener {
         void onItemClick(View view, String obj, int position);

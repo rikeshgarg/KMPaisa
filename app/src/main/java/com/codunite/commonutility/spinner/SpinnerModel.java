@@ -45,6 +45,15 @@ public class SpinnerModel implements Serializable {
         this.isFetch = isFetch;
     }
 
+    public SpinnerModel(String id, String title) {
+        this.id = id;
+        this.title = title;
+        this.desc = "";
+        this.strImgUrl = "";
+        this.strBillerAliasName = "";
+        this.isFetch = "";
+    }
+
     public SpinnerModel(String id, String title, String strImgUrl) {
         this.id = id;
         this.title = title;

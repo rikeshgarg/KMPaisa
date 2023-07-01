@@ -4,16 +4,14 @@ package com.codunite.rechargeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -27,9 +25,6 @@ public final class ActAepshistoryBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button btnAddwallet;
-
-  @NonNull
   public final CardView cardWallbal;
 
   @NonNull
@@ -37,9 +32,6 @@ public final class ActAepshistoryBinding implements ViewBinding {
 
   @NonNull
   public final TextView datePickerTo;
-
-  @NonNull
-  public final EditText edtKeyword;
 
   @NonNull
   public final TextView ewalletbal;
@@ -60,40 +52,33 @@ public final class ActAepshistoryBinding implements ViewBinding {
   public final LinearLayout layFilter;
 
   @NonNull
-  public final NestedScrollView layNestedscroll;
-
-  @NonNull
   public final LinearLayout linearLayout;
 
   @NonNull
-  public final RecyclerView rvPagination;
+  public final SearchView searchview;
 
   @NonNull
   public final TextView walletbal;
 
-  private ActAepshistoryBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnAddwallet,
-      @NonNull CardView cardWallbal, @NonNull TextView datePickerFrom,
-      @NonNull TextView datePickerTo, @NonNull EditText edtKeyword, @NonNull TextView ewalletbal,
-      @NonNull ImageView filterSearch, @NonNull ConstraintLayout headlayout,
-      @NonNull RecyclerView historyRv, @NonNull IncludeActionbarBinding layActionbar,
-      @NonNull LinearLayout layFilter, @NonNull NestedScrollView layNestedscroll,
-      @NonNull LinearLayout linearLayout, @NonNull RecyclerView rvPagination,
+  private ActAepshistoryBinding(@NonNull ConstraintLayout rootView, @NonNull CardView cardWallbal,
+      @NonNull TextView datePickerFrom, @NonNull TextView datePickerTo,
+      @NonNull TextView ewalletbal, @NonNull ImageView filterSearch,
+      @NonNull ConstraintLayout headlayout, @NonNull RecyclerView historyRv,
+      @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout layFilter,
+      @NonNull LinearLayout linearLayout, @NonNull SearchView searchview,
       @NonNull TextView walletbal) {
     this.rootView = rootView;
-    this.btnAddwallet = btnAddwallet;
     this.cardWallbal = cardWallbal;
     this.datePickerFrom = datePickerFrom;
     this.datePickerTo = datePickerTo;
-    this.edtKeyword = edtKeyword;
     this.ewalletbal = ewalletbal;
     this.filterSearch = filterSearch;
     this.headlayout = headlayout;
     this.historyRv = historyRv;
     this.layActionbar = layActionbar;
     this.layFilter = layFilter;
-    this.layNestedscroll = layNestedscroll;
     this.linearLayout = linearLayout;
-    this.rvPagination = rvPagination;
+    this.searchview = searchview;
     this.walletbal = walletbal;
   }
 
@@ -124,12 +109,6 @@ public final class ActAepshistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_addwallet;
-      Button btnAddwallet = ViewBindings.findChildViewById(rootView, id);
-      if (btnAddwallet == null) {
-        break missingId;
-      }
-
       id = R.id.card_wallbal;
       CardView cardWallbal = ViewBindings.findChildViewById(rootView, id);
       if (cardWallbal == null) {
@@ -145,12 +124,6 @@ public final class ActAepshistoryBinding implements ViewBinding {
       id = R.id.datePicker_to;
       TextView datePickerTo = ViewBindings.findChildViewById(rootView, id);
       if (datePickerTo == null) {
-        break missingId;
-      }
-
-      id = R.id.edt_keyword;
-      EditText edtKeyword = ViewBindings.findChildViewById(rootView, id);
-      if (edtKeyword == null) {
         break missingId;
       }
 
@@ -187,21 +160,15 @@ public final class ActAepshistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lay_nestedscroll;
-      NestedScrollView layNestedscroll = ViewBindings.findChildViewById(rootView, id);
-      if (layNestedscroll == null) {
-        break missingId;
-      }
-
       id = R.id.linearLayout;
       LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout == null) {
         break missingId;
       }
 
-      id = R.id.rv_pagination;
-      RecyclerView rvPagination = ViewBindings.findChildViewById(rootView, id);
-      if (rvPagination == null) {
+      id = R.id.searchview;
+      SearchView searchview = ViewBindings.findChildViewById(rootView, id);
+      if (searchview == null) {
         break missingId;
       }
 
@@ -211,9 +178,9 @@ public final class ActAepshistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActAepshistoryBinding((ConstraintLayout) rootView, btnAddwallet, cardWallbal,
-          datePickerFrom, datePickerTo, edtKeyword, ewalletbal, filterSearch, headlayout, historyRv,
-          binding_layActionbar, layFilter, layNestedscroll, linearLayout, rvPagination, walletbal);
+      return new ActAepshistoryBinding((ConstraintLayout) rootView, cardWallbal, datePickerFrom,
+          datePickerTo, ewalletbal, filterSearch, headlayout, historyRv, binding_layActionbar,
+          layFilter, linearLayout, searchview, walletbal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

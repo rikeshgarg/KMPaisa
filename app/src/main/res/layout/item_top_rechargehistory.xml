@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/two"
                 android:orientation="horizontal"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:weightSum="10">
 
                 <TextView
@@ -153,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/two"
                 android:orientation="horizontal"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:weightSum="10">
 
                 <TextView
@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/two"
                 android:orientation="horizontal"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:weightSum="10">
 
                 <TextView
@@ -247,7 +247,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/two"
                 android:orientation="horizontal"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:weightSum="10">
 
                 <TextView
@@ -278,7 +278,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/two"
                 android:orientation="horizontal"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:weightSum="10">
 
                 <TextView

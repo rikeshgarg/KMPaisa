@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.activity.reports;
 
 import android.app.DatePickerDialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,13 +45,15 @@ import java.util.List;
 public class ActivityBillPayHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
     private ImageView imgToolBarBack;
     private TextView txtWalletbal;
+    private Context svContext;
+    private ShowCustomToast customToast;
 
     private RecyclerView wallethistoryrv, rvPagination;
     private boolean isFirstLoad = true;
     private NestedScrollView layNestedScroll;
     private int pageNumber = 1;
     private String strFromDate = "", strToDate = "";
-
+    private String strSearchKey = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,9 +81,10 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
         myCalendar = Calendar.getInstance();
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
         txtTo = (TextView) findViewById(R.id.datePicker_to);
+        //LoadRechargeHistory(txtFrom.getText().toString(), txtTo.getText().toString());
 
-//        txtFrom.setText(GetFormattedDateTime.getcurrentcalDate());
-//        txtTo.setText(GetFormattedDateTime.getcurrentcalDate());
+        txtFrom.setText(GetFormattedDateTime.getcurrentcalDate());
+        txtTo.setText(GetFormattedDateTime.getcurrentcalDate());
 
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -151,6 +156,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
         isFirstLoad = true;
         pageNumber = 1;
         LoadRechargeHistory(strFromDate, strToDate);
+        setSearchView();
 
     }
 
@@ -159,38 +165,30 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
+        lstUploadData.add(strSearchKey);
         lstUploadData.add("" + pageNumber);
-        callWebService(ApiInterface.GETBBSPLIVEHISTORY, lstUploadData);
+        callWebService(ApiInterface.GETBBSPHISTORY, lstUploadData);
     }
 
-    private Context svContext;
-    private ShowCustomToast customToast;
-    
+
 
 
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
-        
         ViewGroup root = (ViewGroup) findViewById(R.id.headlayout);
         new NoInternetScreen(svContext, root, ActivityBillPayHistory.this);
         if (!GlobalVariables.CUSTOMFONTNAME.equals("")) {
             Typeface font = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAME);
             FontUtils.setFont(root, font);
         }
-        
-
         hideKeyboard();
-
-        
-
         loadToolBar();
     }
 
     private void loadToolBar() {
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
-
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         txtHeading.setText("BBPS Live History");
     }
@@ -208,7 +206,6 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
 
     private void hideKeyboard() {
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
-// check if no view has focus:
         View view = this.getCurrentFocus();
         if (view != null) {
             inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
@@ -240,7 +237,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-        if (url.contains(ApiInterface.GETBBSPLIVEHISTORY)) {
+        if (url.contains(ApiInterface.GETBBSPHISTORY)) {
             int strPageCount = 0;
             try {
                 lstItems = new ArrayList<>();
@@ -336,5 +333,31 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
     public void onBackPressed() {
         hideKeyboard();
         super.onBackPressed();
+    }
+
+    private void setSearchView() {
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) findViewById(R.id.searchview);
+        searchView.setVisibility(View.VISIBLE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+
+        // listening to search query text change
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+        });
     }
 }

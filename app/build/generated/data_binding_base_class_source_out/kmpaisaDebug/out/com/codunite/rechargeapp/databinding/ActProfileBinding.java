@@ -36,37 +36,19 @@ public final class ActProfileBinding implements ViewBinding {
   public final EditText edAddress;
 
   @NonNull
-  public final EditText edAddress1;
-
-  @NonNull
   public final EditText edBlock;
-
-  @NonNull
-  public final EditText edBlock1;
 
   @NonNull
   public final EditText edPincode;
 
   @NonNull
-  public final EditText edPincode1;
-
-  @NonNull
   public final EditText edtPIMail;
-
-  @NonNull
-  public final EditText edtPIMail1;
 
   @NonNull
   public final EditText edtPIMobnumber;
 
   @NonNull
-  public final EditText edtPIMobnumber1;
-
-  @NonNull
   public final EditText edtPIName;
-
-  @NonNull
-  public final EditText edtPIName1;
 
   @NonNull
   public final ConstraintLayout headlayout;
@@ -123,15 +105,12 @@ public final class ActProfileBinding implements ViewBinding {
   public final TextView txtState;
 
   private ActProfileBinding(@NonNull ConstraintLayout rootView, @NonNull CircularImageView avatar,
-      @NonNull AppCompatButton btnPIUpdate, @NonNull EditText edAddress,
-      @NonNull EditText edAddress1, @NonNull EditText edBlock, @NonNull EditText edBlock1,
-      @NonNull EditText edPincode, @NonNull EditText edPincode1, @NonNull EditText edtPIMail,
-      @NonNull EditText edtPIMail1, @NonNull EditText edtPIMobnumber,
-      @NonNull EditText edtPIMobnumber1, @NonNull EditText edtPIName, @NonNull EditText edtPIName1,
-      @NonNull ConstraintLayout headlayout, @NonNull ImageView imgDrawable,
-      @NonNull ImageView imgDrawableDis, @NonNull ImageView imgDrop, @NonNull ImageView ivAddress,
-      @NonNull ImageView ivBlock, @NonNull ImageView ivEmail, @NonNull ImageView ivName,
-      @NonNull ImageView ivPhone, @NonNull ImageView ivPincode,
+      @NonNull AppCompatButton btnPIUpdate, @NonNull EditText edAddress, @NonNull EditText edBlock,
+      @NonNull EditText edPincode, @NonNull EditText edtPIMail, @NonNull EditText edtPIMobnumber,
+      @NonNull EditText edtPIName, @NonNull ConstraintLayout headlayout,
+      @NonNull ImageView imgDrawable, @NonNull ImageView imgDrawableDis, @NonNull ImageView imgDrop,
+      @NonNull ImageView ivAddress, @NonNull ImageView ivBlock, @NonNull ImageView ivEmail,
+      @NonNull ImageView ivName, @NonNull ImageView ivPhone, @NonNull ImageView ivPincode,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull RelativeLayout layDistrict,
       @NonNull RelativeLayout layState, @NonNull LinearLayout linearLayout,
       @NonNull LinearLayout llProfileImage1, @NonNull NestedScrollView scrollView2,
@@ -140,17 +119,11 @@ public final class ActProfileBinding implements ViewBinding {
     this.avatar = avatar;
     this.btnPIUpdate = btnPIUpdate;
     this.edAddress = edAddress;
-    this.edAddress1 = edAddress1;
     this.edBlock = edBlock;
-    this.edBlock1 = edBlock1;
     this.edPincode = edPincode;
-    this.edPincode1 = edPincode1;
     this.edtPIMail = edtPIMail;
-    this.edtPIMail1 = edtPIMail1;
     this.edtPIMobnumber = edtPIMobnumber;
-    this.edtPIMobnumber1 = edtPIMobnumber1;
     this.edtPIName = edtPIName;
-    this.edtPIName1 = edtPIName1;
     this.headlayout = headlayout;
     this.imgDrawable = imgDrawable;
     this.imgDrawableDis = imgDrawableDis;
@@ -216,21 +189,9 @@ public final class ActProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ed_address1;
-      EditText edAddress1 = ViewBindings.findChildViewById(rootView, id);
-      if (edAddress1 == null) {
-        break missingId;
-      }
-
       id = R.id.ed_block;
       EditText edBlock = ViewBindings.findChildViewById(rootView, id);
       if (edBlock == null) {
-        break missingId;
-      }
-
-      id = R.id.ed_block1;
-      EditText edBlock1 = ViewBindings.findChildViewById(rootView, id);
-      if (edBlock1 == null) {
         break missingId;
       }
 
@@ -240,21 +201,9 @@ public final class ActProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ed_pincode1;
-      EditText edPincode1 = ViewBindings.findChildViewById(rootView, id);
-      if (edPincode1 == null) {
-        break missingId;
-      }
-
       id = R.id.edt_PI_mail;
       EditText edtPIMail = ViewBindings.findChildViewById(rootView, id);
       if (edtPIMail == null) {
-        break missingId;
-      }
-
-      id = R.id.edt_PI_mail1;
-      EditText edtPIMail1 = ViewBindings.findChildViewById(rootView, id);
-      if (edtPIMail1 == null) {
         break missingId;
       }
 
@@ -264,21 +213,9 @@ public final class ActProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.edt_PI_mobnumber1;
-      EditText edtPIMobnumber1 = ViewBindings.findChildViewById(rootView, id);
-      if (edtPIMobnumber1 == null) {
-        break missingId;
-      }
-
       id = R.id.edt_PI_name;
       EditText edtPIName = ViewBindings.findChildViewById(rootView, id);
       if (edtPIName == null) {
-        break missingId;
-      }
-
-      id = R.id.edt_PI_name1;
-      EditText edtPIName1 = ViewBindings.findChildViewById(rootView, id);
-      if (edtPIName1 == null) {
         break missingId;
       }
 
@@ -388,8 +325,7 @@ public final class ActProfileBinding implements ViewBinding {
       }
 
       return new ActProfileBinding((ConstraintLayout) rootView, avatar, btnPIUpdate, edAddress,
-          edAddress1, edBlock, edBlock1, edPincode, edPincode1, edtPIMail, edtPIMail1,
-          edtPIMobnumber, edtPIMobnumber1, edtPIName, edtPIName1, headlayout, imgDrawable,
+          edBlock, edPincode, edtPIMail, edtPIMobnumber, edtPIName, headlayout, imgDrawable,
           imgDrawableDis, imgDrop, ivAddress, ivBlock, ivEmail, ivName, ivPhone, ivPincode,
           binding_layActionbar, layDistrict, layState, linearLayout, llProfileImage1, scrollView2,
           txtDistrict, txtState);

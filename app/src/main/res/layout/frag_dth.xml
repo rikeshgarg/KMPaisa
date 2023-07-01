@@ -90,12 +90,23 @@
                                     android:layout_marginRight="@dimen/five"
                                     android:src="@drawable/ic_arrow_drop"
                                     />
+                                <ProgressBar
+                                    android:id="@+id/progressbar_load_one"
+                                    android:layout_width="@dimen/sixty"
+                                    android:layout_height="@dimen/sixty"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginStart="@dimen/five"
+                                    android:layout_marginTop="@dimen/five"
+                                    android:layout_marginEnd="@dimen/five"
+                                    android:layout_marginBottom="@dimen/five"
+                                    android:indeterminateDrawable="@drawable/progress_icon" />
                             </RelativeLayout>
 
 
                         </LinearLayout>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -136,6 +147,16 @@
                                     android:layout_marginRight="@dimen/five"
                                     android:src="@drawable/ic_arrow_drop"
                                     />
+                                <ProgressBar
+                                    android:id="@+id/progressbar_load_two"
+                                    android:layout_width="@dimen/sixty"
+                                    android:layout_height="@dimen/sixty"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginStart="@dimen/five"
+                                    android:layout_marginTop="@dimen/five"
+                                    android:layout_marginEnd="@dimen/five"
+                                    android:layout_marginBottom="@dimen/five"
+                                    android:indeterminateDrawable="@drawable/progress_icon" />
                             </RelativeLayout>
 
 
@@ -177,14 +198,6 @@
                             android:textSize="17dp" />
                     </LinearLayout>
 
-                    <TextView
-                        android:visibility="gone"
-                        android:id="@+id/txt_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/three"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/ts_fifteen" />
 
                     <TextView
                         android:visibility="gone"
@@ -259,6 +272,18 @@
                         android:layout_marginTop="@dimen/five">
 
                         <TextView
+                            android:visibility="visible"
+                            android:id="@+id/txt_name"
+                            android:layout_toLeftOf="@+id/txt_roffers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/three"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/ts_fifteen" />
+
+
+                        <TextView
+                            android:layout_below="@+id/txt_name"
                             android:id="@+id/txt_availbalance"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -274,9 +299,9 @@
                             android:layout_alignParentRight="true"
                             android:padding="@dimen/five"
                             android:text="Fetch Custom Info"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="@dimen/ts_fifteen"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
                     </RelativeLayout>
 
                     <androidx.appcompat.widget.AppCompatButton

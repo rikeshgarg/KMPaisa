@@ -15,8 +15,10 @@ public class GlobalVariables {
     public static final String FLAVOR_SONIKAPAY_CHILD = "sonikapaychild";
     public static String ORDERID = "";
     public final static int REQUEST_WRITE_STORAGE_PERMISSION = 24564;
-    public static String PRE_URL_MAIN = "https://www.sonikapay.com/";
-    public static String PRE_URL = PRE_URL_MAIN + "appservice/auth/";
+//    public static String PRE_URL_MAIN = "https://www.sonikapay.com/";
+//    public static String PRE_URL = PRE_URL_MAIN + "appservice/auth/";
+    public static String PRE_URL_MAIN = "https://www.kmpaisa.com/";
+    public static String PRE_URL = PRE_URL_MAIN + "service/WebNew/";
 
     public static final String CURRENCYSYMBOL = "₹ ";
     public static final boolean ISTESTING = true;

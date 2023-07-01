@@ -24,7 +24,7 @@ public final class ActShareBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final AppCompatButton btnCopyShare;
+  public final AppCompatButton btnSubmit;
 
   @NonNull
   public final CardView cardText;
@@ -42,28 +42,28 @@ public final class ActShareBinding implements ViewBinding {
   public final RelativeLayout linearLayout;
 
   @NonNull
-  public final ImageView referWallet;
+  public final TextView referCode;
 
   @NonNull
-  public final TextView referallink;
+  public final ImageView referWallet;
 
   @NonNull
   public final TextView txtRefreealcode;
 
-  private ActShareBinding(@NonNull ConstraintLayout rootView, @NonNull AppCompatButton btnCopyShare,
+  private ActShareBinding(@NonNull ConstraintLayout rootView, @NonNull AppCompatButton btnSubmit,
       @NonNull CardView cardText, @NonNull ConstraintLayout headlayout, @NonNull ImageView imgTop,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull RelativeLayout linearLayout,
-      @NonNull ImageView referWallet, @NonNull TextView referallink,
+      @NonNull TextView referCode, @NonNull ImageView referWallet,
       @NonNull TextView txtRefreealcode) {
     this.rootView = rootView;
-    this.btnCopyShare = btnCopyShare;
+    this.btnSubmit = btnSubmit;
     this.cardText = cardText;
     this.headlayout = headlayout;
     this.imgTop = imgTop;
     this.layActionbar = layActionbar;
     this.linearLayout = linearLayout;
+    this.referCode = referCode;
     this.referWallet = referWallet;
-    this.referallink = referallink;
     this.txtRefreealcode = txtRefreealcode;
   }
 
@@ -94,9 +94,9 @@ public final class ActShareBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_copy_share;
-      AppCompatButton btnCopyShare = ViewBindings.findChildViewById(rootView, id);
-      if (btnCopyShare == null) {
+      id = R.id.btn_submit;
+      AppCompatButton btnSubmit = ViewBindings.findChildViewById(rootView, id);
+      if (btnSubmit == null) {
         break missingId;
       }
 
@@ -127,15 +127,15 @@ public final class ActShareBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.refer_wallet;
-      ImageView referWallet = ViewBindings.findChildViewById(rootView, id);
-      if (referWallet == null) {
+      id = R.id.refer_code;
+      TextView referCode = ViewBindings.findChildViewById(rootView, id);
+      if (referCode == null) {
         break missingId;
       }
 
-      id = R.id.referallink;
-      TextView referallink = ViewBindings.findChildViewById(rootView, id);
-      if (referallink == null) {
+      id = R.id.refer_wallet;
+      ImageView referWallet = ViewBindings.findChildViewById(rootView, id);
+      if (referWallet == null) {
         break missingId;
       }
 
@@ -145,8 +145,8 @@ public final class ActShareBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActShareBinding((ConstraintLayout) rootView, btnCopyShare, cardText, headlayout,
-          imgTop, binding_layActionbar, linearLayout, referWallet, referallink, txtRefreealcode);
+      return new ActShareBinding((ConstraintLayout) rootView, btnSubmit, cardText, headlayout,
+          imgTop, binding_layActionbar, linearLayout, referCode, referWallet, txtRefreealcode);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

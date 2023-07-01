@@ -42,12 +42,17 @@ import com.codunite.rechargeapp.R;
 import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSHistory;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc;
+import com.codunite.rechargeapp.activity.bbps.ActivityBBPSCommision;
 import com.codunite.rechargeapp.activity.bbps.ActivityBBPSLiveCommision;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory;
+import com.codunite.rechargeapp.activity.commissionincome.ActivityAEPSCommision;
+import com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequestHistory;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityMainWalletTransfer;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityTopupWalletRazorpay;
+import com.codunite.rechargeapp.activity.members.AddEditMember;
+import com.codunite.rechargeapp.activity.members.AllMemberList;
 import com.codunite.rechargeapp.activity.profile.ActivityChangeAccount;
 import com.codunite.rechargeapp.activity.profile.ActivityChangePassword;
 import com.codunite.rechargeapp.activity.profile.ActivityChangeTPassword;
@@ -56,6 +61,7 @@ import com.codunite.rechargeapp.activity.profile.ActivityProfile;
 import com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityBillPayHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityComisionWalletHistory;
+import com.codunite.rechargeapp.activity.reports.ActivityRechargeCommisionHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityRequestHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityWalletHistory;
@@ -63,6 +69,14 @@ import com.codunite.rechargeapp.activity.support.ActivityComplaintList;
 import com.codunite.rechargeapp.activity.support.ActivityContact;
 import com.codunite.rechargeapp.activity.support.ActivityHelpFeedback;
 import com.codunite.rechargeapp.activity.support.ActivityTicketList;
+import com.codunite.rechargeapp.activity.virtualaccount.ActivityVirtualAccount;
+import com.codunite.rechargeapp.activity.virtualaccount.VirtualTransactionReport;
+import com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequest;
+import com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequestHistory;
+import com.codunite.rechargeapp.activity.wallet.ActivityEWalletHistory;
+import com.codunite.rechargeapp.activity.wallet.ActivityEWalletTransfer;
+import com.codunite.rechargeapp.activity.wallet.ActivityTopupWallet;
+import com.codunite.rechargeapp.activity.wallet.ActivityWalletTransfer;
 import com.codunite.rechargeapp.adapter.ExpandableListAdapter;
 import com.codunite.commonutility.firebase.FirebaseMessageReceiver;
 import com.codunite.rechargeapp.fragment.FragHomeDashBoard;
@@ -121,6 +135,18 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     private ImageView btnCircleScan, btnCircleTrophy, btnCircleNotification;
     private boolean isBottomFabClicked = false;
     BottomNavigationView bottomNav;
+    public static final String UPI_ADD_MONEY = "Upi Add Money";
+    public static String R_WALLET_MYFUNDREQUEST = "My Fund Request";
+    public static String E_WALLET_MYFUNDREQUEST = "E Fund Request";
+
+    public static List<SpinnerModel> lstCategoryData = new ArrayList<>();
+
+    ExpandableListAdapter expandableListAdapter;
+    ExpandableListView expandableListView;
+    List<MenuModel> headerList = new ArrayList<>();
+    HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
+
+    private DrawerLayout drawer;
 
     public static String ShowBalance(Context svContext) {
         return GlobalVariables.CURRENCYSYMBOL +
@@ -155,7 +181,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         checkInAppUpdate();
     }
 
-    private DrawerLayout drawer;
 
     public void resumeApp() {
         headerList = new ArrayList<>();
@@ -175,19 +200,12 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         btnCircleNotification.setOnClickListener(this);
 
         initMenuData();
-        prepareMenuData();
+        prepareMenuData(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "5"));
         populateExpandableList();
         initBottomMenu();
 
         ImageView img_close = findViewById(R.id.img_close);
-        //bottomNav = findViewById(R.id.bottom_navigation);
-        //bottomNav.setOnItemSelectedListener(this);
-//        bottomNav.setOnItemSelectedListener(item -> {
-//            // do stuff
-//
-//            return true;
-//        });
-//        bottomNav.setItemIconTintList(null);
+
         RelativeLayout rl_main = findViewById(R.id.rl_main);
         LinearLayout ll_logout = findViewById(R.id.ll_logout);
         navigationView = findViewById(R.id.nav_view);
@@ -201,39 +219,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         switchContent(new FragHomeDashBoard());
         final float END_SCALE = 0.7f;
         drawer.setScrimColor(Color.TRANSPARENT);
-//        drawer.setDrawerElevation(0f);
-//        drawer.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
-//                                     @Override
-//                                     public void onDrawerSlide(View drawerView, float slideOffset) {
-//                                         if (slideOffset > 0) {
-//                                             drawer.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-//                                             rl_main.setBackgroundResource(R.drawable.bg);
-//                                             imgMenu.setVisibility(View.GONE);
-//                                             img_close.setVisibility(View.VISIBLE);
-//                                         } else {
-//                                             imgMenu.setVisibility(View.VISIBLE);
-//                                             img_close.setVisibility(View.GONE);
-//                                             rl_main.setBackgroundResource(0);
-//                                             drawer.setBackgroundColor(getResources().getColor(R.color.background));
-//                                         }
-//                                         final float diffScaledOffset = slideOffset * (1 - END_SCALE);
-//                                         final float offsetScale = 1 - diffScaledOffset;
-//                                         rl_main.setScaleX(offsetScale);
-//                                         rl_main.setScaleY(offsetScale);
-//                                         final float xOffset = drawerView.getWidth() * slideOffset;
-//                                         final float xOffsetDiff = rl_main.getWidth() * diffScaledOffset / 2;
-//                                         final float xTranslation = xOffset - xOffsetDiff;
-//                                         rl_main.setTranslationX(xTranslation);
-//                                     }
 //
-//                                     @Override
-//                                     public void onDrawerClosed(View drawerView) {
-////                                         main_lay.setBackground(null);
-////                                         drawer.setBackgroundResource(R.drawable.bg);
-//                                     }
-//                                 }
-//        );
-
         ll_logout.setOnClickListener(v -> ShowConfirmLogout(svContext, "Logout", "Are you confirm?",
                 "Are you are ready to end your current session. You have to enter login detail again"));
     }
@@ -312,19 +298,19 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         callWebService(ApiInterface.UPDATEFCM, lstUploadData);
     }
 
-    private void loadUserDataBackground() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
-        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
-    }
-
-    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
-        loadApiInBackground = true;
-        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
-        webService.LoadDataRetrofit(webService.callReturn());
-    }
+//    private void loadUserDataBackground() {
+//        lstUploadData = new LinkedList<>();
+//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+//        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
+//    }
+//
+//    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
+//        loadApiInBackground = true;
+//        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
+//        webService.LoadDataRetrofit(webService.callReturn());
+//    }
 
     private void callWebService(String postUrl, LinkedList<String> lstUploadData) {
         loadApiInBackground = false;
@@ -340,12 +326,12 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         if (url.contains(ApiInterface.UPDATEFCM)) {
             ActivitySplash.LoadUserData(result, svContext);
             initMenuData();
-            prepareMenuData();
+            prepareMenuData(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "5"));
             populateExpandableList();
 
             initNavigationMenu(
                     PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERNAME, ""),
-                    PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSEREMAIL, ""),
+                    PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, ""),
                     PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERPROFILEPIC, ""),
                     PreferenceConnector.readString(svContext, PreferenceConnector.LOGINMEMBERID, "memberid"),
                     navigationView);
@@ -410,49 +396,22 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     private void initBottomMenu() {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        //bottomNav.setItemTextColor(R.color.bottom_nav_color);
-        //bottomNav.getMenu().getItem(0).setIcon(R.drawable.ic_home_unselect);
-//        bottomNav.getMenu().getItem(1).setIcon(R.drawable.ic_report_new_unselect);
-//        bottomNav.getMenu().getItem(2).setIcon(R.drawable.ic_profile_unselect);
-//        bottomNav.getMenu().getItem(3).setIcon(R.drawable.ic_setting_unselect);
-//        bottomNav.setItemIconTintList(null);
         bottomNav.setOnItemSelectedListener(item -> {
 
             Fragment selectFragment = null;
             switch (item.getItemId()) {
                 case R.id.nav_home:
-
-                    //item.setIcon(R.drawable.ic_home);
-
-
-//            bottomNav.getMenu().getItem(1).setIcon(R.drawable.ic_report_new_unselect);
-//            bottomNav.getMenu().getItem(2).setIcon(R.drawable.ic_profile_unselect);
-//            bottomNav.getMenu().getItem(3).setIcon(R.drawable.ic_setting_unselect);
-
                     switchContent(new FragHomeDashBoard());
                     break;
                 case R.id.nav_report:
-//                    item.setIcon(R.drawable.ic_report_new);
-//                    bottomNav.getMenu().getItem(0).setIcon(R.drawable.ic_home_unselect);
-//                    bottomNav.getMenu().getItem(2).setIcon(R.drawable.ic_profile_unselect);
-//                    bottomNav.getMenu().getItem(3).setIcon(R.drawable.ic_setting_unselect);
                     switchContent(new FragReport());
                     break;
                 case R.id.nav_profile:
-//                    item.setIcon(R.drawable.ic_profile);
-//                    bottomNav.getMenu().getItem(0).setIcon(R.drawable.ic_home_unselect);
-//                    bottomNav.getMenu().getItem(1).setIcon(R.drawable.ic_report_new_unselect);
-//                    bottomNav.getMenu().getItem(3).setIcon(R.drawable.ic_setting_unselect);
                     switchContent(new FragProfile());
                     break;
                 case R.id.nav_setting:
-//                    item.setIcon(R.drawable.ic_setting);
-//                    bottomNav.getMenu().getItem(0).setIcon(R.drawable.ic_home_unselect);
-//                    bottomNav.getMenu().getItem(1).setIcon(R.drawable.ic_report_new_unselect);
-//                    bottomNav.getMenu().getItem(2).setIcon(R.drawable.ic_profile_unselect);
                     switchContent(new FragSetting());
                     break;
             }
@@ -508,11 +467,20 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         View navigation_header = navigationView.getHeaderView(0);
         TextView tvName = navigation_header.findViewById(R.id.menuheader_name);
         TextView tvMemberId = navigation_header.findViewById(R.id.menuheader_memberid);
+        TextView tv_user_type = (TextView) navigation_header.findViewById(R.id.user_type);
+
         ImageView avatar = navigation_header.findViewById(R.id.menuheader_dp);
         LinearLayout ll_close = navigation_header.findViewById(R.id.ll_close);
 
         tvName.setText(strName);
         tvMemberId.setText(memberId);
+        if (usertype.equalsIgnoreCase("3")) {
+            tv_user_type.setText("Master");
+        } else if (usertype.equalsIgnoreCase("4")) {
+            tv_user_type.setText("Distributor");
+        } else if (usertype.equalsIgnoreCase("5")) {
+            tv_user_type.setText("Retailor");
+        }
 
         Typeface fontFamily = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAMEBOLD);
         tvName.setTypeface(fontFamily);
@@ -602,12 +570,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         customToast.showCustomToast(svContext, result, customToast.ToastyError);
     }
 
-    public static List<SpinnerModel> lstCategoryData = new ArrayList<>();
-
-    ExpandableListAdapter expandableListAdapter;
-    ExpandableListView expandableListView;
-    List<MenuModel> headerList = new ArrayList<>();
-    HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
 
     @Override
     public void onBackPressed() {
@@ -621,6 +583,11 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     private String[] strMenuItemMaster;
     private String[][] strMenuChildItemMaster;
 
+    private String[] strMenuItemDistributor;
+    private String[][] strMenuChildItemDistributor;
+    private String[] strMenuItemRetailor;
+    private String[][] strMenuChildItemRetailor;
+
     private int[] arr_ic_menus;
 
     private String[] strMenuItem;
@@ -632,56 +599,265 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             documentsMenuItems[i] = lstCategoryData.get(i).getTitle();
         }
         strMenuItemMaster = new String[]{
+                "AEPS",
+                "Money Transfer",
+                "Members",
                 "Profile",
-                "Main Wallet",
-                "AEPS Wallet",
-                "Commisssion Wallet",
-                "Point Wallet",
-                "Pin",
-//                "Genealogy",
-//                "Reports",
-//                "KYC",
-                "Company Document",
+                "Wallet",
+                "Reports",
+                "Commission",
+                "Xpress Payout",
+                "Virtual Account",
                 "Raise Ticket",
+                "View Complaint",
+                "Refer and Earn",
+                //"Privacy Policy",
+                //"AEPS Wallet",
+                //"Commisssion Wallet",
+                //"Point Wallet",
+                //"Pin",
+                //"Company Document",
+
                 "Useful Links",
-//                "Contact Us",
-//                "Support"
         };
 
         strMenuChildItemMaster = new String[][]{
-                {"My QR Code", "Personal Profile", "Change Password", "Change T-Pin", "Add Nominee"},
-                {"Fund Request", "Add Fund PG", "Wallet Transfer", "Fund Request History", "Wallet History"},
-                {"AEPS Payout", "AEPS Payout Report", "AEPS Wallet Transfer", "AEPS Wallet History"},
-                {"Commission Payout", "Commission Payout Report", "Commission Wallet Transfer", "Commission Wallet History"},
-                {"Point Wallet History"},
-                {"Request Pin", "Transfer Pin", "Pin List"},
-//                {"Search Downline", "Direct Downline", "Direct Active", "Direct Deactive", "Total Downline", "Total Active", "Total Deactive", "Upline Details", "Rank Wise Team", "Level Wise Team"},
-//                {"Recharge History", "BBPS History", "AEPS History", "BBPS Live History", "Money Transfer History", "Recharge Commission", "BBPS Commission", "Recharge Income", "BBPS Income", "AEPS Income", "Aeps Commission", "Direct Income", "Level Income"},
-//                new String[0],
-                documentsMenuItems,
+                {"Balance Enquiry", "Mini Statement", "Withdrawal", "Aadhar Pay", "AEPS History"},
+                {"Register", "Login", "Transfer Report"},
+                {"Add Member", "View All Member", "Distributor", "Retailer"},
+                {"Personal Profile", "Change Password"},
+                {UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
+                {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
+                {"Transfer", "Payout Report"},
+                {"My Virtual Account", "Transaction Report"},
                 {"Create Ticket", "View Ticket"},
+                new String[0],
+                new String[0],
+                //new String[0],
+                //{"AEPS Payout", "AEPS Payout Report", "AEPS Wallet Transfer", "AEPS Wallet History"},
+                //{"Commission Payout", "Commission Payout Report", "Commission Wallet Transfer", "Commission Wallet History"},
+                //{"Point Wallet History"},
+                //{"Request Pin", "Transfer Pin", "Pin List"},
+//                new String[0],
+                //documentsMenuItems,
                 {"Cancellation & refund policy", "Website Disclaimer", "Privacy Policy", "Terms and conditions"},
                 new String[0]};
+
+
+        strMenuItemDistributor = new String[]{
+                "AEPS",
+                "Money Transfer",
+                "Member",
+                "Profile",
+                "Wallet",
+                "Reports",
+                "Commission",
+                "Xpress Payout",
+                "Virtual Account",
+                "Raise Ticket",
+                "View Complaint",
+                "Refer and Earn",
+                "Useful Links",
+        };
+
+        strMenuChildItemDistributor = new String[][]{
+                {"Balance Enquiry", "Mini Statement", "Withdrawal", "Aadhar Pay", "AEPS History"},
+                {"Register", "Login", "Transfer Report"},
+                {"Add Member", "View All Member", "Distributor", "Retailer"},
+                {"Personal Profile", "Change Password"},
+                {UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
+                {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
+                {"Transfer", "Payout Report"},
+                {"My Virtual Account", "Transaction Report"},
+                {"Create Ticket", "View Ticket"},
+                new String[0],
+                new String[0],
+                {"Cancellation & refund policy", "Website Disclaimer", "Privacy Policy", "Terms and conditions"},
+                new String[0]
+        };
+
+        strMenuItemRetailor = new String[]{
+                "AEPS",
+                "Profile",
+                "Wallet",
+                "Reports",
+                "Commission",
+                "Xpress Payout",
+                "Virtual Account",
+                "Raise Ticket",
+                "View Complaint",
+                "Refer and Earn",
+                "Useful Links",
+        };
+
+        strMenuChildItemRetailor = new String[][]{
+                {"Balance Enquiry", "Mini Statement", "Withdrawal", "Aadhar Pay", "AEPS History"},
+                {"Personal Profile", "Change Password"},
+                {UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
+                {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
+                {"Transfer", "Payout Report"},
+                {"My Virtual Account", "Transaction Report"},
+                {"Create Ticket", "View Ticket"},
+                new String[0],
+                new String[0],
+                {"Cancellation & refund policy", "Website Disclaimer", "Privacy Policy", "Terms and conditions"},
+                new String[0]
+        };
+
     }
 
-    private void prepareMenuData() {
+
+    private void prepareMenuData(String usertype) {
         String strVendorStatus = PreferenceConnector.readString(svContext, PreferenceConnector.VENDOR_STATUS, "0");
         LinkedHashMap<String, String[]> HashMap = new LinkedHashMap<String, String[]>();
-        strMenuItem = new String[strMenuItemMaster.length];
-        strMenuChildItem = new String[strMenuChildItemMaster.length][];
-        for (int j = 0; j < strMenuItemMaster.length; j++) {
-            if (strMenuItemMaster[j].equals("Recharge")) {
-                if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRECHARGEACTIVE, false)) {
-                    HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
-                    strMenuItem[j] = strMenuItemMaster[j];
-                    strMenuChildItem[j] = strMenuChildItemMaster[j];
+        // Master Distributor
+        if (usertype.equalsIgnoreCase("3")) {
+            strMenuItem = new String[strMenuItemMaster.length];
+            strMenuChildItem = new String[strMenuChildItemMaster.length][];
+            for (int j = 0; j < strMenuItemMaster.length; j++) {
+                switch (strMenuItemMaster[j]) {
+                    case "AEPS":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false)) {
+                            HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+                            strMenuItem[j] = strMenuItemMaster[j];
+                            strMenuChildItem[j] = strMenuChildItemMaster[j];
+                        }
+                        Log.e(TAG, strMenuItemMaster[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false));
+                        break;
+                    case "Xpress Payout":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false)) {
+                            HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+                            strMenuItem[j] = strMenuItemMaster[j];
+                            strMenuChildItem[j] = strMenuChildItemMaster[j];
+                        }
+                        Log.e(TAG, strMenuItemMaster[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false));
+                        break;
+                    case "Money Transfer":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDMTACTIVE, false)) {
+                            HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+                            strMenuItem[j] = strMenuItemMaster[j];
+                            strMenuChildItem[j] = strMenuChildItemMaster[j];
+                        }
+                        break;
+                    case "Virtual Account":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISVIRTUALACCOUNT, false)) {
+                            HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+                            strMenuItem[j] = strMenuItemMaster[j];
+                            strMenuChildItem[j] = strMenuChildItemMaster[j];
+                        }
+                        break;
+                    default:
+                        HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+                        strMenuItem[j] = strMenuItemMaster[j];
+                        strMenuChildItem[j] = strMenuChildItemMaster[j];
+                        break;
                 }
-            } else {
-                HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
-                strMenuItem[j] = strMenuItemMaster[j];
-                strMenuChildItem[j] = strMenuChildItemMaster[j];
+//                if (strMenuItemMaster[j].equals("Recharge")) {
+//                    if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRECHARGEACTIVE, false)) {
+//                        HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+//                        strMenuItem[j] = strMenuItemMaster[j];
+//                        strMenuChildItem[j] = strMenuChildItemMaster[j];
+//                    }
+//                } else {
+//                    HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
+//                    strMenuItem[j] = strMenuItemMaster[j];
+//                    strMenuChildItem[j] = strMenuChildItemMaster[j];
+//                }
+            }
+
+        }
+        // Distributor
+        else if (usertype.equalsIgnoreCase("4")) {
+            strMenuItem = new String[strMenuItemDistributor.length];
+            strMenuChildItem = new String[strMenuChildItemDistributor.length][];
+            for (int j = 0; j < strMenuItemDistributor.length; j++) {
+                switch (strMenuItemDistributor[j]) {
+                    case "AEPS":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false)) {
+                            HashMap.put(strMenuItemDistributor[j], strMenuChildItemDistributor[j]);
+                            strMenuItem[j] = strMenuItemDistributor[j];
+                            strMenuChildItem[j] = strMenuChildItemDistributor[j];
+                        }
+                        Log.e(TAG, strMenuItemDistributor[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false));
+                        break;
+                    case "Xpress Payout":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false)) {
+                            HashMap.put(strMenuItemDistributor[j], strMenuChildItemDistributor[j]);
+                            strMenuItem[j] = strMenuItemDistributor[j];
+                            strMenuChildItem[j] = strMenuChildItemDistributor[j];
+                        }
+                        Log.e(TAG, strMenuItemDistributor[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false));
+                        break;
+                    case "Money Transfer":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDMTACTIVE, false)) {
+                            HashMap.put(strMenuItemDistributor[j], strMenuChildItemDistributor[j]);
+                            strMenuItem[j] = strMenuItemDistributor[j];
+                            strMenuChildItem[j] = strMenuChildItemDistributor[j];
+                        }
+                        break;
+                    case "Virtual Account":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISVIRTUALACCOUNT, false)) {
+                            HashMap.put(strMenuItemDistributor[j], strMenuChildItemDistributor[j]);
+                            strMenuItem[j] = strMenuItemDistributor[j];
+                            strMenuChildItem[j] = strMenuChildItemDistributor[j];
+                        }
+                        break;
+                    default:
+                        HashMap.put(strMenuItemDistributor[j], strMenuChildItemDistributor[j]);
+                        strMenuItem[j] = strMenuItemDistributor[j];
+                        strMenuChildItem[j] = strMenuChildItemDistributor[j];
+                        break;
+                }
             }
         }
+        // Retailer or user
+        else if (usertype.equalsIgnoreCase("5") || usertype.equalsIgnoreCase("8")) {
+            strMenuItem = new String[strMenuItemRetailor.length];
+            strMenuChildItem = new String[strMenuChildItemRetailor.length][];
+            for (int j = 0; j < strMenuItemRetailor.length; j++) {
+                switch (strMenuItemRetailor[j]) {
+                    case "AEPS":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false)) {
+                            HashMap.put(strMenuItemRetailor[j], strMenuChildItemRetailor[j]);
+                            strMenuItem[j] = strMenuItemRetailor[j];
+                            strMenuChildItem[j] = strMenuChildItemRetailor[j];
+                        }
+                        Log.e(TAG, strMenuItemRetailor[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false));
+                        break;
+                    case "Xpress Payout":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false)) {
+                            HashMap.put(strMenuItemRetailor[j], strMenuChildItemRetailor[j]);
+                            strMenuItem[j] = strMenuItemRetailor[j];
+                            strMenuChildItem[j] = strMenuChildItemRetailor[j];
+                        }
+                        Log.e(TAG, strMenuItemRetailor[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false));
+                        break;
+                    case "Money Transfer":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDMTACTIVE, false)) {
+                            HashMap.put(strMenuItemRetailor[j], strMenuChildItemRetailor[j]);
+                            strMenuItem[j] = strMenuItemRetailor[j];
+                            strMenuChildItem[j] = strMenuChildItemRetailor[j];
+                        }
+                        break;
+                    case "Virtual Account":
+                        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISVIRTUALACCOUNT, false)) {
+                            HashMap.put(strMenuItemRetailor[j], strMenuChildItemRetailor[j]);
+                            strMenuItem[j] = strMenuItemRetailor[j];
+                            strMenuChildItem[j] = strMenuChildItemRetailor[j];
+                        }
+                        break;
+                    default:
+                        HashMap.put(strMenuItemRetailor[j], strMenuChildItemRetailor[j]);
+                        strMenuItem[j] = strMenuItemRetailor[j];
+                        strMenuChildItem[j] = strMenuChildItemRetailor[j];
+                        break;
+                }
+            }
+        }
+
 
         headerList = new ArrayList<>();
         childList = new HashMap<>();
@@ -703,11 +879,11 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
     private void populateExpandableList() {
         int[] textureArrayWin = {
+                R.drawable.ic_aeps,
+                R.drawable.ic_money_transfer,
                 R.drawable.ic_profile,
                 R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
+                R.drawable.iv_wallet,
                 R.drawable.ic_bbps,
                 R.drawable.ic_profile,
                 R.drawable.ic_bbps,
@@ -797,19 +973,62 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             svIntent = new Intent(svContext, ActivityRecharge.class);
             svIntent.putExtra("selecteditem", 1);
             svContext.startActivity(svIntent);
-        }   else if (("DTH").equalsIgnoreCase(title)) {
+        } else if (("DTH").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityRecharge.class);
             svIntent.putExtra("selecteditem", 2);
             svContext.startActivity(svIntent);
-        }  else if (("Fino Balance Enquiry").equalsIgnoreCase(title) || ("Fino Mini Statement").equalsIgnoreCase(title) ||
-                ("Fino Withdrawal").equalsIgnoreCase(title) || ("Fino Aadhar Pay").equalsIgnoreCase(title)) {
-            ActivityMain.OpenNewAeps(title, svContext, customToast);
-        } else if (("Fino AEPS History").equalsIgnoreCase(title)) {
+        } else if (("Balance Enquiry").equalsIgnoreCase(title) || ("Mini Statement").equalsIgnoreCase(title) ||
+                ("Withdrawal").equalsIgnoreCase(title) || ("Aadhar Pay").equalsIgnoreCase(title)) {
+            ActivityMain.OpenAeps(title, svContext, customToast);
+        } else if (("AEPS History").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityFinoAEPSHistory.class);
             svContext.startActivity(svIntent);
-        } else if (("Electricity").equalsIgnoreCase(title)) {
-            svIntent = new Intent(svContext, ActivityRecharge.class);
-            svIntent.putExtra("selecteditem", 2);
+        } else if (("Register").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityRegisterTransfer.class);
+            svIntent.putExtra("selecteditem", 1);
+            svContext.startActivity(svIntent);
+        } else if (("Login").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityLoginTransfer.class);
+            svIntent.putExtra("selecteditem", 1);
+            svContext.startActivity(svIntent);
+        } else if (("Transfer Report").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityMoneyTransferHistory.class);
+            svIntent.putExtra("selecteditem", 1);
+            svContext.startActivity(svIntent);
+        } else if (("Add Member").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, AddEditMember.class);
+            svContext.startActivity(svIntent);
+        } else if (("View All Member").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, AllMemberList.class);
+            svContext.startActivity(svIntent);
+        } else if (("Personal Profile").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityProfile.class);
+            svContext.startActivity(svIntent);
+        } else if (("Change Password").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityChangePassword.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase(UPI_ADD_MONEY)) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRAZORPAYACTIVE, false)) {
+                svIntent = new Intent(svContext, ActivityTopupWallet.class);
+                svContext.startActivity(svIntent);
+            } else {
+                ActivityAddFundRequest.OpenAddFundRequest(svContext);
+            }
+        } else if (title.equalsIgnoreCase("R-Wallet Transfer")) {
+            svIntent = new Intent(svContext, ActivityWalletTransfer.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("E-Wallet Transfer")) {
+            svIntent = new Intent(svContext, ActivityEWalletTransfer.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("R-Wallet History")) {
+            svIntent = new Intent(svContext, com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("E-Wallet History")) {
+            svIntent = new Intent(svContext, ActivityEWalletHistory.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equals(R_WALLET_MYFUNDREQUEST) || title.equals(E_WALLET_MYFUNDREQUEST)) {
+            svIntent = new Intent(svContext, ActivityAddFundRequestHistory.class);
+            svIntent.putExtra("actType", title);
             svContext.startActivity(svIntent);
         } else if (("Recharge History").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityRechargeHistory.class);
@@ -821,8 +1040,69 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         } else if (("BBPS History").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityBbpsHistory.class);
             svContext.startActivity(svIntent);
-        } else if (("BBPS Live History").equalsIgnoreCase(title)) {
-            svIntent = new Intent(svContext, ActivityBillPayHistory.class);
+        } else if (("Money Transfer History").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityMoneyTransferHistory.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("Recharge Commission History")) {
+            svIntent = new Intent(svContext, ActivityRechargeCommisionHistory.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("Recharge Commission")) {
+            svIntent = new Intent(svContext, ActivityRechargeCommision.class);
+            svContext.startActivity(svIntent);
+        } else if (("BBPS Commission").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityBBPSCommision.class);
+            svContext.startActivity(svIntent);
+        } else if (("DMR Commission").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityDMRCommision.class);
+            svContext.startActivity(svIntent);
+        } else if (("AEPS Commission").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityAEPSCommision.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("Transfer")) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false)) {
+                //svIntent = new Intent(svContext, ActivityPayoutTransfer.class);
+                //svContext.startActivity(svIntent);
+            } else {
+                customToast.showCustomToast(svContext, "Not active for you.", customToast.ToastyError);
+            }
+        } else if (title.equalsIgnoreCase("Payout Report")) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false)) {
+                //svIntent = new Intent(svContext, ActivityPayoutTransferReport.class);
+                //svContext.startActivity(svIntent);
+            } else {
+                customToast.showCustomToast(svContext, "Not active for you.", customToast.ToastyError);
+            }
+        } else if (title.equalsIgnoreCase("My Virtual Account")) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISVIRTUALACCOUNT, false)) {
+                svIntent = new Intent(svContext, ActivityVirtualAccount.class);
+                svContext.startActivity(svIntent);
+            } else {
+                customToast.showCustomToast(svContext, "Not active for you.", customToast.ToastyError);
+            }
+        } else if (title.equalsIgnoreCase("Transaction Report")) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISVIRTUALACCOUNT, false)) {
+                svIntent = new Intent(svContext, VirtualTransactionReport.class);
+                svContext.startActivity(svIntent);
+            } else {
+                customToast.showCustomToast(svContext, "Not active for you.", customToast.ToastyError);
+            }
+        } else if (title.equalsIgnoreCase("Create Ticket")) {
+            svIntent = new Intent(svContext, ActivityHelpFeedback.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("View Ticket")) {
+            svIntent = new Intent(svContext, ActivityTicketList.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("View Complaint")) {
+            svIntent = new Intent(svContext, ActivityComplaintList.class);
+            svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("Refer and Earn") ||
+                title.equalsIgnoreCase("Referral") ||
+                title.equalsIgnoreCase("Refer & Earn")) {
+            svIntent = new Intent(svContext, ActivityShare.class);
+            svContext.startActivity(svIntent);
+        } else if (("Electricity").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityRecharge.class);
+            svIntent.putExtra("selecteditem", 2);
             svContext.startActivity(svIntent);
         } else if (("Privacy Policy").equalsIgnoreCase(title)
                 || ("Website Disclaimer").equalsIgnoreCase(title)
@@ -830,12 +1110,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 || ("Terms and conditions").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityPrivacyPolicy.class);
             svIntent.putExtra("actTitle", title);
-            svContext.startActivity(svIntent);
-        } else if (("Personal Profile").equalsIgnoreCase(title)) {
-            svIntent = new Intent(svContext, ActivityProfile.class);
-            svContext.startActivity(svIntent);
-        } else if (("Change Password").equalsIgnoreCase(title)) {
-            svIntent = new Intent(svContext, ActivityChangePassword.class);
             svContext.startActivity(svIntent);
         } else if (("Change T-Pin").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityChangeTPassword.class);
@@ -846,7 +1120,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         } else if (("Change Account").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityChangeAccount.class);
             svContext.startActivity(svIntent);
-        }  else if (title.equalsIgnoreCase("Add Fund PG")) {
+        } else if (title.equalsIgnoreCase("Add Fund PG")) {
             svIntent = new Intent(svContext, ActivityTopupWalletRazorpay.class);
             svContext.startActivity(svIntent);
         } else if (title.equalsIgnoreCase("Fund Request")) {
@@ -858,68 +1132,38 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         } else if (title.equalsIgnoreCase("Wallet Transfer")) {
             svIntent = new Intent(svContext, ActivityMainWalletTransfer.class);
             svContext.startActivity(svIntent);
-        }  else if (title.equalsIgnoreCase("Wallet History")) {
+        } else if (title.equalsIgnoreCase("Wallet History")) {
             svIntent = new Intent(svContext, ActivityWalletHistory.class);
             svContext.startActivity(svIntent);
         } else if (("Commission Wallet History").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityComisionWalletHistory.class);
             svContext.startActivity(svIntent);
-        }  else if (("AEPS Wallet History").equalsIgnoreCase(title)) {
+        } else if (("AEPS Wallet History").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityAepsWalletHistory.class);
             svContext.startActivity(svIntent);
-        } else if (("BBPS Commission").equalsIgnoreCase(title)) {
-            svIntent = new Intent(svContext, ActivityBBPSLiveCommision.class);
-            svContext.startActivity(svIntent);
-        }  else if (title.equalsIgnoreCase("Notification")) {
+        } else if (title.equalsIgnoreCase("Notification")) {
             svIntent = new Intent(svContext, ActivityNotification.class);
             svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("Refer and Earn") ||
-                title.equalsIgnoreCase("Referral") ||
-                title.equalsIgnoreCase("Refer & Earn")) {
-            svIntent = new Intent(svContext, ActivityShare.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("Refer and Earn")) {
-            showRateDialog(svContext);
         } else if (title.equalsIgnoreCase("Contact Us")) {
             svIntent = new Intent(svContext, ActivityContact.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("Create Ticket")) {
-            svIntent = new Intent(svContext, ActivityHelpFeedback.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("View Ticket")) {
-            svIntent = new Intent(svContext, ActivityTicketList.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("View Complaint")) {
-            svIntent = new Intent(svContext, ActivityComplaintList.class);
             svContext.startActivity(svIntent);
         } else if (title.equalsIgnoreCase("Logout")) {
             ShowConfirmLogout(svContext, "Logout", "Are you confirm?",
                     "Are you are ready to end your current session. You have to enter login detail again");
-        } else if (title.equalsIgnoreCase("My Fund Request")) {
-            svIntent = new Intent(svContext, ActivityRequestHistory.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("Recharge Commission")) {
-            svIntent = new Intent(svContext, ActivityRechargeCommision.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("My QR Code")) {
-            svIntent = new Intent(svContext, ActivityQrcode.class);
-            svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase("Fino AEPS Settlement")) {
-            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISNEWAEPSKYCDONE, false)) {
-//                svIntent = new Intent(svContext, ActivityNewPayoutBeneficiaryList.class);
-//                svContext.startActivity(svIntent);
-            } else {
-                ActivityMain.OpenNewAeps(title, svContext, customToast);
-            }
-
-        } else if (title.equalsIgnoreCase("Fino AEPS Settlement Report")) {
-            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISNEWAEPSKYCDONE, false)) {
-//                svIntent = new Intent(svContext, ActivityNewAepsPayoutTransferReport.class);
-//                svContext.startActivity(svIntent);
-            } else {
-                ActivityMain.OpenNewAeps(title, svContext, customToast);
-            }
         }
+
+//         else if (("Recharge History").equalsIgnoreCase(title)) {
+//            svIntent = new Intent(svContext, ActivityRechargeHistory.class);
+//            svIntent.putExtra("selecteditem", 2);
+//            svContext.startActivity(svIntent);
+//        }else if (("Bill Pay History").equalsIgnoreCase(title)) {
+//            svIntent = new Intent(svContext, ActivityBillPayHistory.class);
+//            svContext.startActivity(svIntent);
+//        } else if (("BBPS History").equalsIgnoreCase(title)) {
+//            svIntent = new Intent(svContext, ActivityBbpsHistory.class);
+//            svContext.startActivity(svIntent);
+//        }
+
     }
 
     private static void showRateDialog(Context svContext) {
@@ -937,23 +1181,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         builder.setNegativeButton("Later", (dialogInterface, i) -> dialogInterface.dismiss());
         builder.show();
     }
-
-
-    public static void OpenNewAeps(String itemName, Context svContext, ShowCustomToast customToast) {
-        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISNEWAEPSACTIVE, false)) {
-            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISNEWAEPSKYCDONE, false)) {
-                Intent svIntent = new Intent(svContext, ActivityFinoAEPSBankingService.class);
-                svIntent.putExtra("selecteditem", itemName.replace("Fino ", ""));
-                svContext.startActivity(svIntent);
-            } else {
-                Intent svIntent = new Intent(svContext, ActivityFinoAEPSKyc.class);
-                svContext.startActivity(svIntent);
-            }
-        } else {
-            customToast.showCustomToast(svContext, "AEPS Not active. Contact Admin", customToast.ToastyInfo);
-        }
-    }
-
 
     private static void ShowConfirmLogout(Context svContext, String head, String strTitle, String strDesc) {
         final Dialog dialog = new Dialog(svContext);
@@ -1136,5 +1363,21 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public static void OpenAeps(String itemName, Context svContext, ShowCustomToast customToast) {
+        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSACTIVE, false)) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISAEPSKYCDONE, false)) {
+                Intent svIntent = new Intent(svContext, ActivityFinoAEPSBankingService.class);
+                svIntent.putExtra("selecteditem", itemName);
+                svContext.startActivity(svIntent);
+            } else {
+                Intent svIntent = new Intent(svContext, ActivityFinoAEPSKyc.class);
+                svContext.startActivity(svIntent);
+            }
+        } else {
+            Intent svIntent = new Intent(svContext, ActivityFinoAEPSKyc.class);
+            svContext.startActivity(svIntent);
+            customToast.showCustomToast(svContext, "AEPS Not active. Contact Admin", customToast.ToastyInfo);
+        }
+    }
 
 }

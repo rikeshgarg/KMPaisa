@@ -86,6 +86,12 @@ public final class ActAepskycBinding implements ViewBinding {
   public final ImageView imgBackaadharcard;
 
   @NonNull
+  public final ImageView imgDrawable;
+
+  @NonNull
+  public final ImageView imgDrawable1;
+
+  @NonNull
   public final ImageView imgDrop1;
 
   @NonNull
@@ -96,6 +102,30 @@ public final class ActAepskycBinding implements ViewBinding {
 
   @NonNull
   public final ImageView imgPancard;
+
+  @NonNull
+  public final ImageView ivAddress;
+
+  @NonNull
+  public final ImageView ivAdharNo;
+
+  @NonNull
+  public final ImageView ivFname;
+
+  @NonNull
+  public final ImageView ivLname;
+
+  @NonNull
+  public final ImageView ivMobile;
+
+  @NonNull
+  public final ImageView ivPancardNo;
+
+  @NonNull
+  public final ImageView ivPincode;
+
+  @NonNull
+  public final ImageView ivShop;
 
   @NonNull
   public final TextView kycCharge;
@@ -159,9 +189,12 @@ public final class ActAepskycBinding implements ViewBinding {
       @NonNull EditText edMobile, @NonNull EditText edPancardNo, @NonNull EditText edPincode,
       @NonNull EditText edShopname, @NonNull EditText edtTransactionpassword,
       @NonNull TextView goback, @NonNull ConstraintLayout headlayout,
-      @NonNull ImageView imgBackaadharcard, @NonNull ImageView imgDrop1,
-      @NonNull ImageView imgDrop2, @NonNull ImageView imgFrontaadharcard,
-      @NonNull ImageView imgPancard, @NonNull TextView kycCharge,
+      @NonNull ImageView imgBackaadharcard, @NonNull ImageView imgDrawable,
+      @NonNull ImageView imgDrawable1, @NonNull ImageView imgDrop1, @NonNull ImageView imgDrop2,
+      @NonNull ImageView imgFrontaadharcard, @NonNull ImageView imgPancard,
+      @NonNull ImageView ivAddress, @NonNull ImageView ivAdharNo, @NonNull ImageView ivFname,
+      @NonNull ImageView ivLname, @NonNull ImageView ivMobile, @NonNull ImageView ivPancardNo,
+      @NonNull ImageView ivPincode, @NonNull ImageView ivShop, @NonNull TextView kycCharge,
       @NonNull LinearLayout layAadharback, @NonNull LinearLayout layAadharfront,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout layPancard,
       @NonNull RelativeLayout layoutTransactionpassword, @NonNull NestedScrollView nestedScrollView,
@@ -190,10 +223,20 @@ public final class ActAepskycBinding implements ViewBinding {
     this.goback = goback;
     this.headlayout = headlayout;
     this.imgBackaadharcard = imgBackaadharcard;
+    this.imgDrawable = imgDrawable;
+    this.imgDrawable1 = imgDrawable1;
     this.imgDrop1 = imgDrop1;
     this.imgDrop2 = imgDrop2;
     this.imgFrontaadharcard = imgFrontaadharcard;
     this.imgPancard = imgPancard;
+    this.ivAddress = ivAddress;
+    this.ivAdharNo = ivAdharNo;
+    this.ivFname = ivFname;
+    this.ivLname = ivLname;
+    this.ivMobile = ivMobile;
+    this.ivPancardNo = ivPancardNo;
+    this.ivPincode = ivPincode;
+    this.ivShop = ivShop;
     this.kycCharge = kycCharge;
     this.layAadharback = layAadharback;
     this.layAadharfront = layAadharfront;
@@ -351,6 +394,18 @@ public final class ActAepskycBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.img_drawable;
+      ImageView imgDrawable = ViewBindings.findChildViewById(rootView, id);
+      if (imgDrawable == null) {
+        break missingId;
+      }
+
+      id = R.id.img_drawable1;
+      ImageView imgDrawable1 = ViewBindings.findChildViewById(rootView, id);
+      if (imgDrawable1 == null) {
+        break missingId;
+      }
+
       id = R.id.img_drop_1;
       ImageView imgDrop1 = ViewBindings.findChildViewById(rootView, id);
       if (imgDrop1 == null) {
@@ -372,6 +427,54 @@ public final class ActAepskycBinding implements ViewBinding {
       id = R.id.img_pancard;
       ImageView imgPancard = ViewBindings.findChildViewById(rootView, id);
       if (imgPancard == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_address;
+      ImageView ivAddress = ViewBindings.findChildViewById(rootView, id);
+      if (ivAddress == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_adhar_no;
+      ImageView ivAdharNo = ViewBindings.findChildViewById(rootView, id);
+      if (ivAdharNo == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_fname;
+      ImageView ivFname = ViewBindings.findChildViewById(rootView, id);
+      if (ivFname == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_lname;
+      ImageView ivLname = ViewBindings.findChildViewById(rootView, id);
+      if (ivLname == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_mobile;
+      ImageView ivMobile = ViewBindings.findChildViewById(rootView, id);
+      if (ivMobile == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_pancard_no;
+      ImageView ivPancardNo = ViewBindings.findChildViewById(rootView, id);
+      if (ivPancardNo == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_pincode;
+      ImageView ivPincode = ViewBindings.findChildViewById(rootView, id);
+      if (ivPincode == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_shop;
+      ImageView ivShop = ViewBindings.findChildViewById(rootView, id);
+      if (ivShop == null) {
         break missingId;
       }
 
@@ -487,11 +590,13 @@ public final class ActAepskycBinding implements ViewBinding {
       return new ActAepskycBinding((ConstraintLayout) rootView, btSaveInput, btnTransactionPassword,
           checkFingerMachine, chooseAadharback, chooseAadharfront, choosePancard, deviceType,
           edAddress, edAdharNo, edFirstName, edLastName, edMobile, edPancardNo, edPincode,
-          edShopname, edtTransactionpassword, goback, headlayout, imgBackaadharcard, imgDrop1,
-          imgDrop2, imgFrontaadharcard, imgPancard, kycCharge, layAadharback, layAadharfront,
-          binding_layActionbar, layPancard, layoutTransactionpassword, nestedScrollView,
-          nofileAadharfront, radioMantra, radioMorpho, removeAadharback, removeAadharfront,
-          removePancard, resendotp, spinnerCitylist, spinnerStatelist, tvMachinetype, txtKycStatus);
+          edShopname, edtTransactionpassword, goback, headlayout, imgBackaadharcard, imgDrawable,
+          imgDrawable1, imgDrop1, imgDrop2, imgFrontaadharcard, imgPancard, ivAddress, ivAdharNo,
+          ivFname, ivLname, ivMobile, ivPancardNo, ivPincode, ivShop, kycCharge, layAadharback,
+          layAadharfront, binding_layActionbar, layPancard, layoutTransactionpassword,
+          nestedScrollView, nofileAadharfront, radioMantra, radioMorpho, removeAadharback,
+          removeAadharfront, removePancard, resendotp, spinnerCitylist, spinnerStatelist,
+          tvMachinetype, txtKycStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
