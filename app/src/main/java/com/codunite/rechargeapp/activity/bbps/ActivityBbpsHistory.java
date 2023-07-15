@@ -1,6 +1,7 @@
 package com.codunite.rechargeapp.activity.bbps;
 
 import android.app.DatePickerDialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +23,7 @@ import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.adapter.PaginationAdapter;
 import com.codunite.rechargeapp.activity.support.ActivityRaiseComplaint;
 import com.codunite.rechargeapp.R;
+import com.codunite.rechargeapp.adapter.RechargeHistoryAdapter;
 import com.codunite.rechargeapp.model.RechargeHistoryModel;
 import com.codunite.commonutility.GetFormattedDateTime;
 import com.codunite.commonutility.GlobalVariables;
@@ -42,9 +45,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ActivityBbpsHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
-    private ImageView imgToolBarBack;
+    private ImageView imgToolBarBack,iv_from,iv_to;
     private TextView txtWalletbal;
-
+    private String strSearchKey = "";
     private RecyclerView wallethistoryrv, rvPagination;
     private boolean isFirstLoad = true;
     private NestedScrollView layNestedScroll;
@@ -54,7 +57,8 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_billpayhistory);
+        //setContentView(R.layout.act_billpayhistory);
+        setContentView(R.layout.act_rechargehistory);
         StartApp();
 
         resumeApp();
@@ -66,7 +70,8 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
 
     public void resumeApp() {
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
-
+        iv_from=(ImageView)findViewById(R.id.iv_from);
+        iv_to=(ImageView)findViewById(R.id.iv_to);
         layNestedScroll = (NestedScrollView) findViewById(R.id.lay_nestedscroll);
         wallethistoryrv = (RecyclerView) findViewById(R.id.history_rv);
         rvPagination = (RecyclerView) findViewById(R.id.rv_pagination);
@@ -100,7 +105,7 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
 
         };
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = false;
@@ -112,7 +117,7 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
             }
         });
 
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = true;
@@ -145,16 +150,41 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
         isFirstLoad = true;
         pageNumber = 1;
         LoadRechargeHistory(strFromDate, strToDate);
-
+        setSearchView();
     }
+    private void setSearchView() {
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) findViewById(R.id.searchview);
+        searchView.setVisibility(View.VISIBLE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
 
+        // listening to search query text change
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+        });
+    }
     private void LoadRechargeHistory(String fromDate, String toDate) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
-        lstUploadData.add("" + pageNumber);
-        callWebService(ApiInterface.GETBBSPHISTORY, lstUploadData);
+        lstUploadData.add(strSearchKey);
+        //lstUploadData.add("" + pageNumber);
+        callWebService(ApiInterface.GETBBSPLIVEHISTORY, lstUploadData);
     }
 
     private Context svContext;
@@ -233,7 +263,7 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-        if (url.contains(ApiInterface.GETBBSPHISTORY)) {
+        if (url.contains(ApiInterface.GETBBSPLIVEHISTORY)) {
             int strPageCount = 0;
             try {
                 lstItems = new ArrayList<>();
@@ -242,11 +272,6 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
                 String str_message = json.getString(TAG_MESSAGE);
                 String str_json_status = json.getString(TAG_STATUS);
 
-                try {
-                    strPageCount = Integer.parseInt(json.getString("pages"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
 
                 if (str_json_status.equalsIgnoreCase("0")) {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
@@ -290,11 +315,30 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
             int animation_type = ItemAnimation.LEFT_RIGHT;
-            layNestedScroll.scrollTo(0, 0);
-            if (isFirstLoad) {
-                isFirstLoad = false;
-                LoadPaginationView(strPageCount);
-            }
+            RechargeHistoryAdapter mAdapter = new RechargeHistoryAdapter(this, lstItems, animation_type, true);
+            wallethistoryrv.setAdapter(mAdapter);
+            mAdapter.setOnItemClickListener(new RechargeHistoryAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, String obj, int position) {
+
+                }
+            });
+
+            mAdapter.setOnComplaintItemClickListener(new RechargeHistoryAdapter.OnComplaintItemClickListener() {
+                @Override
+                public void onComplaintItemClick(View view, String obj, int position) {
+                    Intent intent = new Intent(svContext, ActivityRaiseComplaint.class);
+                    intent.putExtra("comp_from", true);
+                    intent.putExtra("rechg_id", lstItems.get(position).getStr_order_id());
+                    intent.putExtra("rechg_amount", lstItems.get(position).getStr_amount());
+                    startActivity(intent);
+                }
+            });
+//            layNestedScroll.scrollTo(0, 0);
+//            if (isFirstLoad) {
+//                isFirstLoad = false;
+//                LoadPaginationView(strPageCount);
+//            }
         }
     }
 

@@ -63,8 +63,9 @@ public class ActivityWalletHistory extends AppCompatActivity implements View.OnC
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
     private TextView txtWalletbal;
-    private Button btnAddWallet;
+    private TextView btnAddWallet;
     private CardView cvAddWallet, cardShowBalance;
+    ImageView iv_from,iv_to;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,19 +84,17 @@ public class ActivityWalletHistory extends AppCompatActivity implements View.OnC
     public void resumeApp() {
         wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
-        btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
+        btnAddWallet = (TextView) findViewById(R.id.btn_addwallet);
         txtWalletbal.setVisibility(View.INVISIBLE);
-        cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
-        cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
-        cvAddWallet.setVisibility(View.INVISIBLE);
-        cardShowBalance.setVisibility(View.INVISIBLE);
         layFilter = (LinearLayout) findViewById(R.id.lay_filter);
+        iv_from=(ImageView)findViewById(R.id.iv_from);
+        iv_to=(ImageView)findViewById(R.id.iv_to);
         layFilter.setVisibility(View.INVISIBLE);
         btnAddWallet.setOnClickListener(this);
 
-        TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
+        //TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
-        txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
+        //txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
 
         myCalendar = Calendar.getInstance();
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
@@ -121,7 +120,7 @@ public class ActivityWalletHistory extends AppCompatActivity implements View.OnC
         };
 
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = false;
@@ -133,7 +132,7 @@ public class ActivityWalletHistory extends AppCompatActivity implements View.OnC
             }
         });
 
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = true;
@@ -313,11 +312,8 @@ public class ActivityWalletHistory extends AppCompatActivity implements View.OnC
                 e.printStackTrace();
             }
 
-            cvAddWallet.setVisibility(View.VISIBLE);
-            cardShowBalance.setVisibility(View.VISIBLE);
             layFilter.setVisibility(View.VISIBLE);
             searchView.setVisibility(View.VISIBLE);
-
             txtWalletbal.setVisibility(View.VISIBLE);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

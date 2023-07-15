@@ -63,6 +63,9 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
     private int[] editTextsClickId = {};
     private List<String> listSpinner;
 
+    private Context svContext;
+    private ShowCustomToast customToast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,13 +130,6 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
 
 //        btnBack = (Button) allViewWithClick[0];
     }
-
-
-    private Context svContext;
-    private ShowCustomToast customToast;
-    
-    
-
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
@@ -151,9 +147,6 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         }
 
         hideKeyboard();
-
-
-
         loadToolBar();
     }
 

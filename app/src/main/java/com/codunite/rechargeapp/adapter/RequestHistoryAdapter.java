@@ -38,18 +38,17 @@ public class RequestHistoryAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
-        public TextView amount, datetime, desc;
-        public CardView cardView;
+        public TextView amount, datetime, desc,tv_request_id,tv_txn_id,tv_status;
         public View lyt_parent;
 
         public OriginalViewHolder(View v) {
             super(v);
             amount = (TextView) v.findViewById(R.id.amount);
             datetime = (TextView) v.findViewById(R.id.datetime);
-            desc = (TextView) v.findViewById(R.id.rechargedesc);
-
-            cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
+            tv_request_id= (TextView) v.findViewById(R.id.tv_request_id);
+            tv_txn_id= (TextView) v.findViewById(R.id.tv_txn_id);
+            tv_status= (TextView) v.findViewById(R.id.tv_status);
         }
     }
 
@@ -68,18 +67,24 @@ public class RequestHistoryAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
             view.amount.setText(items.get(position).getStr_amount());
             view.datetime.setText(items.get(position).getStr_datetime());
-            view.desc.setText("#" + items.get(position).getRequest_id() + "\n#" +
-                    items.get(position).getTxnid() + "\n#" +
-                    items.get(position).getStatus());
+            view.tv_request_id.setText("#" + items.get(position).getRequest_id());
+            view.tv_txn_id.setText("#" + items.get(position).getTxnid());
+            view.tv_status.setText(items.get(position).getStatus());
+
+//            view.desc.setText("#" + items.get(position).getRequest_id() + "\n#" +
+//                    items.get(position).getTxnid() + "\n#" +
+//                    items.get(position).getStatus());
 
 
             if (items.get(position).getStatus().equalsIgnoreCase("Approved")){
-                view.amount.setTextColor(ctx.getResources().getColor(R.color.green));
+                 view.tv_status.setTextColor(ctx.getResources().getColor(R.color.green));
             }else if (items.get(position).getStatus().equalsIgnoreCase("Rejected")){
-                view.amount.setTextColor(ctx.getResources().getColor(R.color.red));
+                view.tv_status.setTextColor(ctx.getResources().getColor(R.color.red));
             }else {
-                view.amount.setTextColor(ctx.getResources().getColor(R.color.black));
+                view.tv_status.setTextColor(ctx.getResources().getColor(R.color.orange_900));
             }
+
+
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override

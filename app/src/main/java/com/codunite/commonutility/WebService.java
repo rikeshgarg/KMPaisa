@@ -327,7 +327,7 @@ public class WebService {
                 return apiService.addBeneficiary(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6), lstUploadData.get(7));
             case ApiInterface.GETMONEYTRANSFERHISTORY:
-                return apiService.getMoneyTransferHistory(lstUploadData.get(0));
+                return apiService.getMoneyTransferHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.GETBBPSOPERATORLIST:
                 return apiService.getBbpsOperator();
             case ApiInterface.GETBBPSCIRCLELIST:
@@ -350,7 +350,7 @@ public class WebService {
                             lstUploadData.get(9), lstUploadData.get(10), lstUploadData.get(11), lstUploadData.get(12));
                 }
             case ApiInterface.GETMEMBERBYMOBILE:
-                return apiService.GetMemberByMobile(lstUploadData.get(0));
+                return apiService.GetMemberByMobile(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.OPERATORLIST:
                 return apiService.GetOperator(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.GETCOUNTRYLIST:
@@ -434,7 +434,7 @@ public class WebService {
             case ApiInterface.GetCITYLIST:
                 return apiService.getCityList();
             case ApiInterface.GETOPERATORID:
-                return apiService.GetOperatorList(lstUploadData.get(0));
+                return apiService.GetOperatorList(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.GETMEMBERLIST:
                 return apiService.GETMEMBERLIST(lstUploadData.get(0));
             case ApiInterface.GETRECHARGECOMMISIONLIST:
@@ -467,7 +467,7 @@ public class WebService {
                 return apiService.GetUsername(lstUploadData.get(0));
             case ApiInterface.REQUESTAMOUNT:
                 return apiService.RequestWalletBalance(lstUploadData.get(0), lstUploadData.get(1),
-                        lstUploadData.get(2));
+                        lstUploadData.get(2), lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5));
             case ApiInterface.GETUPGRADEINCOME:
                 return apiService.GetUpgradeIncome(lstUploadData.get(0));
             case ApiInterface.ELECTRICRECHARGEAUTH:
@@ -491,8 +491,7 @@ public class WebService {
                 return apiService.ChangeTranscationPassword(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3));
             case ApiInterface.UPADATEUSERDATA:
-                return apiService.UpdateUserData(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3), lstUploadData.get(4),
-                        lstUploadData.get(5), lstUploadData.get(6), lstUploadData.get(7));
+                return apiService.UpdateUserData(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
 
             case ApiInterface.RECHARGEOTPAUTH:
                 return apiService.RechargeOtpConfirm(lstUploadData.get(0), lstUploadData.get(1));
@@ -501,7 +500,9 @@ public class WebService {
             case ApiInterface.EWALLETHISTORY:
                 return apiService.GetEWalletHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.REQUESTHISTORY:
-                return apiService.GetRequestHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
+                return apiService.GetRequestHistory(lstUploadData.get(0));
+            case ApiInterface.E_REQUESTHISTORY:
+                return apiService.GetERequestHistory(lstUploadData.get(0));
             case ApiInterface.GETPOINTWALLETHISTORY:
                 return apiService.GetPointWalletHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
 
@@ -519,7 +520,7 @@ public class WebService {
             case ApiInterface.WALLETOTPAUTH:
                 return apiService.WalletTransferOtpAuth(lstUploadData.get(0), lstUploadData.get(1));
             case ApiInterface.MTRANSFERHISTORY:
-                return apiService.MtransferHistory(lstUploadData.get(0));
+                return apiService.MtransferHistory(lstUploadData.get(0),lstUploadData.get(1),lstUploadData.get(2),lstUploadData.get(3));
             case ApiInterface.MOBILETRANSFER:
                 return apiService.TransferMwalletAmount(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3),lstUploadData.get(4), lstUploadData.get(5));
@@ -567,13 +568,13 @@ public class WebService {
                 return apiService.PayEmi(lstUploadData.get(0), lstUploadData.get(1),
                         lstUploadData.get(2));
             case ApiInterface.ROFFERS:
-                return apiService.GetROffers(lstUploadData.get(0), lstUploadData.get(1));
+                return apiService.GetROffers(lstUploadData.get(0), lstUploadData.get(1),lstUploadData.get(2));
             case ApiInterface.RDTHOFFERS:
-                return apiService.GetRDthOffers(lstUploadData.get(0), lstUploadData.get(1));
+                return apiService.GetRDthOffers(lstUploadData.get(0), lstUploadData.get(1),lstUploadData.get(2));
             case ApiInterface.VIEWALLPLANS:
-                return apiService.GetAllPlans(lstUploadData.get(0), lstUploadData.get(1));
+                return apiService.GetAllPlans(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.VIEWALLDTHPLANS:
-                return apiService.GetAllDthPlans(lstUploadData.get(0), lstUploadData.get(1));
+                return apiService.GetAllDthPlans(lstUploadData.get(0), lstUploadData.get(1),lstUploadData.get(2));
             case ApiInterface.GETCCTRANSFERHISTORY:
                 return apiService.CCTransferHistory(lstUploadData.get(0));
             case ApiInterface.USERKYC:
@@ -746,12 +747,14 @@ public class WebService {
             case ApiInterface.VIRTUAL_ACCOUNT_REPORT:
                 return apiService.virtualAccountList(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.DMT_BANK_LIST:
-                return apiService.dmtBankList();
+                return apiService.dmtBankList(lstUploadData.get(0));
             case ApiInterface.GET_SENDER_DETAILS:
                 return apiService.getSenderDetail(lstUploadData.get(0), lstUploadData.get(1));
             case ApiInterface.UPDATE_SENDER_DETAILS:
                 return apiService.updateSenderDetailAuth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6));
+            case ApiInterface.RECENTRECHARGEHISTORY:
+                return apiService.getRecentRechargeHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
                 default:
                 new ShowCustomToast(context).showToast("Please decalre Url in webservice file", context);
                 break;

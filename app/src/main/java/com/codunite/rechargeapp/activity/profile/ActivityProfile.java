@@ -147,22 +147,12 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
                 lstUploadData = new LinkedList<>();
                 lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                 lstUploadData.add(edName.getText().toString().trim());
-//                lstUploadData.add(edAddress.getText().toString().trim());
-//                lstUploadData.add(edPincode.getText().toString().trim());
-//                lstUploadData.add(selectedFranchSpinnerDistrict.getId());
-//                lstUploadData.add(selectedFranchSpinnerState.getId());
-//                lstUploadData.add(edBlockName.getText().toString().trim());
-                lstUploadData.add("photo");
+                lstUploadData.add("");
                 callWebService(ApiInterface.UPADATEUSERDATA, lstUploadData);
             } else {
                 lstUploadData = new LinkedList<>();
                 lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                 lstUploadData.add(edName.getText().toString().trim());
-//                lstUploadData.add(edAddress.getText().toString().trim());
-//                lstUploadData.add(edPincode.getText().toString().trim());
-//                lstUploadData.add(selectedFranchSpinnerDistrict.getId());
-//                lstUploadData.add(selectedFranchSpinnerState.getId());
-//                lstUploadData.add(edBlockName.getText().toString().trim());
                 lstUploadData.add(encodeImage(imageDpUri));
                 callWebService(ApiInterface.UPADATEUSERDATA, lstUploadData);
             }
@@ -202,6 +192,15 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
             });
         }
         imgAvatar = findViewById(allViewWithClick[1]);
+        String imageUrl = PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERPROFILEPIC, "");
+        if(imageUrl!="") {
+            try {
+                ImageLoading.loadImages(imageUrl, imgAvatar, R.drawable.users);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     private Uri imageDpUri = null;
@@ -381,7 +380,7 @@ public class ActivityProfile extends AppCompatActivity implements View.OnClickLi
                 } else {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastySuccess);
                     PreferenceConnector.writeString(svContext, PreferenceConnector.LOGINUSERNAME, edName.getText().toString().trim());
-
+                    //PreferenceConnector.writeString(svContext, PreferenceConnector.LOGINUSERPROFILEPIC, "");
                     Intent svIntent = new Intent(svContext, ActivityMain.class);
                     svContext.startActivity(svIntent);
                     finishAffinity();

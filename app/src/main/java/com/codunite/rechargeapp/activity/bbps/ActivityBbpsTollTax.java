@@ -65,6 +65,7 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
     public static final String TAG_MESSAGE = "message";
     public static final String TAG_STATUS = "status";
     private EditText edtOtp;
+    TextView tv_heading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,9 +208,10 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
     private void loadToolBar() {
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
-
+        tv_heading = (TextView)findViewById(R.id.tv_heading);
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("BBPS Toll Tax");
+        //txtHeading.setText("BBPS Toll Tax");
+        tv_heading.setText("BBPS Toll Tax");
     }
 
 

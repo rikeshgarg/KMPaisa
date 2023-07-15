@@ -4,16 +4,13 @@ package com.codunite.rechargeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -25,16 +22,10 @@ import me.grantland.widget.AutofitTextView;
 
 public final class ActWallethistoryWalletBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnAddwallet;
-
-  @NonNull
-  public final CardView cardAddwallet;
-
-  @NonNull
-  public final CardView cardWallbal;
+  public final TextView btnAddwallet;
 
   @NonNull
   public final TextView datePickerFrom;
@@ -43,13 +34,19 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
   public final TextView datePickerTo;
 
   @NonNull
-  public final AutofitTextView ewalletbal;
+  public final TextView datePickerTo1;
 
   @NonNull
   public final ImageView filterSearch;
 
   @NonNull
-  public final ConstraintLayout headlayout;
+  public final LinearLayout headlayout;
+
+  @NonNull
+  public final ImageView ivFrom;
+
+  @NonNull
+  public final ImageView ivTo;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
@@ -58,10 +55,10 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
   public final LinearLayout layFilter;
 
   @NonNull
-  public final NestedScrollView layNestedscroll;
+  public final LinearLayout llBal;
 
   @NonNull
-  public final LinearLayout linearLayout;
+  public final RelativeLayout rlTop;
 
   @NonNull
   public final RecyclerView rvPagination;
@@ -75,28 +72,27 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
   @NonNull
   public final RecyclerView wallethistoryRv;
 
-  private ActWallethistoryWalletBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button btnAddwallet, @NonNull CardView cardAddwallet, @NonNull CardView cardWallbal,
-      @NonNull TextView datePickerFrom, @NonNull TextView datePickerTo,
-      @NonNull AutofitTextView ewalletbal, @NonNull ImageView filterSearch,
-      @NonNull ConstraintLayout headlayout, @NonNull IncludeActionbarBinding layActionbar,
-      @NonNull LinearLayout layFilter, @NonNull NestedScrollView layNestedscroll,
-      @NonNull LinearLayout linearLayout, @NonNull RecyclerView rvPagination,
-      @NonNull SearchView searchview, @NonNull AutofitTextView walletbal,
-      @NonNull RecyclerView wallethistoryRv) {
+  private ActWallethistoryWalletBinding(@NonNull LinearLayout rootView,
+      @NonNull TextView btnAddwallet, @NonNull TextView datePickerFrom,
+      @NonNull TextView datePickerTo, @NonNull TextView datePickerTo1,
+      @NonNull ImageView filterSearch, @NonNull LinearLayout headlayout, @NonNull ImageView ivFrom,
+      @NonNull ImageView ivTo, @NonNull IncludeActionbarBinding layActionbar,
+      @NonNull LinearLayout layFilter, @NonNull LinearLayout llBal, @NonNull RelativeLayout rlTop,
+      @NonNull RecyclerView rvPagination, @NonNull SearchView searchview,
+      @NonNull AutofitTextView walletbal, @NonNull RecyclerView wallethistoryRv) {
     this.rootView = rootView;
     this.btnAddwallet = btnAddwallet;
-    this.cardAddwallet = cardAddwallet;
-    this.cardWallbal = cardWallbal;
     this.datePickerFrom = datePickerFrom;
     this.datePickerTo = datePickerTo;
-    this.ewalletbal = ewalletbal;
+    this.datePickerTo1 = datePickerTo1;
     this.filterSearch = filterSearch;
     this.headlayout = headlayout;
+    this.ivFrom = ivFrom;
+    this.ivTo = ivTo;
     this.layActionbar = layActionbar;
     this.layFilter = layFilter;
-    this.layNestedscroll = layNestedscroll;
-    this.linearLayout = linearLayout;
+    this.llBal = llBal;
+    this.rlTop = rlTop;
     this.rvPagination = rvPagination;
     this.searchview = searchview;
     this.walletbal = walletbal;
@@ -105,7 +101,7 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -131,20 +127,8 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btn_addwallet;
-      Button btnAddwallet = ViewBindings.findChildViewById(rootView, id);
+      TextView btnAddwallet = ViewBindings.findChildViewById(rootView, id);
       if (btnAddwallet == null) {
-        break missingId;
-      }
-
-      id = R.id.card_addwallet;
-      CardView cardAddwallet = ViewBindings.findChildViewById(rootView, id);
-      if (cardAddwallet == null) {
-        break missingId;
-      }
-
-      id = R.id.card_wallbal;
-      CardView cardWallbal = ViewBindings.findChildViewById(rootView, id);
-      if (cardWallbal == null) {
         break missingId;
       }
 
@@ -160,9 +144,9 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ewalletbal;
-      AutofitTextView ewalletbal = ViewBindings.findChildViewById(rootView, id);
-      if (ewalletbal == null) {
+      id = R.id.datePicker_to1;
+      TextView datePickerTo1 = ViewBindings.findChildViewById(rootView, id);
+      if (datePickerTo1 == null) {
         break missingId;
       }
 
@@ -172,7 +156,19 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout headlayout = (ConstraintLayout) rootView;
+      LinearLayout headlayout = (LinearLayout) rootView;
+
+      id = R.id.iv_from;
+      ImageView ivFrom = ViewBindings.findChildViewById(rootView, id);
+      if (ivFrom == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_to;
+      ImageView ivTo = ViewBindings.findChildViewById(rootView, id);
+      if (ivTo == null) {
+        break missingId;
+      }
 
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
@@ -187,15 +183,15 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lay_nestedscroll;
-      NestedScrollView layNestedscroll = ViewBindings.findChildViewById(rootView, id);
-      if (layNestedscroll == null) {
+      id = R.id.ll_bal;
+      LinearLayout llBal = ViewBindings.findChildViewById(rootView, id);
+      if (llBal == null) {
         break missingId;
       }
 
-      id = R.id.linearLayout;
-      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout == null) {
+      id = R.id.rl_top;
+      RelativeLayout rlTop = ViewBindings.findChildViewById(rootView, id);
+      if (rlTop == null) {
         break missingId;
       }
 
@@ -223,10 +219,10 @@ public final class ActWallethistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActWallethistoryWalletBinding((ConstraintLayout) rootView, btnAddwallet,
-          cardAddwallet, cardWallbal, datePickerFrom, datePickerTo, ewalletbal, filterSearch,
-          headlayout, binding_layActionbar, layFilter, layNestedscroll, linearLayout, rvPagination,
-          searchview, walletbal, wallethistoryRv);
+      return new ActWallethistoryWalletBinding((LinearLayout) rootView, btnAddwallet,
+          datePickerFrom, datePickerTo, datePickerTo1, filterSearch, headlayout, ivFrom, ivTo,
+          binding_layActionbar, layFilter, llBal, rlTop, rvPagination, searchview, walletbal,
+          wallethistoryRv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

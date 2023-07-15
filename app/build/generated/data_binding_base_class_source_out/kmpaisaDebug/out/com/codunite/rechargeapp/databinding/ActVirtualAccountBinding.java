@@ -4,13 +4,11 @@ package com.codunite.rechargeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.widget.NestedScrollView;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -20,22 +18,16 @@ import java.lang.String;
 
 public final class ActVirtualAccountBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnActive;
+  public final AppCompatButton btnActive;
 
   @NonNull
-  public final CardView cardPayoutTransfer;
-
-  @NonNull
-  public final ConstraintLayout headlayout;
+  public final LinearLayout headlayout;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
-
-  @NonNull
-  public final NestedScrollView nestedScrollView;
 
   @NonNull
   public final TextView tvActiveStatus;
@@ -46,16 +38,14 @@ public final class ActVirtualAccountBinding implements ViewBinding {
   @NonNull
   public final TextView tvVirtualac;
 
-  private ActVirtualAccountBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnActive,
-      @NonNull CardView cardPayoutTransfer, @NonNull ConstraintLayout headlayout,
-      @NonNull IncludeActionbarBinding layActionbar, @NonNull NestedScrollView nestedScrollView,
-      @NonNull TextView tvActiveStatus, @NonNull TextView tvIfsc, @NonNull TextView tvVirtualac) {
+  private ActVirtualAccountBinding(@NonNull LinearLayout rootView,
+      @NonNull AppCompatButton btnActive, @NonNull LinearLayout headlayout,
+      @NonNull IncludeActionbarBinding layActionbar, @NonNull TextView tvActiveStatus,
+      @NonNull TextView tvIfsc, @NonNull TextView tvVirtualac) {
     this.rootView = rootView;
     this.btnActive = btnActive;
-    this.cardPayoutTransfer = cardPayoutTransfer;
     this.headlayout = headlayout;
     this.layActionbar = layActionbar;
-    this.nestedScrollView = nestedScrollView;
     this.tvActiveStatus = tvActiveStatus;
     this.tvIfsc = tvIfsc;
     this.tvVirtualac = tvVirtualac;
@@ -63,7 +53,7 @@ public final class ActVirtualAccountBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -89,18 +79,12 @@ public final class ActVirtualAccountBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btn_active;
-      Button btnActive = ViewBindings.findChildViewById(rootView, id);
+      AppCompatButton btnActive = ViewBindings.findChildViewById(rootView, id);
       if (btnActive == null) {
         break missingId;
       }
 
-      id = R.id.card_payout_transfer;
-      CardView cardPayoutTransfer = ViewBindings.findChildViewById(rootView, id);
-      if (cardPayoutTransfer == null) {
-        break missingId;
-      }
-
-      ConstraintLayout headlayout = (ConstraintLayout) rootView;
+      LinearLayout headlayout = (LinearLayout) rootView;
 
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
@@ -108,12 +92,6 @@ public final class ActVirtualAccountBinding implements ViewBinding {
         break missingId;
       }
       IncludeActionbarBinding binding_layActionbar = IncludeActionbarBinding.bind(layActionbar);
-
-      id = R.id.nested_scroll_view;
-      NestedScrollView nestedScrollView = ViewBindings.findChildViewById(rootView, id);
-      if (nestedScrollView == null) {
-        break missingId;
-      }
 
       id = R.id.tv_active_status;
       TextView tvActiveStatus = ViewBindings.findChildViewById(rootView, id);
@@ -133,9 +111,8 @@ public final class ActVirtualAccountBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActVirtualAccountBinding((ConstraintLayout) rootView, btnActive,
-          cardPayoutTransfer, headlayout, binding_layActionbar, nestedScrollView, tvActiveStatus,
-          tvIfsc, tvVirtualac);
+      return new ActVirtualAccountBinding((LinearLayout) rootView, btnActive, headlayout,
+          binding_layActionbar, tvActiveStatus, tvIfsc, tvVirtualac);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

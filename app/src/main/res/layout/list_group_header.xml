@@ -26,7 +26,6 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_12"
-            android:background="@drawable/menu_icon_bg"
             android:gravity="center">
 
             <ImageView
@@ -44,7 +43,7 @@
             android:id="@+id/lblListHeader"
             android:layout_width="match_parent"
             android:layout_height="?attr/listPreferredItemHeightSmall"
-            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_50"
             android:gravity="center_vertical"
             android:paddingRight="?attr/listPreferredItemPaddingRight"
             android:textColor="@color/black"
@@ -59,7 +58,7 @@
             android:layout_marginRight="@dimen/dp_15"
             android:padding="@dimen/seven"
             android:src="@drawable/ic_arrow_menu"
-            app:tint="@color/white" />
+            app:tint="@color/black" />
 
     </RelativeLayout>
 

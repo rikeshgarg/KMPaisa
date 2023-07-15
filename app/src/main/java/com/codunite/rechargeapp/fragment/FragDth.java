@@ -231,6 +231,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
             strDthOperatorCode = (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]);
 
             lstUploadData = new LinkedList<>();
+            lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
             lstUploadData.add(strDthMobile);
             lstUploadData.add(strDthOperatorCode);
             callWebService(ApiInterface.VIEWALLDTHPLANS, lstUploadData);

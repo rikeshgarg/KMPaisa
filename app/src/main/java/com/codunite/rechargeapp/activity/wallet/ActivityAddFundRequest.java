@@ -360,8 +360,8 @@ public class ActivityAddFundRequest extends AppCompatActivity implements View.On
         ImageView imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
 
-//        TextView txtHeading = (TextView) findViewById(R.id.heading);
-//        txtHeading.setText("Fund Request");
+        TextView txtHeading = (TextView) findViewById(R.id.heading);
+        txtHeading.setText("Fund Request");
 //
 //        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
 //        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));

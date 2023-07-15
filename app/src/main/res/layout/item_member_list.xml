@@ -4,263 +4,205 @@
     android:id="@+id/lyt_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/fifteen"
+    android:layout_marginRight="@dimen/fifteen"
+    android:layout_marginBottom="@dimen/fifteen"
     android:orientation="horizontal">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
+
+    <LinearLayout
+        android:id="@+id/ll_bg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/five"
-        android:visibility="visible"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="@dimen/card_item_corner"
-        app:cardElevation="@dimen/card_item_elevation">
+        android:layout_height="180dp"
+        android:background="@drawable/bg_dashboard_blue"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/ten">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/two"
-                android:orientation="horizontal"
-                android:weightSum="10">
+                android:id="@+id/ll_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@drawable/bg_circle_white"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="4"
-                    android:text="User Code"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_forteen"
-                    android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:padding="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_member">
 
-                <TextView
-                    android:text="123456"
-                    android:id="@+id/vm_memberid"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="6"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_twelve"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/two"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="4"
-                    android:text="Name"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_forteen"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:text="Test user"
-                    android:id="@+id/vm_name"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="6"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_twelve"
-                    android:textStyle="bold" />
+                </ImageView>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/two"
-                android:weightSum="10">
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ll_image"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="4"
-                    android:text="Mobile"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_forteen"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:weightSum="10">
 
-                <TextView
-                    android:text="123456"
-                    android:id="@+id/vm_wallbal"
-                    android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="3"
+                        android:text="User Code:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+
+                    <TextView
+                        android:id="@+id/vm_memberid"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:gravity="right"
+                        android:text="123456"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="6"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_twelve"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="@dimen/two"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="3"
+                        android:text="Name:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+
+                    <TextView
+                        android:id="@+id/vm_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:gravity="right"
+                        android:text="Test user"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/two"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="3"
+                        android:text="Mobile:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+
+                    <TextView
+                        android:id="@+id/vm_wallbal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:gravity="right"
+                        android:text="123456"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/two"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="2"
+                        android:text="Email:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+
+                    <TextView
+                        android:id="@+id/vm_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:gravity="right"
+                        android:text="test@test.com"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/two"
-                android:weightSum="10">
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/img_ballance"
+                android:orientation="vertical">
+
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="4"
-                    android:text="Email"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_forteen"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:text="test@test.com"
-                    android:id="@+id/vm_status"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="6"
-                    android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_twelve"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/two"
-                android:weightSum="10">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_25"
                     android:text="Wallet balance"
-                    android:textColor="@color/fontcolortextview"
+                    android:textColor="@color/colorAccent"
                     android:textSize="@dimen/ts_forteen"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:text="5475"
                     android:id="@+id/wallet_bal"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_weight="6"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="54757"
                     android:textColor="@color/fontcolortextview"
-                    android:textSize="@dimen/ts_twelve"
+                    android:textSize="@dimen/ts_forteen"
                     android:textStyle="bold" />
-            </LinearLayout>
 
-        </LinearLayout>
+            </RelativeLayout>
 
-<!--        <RelativeLayout-->
-<!--            android:id="@+id/lay_head_change"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
+        </RelativeLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:id="@+id/lay_amount"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="@dimen/thirty"-->
-<!--                android:layout_marginRight="@dimen/ten"-->
-<!--                android:layout_alignParentRight="true"-->
-<!--                android:orientation="horizontal">-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="@string/currency_symbol"-->
-<!--                    android:textSize="@dimen/ts_twentyfive" />-->
+    </LinearLayout>
 
-<!--                <TextView-->
-<!--                    android:id="@+id/amount"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginLeft="@dimen/five"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="1000"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/ts_twenty" />-->
-<!--            </LinearLayout>-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_alignParentLeft="true"-->
-<!--                android:id="@+id/lay_notification"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="@dimen/ten"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_member_id"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:text="KMD123456"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/ts_seventeen"-->
-<!--                    android:textStyle="normal" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_name"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="@dimen/three"-->
-<!--                    android:text="User"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/ts_thirteen" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_email"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="@dimen/three"-->
-<!--                    android:text="test@test.com"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/ts_thirteen" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_mobile"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="@dimen/three"-->
-<!--                    android:text="123456789"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/ts_thirteen" />-->
-
-<!--            </LinearLayout>-->
-
-<!--        </RelativeLayout>-->
-
-    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

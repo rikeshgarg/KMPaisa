@@ -206,6 +206,7 @@ public class FragLandline extends Fragment implements OnClickListener, WebServic
             strDthOperatorCode = (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]);
 
             lstUploadData = new LinkedList<>();
+            lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
             lstUploadData.add(strDthMobile);
             lstUploadData.add(strDthOperatorCode);
             callWebService(ApiInterface.VIEWALLDTHPLANS, lstUploadData);

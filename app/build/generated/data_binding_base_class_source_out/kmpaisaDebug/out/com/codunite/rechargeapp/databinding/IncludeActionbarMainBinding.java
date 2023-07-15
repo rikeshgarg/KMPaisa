@@ -31,7 +31,7 @@ public final class IncludeActionbarMainBinding implements ViewBinding {
   public final ImageView imgMenu;
 
   @NonNull
-  public final LinearLayout imgScancode;
+  public final LinearLayout imgNotification;
 
   @NonNull
   public final LinearLayout layActions;
@@ -44,13 +44,13 @@ public final class IncludeActionbarMainBinding implements ViewBinding {
 
   private IncludeActionbarMainBinding(@NonNull FrameLayout rootView, @NonNull ImageView imgClose,
       @NonNull LinearLayout imgDashLogo, @NonNull ImageView imgMenu,
-      @NonNull LinearLayout imgScancode, @NonNull LinearLayout layActions,
+      @NonNull LinearLayout imgNotification, @NonNull LinearLayout layActions,
       @NonNull RelativeLayout layTop, @NonNull LinearLayout llMenu) {
     this.rootView = rootView;
     this.imgClose = imgClose;
     this.imgDashLogo = imgDashLogo;
     this.imgMenu = imgMenu;
-    this.imgScancode = imgScancode;
+    this.imgNotification = imgNotification;
     this.layActions = layActions;
     this.layTop = layTop;
     this.llMenu = llMenu;
@@ -101,9 +101,9 @@ public final class IncludeActionbarMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.img_scancode;
-      LinearLayout imgScancode = ViewBindings.findChildViewById(rootView, id);
-      if (imgScancode == null) {
+      id = R.id.img_notification;
+      LinearLayout imgNotification = ViewBindings.findChildViewById(rootView, id);
+      if (imgNotification == null) {
         break missingId;
       }
 
@@ -126,7 +126,7 @@ public final class IncludeActionbarMainBinding implements ViewBinding {
       }
 
       return new IncludeActionbarMainBinding((FrameLayout) rootView, imgClose, imgDashLogo, imgMenu,
-          imgScancode, layActions, layTop, llMenu);
+          imgNotification, layActions, layTop, llMenu);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

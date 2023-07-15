@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +21,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.codunite.commonutility.FragmentTAG;
 import com.codunite.rechargeapp.activity.ActivityLoginTransfer;
@@ -27,6 +31,7 @@ import com.codunite.rechargeapp.activity.bbps.ActivityBBPSDashBoardActivity;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsElectricity;
 import com.codunite.rechargeapp.activity.bbps.FragBBPSDashBoard;
 import com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory;
+import com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequest;
 import com.codunite.rechargeapp.activity.wallet.ActivityEWalletHistory;
 import com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory;
 import com.codunite.rechargeapp.adapter.DashboardAdapter;
@@ -38,6 +43,7 @@ import com.codunite.rechargeapp.activity.bbps.ActivityBbpsTollTax;
 import com.codunite.rechargeapp.activity.ActivityRecharge;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.WebViewActivity;
+import com.codunite.rechargeapp.adapter.SliderAdapter;
 import com.codunite.rechargeapp.model.DashboardAffilateModel;
 import com.codunite.rechargeapp.model.DashboardModel;
 import com.codunite.rechargeapp.model.SliderModel;
@@ -79,6 +85,10 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
     private CardView cardMarquee;
     private SwipeRefreshLayout layrefrsh;
     private View layIsFundRequest;
+    private int animation_type = ItemAnimation.NONE;
+
+    private ViewPager2 viewPager2;
+    private Handler sliderHandler = new Handler();
 
     public FragHomeDashBoard() {
     }
@@ -103,8 +113,6 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
         }
         resumeApp();
     }
-
-    private int animation_type = ItemAnimation.NONE;
 
     @Override
     public void onClick(View v) {
@@ -134,20 +142,31 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
     }
 
     public void resumeApp() {
-        layIsFundRequest = (View) aiView.findViewById(R.id.lay_isfundrequest);
+        //layIsFundRequest = (View) aiView.findViewById(R.id.lay_isfundrequest);
         cardMarquee = (CardView) aiView.findViewById(R.id.card_marque);
         layrefrsh = (SwipeRefreshLayout) aiView.findViewById(R.id.layrefrsh);
+        viewPager2 =(ViewPager2) aiView.findViewById(R.id.viewPagerImageSlider);
 
-        (aiView.findViewById(R.id.btn_fundrequest)).setOnClickListener(view -> {
-            Intent svIntent = new Intent(svContext, ActivityFundRequest.class);
-            startActivity(svIntent);
+
+//        (aiView.findViewById(R.id.btn_fundrequest)).setOnClickListener(view -> {
+//            Intent svIntent = new Intent(svContext, ActivityFundRequest.class);
+//            startActivity(svIntent);
+//        });
+
+        (aiView.findViewById(R.id.ll_addfund)).setOnClickListener(view -> {
+            ActivityAddFundRequest.OpenAddFundRequest(svContext);
         });
 
-        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.IS_FUNDREQUEST_ACTIVE, false)) {
-            layIsFundRequest.setVisibility(View.VISIBLE);
-        } else {
-            layIsFundRequest.setVisibility(View.GONE);
-        }
+        (aiView.findViewById(R.id.ll_passbook)).setOnClickListener(view -> {
+            Intent svIntent = new Intent(svContext, com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory.class);
+            svContext.startActivity(svIntent);
+        });
+
+//        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.IS_FUNDREQUEST_ACTIVE, false)) {
+//            layIsFundRequest.setVisibility(View.VISIBLE);
+//        } else {
+//            layIsFundRequest.setVisibility(View.GONE);
+//        }
 
         ((TextView) aiView.findViewById(R.id.txt_direct_downline)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.TOTALDIRECTDOWNLINE, "0"));
         ((TextView) aiView.findViewById(R.id.txt_direct_active)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.TOTALDIRECTACTIVE, "0"));
@@ -176,16 +195,16 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
 
         layrefrsh.setRefreshing(false);
         layrefrsh.setOnRefreshListener(() -> {
-            ((ActivityMain) requireActivity()).loadUserData();
+            ((ActivityMain) requireActivity()).loadUserData(false);
             layrefrsh.setRefreshing(false);
             resumeApp();
         });
 
         layrefrsh.setColorSchemeColors(
-                getResources().getColor(android.R.color.holo_blue_bright),
-                getResources().getColor(android.R.color.holo_green_light),
-                getResources().getColor(android.R.color.holo_orange_light),
-                getResources().getColor(android.R.color.holo_red_light)
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent)
         );
 
         root.setVisibility(View.VISIBLE);
@@ -204,18 +223,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
         });
         ((TextView) aiView.findViewById(R.id.txt_aeps)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
 
-//        LinearLayout commissionwallet = aiView.findViewById(R.id.lay_commission_wallet);
-//        commissionwallet.setOnClickListener(v -> {
-//            Intent svIntent = new Intent(svContext, ActivityComisionWalletHistory.class);
-//            startActivity(svIntent);
-//        });
-        //((TextView) aiView.findViewById(R.id.txt_commission_wallet)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.COMMISIONBALANCE, "0"));
-
-
-        //((TextView) aiView.findViewById(R.id.txt_points_wallet)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.COINBALANCE, "0"));
-
-
-        RecyclerView rvDashGeneology = (RecyclerView) aiView.findViewById(R.id.rv_anim_lay);
+        //RecyclerView rvDashGeneology = (RecyclerView) aiView.findViewById(R.id.rv_anim_lay);
 
         lstDashBoardMainAnim = new ArrayList<>();
         if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.PACKAGE_DOWNLOADED, false)) {
@@ -238,9 +246,9 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
         lstDashBoardMainAnim.add(new DashboardModel("Refer & Earn", R.raw.refer_earn, true,0));
 
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(svContext, LinearLayoutManager.HORIZONTAL, false);
-        rvDashGeneology.setLayoutManager(layoutManager);
-        rvDashGeneology.setHasFixedSize(true);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(svContext, LinearLayoutManager.HORIZONTAL, false);
+//        rvDashGeneology.setLayoutManager(layoutManager);
+//        rvDashGeneology.setHasFixedSize(true);
 
         LoadSlider();
         LoadRechargeManu();
@@ -444,11 +452,46 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
 
         ImageSlider sliderView = aiView.findViewById(R.id.image_slider);
         List<SlideModel> imageList = new ArrayList<>();
+        List<SlideModel> imageListSlider = new ArrayList<>();
+
+        if (FragHomeDashBoard.lstSlider != null && FragHomeDashBoard.lstSlider.size() > 0) {
+            viewPager2.setVisibility(View.VISIBLE);
+        } else {
+            viewPager2.setVisibility(View.GONE);
+            return;
+        }
         for (int j = 0; j < FragHomeDashBoard.lstSlider.size(); j++) {
             imageList.add(new SlideModel((FragHomeDashBoard.lstSlider.get(j).getBanner_img()).replaceAll("\\/", "/"), ScaleTypes.FIT));
         }
 
+        viewPager2.setAdapter(new SliderAdapter(FragHomeDashBoard.lstSlider,viewPager2));
+        viewPager2.setClipToPadding(false);
+        viewPager2.setClipChildren(false);
+        viewPager2.setOffscreenPageLimit(3);
+        //viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(30));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+                //page.setScaleY(0.85f + r * 0.15f);
+            }
+        });
+        viewPager2.setPageTransformer(compositePageTransformer);
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable, 2000); // slide duration 2 seconds
+            }
+        });
+
+
         sliderView.setImageList(imageList, ScaleTypes.FIT);
+
         sliderView.setItemClickListener(i -> {
             PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, FragHomeDashBoard.lstSlider.get(i).getBanner_name());
             PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, FragHomeDashBoard.lstSlider.get(i).getBanner_url());
@@ -460,5 +503,14 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
+        sliderHandler.postDelayed(sliderRunnable, 2000);
     }
+
+    private Runnable sliderRunnable = new Runnable() {
+        @Override
+        public void run() {
+            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+        }
+    };
+
 }

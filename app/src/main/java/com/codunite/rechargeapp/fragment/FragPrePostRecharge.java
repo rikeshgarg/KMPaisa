@@ -188,6 +188,7 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
                     pbLoadOperator.setVisibility(View.VISIBLE);
                     pbLoadCircle.setVisibility(View.VISIBLE);
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(edPhoneNumber.getText().toString().trim());
                     callWebServiceWithoutLoader(ApiInterface.GETOPERATORID, lstUploadData);
                 }

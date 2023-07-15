@@ -36,6 +36,9 @@ public final class ActWallettransferBinding implements ViewBinding {
   public final CardView cardOtp;
 
   @NonNull
+  public final EditText edtAvlBalance;
+
+  @NonNull
   public final EditText edtDesc;
 
   @NonNull
@@ -75,17 +78,18 @@ public final class ActWallettransferBinding implements ViewBinding {
   public final Spinner spinnerMemberlist;
 
   private ActWallettransferBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnOtpauth,
-      @NonNull Button btnProceed, @NonNull CardView cardOtp, @NonNull EditText edtDesc,
-      @NonNull EditText edtEnteramount, @NonNull EditText edtEntermobile, @NonNull PinView edtOtp,
-      @NonNull EditText edtcurrentwalletbal, @NonNull ConstraintLayout headlayout,
-      @NonNull ImageView imgDrop1, @NonNull ImageView imgDrop2,
-      @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout linearLayout,
-      @NonNull NestedScrollView scrollView2, @NonNull Spinner spinnerCrdr,
-      @NonNull Spinner spinnerMemberlist) {
+      @NonNull Button btnProceed, @NonNull CardView cardOtp, @NonNull EditText edtAvlBalance,
+      @NonNull EditText edtDesc, @NonNull EditText edtEnteramount, @NonNull EditText edtEntermobile,
+      @NonNull PinView edtOtp, @NonNull EditText edtcurrentwalletbal,
+      @NonNull ConstraintLayout headlayout, @NonNull ImageView imgDrop1,
+      @NonNull ImageView imgDrop2, @NonNull IncludeActionbarBinding layActionbar,
+      @NonNull LinearLayout linearLayout, @NonNull NestedScrollView scrollView2,
+      @NonNull Spinner spinnerCrdr, @NonNull Spinner spinnerMemberlist) {
     this.rootView = rootView;
     this.btnOtpauth = btnOtpauth;
     this.btnProceed = btnProceed;
     this.cardOtp = cardOtp;
+    this.edtAvlBalance = edtAvlBalance;
     this.edtDesc = edtDesc;
     this.edtEnteramount = edtEnteramount;
     this.edtEntermobile = edtEntermobile;
@@ -143,6 +147,12 @@ public final class ActWallettransferBinding implements ViewBinding {
       id = R.id.card_otp;
       CardView cardOtp = ViewBindings.findChildViewById(rootView, id);
       if (cardOtp == null) {
+        break missingId;
+      }
+
+      id = R.id.edt_avl_balance;
+      EditText edtAvlBalance = ViewBindings.findChildViewById(rootView, id);
+      if (edtAvlBalance == null) {
         break missingId;
       }
 
@@ -222,9 +232,9 @@ public final class ActWallettransferBinding implements ViewBinding {
       }
 
       return new ActWallettransferBinding((ConstraintLayout) rootView, btnOtpauth, btnProceed,
-          cardOtp, edtDesc, edtEnteramount, edtEntermobile, edtOtp, edtcurrentwalletbal, headlayout,
-          imgDrop1, imgDrop2, binding_layActionbar, linearLayout, scrollView2, spinnerCrdr,
-          spinnerMemberlist);
+          cardOtp, edtAvlBalance, edtDesc, edtEnteramount, edtEntermobile, edtOtp,
+          edtcurrentwalletbal, headlayout, imgDrop1, imgDrop2, binding_layActionbar, linearLayout,
+          scrollView2, spinnerCrdr, spinnerMemberlist);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

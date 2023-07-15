@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActivityNew">
+    android:layout_height="wrap_content"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <include
             layout="@layout/include_connection"
@@ -30,36 +30,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/lay_actionbar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
-            <androidx.core.widget.NestedScrollView
-                android:id="@+id/nested_scroll_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none"
-                android:scrollingCache="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="170dp"
                     android:orientation="vertical"
-                    android:paddingTop="@dimen/ten">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/card_payout_transfer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/ten"
-                        android:visibility="visible"
-                        app:cardCornerRadius="@dimen/fifteen">
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_dashboard_blue"
+                    >
 
                         <LinearLayout
+                            android:layout_gravity="center_vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/ten"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_10"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -74,33 +65,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="5"
                                     android:maxLines="1"
-                                    android:text="Status"
-                                    android:textColor="@color/fontcolortextview"
-                                    android:textSize="@dimen/ts_sixteen" />
-
-                                <TextView
-                                    android:id="@+id/tv_active_status"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:textColor="@color/fontcolortextview"
-                                    android:textSize="@dimen/ts_sixteen" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/ten"
-                                android:orientation="horizontal"
-                                android:weightSum="10">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5"
-                                    android:maxLines="1"
-                                    android:text="Virtual Account No."
-                                    android:textColor="@color/fontcolortextview"
+                                    android:text="Virtual Account No.:"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/ts_sixteen" />
 
                                 <TextView
@@ -108,7 +74,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="5"
-                                    android:textColor="@color/fontcolortextview"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/ts_sixteen" />
                             </LinearLayout>
 
@@ -124,8 +90,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="5"
                                     android:maxLines="1"
-                                    android:text="IFSC"
-                                    android:textColor="@color/fontcolortextview"
+                                    android:text="IFSC:"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/ts_sixteen" />
 
                                 <TextView
@@ -133,31 +99,56 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="5"
-                                    android:textColor="@color/fontcolortextview"
+                                    android:textColor="@color/white"
                                     android:textSize="@dimen/ts_sixteen" />
                             </LinearLayout>
 
-                            <Button
-                                android:id="@+id/btn_active"
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/ten"
+                                android:orientation="horizontal"
+                                android:weightSum="10">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="5"
+                                    android:maxLines="1"
+                                    android:text="Status:"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/ts_sixteen" />
+
+                                <TextView
+                                    android:id="@+id/tv_active_status"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="5"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/ts_sixteen" />
+                            </LinearLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_active"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="end"
-                                android:layout_marginEnd="@dimen/five"
-                                android:layout_marginBottom="@dimen/five"
+                                android:background="@drawable/blue_button_background"
+                                android:backgroundTint="@color/colorPrimary"
                                 android:maxLines="1"
                                 android:text="Active"
-                                android:textColor="@color/c_white"
-                                android:textSize="@dimen/ts_twelve" />
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_14" />
 
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+
 
                 </LinearLayout>
 
-            </androidx.core.widget.NestedScrollView>
 
         </RelativeLayout>
 
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

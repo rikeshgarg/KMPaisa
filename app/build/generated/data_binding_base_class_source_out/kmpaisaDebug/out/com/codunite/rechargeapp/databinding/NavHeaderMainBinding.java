@@ -4,7 +4,6 @@ package com.codunite.rechargeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -28,7 +28,7 @@ public final class NavHeaderMainBinding implements ViewBinding {
   public final LinearLayout llProfileImage;
 
   @NonNull
-  public final ImageView menuheaderDp;
+  public final CircularImageView menuheaderDp;
 
   @NonNull
   public final TextView menuheaderMemberid;
@@ -40,7 +40,7 @@ public final class NavHeaderMainBinding implements ViewBinding {
   public final TextView userType;
 
   private NavHeaderMainBinding(@NonNull RelativeLayout rootView, @NonNull LinearLayout llClose,
-      @NonNull LinearLayout llProfileImage, @NonNull ImageView menuheaderDp,
+      @NonNull LinearLayout llProfileImage, @NonNull CircularImageView menuheaderDp,
       @NonNull TextView menuheaderMemberid, @NonNull TextView menuheaderName,
       @NonNull TextView userType) {
     this.rootView = rootView;
@@ -92,7 +92,7 @@ public final class NavHeaderMainBinding implements ViewBinding {
       }
 
       id = R.id.menuheader_dp;
-      ImageView menuheaderDp = ViewBindings.findChildViewById(rootView, id);
+      CircularImageView menuheaderDp = ViewBindings.findChildViewById(rootView, id);
       if (menuheaderDp == null) {
         break missingId;
       }

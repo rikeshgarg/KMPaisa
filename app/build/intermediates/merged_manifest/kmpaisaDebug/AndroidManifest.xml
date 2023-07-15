@@ -42,7 +42,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -195,11 +195,6 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.codunite.rechargeapp.activity.ActivityBrowseProfileImage"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="com.codunite.rechargeapp.activity.reports.ActivityRequestHistory"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
@@ -520,6 +515,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.codunite.rechargeapp.activity.wallet.ActivityWallet"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.paysprint.onboardinglib.activities.DetailShowFino"
+            android:exported="false" />
         <activity android:name="com.paysprint.onboardinglib.activities.AadhaarVerification" />
         <activity
             android:name="com.paysprint.onboardinglib.activities.PanImageUpload"

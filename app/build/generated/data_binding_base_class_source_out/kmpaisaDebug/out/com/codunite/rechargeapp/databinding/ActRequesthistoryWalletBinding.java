@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -18,19 +18,23 @@ import com.codunite.rechargeapp.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
+import me.grantland.widget.AutofitTextView;
 
 public final class ActRequesthistoryWalletBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final Button addRequest;
+  public final TextView addRequest;
+
+  @NonNull
+  public final Button addRequest1;
 
   @NonNull
   public final CardView cardWallbal;
 
   @NonNull
-  public final ConstraintLayout headlayout;
+  public final LinearLayout headlayout;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
@@ -42,30 +46,44 @@ public final class ActRequesthistoryWalletBinding implements ViewBinding {
   public final LinearLayout linearLayout;
 
   @NonNull
-  public final TextView walletbal;
+  public final LinearLayout llBal;
+
+  @NonNull
+  public final RelativeLayout rlTop;
+
+  @NonNull
+  public final AutofitTextView walletbal;
+
+  @NonNull
+  public final TextView walletbal1;
 
   @NonNull
   public final RecyclerView wallethistoryRv;
 
-  private ActRequesthistoryWalletBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button addRequest, @NonNull CardView cardWallbal,
-      @NonNull ConstraintLayout headlayout, @NonNull IncludeActionbarBinding layActionbar,
-      @NonNull LinearLayout layBtn, @NonNull LinearLayout linearLayout, @NonNull TextView walletbal,
-      @NonNull RecyclerView wallethistoryRv) {
+  private ActRequesthistoryWalletBinding(@NonNull LinearLayout rootView,
+      @NonNull TextView addRequest, @NonNull Button addRequest1, @NonNull CardView cardWallbal,
+      @NonNull LinearLayout headlayout, @NonNull IncludeActionbarBinding layActionbar,
+      @NonNull LinearLayout layBtn, @NonNull LinearLayout linearLayout, @NonNull LinearLayout llBal,
+      @NonNull RelativeLayout rlTop, @NonNull AutofitTextView walletbal,
+      @NonNull TextView walletbal1, @NonNull RecyclerView wallethistoryRv) {
     this.rootView = rootView;
     this.addRequest = addRequest;
+    this.addRequest1 = addRequest1;
     this.cardWallbal = cardWallbal;
     this.headlayout = headlayout;
     this.layActionbar = layActionbar;
     this.layBtn = layBtn;
     this.linearLayout = linearLayout;
+    this.llBal = llBal;
+    this.rlTop = rlTop;
     this.walletbal = walletbal;
+    this.walletbal1 = walletbal1;
     this.wallethistoryRv = wallethistoryRv;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -91,8 +109,14 @@ public final class ActRequesthistoryWalletBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.add_request;
-      Button addRequest = ViewBindings.findChildViewById(rootView, id);
+      TextView addRequest = ViewBindings.findChildViewById(rootView, id);
       if (addRequest == null) {
+        break missingId;
+      }
+
+      id = R.id.add_request1;
+      Button addRequest1 = ViewBindings.findChildViewById(rootView, id);
+      if (addRequest1 == null) {
         break missingId;
       }
 
@@ -102,7 +126,7 @@ public final class ActRequesthistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout headlayout = (ConstraintLayout) rootView;
+      LinearLayout headlayout = (LinearLayout) rootView;
 
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
@@ -123,9 +147,27 @@ public final class ActRequesthistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ll_bal;
+      LinearLayout llBal = ViewBindings.findChildViewById(rootView, id);
+      if (llBal == null) {
+        break missingId;
+      }
+
+      id = R.id.rl_top;
+      RelativeLayout rlTop = ViewBindings.findChildViewById(rootView, id);
+      if (rlTop == null) {
+        break missingId;
+      }
+
       id = R.id.walletbal;
-      TextView walletbal = ViewBindings.findChildViewById(rootView, id);
+      AutofitTextView walletbal = ViewBindings.findChildViewById(rootView, id);
       if (walletbal == null) {
+        break missingId;
+      }
+
+      id = R.id.walletbal1;
+      TextView walletbal1 = ViewBindings.findChildViewById(rootView, id);
+      if (walletbal1 == null) {
         break missingId;
       }
 
@@ -135,9 +177,9 @@ public final class ActRequesthistoryWalletBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActRequesthistoryWalletBinding((ConstraintLayout) rootView, addRequest,
-          cardWallbal, headlayout, binding_layActionbar, layBtn, linearLayout, walletbal,
-          wallethistoryRv);
+      return new ActRequesthistoryWalletBinding((LinearLayout) rootView, addRequest, addRequest1,
+          cardWallbal, headlayout, binding_layActionbar, layBtn, linearLayout, llBal, rlTop,
+          walletbal, walletbal1, wallethistoryRv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

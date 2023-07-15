@@ -84,16 +84,13 @@ public final class ActLoginBinding implements ViewBinding {
   public final LinearLayout layBottomtext;
 
   @NonNull
-  public final CardView layoutLogin;
+  public final LinearLayout layoutLogin;
 
   @NonNull
   public final RelativeLayout layoutLoginBg;
 
   @NonNull
   public final CardView layoutTransactionpassword;
-
-  @NonNull
-  public final LinearLayout linearLayout;
 
   @NonNull
   public final RelativeLayout rlTop;
@@ -106,9 +103,9 @@ public final class ActLoginBinding implements ViewBinding {
       @NonNull TextInputLayout filledTextField, @NonNull AppCompatButton goback,
       @NonNull ConstraintLayout headlayout, @NonNull ImageView imgBack, @NonNull ImageView ivEmail,
       @NonNull ImageView ivEye, @NonNull ImageView ivOtp, @NonNull ImageView ivPassword,
-      @NonNull LinearLayout layBottomtext, @NonNull CardView layoutLogin,
+      @NonNull LinearLayout layBottomtext, @NonNull LinearLayout layoutLogin,
       @NonNull RelativeLayout layoutLoginBg, @NonNull CardView layoutTransactionpassword,
-      @NonNull LinearLayout linearLayout, @NonNull RelativeLayout rlTop) {
+      @NonNull RelativeLayout rlTop) {
     this.rootView = rootView;
     this.btnForgetpassword = btnForgetpassword;
     this.btnSignIn = btnSignIn;
@@ -132,7 +129,6 @@ public final class ActLoginBinding implements ViewBinding {
     this.layoutLogin = layoutLogin;
     this.layoutLoginBg = layoutLoginBg;
     this.layoutTransactionpassword = layoutTransactionpassword;
-    this.linearLayout = linearLayout;
     this.rlTop = rlTop;
   }
 
@@ -274,7 +270,7 @@ public final class ActLoginBinding implements ViewBinding {
       }
 
       id = R.id.layoutLogin;
-      CardView layoutLogin = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout layoutLogin = ViewBindings.findChildViewById(rootView, id);
       if (layoutLogin == null) {
         break missingId;
       }
@@ -291,12 +287,6 @@ public final class ActLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.linearLayout;
-      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
-      if (linearLayout == null) {
-        break missingId;
-      }
-
       id = R.id.rl_top;
       RelativeLayout rlTop = ViewBindings.findChildViewById(rootView, id);
       if (rlTop == null) {
@@ -307,7 +297,7 @@ public final class ActLoginBinding implements ViewBinding {
           btnSignUp, btnTransactionPassword, edtLoginID, edtLoginID1, edtPassword, edtPassword1,
           edtTransactionpassword, edtTransactionpassword1, filledTextField, goback, headlayout,
           imgBack, ivEmail, ivEye, ivOtp, ivPassword, layBottomtext, layoutLogin, layoutLoginBg,
-          layoutTransactionpassword, linearLayout, rlTop);
+          layoutTransactionpassword, rlTop);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

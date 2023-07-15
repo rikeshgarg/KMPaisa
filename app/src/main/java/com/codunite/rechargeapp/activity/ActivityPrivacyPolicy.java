@@ -64,12 +64,6 @@ public class ActivityPrivacyPolicy extends AppCompatActivity implements View.OnC
 
         if (actTitle.equals("Privacy Policy")) {
             callWebServiceWithoutLoader(ApiInterface.GET_PRIVACY_CONTENT, lstUploadData);
-        } else if (actTitle.equals("Website Disclaimer")) {
-            callWebServiceWithoutLoader(ApiInterface.GET_WEBSITE_DISCLAIMER, lstUploadData);
-        } else if (actTitle.equals("Cancellation & refund policy")) {
-            callWebServiceWithoutLoader(ApiInterface.GET_PRODUCT_DESIGN, lstUploadData);
-        } else if (actTitle.equals("Terms and conditions")) {
-            callWebServiceWithoutLoader(ApiInterface.GET_TERMS_AND_CONDITIONS, lstUploadData);
         }
     }
 
@@ -179,7 +173,7 @@ public class ActivityPrivacyPolicy extends AppCompatActivity implements View.OnC
 
     public static final String TAG_MESSAGE = "message";
     public static final String TAG_STATUS = "status";
-    public static final String TAG_DATA = "content";
+    public static final String TAG_DATA = "data";
 
 
     @Override
@@ -200,57 +194,8 @@ public class ActivityPrivacyPolicy extends AppCompatActivity implements View.OnC
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        } else if (url.contains(ApiInterface.GET_WEBSITE_DISCLAIMER)) {
-            try {
-                JSONObject json = new JSONObject(result);
-
-                String str_status = json.getString(TAG_STATUS);
-                String str_msg = json.getString(TAG_MESSAGE);
-                if (str_status.equalsIgnoreCase("1")) {
-                    String data = json.getString(TAG_DATA);
-                    ppcontent.setText(data);
-                } else {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
-        } else if (url.contains(ApiInterface.GET_PRODUCT_DESIGN)) {
-            try {
-                JSONObject json = new JSONObject(result);
-
-                String str_status = json.getString(TAG_STATUS);
-                String str_msg = json.getString(TAG_MESSAGE);
-                if (str_status.equalsIgnoreCase("1")) {
-                    String data = json.getString(TAG_DATA);
-                    ppcontent.setText(data);
-                } else {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
-        } else if (url.contains(ApiInterface.GET_TERMS_AND_CONDITIONS)) {
-            try {
-                JSONObject json = new JSONObject(result);
-
-                String str_status = json.getString(TAG_STATUS);
-                String str_msg = json.getString(TAG_MESSAGE);
-                if (str_status.equalsIgnoreCase("1")) {
-                    String data = json.getString(TAG_DATA);
-                    ppcontent.setText(data);
-                } else {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
         }
-
-        ppcontent.setMovementMethod(new ScrollingMovementMethod());
+        //ppcontent.setMovementMethod(new ScrollingMovementMethod());
     }
 
     @Override

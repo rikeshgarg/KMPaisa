@@ -186,7 +186,7 @@
                     android:background="@drawable/back_searchview_spinner"
                     android:gravity="center_vertical"
                     android:padding="@dimen/three"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:iconifiedByDefault="false"
                     app:queryHint="Search"
                     app:searchHintIcon="@drawable/ic_baseline_search_24" />
@@ -194,7 +194,7 @@
                     android:id="@+id/history_rv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/lay_filter"
+                    android:layout_below="@+id/searchview"
                     android:layout_marginLeft="@dimen/ten"
                     android:layout_marginTop="@dimen/ten"
                     android:layout_marginRight="@dimen/ten"

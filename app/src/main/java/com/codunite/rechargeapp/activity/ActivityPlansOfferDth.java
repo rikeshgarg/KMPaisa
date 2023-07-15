@@ -67,6 +67,7 @@ public class ActivityPlansOfferDth extends AppCompatActivity implements View.OnC
         String sessionId = getIntent().getStringExtra("filename");
         if (sessionId.equalsIgnoreCase("offer_d2h")) {
             lstUploadData = new LinkedList<>();
+            lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
             lstUploadData.add(FragDth.strDthMobile);
             lstUploadData.add(FragDth.strDthOperatorCode);
             callWebService(ApiInterface.RDTHOFFERS, lstUploadData);
@@ -424,6 +425,7 @@ public class ActivityPlansOfferDth extends AppCompatActivity implements View.OnC
                     strSelectedOperator = (listSpinnerOperatorList.get(spinnerOperatorList.getSelectedItemPosition()).split("#:#")[0]);
 
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(FragDth.strDthMobile);
                     lstUploadData.add(FragDth.strDthOperatorCode);
                     callWebService(ApiInterface.RDTHOFFERS, lstUploadData);

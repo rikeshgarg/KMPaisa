@@ -169,11 +169,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="com.codunite.rechargeapp.activity.reports.ActivityRequestHistory"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
             android:name="com.codunite.rechargeapp.activity.ActivityPlansOfferDth"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -504,6 +499,12 @@
 
         <activity
             android:name=".activity.ActivitySenderDetails"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity
+            android:name=".activity.wallet.ActivityWallet"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />

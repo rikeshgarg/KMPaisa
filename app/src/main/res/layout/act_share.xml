@@ -185,9 +185,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="20.0dip"
                     android:layout_marginRight="20.0dip"
+                    android:paddingLeft="@dimen/fifteen"
+                    android:paddingRight="@dimen/fifteen"
                     android:background="@drawable/back_edittext_default"
                     android:gravity="center"
-                    android:padding="@dimen/five"
                     android:textSize="@dimen/ts_twenty" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -197,7 +198,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:background="#f4ac47"
+                    android:background="@drawable/blue_button_background"
                     android:layout_marginLeft="40.0dip"
                     android:textSize="@dimen/ts_twenty"
                     android:layout_marginTop="40dp"

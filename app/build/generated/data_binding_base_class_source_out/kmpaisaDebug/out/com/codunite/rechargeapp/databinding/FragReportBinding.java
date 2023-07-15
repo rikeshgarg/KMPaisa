@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.codunite.rechargeapp.R;
 import com.denzcoskun.imageslider.ImageSlider;
 import java.lang.NullPointerException;
@@ -31,7 +33,25 @@ public final class FragReportBinding implements ViewBinding {
   public final CardView cardSlider;
 
   @NonNull
+  public final CardView cvRecharge1;
+
+  @NonNull
+  public final CardView cvRecharge2;
+
+  @NonNull
+  public final CardView cvRecharge3;
+
+  @NonNull
   public final ImageSlider imageSlider;
+
+  @NonNull
+  public final ImageView imgdrawable1;
+
+  @NonNull
+  public final ImageView imgdrawable2;
+
+  @NonNull
+  public final ImageView imgdrawable3;
 
   @NonNull
   public final LinearLayout mylayout;
@@ -46,26 +66,53 @@ public final class FragReportBinding implements ViewBinding {
   public final AutofitTextView totalFailed;
 
   @NonNull
+  public final AutofitTextView totalFailed1;
+
+  @NonNull
   public final AutofitTextView totalPending;
+
+  @NonNull
+  public final AutofitTextView totalPending1;
 
   @NonNull
   public final AutofitTextView totalSuccess;
 
+  @NonNull
+  public final AutofitTextView totalSuccess1;
+
+  @NonNull
+  public final ViewPager2 viewPagerImageSlider;
+
   private FragReportBinding(@NonNull LinearLayout rootView, @NonNull FrameLayout cardRecharge,
-      @NonNull CardView cardSlider, @NonNull ImageSlider imageSlider,
-      @NonNull LinearLayout mylayout, @NonNull NestedScrollView nestedScrollView,
-      @NonNull RecyclerView rvDashReports, @NonNull AutofitTextView totalFailed,
-      @NonNull AutofitTextView totalPending, @NonNull AutofitTextView totalSuccess) {
+      @NonNull CardView cardSlider, @NonNull CardView cvRecharge1, @NonNull CardView cvRecharge2,
+      @NonNull CardView cvRecharge3, @NonNull ImageSlider imageSlider,
+      @NonNull ImageView imgdrawable1, @NonNull ImageView imgdrawable2,
+      @NonNull ImageView imgdrawable3, @NonNull LinearLayout mylayout,
+      @NonNull NestedScrollView nestedScrollView, @NonNull RecyclerView rvDashReports,
+      @NonNull AutofitTextView totalFailed, @NonNull AutofitTextView totalFailed1,
+      @NonNull AutofitTextView totalPending, @NonNull AutofitTextView totalPending1,
+      @NonNull AutofitTextView totalSuccess, @NonNull AutofitTextView totalSuccess1,
+      @NonNull ViewPager2 viewPagerImageSlider) {
     this.rootView = rootView;
     this.cardRecharge = cardRecharge;
     this.cardSlider = cardSlider;
+    this.cvRecharge1 = cvRecharge1;
+    this.cvRecharge2 = cvRecharge2;
+    this.cvRecharge3 = cvRecharge3;
     this.imageSlider = imageSlider;
+    this.imgdrawable1 = imgdrawable1;
+    this.imgdrawable2 = imgdrawable2;
+    this.imgdrawable3 = imgdrawable3;
     this.mylayout = mylayout;
     this.nestedScrollView = nestedScrollView;
     this.rvDashReports = rvDashReports;
     this.totalFailed = totalFailed;
+    this.totalFailed1 = totalFailed1;
     this.totalPending = totalPending;
+    this.totalPending1 = totalPending1;
     this.totalSuccess = totalSuccess;
+    this.totalSuccess1 = totalSuccess1;
+    this.viewPagerImageSlider = viewPagerImageSlider;
   }
 
   @Override
@@ -107,9 +154,45 @@ public final class FragReportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cv_recharge1;
+      CardView cvRecharge1 = ViewBindings.findChildViewById(rootView, id);
+      if (cvRecharge1 == null) {
+        break missingId;
+      }
+
+      id = R.id.cv_recharge2;
+      CardView cvRecharge2 = ViewBindings.findChildViewById(rootView, id);
+      if (cvRecharge2 == null) {
+        break missingId;
+      }
+
+      id = R.id.cv_recharge3;
+      CardView cvRecharge3 = ViewBindings.findChildViewById(rootView, id);
+      if (cvRecharge3 == null) {
+        break missingId;
+      }
+
       id = R.id.image_slider;
       ImageSlider imageSlider = ViewBindings.findChildViewById(rootView, id);
       if (imageSlider == null) {
+        break missingId;
+      }
+
+      id = R.id.imgdrawable1;
+      ImageView imgdrawable1 = ViewBindings.findChildViewById(rootView, id);
+      if (imgdrawable1 == null) {
+        break missingId;
+      }
+
+      id = R.id.imgdrawable2;
+      ImageView imgdrawable2 = ViewBindings.findChildViewById(rootView, id);
+      if (imgdrawable2 == null) {
+        break missingId;
+      }
+
+      id = R.id.imgdrawable3;
+      ImageView imgdrawable3 = ViewBindings.findChildViewById(rootView, id);
+      if (imgdrawable3 == null) {
         break missingId;
       }
 
@@ -133,9 +216,21 @@ public final class FragReportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.total_failed1;
+      AutofitTextView totalFailed1 = ViewBindings.findChildViewById(rootView, id);
+      if (totalFailed1 == null) {
+        break missingId;
+      }
+
       id = R.id.total_pending;
       AutofitTextView totalPending = ViewBindings.findChildViewById(rootView, id);
       if (totalPending == null) {
+        break missingId;
+      }
+
+      id = R.id.total_pending1;
+      AutofitTextView totalPending1 = ViewBindings.findChildViewById(rootView, id);
+      if (totalPending1 == null) {
         break missingId;
       }
 
@@ -145,8 +240,22 @@ public final class FragReportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragReportBinding((LinearLayout) rootView, cardRecharge, cardSlider, imageSlider,
-          mylayout, nestedScrollView, rvDashReports, totalFailed, totalPending, totalSuccess);
+      id = R.id.total_success1;
+      AutofitTextView totalSuccess1 = ViewBindings.findChildViewById(rootView, id);
+      if (totalSuccess1 == null) {
+        break missingId;
+      }
+
+      id = R.id.viewPagerImageSlider;
+      ViewPager2 viewPagerImageSlider = ViewBindings.findChildViewById(rootView, id);
+      if (viewPagerImageSlider == null) {
+        break missingId;
+      }
+
+      return new FragReportBinding((LinearLayout) rootView, cardRecharge, cardSlider, cvRecharge1,
+          cvRecharge2, cvRecharge3, imageSlider, imgdrawable1, imgdrawable2, imgdrawable3, mylayout,
+          nestedScrollView, rvDashReports, totalFailed, totalFailed1, totalPending, totalPending1,
+          totalSuccess, totalSuccess1, viewPagerImageSlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

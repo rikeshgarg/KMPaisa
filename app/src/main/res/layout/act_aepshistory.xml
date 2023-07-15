@@ -174,7 +174,7 @@
                 android:layout_marginStart="@dimen/twenty"
                 android:layout_marginTop="@dimen/ten"
                 android:layout_marginEnd="@dimen/twenty"
-                android:background="@drawable/back_edittext_default"
+                android:background="@drawable/back_searchview_spinner"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/three"
                 app:iconifiedByDefault="false"

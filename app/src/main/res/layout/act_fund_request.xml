@@ -26,20 +26,10 @@
             android:background="#3c3c3c"
             android:padding="@dimen/twenty" />
 
-        <include
-            android:id="@+id/include_demourl"
-            layout="@layout/include_demourl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lay_actionbar"
-            android:background="#3c3c3c"
-            android:padding="@dimen/twenty" />
-
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/include_demourl">
+            android:layout_below="@+id/lay_actionbar">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -56,6 +46,7 @@
                     app:inflationDelay="100"
                     app:overrideEmailLink="true"
                     app:overrideTelLink="true"
+                    android:visibility="gone"
                     app:showZoomControl="false"
                     app:url="@string/url"
                     app:webViewProgressBarStyle="linear" />

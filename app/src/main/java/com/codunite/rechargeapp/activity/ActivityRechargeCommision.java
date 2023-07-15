@@ -47,6 +47,10 @@ public class ActivityRechargeCommision extends AppCompatActivity implements View
     public static final String TAG_TYPE = "type";
     public static final String TAG_MESSAGE = "message";
     public static final String TAG_STATUS = "status";
+
+    private Context svContext;
+    private ShowCustomToast customToast;
+
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
     private TextView txtWalletbal;
@@ -69,8 +73,8 @@ public class ActivityRechargeCommision extends AppCompatActivity implements View
         txtWalletbal.setVisibility(View.INVISIBLE);
         cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
         cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
-        cvAddWallet.setVisibility(View.INVISIBLE);
-        cardShowBalance.setVisibility(View.INVISIBLE);
+        cvAddWallet.setVisibility(View.GONE);
+        cardShowBalance.setVisibility(View.GONE);
 
         btnAddWallet.setOnClickListener(this);
         lstUploadData = new LinkedList<>();
@@ -79,11 +83,6 @@ public class ActivityRechargeCommision extends AppCompatActivity implements View
 
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
     }
-
-    private Context svContext;
-    private ShowCustomToast customToast;
-    
-    
 
     private void StartApp() {
         svContext = this;
@@ -95,12 +94,7 @@ public class ActivityRechargeCommision extends AppCompatActivity implements View
             Typeface font = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAME);
             FontUtils.setFont(root, font);
         }
-        
-
         hideKeyboard();
-
-        
-
         loadToolBar();
     }
 

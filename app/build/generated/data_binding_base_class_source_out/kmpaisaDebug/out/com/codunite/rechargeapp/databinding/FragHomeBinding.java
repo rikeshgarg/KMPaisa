@@ -7,17 +7,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.codunite.rechargeapp.R;
 import com.denzcoskun.imageslider.ImageSlider;
 import java.lang.NullPointerException;
@@ -27,15 +26,6 @@ import java.lang.String;
 public final class FragHomeBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
-
-  @NonNull
-  public final RelativeLayout activityLanding;
-
-  @NonNull
-  public final RelativeLayout activityLanding1;
-
-  @NonNull
-  public final AppCompatButton btnFundrequest;
 
   @NonNull
   public final FrameLayout cardAffiliate;
@@ -54,12 +44,6 @@ public final class FragHomeBinding implements ViewBinding {
 
   @NonNull
   public final ImageSlider imageSlider;
-
-  @NonNull
-  public final LinearLayout imgBackground;
-
-  @NonNull
-  public final LinearLayout imgBackground1;
 
   @NonNull
   public final ImageView imgdrawable1;
@@ -92,9 +76,6 @@ public final class FragHomeBinding implements ViewBinding {
   public final LinearLayout layEWallet;
 
   @NonNull
-  public final LinearLayout layIsfundrequest;
-
-  @NonNull
   public final LinearLayout layLevelIncome;
 
   @NonNull
@@ -107,13 +88,19 @@ public final class FragHomeBinding implements ViewBinding {
   public final SwipeRefreshLayout layrefrsh;
 
   @NonNull
+  public final LinearLayout llAddfund;
+
+  @NonNull
+  public final LinearLayout llPassbook;
+
+  @NonNull
+  public final LinearLayout llPay;
+
+  @NonNull
   public final LinearLayout mylayout;
 
   @NonNull
   public final NestedScrollView nestedScrollView;
-
-  @NonNull
-  public final RecyclerView rvAnimLay;
 
   @NonNull
   public final RecyclerView rvBbps;
@@ -178,21 +165,22 @@ public final class FragHomeBinding implements ViewBinding {
   @NonNull
   public final TextView txtTotalIncome;
 
-  private FragHomeBinding(@NonNull LinearLayout rootView, @NonNull RelativeLayout activityLanding,
-      @NonNull RelativeLayout activityLanding1, @NonNull AppCompatButton btnFundrequest,
-      @NonNull FrameLayout cardAffiliate, @NonNull CardView cardMarque,
-      @NonNull CardView cvRecharge1, @NonNull CardView cvRecharge2, @NonNull CardView cvRecharge3,
-      @NonNull ImageSlider imageSlider, @NonNull LinearLayout imgBackground,
-      @NonNull LinearLayout imgBackground1, @NonNull ImageView imgdrawable1,
-      @NonNull ImageView imgdrawable2, @NonNull ImageView imgdrawable3,
-      @NonNull LinearLayout layActiveDownline, @NonNull LinearLayout layDeactiveDownline,
-      @NonNull LinearLayout layDirectActive, @NonNull LinearLayout layDirectDeactive,
-      @NonNull LinearLayout layDirectDownline, @NonNull LinearLayout layDirectIncome,
-      @NonNull LinearLayout layEWallet, @NonNull LinearLayout layIsfundrequest,
+  @NonNull
+  public final ViewPager2 viewPagerImageSlider;
+
+  private FragHomeBinding(@NonNull LinearLayout rootView, @NonNull FrameLayout cardAffiliate,
+      @NonNull CardView cardMarque, @NonNull CardView cvRecharge1, @NonNull CardView cvRecharge2,
+      @NonNull CardView cvRecharge3, @NonNull ImageSlider imageSlider,
+      @NonNull ImageView imgdrawable1, @NonNull ImageView imgdrawable2,
+      @NonNull ImageView imgdrawable3, @NonNull LinearLayout layActiveDownline,
+      @NonNull LinearLayout layDeactiveDownline, @NonNull LinearLayout layDirectActive,
+      @NonNull LinearLayout layDirectDeactive, @NonNull LinearLayout layDirectDownline,
+      @NonNull LinearLayout layDirectIncome, @NonNull LinearLayout layEWallet,
       @NonNull LinearLayout layLevelIncome, @NonNull LinearLayout layRWallet,
       @NonNull LinearLayout layTotalDownline, @NonNull SwipeRefreshLayout layrefrsh,
-      @NonNull LinearLayout mylayout, @NonNull NestedScrollView nestedScrollView,
-      @NonNull RecyclerView rvAnimLay, @NonNull RecyclerView rvBbps,
+      @NonNull LinearLayout llAddfund, @NonNull LinearLayout llPassbook,
+      @NonNull LinearLayout llPay, @NonNull LinearLayout mylayout,
+      @NonNull NestedScrollView nestedScrollView, @NonNull RecyclerView rvBbps,
       @NonNull RecyclerView rvDashboard, @NonNull RecyclerView rvDashboardAeps,
       @NonNull RecyclerView rvDashboardAffiliate, @NonNull TextView textMarquee,
       @NonNull TextView txtActiveDownline, @NonNull TextView txtAeps,
@@ -202,19 +190,14 @@ public final class FragHomeBinding implements ViewBinding {
       @NonNull TextView txtDirectIncome, @NonNull TextView txtLevelIncome,
       @NonNull TextView txtMainWallet, @NonNull TextView txtMembership, @NonNull TextView txtRank,
       @NonNull TextView txtRechargeIncome, @NonNull TextView txtTotalDownline,
-      @NonNull TextView txtTotalIncome) {
+      @NonNull TextView txtTotalIncome, @NonNull ViewPager2 viewPagerImageSlider) {
     this.rootView = rootView;
-    this.activityLanding = activityLanding;
-    this.activityLanding1 = activityLanding1;
-    this.btnFundrequest = btnFundrequest;
     this.cardAffiliate = cardAffiliate;
     this.cardMarque = cardMarque;
     this.cvRecharge1 = cvRecharge1;
     this.cvRecharge2 = cvRecharge2;
     this.cvRecharge3 = cvRecharge3;
     this.imageSlider = imageSlider;
-    this.imgBackground = imgBackground;
-    this.imgBackground1 = imgBackground1;
     this.imgdrawable1 = imgdrawable1;
     this.imgdrawable2 = imgdrawable2;
     this.imgdrawable3 = imgdrawable3;
@@ -225,14 +208,15 @@ public final class FragHomeBinding implements ViewBinding {
     this.layDirectDownline = layDirectDownline;
     this.layDirectIncome = layDirectIncome;
     this.layEWallet = layEWallet;
-    this.layIsfundrequest = layIsfundrequest;
     this.layLevelIncome = layLevelIncome;
     this.layRWallet = layRWallet;
     this.layTotalDownline = layTotalDownline;
     this.layrefrsh = layrefrsh;
+    this.llAddfund = llAddfund;
+    this.llPassbook = llPassbook;
+    this.llPay = llPay;
     this.mylayout = mylayout;
     this.nestedScrollView = nestedScrollView;
-    this.rvAnimLay = rvAnimLay;
     this.rvBbps = rvBbps;
     this.rvDashboard = rvDashboard;
     this.rvDashboardAeps = rvDashboardAeps;
@@ -254,6 +238,7 @@ public final class FragHomeBinding implements ViewBinding {
     this.txtRechargeIncome = txtRechargeIncome;
     this.txtTotalDownline = txtTotalDownline;
     this.txtTotalIncome = txtTotalIncome;
+    this.viewPagerImageSlider = viewPagerImageSlider;
   }
 
   @Override
@@ -283,24 +268,6 @@ public final class FragHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.activity_landing;
-      RelativeLayout activityLanding = ViewBindings.findChildViewById(rootView, id);
-      if (activityLanding == null) {
-        break missingId;
-      }
-
-      id = R.id.activity_landing1;
-      RelativeLayout activityLanding1 = ViewBindings.findChildViewById(rootView, id);
-      if (activityLanding1 == null) {
-        break missingId;
-      }
-
-      id = R.id.btn_fundrequest;
-      AppCompatButton btnFundrequest = ViewBindings.findChildViewById(rootView, id);
-      if (btnFundrequest == null) {
-        break missingId;
-      }
-
       id = R.id.card_affiliate;
       FrameLayout cardAffiliate = ViewBindings.findChildViewById(rootView, id);
       if (cardAffiliate == null) {
@@ -334,18 +301,6 @@ public final class FragHomeBinding implements ViewBinding {
       id = R.id.image_slider;
       ImageSlider imageSlider = ViewBindings.findChildViewById(rootView, id);
       if (imageSlider == null) {
-        break missingId;
-      }
-
-      id = R.id.img_background;
-      LinearLayout imgBackground = ViewBindings.findChildViewById(rootView, id);
-      if (imgBackground == null) {
-        break missingId;
-      }
-
-      id = R.id.img_background1;
-      LinearLayout imgBackground1 = ViewBindings.findChildViewById(rootView, id);
-      if (imgBackground1 == null) {
         break missingId;
       }
 
@@ -409,12 +364,6 @@ public final class FragHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lay_isfundrequest;
-      LinearLayout layIsfundrequest = ViewBindings.findChildViewById(rootView, id);
-      if (layIsfundrequest == null) {
-        break missingId;
-      }
-
       id = R.id.lay_level_income;
       LinearLayout layLevelIncome = ViewBindings.findChildViewById(rootView, id);
       if (layLevelIncome == null) {
@@ -439,17 +388,29 @@ public final class FragHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ll_addfund;
+      LinearLayout llAddfund = ViewBindings.findChildViewById(rootView, id);
+      if (llAddfund == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_passbook;
+      LinearLayout llPassbook = ViewBindings.findChildViewById(rootView, id);
+      if (llPassbook == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_pay;
+      LinearLayout llPay = ViewBindings.findChildViewById(rootView, id);
+      if (llPay == null) {
+        break missingId;
+      }
+
       LinearLayout mylayout = (LinearLayout) rootView;
 
       id = R.id.nested_scroll_view;
       NestedScrollView nestedScrollView = ViewBindings.findChildViewById(rootView, id);
       if (nestedScrollView == null) {
-        break missingId;
-      }
-
-      id = R.id.rv_anim_lay;
-      RecyclerView rvAnimLay = ViewBindings.findChildViewById(rootView, id);
-      if (rvAnimLay == null) {
         break missingId;
       }
 
@@ -579,16 +540,22 @@ public final class FragHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragHomeBinding((LinearLayout) rootView, activityLanding, activityLanding1,
-          btnFundrequest, cardAffiliate, cardMarque, cvRecharge1, cvRecharge2, cvRecharge3,
-          imageSlider, imgBackground, imgBackground1, imgdrawable1, imgdrawable2, imgdrawable3,
+      id = R.id.viewPagerImageSlider;
+      ViewPager2 viewPagerImageSlider = ViewBindings.findChildViewById(rootView, id);
+      if (viewPagerImageSlider == null) {
+        break missingId;
+      }
+
+      return new FragHomeBinding((LinearLayout) rootView, cardAffiliate, cardMarque, cvRecharge1,
+          cvRecharge2, cvRecharge3, imageSlider, imgdrawable1, imgdrawable2, imgdrawable3,
           layActiveDownline, layDeactiveDownline, layDirectActive, layDirectDeactive,
-          layDirectDownline, layDirectIncome, layEWallet, layIsfundrequest, layLevelIncome,
-          layRWallet, layTotalDownline, layrefrsh, mylayout, nestedScrollView, rvAnimLay, rvBbps,
-          rvDashboard, rvDashboardAeps, rvDashboardAffiliate, textMarquee, txtActiveDownline,
-          txtAeps, txtBbpsIncome, txtCashbackIncome, txtDeactiveDownline, txtDirectActive,
-          txtDirectDeactive, txtDirectDownline, txtDirectIncome, txtLevelIncome, txtMainWallet,
-          txtMembership, txtRank, txtRechargeIncome, txtTotalDownline, txtTotalIncome);
+          layDirectDownline, layDirectIncome, layEWallet, layLevelIncome, layRWallet,
+          layTotalDownline, layrefrsh, llAddfund, llPassbook, llPay, mylayout, nestedScrollView,
+          rvBbps, rvDashboard, rvDashboardAeps, rvDashboardAffiliate, textMarquee,
+          txtActiveDownline, txtAeps, txtBbpsIncome, txtCashbackIncome, txtDeactiveDownline,
+          txtDirectActive, txtDirectDeactive, txtDirectDownline, txtDirectIncome, txtLevelIncome,
+          txtMainWallet, txtMembership, txtRank, txtRechargeIncome, txtTotalDownline,
+          txtTotalIncome, viewPagerImageSlider);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

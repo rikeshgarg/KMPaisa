@@ -63,7 +63,7 @@ public class ActivityRaiseComplaint extends AppCompatActivity implements View.On
 
         strFromBBps = getIntent().getBooleanExtra("comp_from", false);
 
-        txtRechargeId.setText(String.format("Recharge ID: %s", getIntent().getStringExtra("txt_id")));
+        txtRechargeId.setText(String.format("Recharge ID: %s", getIntent().getStringExtra("rechg_id")));
         tvRechargeAmount.setText(String.format("Amount: "+ getIntent().getStringExtra("rechg_amount")));
 
     }

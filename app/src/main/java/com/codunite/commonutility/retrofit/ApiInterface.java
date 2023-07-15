@@ -54,6 +54,7 @@ public interface ApiInterface {
 
     String E_REQUESTHISTORY = "getEwalletRequestHistory";
     String RECHARGEHISTORY = "getRechargeHistory";
+    String RECENTRECHARGEHISTORY = "getRecentRechargeHistory";
     String RECHARGECOMMISIONHISTORY = "getRechargeCommisionHistory";
     String GETELECTRICITYBILLERDETAIL = "getElectricityBillerDetail";//unused
     String ADDWALLET = "addWallet";//unused
@@ -825,7 +826,9 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETMONEYTRANSFERHISTORY)
-    Call<String> getMoneyTransferHistory(@Field("userID") String user_id);
+    Call<String> getMoneyTransferHistory(@Field("user_id") String user_id,@Field("startDate") String fromDate,
+                                         @Field("endDate") String toDate,
+                                         @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(MONEYTRANSFERAUTH)
@@ -863,7 +866,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(MONEYTRANSFERlOGIN)
-    Call<String> moneyTransferLogin(@Field("userID") String user_id,
+    Call<String> moneyTransferLogin(@Field("user_id") String user_id,
                                     @Field("mobile") String mobile);
 
 
@@ -1000,7 +1003,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETMEMBERBYMOBILE)
-    Call<String> GetMemberByMobile(@Field("mobile") String mobile);
+    Call<String> GetMemberByMobile(@Field("user_id") String user_id,@Field("mobile") String mobile);
 
     @FormUrlEncoded
     @POST(RAISERECHGCOMPALINT)
@@ -1068,17 +1071,17 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETBBSPHISTORY)
-    Call<String> getPayBillHistorys(@Field("userID") String code,
-                                    @Field("fromDate") String from,
-                                    @Field("toDate") String to,
-                                    @Field("page_no") String page);
+    Call<String> getPayBillHistorys(@Field("user_id") String user_id,
+                                    @Field("startDate") String from,
+                                    @Field("endDate") String to,
+                                    @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(GETBBSPLIVEHISTORY)
-    Call<String> getBBPSLiveHistory(@Field("userID") String code,
-                                    @Field("fromDate") String from,
-                                    @Field("toDate") String to,
-                                    @Field("page_no") String page);
+    Call<String> getBBPSLiveHistory(@Field("user_id") String user_id,
+                                    @Field("startDate") String from,
+                                    @Field("endDate") String to,
+                                    @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(GETRECHARGECOMMISIONLIST)
@@ -1139,7 +1142,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETOPERATORID)
-    Call<String> GetOperatorList(@Field("mobile") String mob);
+    Call<String> GetOperatorList(@Field("user_id") String user_id,@Field("mobile") String mob);
 
     @FormUrlEncoded
     @POST(GetSTATELIST)
@@ -1187,7 +1190,10 @@ public interface ApiInterface {
     @POST(REQUESTAMOUNT)
     Call<String> RequestWalletBalance(@Field("user_id") String userid,
                                       @Field("amount") String amount,
-                                      @Field("transid") String transid);
+                                      @Field("transid") String transid,
+                                      @Field("walletType") String walletType,
+                                      @Field("remark") String remark,
+                                      @Field("photo") String photo);
 
     @FormUrlEncoded
     @POST(ELECTRICRECHARGEAUTH)
@@ -1261,13 +1267,8 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(UPADATEUSERDATA)
-    Call<String> UpdateUserData(@Field("userID") String userId,
+    Call<String> UpdateUserData(@Field("user_id") String userId,
                                 @Field("name") String password,
-                                @Field("address") String address,
-                                @Field("pincode") String pincode,
-                                @Field("city_id") String city_id,
-                                @Field("state_id") String state_id,
-                                @Field("block_id") String block_id,
                                 @Field("photo") String photo);
 
     @FormUrlEncoded
@@ -1286,7 +1287,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(CHANGEPASSWORD)
-    Call<String> ChangePassword(@Field("userID") String userId,
+    Call<String> ChangePassword(@Field("user_id") String userId,
                                 @Field("opw") String oldpassword,
                                 @Field("npw") String newpassword,
                                 @Field("cpw") String confirmpassword);
@@ -1340,9 +1341,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(REQUESTHISTORY)
-    Call<String> GetRequestHistory(@Field("user_id") String userId,
-                                   @Field("fromDate") String from,
-                                   @Field("toDate") String to);
+    Call<String> GetRequestHistory(@Field("user_id") String userId);
 
     @FormUrlEncoded
     @POST(E_REQUESTHISTORY)
@@ -1368,7 +1367,10 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(MTRANSFERHISTORY)
-    Call<String> MtransferHistory(@Field("user_id") String userid);
+    Call<String> MtransferHistory(@Field("user_id") String userId,
+                                  @Field("startDate") String fromDate,
+                                  @Field("endDate") String toDate,
+                                  @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(MOBILETRANSFER)
@@ -1446,10 +1448,10 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(RECHARGEHISTORY)
-    Call<String> GetRechargeHistory(@Field("userID") String userId,
-                                    @Field("fromDate") String from,
-                                    @Field("toDate") String to,
-                                    @Field("page_no") String page);
+    Call<String> GetRechargeHistory(@Field("user_id") String user_id,
+                                    @Field("startDate") String startDate,
+                                    @Field("endDate") String endDate,
+                                    @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(RECHARGECOMMISIONHISTORY)
@@ -1477,22 +1479,26 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(ROFFERS)
-    Call<String> GetROffers(@Field("mobile") String code,
+    Call<String> GetROffers(@Field("user_id") String user_id,
+                            @Field("mobile") String code,
                             @Field("operator") String emi_id);
 
     @FormUrlEncoded
     @POST(RDTHOFFERS)
-    Call<String> GetRDthOffers(@Field("mobile") String code,
+    Call<String> GetRDthOffers(@Field("user_id") String user_id,
+                               @Field("mobile") String code,
                                @Field("operator") String emi_id);
 
     @FormUrlEncoded
     @POST(VIEWALLPLANS)
-    Call<String> GetAllPlans(@Field("circle") String code,
+    Call<String> GetAllPlans(@Field("user_id") String user_id,
+                             @Field("circle") String code,
                              @Field("operator") String emi_id);
 
     @FormUrlEncoded
     @POST(VIEWALLDTHPLANS)
-    Call<String> GetAllDthPlans(@Field("number") String card_num,
+    Call<String> GetAllDthPlans(@Field("user_id") String user_id,
+                                @Field("number") String card_num,
                                 @Field("operator") String emi_id);
 
 
@@ -1736,22 +1742,30 @@ public interface ApiInterface {
                                     @Field("endDate") String toDate,
                                     @Field("keyword") String keyword);
 
-    @GET(DMT_BANK_LIST)
-    Call<String> dmtBankList();
+    @FormUrlEncoded
+    @POST(DMT_BANK_LIST)
+    Call<String> dmtBankList(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GET_SENDER_DETAILS)
-    Call<String> getSenderDetail(@Field("userID") String user_id,
+    Call<String> getSenderDetail(@Field("user_id") String user_id,
                                  @Field("mobile") String mobile);
 
     @FormUrlEncoded
     @POST(UPDATE_SENDER_DETAILS)
-    Call<String> updateSenderDetailAuth(@Field("userID") String user_id,
+    Call<String> updateSenderDetailAuth(@Field("user_id") String user_id,
                                         @Field("accountMobile") String mobile,
                                         @Field("first_name") String first_name,
                                         @Field("last_name") String last_name,
                                         @Field("dob") String dob,
                                         @Field("address") String address,
                                         @Field("pin_code") String pin_code);
+
+
+    @FormUrlEncoded
+    @POST(RECENTRECHARGEHISTORY)
+    Call<String> getRecentRechargeHistory(@Field("user_id") String user_id,
+                                          @Field("service_id") String service_id,
+                                          @Field("is_bbps") String is_bbps);
 
 }

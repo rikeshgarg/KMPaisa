@@ -29,22 +29,19 @@ public final class ItemWallethistoryBinding implements ViewBinding {
   public final TextView closingbalance;
 
   @NonNull
-  public final ImageView imgRuppeSymbol;
-
-  @NonNull
-  public final LinearLayout layAmount;
-
-  @NonNull
   public final RelativeLayout layTop;
 
   @NonNull
   public final LinearLayout llDesc;
 
   @NonNull
-  public final LinearLayout lytParent;
+  public final LinearLayout llLeft;
 
   @NonNull
-  public final TextView memberDetail;
+  public final LinearLayout llRight;
+
+  @NonNull
+  public final LinearLayout lytParent;
 
   @NonNull
   public final LinearLayout openbal;
@@ -56,7 +53,10 @@ public final class ItemWallethistoryBinding implements ViewBinding {
   public final TextView rechargedesc;
 
   @NonNull
-  public final View viewColor;
+  public final RelativeLayout rlColor;
+
+  @NonNull
+  public final ImageView viewColor;
 
   @NonNull
   public final TextView vmMemberid;
@@ -65,24 +65,24 @@ public final class ItemWallethistoryBinding implements ViewBinding {
   public final TextView vmName;
 
   private ItemWallethistoryBinding(@NonNull LinearLayout rootView, @NonNull CardView cardview,
-      @NonNull TextView closingbalance, @NonNull ImageView imgRuppeSymbol,
-      @NonNull LinearLayout layAmount, @NonNull RelativeLayout layTop, @NonNull LinearLayout llDesc,
-      @NonNull LinearLayout lytParent, @NonNull TextView memberDetail,
-      @NonNull LinearLayout openbal, @NonNull TextView openingbalance,
-      @NonNull TextView rechargedesc, @NonNull View viewColor, @NonNull TextView vmMemberid,
+      @NonNull TextView closingbalance, @NonNull RelativeLayout layTop,
+      @NonNull LinearLayout llDesc, @NonNull LinearLayout llLeft, @NonNull LinearLayout llRight,
+      @NonNull LinearLayout lytParent, @NonNull LinearLayout openbal,
+      @NonNull TextView openingbalance, @NonNull TextView rechargedesc,
+      @NonNull RelativeLayout rlColor, @NonNull ImageView viewColor, @NonNull TextView vmMemberid,
       @NonNull TextView vmName) {
     this.rootView = rootView;
     this.cardview = cardview;
     this.closingbalance = closingbalance;
-    this.imgRuppeSymbol = imgRuppeSymbol;
-    this.layAmount = layAmount;
     this.layTop = layTop;
     this.llDesc = llDesc;
+    this.llLeft = llLeft;
+    this.llRight = llRight;
     this.lytParent = lytParent;
-    this.memberDetail = memberDetail;
     this.openbal = openbal;
     this.openingbalance = openingbalance;
     this.rechargedesc = rechargedesc;
+    this.rlColor = rlColor;
     this.viewColor = viewColor;
     this.vmMemberid = vmMemberid;
     this.vmName = vmName;
@@ -127,18 +127,6 @@ public final class ItemWallethistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.img_ruppe_symbol;
-      ImageView imgRuppeSymbol = ViewBindings.findChildViewById(rootView, id);
-      if (imgRuppeSymbol == null) {
-        break missingId;
-      }
-
-      id = R.id.lay_amount;
-      LinearLayout layAmount = ViewBindings.findChildViewById(rootView, id);
-      if (layAmount == null) {
-        break missingId;
-      }
-
       id = R.id.lay_top;
       RelativeLayout layTop = ViewBindings.findChildViewById(rootView, id);
       if (layTop == null) {
@@ -151,13 +139,19 @@ public final class ItemWallethistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      LinearLayout lytParent = (LinearLayout) rootView;
-
-      id = R.id.member_detail;
-      TextView memberDetail = ViewBindings.findChildViewById(rootView, id);
-      if (memberDetail == null) {
+      id = R.id.ll_left;
+      LinearLayout llLeft = ViewBindings.findChildViewById(rootView, id);
+      if (llLeft == null) {
         break missingId;
       }
+
+      id = R.id.ll_right;
+      LinearLayout llRight = ViewBindings.findChildViewById(rootView, id);
+      if (llRight == null) {
+        break missingId;
+      }
+
+      LinearLayout lytParent = (LinearLayout) rootView;
 
       id = R.id.openbal;
       LinearLayout openbal = ViewBindings.findChildViewById(rootView, id);
@@ -177,8 +171,14 @@ public final class ItemWallethistoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rl_color;
+      RelativeLayout rlColor = ViewBindings.findChildViewById(rootView, id);
+      if (rlColor == null) {
+        break missingId;
+      }
+
       id = R.id.view_color;
-      View viewColor = ViewBindings.findChildViewById(rootView, id);
+      ImageView viewColor = ViewBindings.findChildViewById(rootView, id);
       if (viewColor == null) {
         break missingId;
       }
@@ -195,9 +195,9 @@ public final class ItemWallethistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemWallethistoryBinding((LinearLayout) rootView, cardview, closingbalance,
-          imgRuppeSymbol, layAmount, layTop, llDesc, lytParent, memberDetail, openbal,
-          openingbalance, rechargedesc, viewColor, vmMemberid, vmName);
+      return new ItemWallethistoryBinding((LinearLayout) rootView, cardview, closingbalance, layTop,
+          llDesc, llLeft, llRight, lytParent, openbal, openingbalance, rechargedesc, rlColor,
+          viewColor, vmMemberid, vmName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

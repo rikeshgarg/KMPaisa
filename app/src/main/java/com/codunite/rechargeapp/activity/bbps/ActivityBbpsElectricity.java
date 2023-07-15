@@ -66,6 +66,7 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
     public static final String TAG_DATA = "data";
     public static final String TAG_MESSAGE = "message";
     public static final String TAG_STATUS = "status";
+    TextView tv_heading;
     private EditText edtOtp;
 
     @Override
@@ -101,7 +102,7 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         LoadOperatorList();
 
         hideOtpLayout();
-        OpenDemoLink();
+        //OpenDemoLink();
     }
 
     @Override
@@ -216,9 +217,10 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
     private void loadToolBar(){
         imgToolBarBack = (ImageView)findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
-
+        tv_heading = (TextView)findViewById(R.id.tv_heading);
         TextView txtHeading = (TextView)findViewById(R.id.heading);
-        txtHeading.setText("BBPS Electricity");
+        //txtHeading.setText("BBPS Electricity");
+        tv_heading.setText("BBPS Electricity");
     }
 
     public static void hideFragmentkeyboard(Context meraContext, View meraView) {

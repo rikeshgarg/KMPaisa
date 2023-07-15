@@ -55,16 +55,30 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="5dp"
+                        android:paddingLeft="@dimen/twenty"
+                        android:paddingRight="@dimen/twenty"
+                        android:paddingBottom="@dimen/twenty"
                         android:orientation="vertical"
-                        android:paddingLeft="9dp"
-                        android:paddingRight="9dp"
                         android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/twentyfive"
+                            android:foregroundGravity="center|left"
+                            android:gravity="left"
+                            android:text="sfhjkhfjksf"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/ts_twenty"
+                            />
 
                         <RelativeLayout
                             android:id="@+id/lay_serviceoperator"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/fortyfive"
-                            android:layout_marginTop="@dimen/fifteen"
+                            android:layout_marginTop="@dimen/twenty"
                             android:background="@drawable/back_edittext_default">
 
                             <Spinner
@@ -214,7 +228,7 @@
 
                             <Button
                                 android:id="@+id/btn_electricrecharge"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="@dimen/fortyfive"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="@dimen/fifteen"
@@ -228,6 +242,7 @@
                         </LinearLayout>
                     </LinearLayout>
                     <include
+                        android:visibility="gone"
                         layout="@layout/include_demourl"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

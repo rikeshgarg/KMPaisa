@@ -1,29 +1,29 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:321:9-331:20
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:58:9-66:20
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:58:9-66:20
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:316:9-326:20
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:62:9-70:20
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:62:9-70:20
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:14:9-22:20
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:14:9-22:20
 	android:grantUriPermissions
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:325:13-47
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:320:13-47
 	android:authorities
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:323:13-60
-		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:60:13-72
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:318:13-60
+		REJECTED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:64:13-64
 		REJECTED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:16:13-60
 	android:exported
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:324:13-37
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:319:13-37
 	tools:replace
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:326:13-48
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:321:13-48
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:322:13-62
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:317:13-62
 manifest
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:2:1-69:12
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:2:1-73:12
 MERGED from [androidx.databinding:databinding-adapters:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\13fed12992d0625f2c7a8d2dd707412a\transformed\databinding-adapters-7.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\219e79169c1fdb95b4b927ee02e6725f\transformed\jetified-databinding-ktx-7.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\4da0a38a56ab42a9fb3900799ad8da01\transformed\databinding-runtime-7.4.1\AndroidManifest.xml:2:1-7:12
@@ -46,6 +46,7 @@ MERGED from [gun0912.ted:tedonactivityresult:1.0.6] C:\Users\dell\.gradle\caches
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\dell\.gradle\caches\transforms-3\d9fdd6bba6a7245d14bce7f2c684e9ab\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9d06b2efbb19baf11f528642ff4bbe77\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:17:1-61:12
 MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:15:1-32:12
 MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\dell\.gradle\caches\transforms-3\663a44d5895ecaaa4a007f896f276a90\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:15:1-33:12
@@ -60,7 +61,6 @@ MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Use
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\f58d308a52dd392bbdf542e26c747624\transformed\jetified-firebase-installations-interop-17.1.0\AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\dell\.gradle\caches\transforms-3\220c72698b2f82184d57559fbab363f4\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\dell\.gradle\caches\transforms-3\eff6778dc98615d56addd25c940af180\transformed\jetified-activity-1.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.gridlayout:gridlayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\911d732486127f637030911c7c2c7824\transformed\gridlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -80,10 +80,10 @@ MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\dell\.gradle\cac
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\d73df448404e58552ac2a2666517d027\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\bbe83a18797393fbc4f615cc34474291\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\37c82f64fcfdec98f730f97078baf42e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\09c60a2188af564c070166d237245bda\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\08c08df8ea096281377ad4082159fb7e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5638745054b54ff563c35e4774182586\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\b015207cd36488621ec85f60c5ff929b\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.core:core-ktx:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\c5cbaec881a490f6d7cd80aec939d9ff\transformed\jetified-core-ktx-1.10.0\AndroidManifest.xml:2:1-7:12
@@ -98,6 +98,7 @@ MERGED from [com.google.android.play:core:1.10.3] C:\Users\dell\.gradle\caches\t
 MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.2.22] C:\Users\dell\.gradle\caches\transforms-3\625d2d888c94b74078abe4865071f43b\transformed\jetified-android-gif-drawable-1.2.22\AndroidManifest.xml:2:1-9:12
 MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:2:1-32:12
 MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\dell\.gradle\caches\transforms-3\17a3d9d506c41bc95d79b70c08368c38\transformed\jetified-roundedimageview-2.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\a509877802732fef220d953dc87b0d98\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\e6491ef8e0cf081a5b93d2e24c02f3ee\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
@@ -115,11 +116,11 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\cache
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\80d93c12985bdd7558cd55e0ef599b0c\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\00f64cb32d3d212f10602adbb7c8ccd2\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\378b8db748a6883e92ca2196ad46f8fd\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\82f726a2ca802cabb336031f0c9842ee\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\3c697dd80ee3e6689242243ac2ecdd06\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\6bac3134c7b17042573c302a56247648\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\6e2322961c63bf73738cb856219b4db2\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\b59a9bb54f5ff865e4aa299145b95963\transformed\sqlite-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\541a06dbe3de5f962b5a98a42b064b9d\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -129,55 +130,55 @@ MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.grad
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\dell\.gradle\caches\transforms-3\3f8d4fd8875ccc99b29719ab900eccc7\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:2:1-13:12
 MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\dell\.gradle\caches\transforms-3\ae2ba79bd4a933f9f9aff3d46eb64ad5\transformed\jetified-relinker-1.4.1\AndroidManifest.xml:2:1-7:12
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
 	package
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:4:5-39
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:4:5-39
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:1-512:12
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:1-513:12
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:2:11-69
 queries
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:6:5-16:15
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:15:5-25:15
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:15:5-25:15
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:6:5-16:15
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:16:5-26:15
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:16:5-26:15
 intent#action:name:android.intent.action.VIEW+data:host:pay+data:scheme:upi
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:7:9-12:18
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:7:9-12:18
 action#android.intent.action.VIEW
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:8:13-65
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:8:13-65
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:8:21-62
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:8:21-62
 data
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:9:13-11:40
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:9:13-11:40
 	android:host
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:10:17-35
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:10:17-35
 	android:scheme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:11:17-37
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:11:17-37
 	android:pathPrefix
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:66:21-51
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:66:21-51
 package#com.android.chrome
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:14:9-54
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:14:9-54
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:14:18-51
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:14:18-51
 package#com.codunite.rechargeapp.WebViewActivity
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:15:9-76
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:15:9-76
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:15:18-73
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:15:18-73
 uses-permission#android.permission.INTERNET
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:18:5-67
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:10:5-67
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:10:5-67
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:18:5-67
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:10:5-67
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:10:5-67
 MERGED from [com.github.salehyarahmadi:AndExAlertDialog:v1.0.1] C:\Users\dell\.gradle\caches\transforms-3\10adcdab46fa41d04d89e316bd4bea36\transformed\jetified-AndExAlertDialog-v1.0.1\AndroidManifest.xml:11:5-67
 MERGED from [com.github.salehyarahmadi:AndExAlertDialog:v1.0.1] C:\Users\dell\.gradle\caches\transforms-3\10adcdab46fa41d04d89e316bd4bea36\transformed\jetified-AndExAlertDialog-v1.0.1\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:10:5-67
@@ -191,17 +192,17 @@ MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transfor
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:18:22-64
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:18:22-64
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:19:5-76
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:19:5-76
 MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:12:5-76
 MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\af81a0cd6ea90c75b438cab3e0550b1a\transformed\jetified-xfetch2-3.1.6\AndroidManifest.xml:12:5-76
 MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:11:5-76
 MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:11:5-76
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:19:22-73
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:19:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:20:5-79
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:20:5-79
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-installations:17.1.3] C:\Users\dell\.gradle\caches\transforms-3\56c6ab6de789bedfc93c57a8a295f1d5\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:9:5-79
@@ -217,67 +218,67 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\
 MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:12:5-79
 MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.6] C:\Users\dell\.gradle\caches\transforms-3\9062463a3e3320af4cd791723804e3c8\transformed\jetified-xfetch2core-3.1.6\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:20:22-76
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:20:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:21:5-80
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:11:5-80
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:11:5-80
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:21:5-80
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:11:5-80
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:11:5-80
 MERGED from [com.github.salehyarahmadi:AndExAlertDialog:v1.0.1] C:\Users\dell\.gradle\caches\transforms-3\10adcdab46fa41d04d89e316bd4bea36\transformed\jetified-AndExAlertDialog-v1.0.1\AndroidManifest.xml:12:5-80
 MERGED from [com.github.salehyarahmadi:AndExAlertDialog:v1.0.1] C:\Users\dell\.gradle\caches\transforms-3\10adcdab46fa41d04d89e316bd4bea36\transformed\jetified-AndExAlertDialog-v1.0.1\AndroidManifest.xml:12:5-80
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:21:22-77
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:21:22-77
 uses-permission#android.permission.READ_CONTACTS
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:22:5-72
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:22:5-72
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:22:22-69
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:22:22-69
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:23:5-82
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:23:5-82
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:28:5-82
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:28:5-82
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:11:5-82
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\dell\.gradle\caches\transforms-3\7eee2b650eb690b5f0aa55755fa2af4c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:11:5-82
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:23:22-79
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:23:22-79
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:24:5-81
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:24:5-81
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:24:22-78
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:24:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:25:5-79
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:25:5-79
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:25:22-76
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:25:22-76
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:26:5-75
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:13:5-75
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:13:5-75
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:26:5-75
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:13:5-75
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:13:5-75
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:26:22-72
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:26:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:27:5-29:48
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:37:5-40:40
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:37:5-40:40
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:27:5-29:48
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:12:5-81
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:12:5-81
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:38:5-41:48
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:38:5-41:48
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:11:5-81
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:11:5-81
-	android:maxSdkVersion
-		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:39:9-35
 	tools:ignore
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:40:9-37
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:40:9-37
 	tools:remove
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:29:9-45
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:29:9-45
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:28:9-65
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:28:9-65
 uses-permission#android.permission.CAMERA
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:30:5-65
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:30:5-65
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:30:22-62
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:30:22-62
 uses-permission#android.permission.USE_FULL_SCREEN_INTENT
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:31:5-81
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:31:5-81
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:31:22-78
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:31:22-78
 application
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:33:5-511:19
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:42:5-67:19
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:42:5-67:19
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:33:5-512:19
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:43:5-71:19
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:43:5-71:19
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:26:5-30:19
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:13:5-23:19
@@ -342,876 +343,876 @@ MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dell\.gradle\caches\transforms-3\519b161fb6e638148937132254c03c78\transformed\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\633f666557477bdc1e2e09f83676a0d8\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
-MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:11:5-20
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:11:5-20
 	android:requestLegacyExternalStorage
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:38:9-52
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:38:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:40:9-35
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:40:9-35
 	android:label
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:37:9-41
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:37:9-41
 	android:roundIcon
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:39:9-51
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:39:9-51
 	android:icon
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:36:9-47
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:36:9-47
 	android:allowBackup
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:35:9-35
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:35:9-35
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:41:9-52
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:41:9-52
 	android:usesCleartextTraffic
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:42:9-44
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:42:9-44
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:34:9-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:34:9-56
 meta-data#com.google.android.gms.version
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:43:9-45:69
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:43:9-45:69
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:45:13-66
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:45:13-66
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:44:13-58
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:44:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:46:9-48:61
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:46:9-48:61
 	android:value
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:48:13-58
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:48:13-58
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:47:13-58
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:47:13-58
 activity#com.codunite.rechargeapp.activity.ActivitySplash
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:50:9-69:20
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:50:9-69:20
 	android:launchMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:53:13-44
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:53:13-44
 	android:exported
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:52:13-36
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:52:13-36
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:51:13-52
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:51:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:54:13-57:29
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:54:13-57:29
 action#android.intent.action.MAIN
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:55:17-69
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:55:25-66
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:55:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:56:17-77
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:56:17-77
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:56:27-74
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:56:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:https://www.vsidigital.in+data:pathPrefix:/register+data:scheme:https
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:58:13-68:29
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:58:13-68:29
 	android:label
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:58:28-57
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:58:28-57
 category#android.intent.category.DEFAULT
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:61:17-76
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:61:17-76
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:61:27-73
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:61:27-73
 category#android.intent.category.BROWSABLE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:62:17-78
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:62:17-78
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:62:27-75
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:62:27-75
 activity#com.codunite.rechargeapp.activity.ActivityWithdrawalRequest
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:70:9-74:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:70:9-74:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:72:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:72:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:74:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:74:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:73:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:73:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:71:13-87
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:71:13-87
 activity#com.codunite.rechargeapp.activity.ActivityNotification
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:76:9-80:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:76:9-80:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:78:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:78:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:80:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:80:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:79:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:79:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:77:13-82
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:77:13-82
 activity#com.codunite.rechargeapp.activity.ActivitySignUp
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:82:9-86:79
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:82:9-86:79
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:84:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:84:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:86:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:86:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:85:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:85:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:83:13-76
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:83:13-76
 activity#com.codunite.rechargeapp.activity.ActivityMain
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:88:9-92:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:88:9-92:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:90:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:90:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:92:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:92:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:91:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:91:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:89:13-74
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:89:13-74
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBBPSLiveCommision
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:93:9-97:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:93:9-97:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:95:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:95:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:97:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:97:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:96:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:96:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:94:13-68
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:94:13-68
 activity#com.codunite.rechargeapp.activity.ActivityPlansOffer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:98:9-102:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:98:9-102:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:100:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:100:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:102:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:102:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:101:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:101:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:99:13-80
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:99:13-80
 activity#com.codunite.rechargeapp.activity.support.ActivityHelpFeedback
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:103:9-107:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:103:9-107:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:105:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:105:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:107:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:107:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:106:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:106:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:104:13-90
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:104:13-90
 activity#com.codunite.rechargeapp.activity.support.ActivityTicketList
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:108:9-112:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:108:9-112:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:110:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:110:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:112:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:112:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:111:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:111:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:109:13-88
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:109:13-88
 activity#com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSBankingService
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:114:9-118:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:114:9-118:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:116:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:116:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:118:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:118:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:117:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:117:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:115:13-76
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:115:13-76
 activity#com.codunite.rechargeapp.activity.reports.ActivityComisionWalletHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:119:9-123:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:119:9-123:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:121:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:121:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:123:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:123:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:122:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:122:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:120:13-99
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:120:13-99
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:124:9-128:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:124:9-128:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:126:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:126:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:128:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:128:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:127:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:127:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:125:13-62
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:125:13-62
 activity#com.codunite.rechargeapp.activity.profile.ActivityKyc
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:131:9-135:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:131:9-135:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:133:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:133:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:135:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:135:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:134:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:134:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:132:13-81
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:132:13-81
 activity#com.codunite.rechargeapp.activity.profile.ActivityChangeAccount
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:136:9-140:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:136:9-140:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:138:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:138:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:140:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:140:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:139:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:139:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:137:13-91
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:137:13-91
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsAllServices
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:141:9-145:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:141:9-145:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:143:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:143:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:145:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:145:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:144:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:144:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:142:13-66
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:142:13-66
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsElectricity
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:146:9-150:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:146:9-150:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:148:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:148:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:150:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:150:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:149:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:149:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:147:13-66
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:147:13-66
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBbpsTollTax
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:151:9-155:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:151:9-155:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:153:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:153:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:155:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:155:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:154:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:154:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:152:13-62
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:152:13-62
 activity#com.codunite.rechargeapp.activity.ActivityCompletion
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:156:9-160:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:156:9-160:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:158:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:158:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:160:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:160:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:159:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:159:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:157:13-80
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:157:13-80
 activity#com.codunite.rechargeapp.activity.reports.ActivityBillPayHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:161:9-165:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:161:9-165:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:163:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:163:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:165:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:165:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:164:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:164:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:162:13-92
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:162:13-92
 activity#com.codunite.rechargeapp.activity.ActivityBrowseProfileImage
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:166:9-170:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:166:9-170:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:168:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:168:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:170:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:170:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:169:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:169:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:167:13-88
-activity#com.codunite.rechargeapp.activity.reports.ActivityRequestHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:171:9-175:70
-	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:173:13-49
-	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:175:13-67
-	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:174:13-56
-	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:172:13-92
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:167:13-88
 activity#com.codunite.rechargeapp.activity.ActivityPlansOfferDth
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:176:9-180:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:171:9-175:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:178:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:173:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:180:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:175:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:179:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:174:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:177:13-83
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:172:13-83
 activity#com.codunite.rechargeapp.activity.support.ActivityContact
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:181:9-185:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:176:9-180:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:183:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:178:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:185:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:180:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:184:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:179:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:182:13-85
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:177:13-85
 activity#com.codunite.rechargeapp.activity.ActivityLogin
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:186:9-190:57
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:181:9-185:57
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:188:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:183:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:190:13-54
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:185:13-54
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:189:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:184:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:187:13-75
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:182:13-75
 activity#com.codunite.rechargeapp.activity.profile.ActivityForgotPassword
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:191:9-195:57
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:186:9-190:57
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:193:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:188:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:195:13-54
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:190:13-54
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:194:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:189:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:192:13-92
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:187:13-92
 activity#com.codunite.rechargeapp.activity.ActivityRecharge
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:196:9-200:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:191:9-195:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:198:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:193:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:200:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:195:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:199:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:194:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:197:13-78
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:192:13-78
 activity#com.codunite.rechargeapp.activity.support.ActivityComplaintList
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:201:9-205:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:196:9-200:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:203:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:198:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:205:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:200:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:204:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:199:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:202:13-91
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:197:13-91
 activity#com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:206:9-210:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:201:9-205:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:208:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:203:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:210:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:205:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:209:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:204:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:207:13-93
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:202:13-93
 activity#com.codunite.rechargeapp.activity.mainwallet.ActivityMainWalletTransfer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:212:9-216:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:207:9-211:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:214:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:209:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:216:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:211:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:215:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:210:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:213:13-99
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:208:13-99
 activity#com.codunite.rechargeapp.activity.ActivityRechargeCommision
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:218:9-222:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:213:9-217:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:220:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:215:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:222:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:217:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:221:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:216:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:219:13-87
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:214:13-87
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBBPSCommision
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:223:9-227:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:218:9-222:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:225:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:220:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:227:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:222:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:226:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:221:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:224:13-64
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:219:13-64
 activity#com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:228:9-232:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:223:9-227:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:230:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:225:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:232:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:227:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:231:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:226:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:229:13-99
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:224:13-99
 activity#com.codunite.rechargeapp.activity.commissionincome.ActivityAEPSCommision
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:233:9-237:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:228:9-232:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:235:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:230:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:237:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:232:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:236:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:231:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:234:13-100
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:229:13-100
 activity#com.codunite.rechargeapp.activity.ActivityPrivacyPolicy
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:238:9-242:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:233:9-237:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:240:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:235:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:242:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:237:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:241:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:236:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:239:13-83
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:234:13-83
 activity#com.codunite.rechargeapp.activity.support.ActivityRaiseComplaint
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:243:9-247:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:238:9-242:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:245:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:240:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:247:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:242:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:246:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:241:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:244:13-92
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:239:13-92
 activity#com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:248:9-252:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:243:9-247:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:250:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:245:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:252:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:247:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:251:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:246:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:249:13-92
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:244:13-92
 activity#com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequestHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:253:9-257:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:248:9-252:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:255:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:250:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:257:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:252:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:256:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:251:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:254:13-99
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:249:13-99
 activity#com.codunite.rechargeapp.activity.ActivityShare
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:258:9-262:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:253:9-257:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:260:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:255:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:262:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:257:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:261:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:256:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:259:13-75
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:254:13-75
 activity#com.codunite.rechargeapp.WebViewActivity
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:264:9-268:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:259:9-263:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:266:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:261:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:268:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:263:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:267:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:262:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:265:13-68
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:260:13-68
 activity#com.codunite.rechargeapp.activity.profile.ActivityChangePassword
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:269:9-273:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:264:9-268:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:271:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:266:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:273:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:268:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:272:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:267:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:270:13-92
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:265:13-92
 activity#com.codunite.rechargeapp.activity.reports.ActivityWalletHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:274:9-278:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:269:9-273:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:276:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:271:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:278:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:273:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:277:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:272:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:275:13-91
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:270:13-91
 activity#com.codunite.rechargeapp.activity.profile.ActivityChangeTPassword
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:279:9-283:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:274:9-278:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:281:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:276:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:283:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:278:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:282:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:277:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:280:13-93
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:275:13-93
 activity#com.codunite.rechargeapp.activity.profile.ActivityProfile
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:284:9-288:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:279:9-283:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:286:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:281:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:288:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:283:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:287:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:282:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:285:13-85
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:280:13-85
 activity#com.codunite.commonutility.spinner.ActivitySpinner
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:289:9-293:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:284:9-288:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:291:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:286:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:293:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:288:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:292:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:287:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:290:13-78
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:285:13-78
 activity#com.yalantis.ucrop.UCropActivity
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:294:9-298:72
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:53:9-56:50
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:53:9-56:50
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:289:9-293:72
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:57:9-60:50
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:57:9-60:50
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:296:13-49
-		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:55:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:291:13-49
+		REJECTED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:59:13-49
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:297:13-69
-		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:56:13-47
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:292:13-69
+		REJECTED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:60:13-47
 	tools:replace
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:298:13-69
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:293:13-69
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:295:13-60
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:290:13-60
 activity#com.codunite.rechargeapp.activity.ActivityIntro
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:300:9-303:59
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:295:9-298:59
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:302:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:297:13-49
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:303:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:298:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:301:13-75
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:296:13-75
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:305:9-307:55
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:300:9-302:55
 	android:resource
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:307:13-52
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:302:13-52
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:306:13-83
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:301:13-83
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:308:9-310:53
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:303:9-305:53
 	android:resource
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:310:13-50
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:305:13-50
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:309:13-84
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:304:13-84
 service#com.codunite.commonutility.firebase.FirebaseMessageReceiver
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:312:9-319:19
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:307:9-314:19
 	android:exported
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:314:13-37
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:309:13-37
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:313:13-87
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:308:13-87
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:315:13-318:29
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:310:13-313:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:316:17-78
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:311:17-78
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:316:25-75
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:311:25-75
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:317:17-81
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:312:17-81
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:317:25-78
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:312:25-78
 receiver#com.razorpay.RzpTokenReceiver
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:333:9-341:20
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:328:9-336:20
 MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:12:9-16:20
 MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:12:9-16:20
 	android:exported
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:335:13-36
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:330:13-36
 	android:permission
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:336:13-61
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:331:13-61
 	tools:replace
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:337:13-45
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:332:13-45
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:334:13-57
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:329:13-57
 intent-filter#action:name:rzp.device_token.share
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:338:13-340:29
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:333:13-335:29
 action#rzp.device_token.share
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:339:17-65
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:334:17-65
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:339:25-62
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:334:25-62
 activity#com.razorpay.CheckoutActivity
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:343:9-346:52
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:338:9-341:52
 MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:18:9-29:20
 MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:18:9-29:20
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:346:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:341:13-49
 	android:exported
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:345:13-36
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:340:13-36
 	android:configChanges
 		ADDED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:20:13-83
 	android:theme
 		ADDED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:21:13-49
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:344:13-57
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:339:13-57
 uses-library#org.apache.http.legacy
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:348:9-350:40
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:343:9-345:40
 	android:required
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:350:13-37
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:345:13-37
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:349:13-50
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:344:13-50
 meta-data#com.razorpay.ApiKey
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:352:9-354:55
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:347:9-349:55
 	android:value
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:354:13-52
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:349:13-52
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:353:13-47
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:348:13-47
 activity#com.codunite.rechargeapp.activity.mainwallet.ActivityTopupWalletRazorpay
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:357:9-361:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:352:9-356:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:359:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:354:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:361:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:356:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:360:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:355:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:358:13-76
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:353:13-76
 activity#com.codunite.rechargeapp.activity.aepsnew.finoaepspayout.ActivityNewAepsPayoutAddBene
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:362:9-366:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:357:9-361:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:364:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:359:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:366:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:361:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:365:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:360:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:363:13-89
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:358:13-89
 activity#com.codunite.rechargeapp.activity.aepsnew.finoaepspayout.ActivityNewAepsWalletPayoutTransfer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:367:9-371:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:362:9-366:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:369:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:364:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:371:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:366:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:370:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:365:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:368:13-96
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:363:13-96
 activity#com.codunite.rechargeapp.activity.aepsnew.finoaepspayout.ActivityNewPayoutVerifyDoc
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:372:9-376:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:367:9-371:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:374:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:369:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:376:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:371:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:375:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:370:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:373:13-87
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:368:13-87
 activity#com.codunite.rechargeapp.activity.ActivityQrcode
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:377:9-381:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:372:9-376:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:379:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:374:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:381:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:376:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:380:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:375:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:378:13-76
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:373:13-76
 activity#com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:384:9-388:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:379:9-383:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:386:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:381:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:388:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:383:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:387:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:382:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:385:13-95
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:380:13-95
 activity#com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:389:9-393:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:384:9-388:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:391:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:386:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:393:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:388:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:392:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:387:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:390:13-65
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:385:13-65
 activity#com.codunite.rechargeapp.activity.members.AddEditMember
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:394:9-398:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:389:9-393:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:396:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:391:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:398:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:393:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:397:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:392:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:395:13-83
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:390:13-83
 activity#com.codunite.rechargeapp.activity.members.AllMemberList
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:399:9-403:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:394:9-398:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:401:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:396:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:403:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:398:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:402:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:397:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:400:13-83
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:395:13-83
 activity#com.codunite.rechargeapp.activity.ActivityLoginTransfer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:404:9-408:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:399:9-403:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:406:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:401:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:408:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:403:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:407:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:402:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:405:13-83
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:400:13-83
 activity#com.codunite.rechargeapp.activity.ActivityRegisterTransfer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:411:9-415:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:406:9-410:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:413:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:408:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:415:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:410:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:414:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:409:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:412:13-86
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:407:13-86
 activity#com.codunite.rechargeapp.activity.ActivityMoneyTransferHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:416:9-420:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:411:9-415:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:418:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:413:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:420:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:415:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:419:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:414:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:417:13-90
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:412:13-90
 activity#com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:422:9-426:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:417:9-421:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:424:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:419:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:426:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:421:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:425:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:420:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:423:13-69
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:418:13-69
 activity#com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequest
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:428:9-432:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:423:9-427:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:430:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:425:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:432:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:427:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:431:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:426:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:429:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:424:13-67
 activity#com.codunite.rechargeapp.activity.wallet.ActivityTopupWallet
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:434:9-438:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:429:9-433:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:436:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:431:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:438:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:433:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:437:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:432:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:435:13-64
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:430:13-64
 activity#com.codunite.rechargeapp.activity.wallet.ActivityWalletTransfer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:440:9-444:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:435:9-439:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:442:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:437:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:444:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:439:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:443:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:438:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:441:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:436:13-67
 activity#com.codunite.rechargeapp.activity.wallet.ActivityEWalletTransfer
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:446:9-450:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:441:9-445:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:448:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:443:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:450:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:445:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:449:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:444:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:447:13-68
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:442:13-68
 activity#com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:452:9-456:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:447:9-451:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:454:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:449:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:456:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:451:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:455:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:450:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:453:13-66
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:448:13-66
 activity#com.codunite.rechargeapp.activity.wallet.ActivityEWalletHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:458:9-462:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:453:9-457:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:460:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:455:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:462:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:457:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:461:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:456:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:459:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:454:13-67
 activity#com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequestHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:464:9-468:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:459:9-463:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:466:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:461:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:468:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:463:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:467:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:462:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:465:13-74
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:460:13-74
 activity#com.codunite.rechargeapp.activity.bbps.ActivityBBPSDashBoardActivity
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:469:9-473:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:464:9-468:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:471:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:466:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:473:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:468:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:472:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:467:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:470:13-72
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:465:13-72
 activity#com.codunite.rechargeapp.activity.reports.ActivityRechargeCommisionHistory
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:475:9-479:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:470:9-474:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:477:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:472:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:479:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:474:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:478:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:473:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:476:13-78
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:471:13-78
 activity#com.codunite.rechargeapp.activity.virtualaccount.ActivityVirtualAccount
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:481:9-485:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:476:9-480:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:483:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:478:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:485:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:480:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:484:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:479:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:482:13-75
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:477:13-75
 activity#com.codunite.rechargeapp.activity.virtualaccount.VirtualTransactionReport
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:487:9-491:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:482:9-486:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:489:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:484:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:491:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:486:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:490:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:485:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:488:13-77
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:483:13-77
 activity#com.codunite.rechargeapp.activity.ActivityBeneficiaryList
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:493:9-497:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:488:9-492:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:495:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:490:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:497:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:492:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:496:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:491:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:494:13-61
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:489:13-61
 activity#com.codunite.rechargeapp.activity.ActivityAddBeneficiary
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:499:9-503:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:494:9-498:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:501:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:496:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:503:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:498:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:502:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:497:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:500:13-60
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:495:13-60
 activity#com.codunite.rechargeapp.activity.ActivitySenderDetails
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:505:9-509:70
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:500:9-504:70
 	android:screenOrientation
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:507:13-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:502:13-49
 	android:windowSoftInputMode
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:509:13-67
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:504:13-67
 	android:theme
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:508:13-56
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:503:13-56
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:506:13-59
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:501:13-59
+activity#com.codunite.rechargeapp.activity.wallet.ActivityWallet
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:506:9-510:70
+	android:screenOrientation
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:508:13-49
+	android:windowSoftInputMode
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:510:13-67
+	android:theme
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:509:13-56
+	android:name
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:507:13-59
 uses-sdk
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:6:5-8:41
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:6:5-8:41
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:6:5-8:41
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.databinding:databinding-adapters:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\13fed12992d0625f2c7a8d2dd707412a\transformed\databinding-adapters-7.4.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:databinding-adapters:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\13fed12992d0625f2c7a8d2dd707412a\transformed\databinding-adapters-7.4.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:databinding-ktx:7.4.1] C:\Users\dell\.gradle\caches\transforms-3\219e79169c1fdb95b4b927ee02e6725f\transformed\jetified-databinding-ktx-7.4.1\AndroidManifest.xml:5:5-44
@@ -1256,6 +1257,8 @@ MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\cache
 MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\dell\.gradle\caches\transforms-3\78404ee00c707d3d3aee88d546e58127\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9d06b2efbb19baf11f528642ff4bbe77\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\9d06b2efbb19baf11f528642ff4bbe77\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-messaging:23.1.2] C:\Users\dell\.gradle\caches\transforms-3\4455bbd306df7d888bc5045e8f1a466a\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\dell\.gradle\caches\transforms-3\06c4e82af744f80d5170781c59059629\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:18:5-20:41
@@ -1284,8 +1287,6 @@ MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.g
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\dell\.gradle\caches\transforms-3\aab337d837dd01656472a238881cb518\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\dell\.gradle\caches\transforms-3\cf9056b6c615ada306d0e0b0a27ce93b\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\7bae2a8e4038f1c5bffc959b45f9aab0\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\dell\.gradle\caches\transforms-3\220c72698b2f82184d57559fbab363f4\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\dell\.gradle\caches\transforms-3\220c72698b2f82184d57559fbab363f4\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.6.0] C:\Users\dell\.gradle\caches\transforms-3\eff6778dc98615d56addd25c940af180\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
@@ -1324,14 +1325,14 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\del
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\bbe83a18797393fbc4f615cc34474291\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\37c82f64fcfdec98f730f97078baf42e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\37c82f64fcfdec98f730f97078baf42e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\09c60a2188af564c070166d237245bda\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\09c60a2188af564c070166d237245bda\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\08c08df8ea096281377ad4082159fb7e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\08c08df8ea096281377ad4082159fb7e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5638745054b54ff563c35e4774182586\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\5638745054b54ff563c35e4774182586\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\159b0b787730eee513df066bb55fdb53\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\b015207cd36488621ec85f60c5ff929b\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\dell\.gradle\caches\transforms-3\b015207cd36488621ec85f60c5ff929b\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.10.0] C:\Users\dell\.gradle\caches\transforms-3\34b0bdbc42bb0ade5915cdca2d619df3\transformed\core-1.10.0\AndroidManifest.xml:20:5-44
@@ -1360,6 +1361,8 @@ MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transfor
 MERGED from [com.razorpay:checkout:1.5.16] C:\Users\dell\.gradle\caches\transforms-3\16724e05ab90dacbe215fbab41f88ed5\transformed\jetified-checkout-1.5.16\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:23:5-25:41
 MERGED from [com.github.joaquimley:faboptions:1.2.0] C:\Users\dell\.gradle\caches\transforms-3\114212cd8efd03552890c8d37db8cb83\transformed\jetified-faboptions-1.2.0\AndroidManifest.xml:23:5-25:41
+MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\dell\.gradle\caches\transforms-3\17a3d9d506c41bc95d79b70c08368c38\transformed\jetified-roundedimageview-2.3.0\AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\dell\.gradle\caches\transforms-3\17a3d9d506c41bc95d79b70c08368c38\transformed\jetified-roundedimageview-2.3.0\AndroidManifest.xml:7:5-43
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\a509877802732fef220d953dc87b0d98\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\dell\.gradle\caches\transforms-3\a509877802732fef220d953dc87b0d98\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\dell\.gradle\caches\transforms-3\36910ffb9aba97e54a2ac75d667a11ec\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
@@ -1394,6 +1397,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dell\.gradle\cac
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\00f64cb32d3d212f10602adbb7c8ccd2\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\378b8db748a6883e92ca2196ad46f8fd\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dell\.gradle\caches\transforms-3\378b8db748a6883e92ca2196ad46f8fd\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\82f726a2ca802cabb336031f0c9842ee\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.4.0] C:\Users\dell\.gradle\caches\transforms-3\82f726a2ca802cabb336031f0c9842ee\transformed\lifecycle-livedata-2.4.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\dell\.gradle\caches\transforms-3\4499b303e3b71b01828902b6c4975979\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
@@ -1402,8 +1407,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\dell\.gr
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\dell\.gradle\caches\transforms-3\3c697dd80ee3e6689242243ac2ecdd06\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\6bac3134c7b17042573c302a56247648\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\dell\.gradle\caches\transforms-3\6bac3134c7b17042573c302a56247648\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\dell\.gradle\caches\transforms-3\fe0b130ea25597d3ab15bdd72f9ea817\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\6e2322961c63bf73738cb856219b4db2\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\6e2322961c63bf73738cb856219b4db2\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\b59a9bb54f5ff865e4aa299145b95963\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
@@ -1422,122 +1425,128 @@ MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches
 MERGED from [com.pnikosis:materialish-progress:1.7] C:\Users\dell\.gradle\caches\transforms-3\c14a7bbec2d58531cf3e0e41c35f3d8f\transformed\jetified-materialish-progress-1.7\AndroidManifest.xml:7:5-9:41
 MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\dell\.gradle\caches\transforms-3\ae2ba79bd4a933f9f9aff3d46eb64ad5\transformed\jetified-relinker-1.4.1\AndroidManifest.xml:5:5-43
 MERGED from [pl.droidsonroids.relinker:relinker:1.4.1] C:\Users\dell\.gradle\caches\transforms-3\ae2ba79bd4a933f9f9aff3d46eb64ad5\transformed\jetified-relinker-1.4.1\AndroidManifest.xml:5:5-43
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
-		INJECTED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml
+		INJECTED from E:\KMPaisa\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:327:13-330:52
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:63:13-65:54
-MERGED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:63:13-65:54
+ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:322:13-325:52
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:67:13-69:54
+MERGED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:67:13-69:54
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:19:13-21:58
 MERGED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:19:13-21:58
 	android:resource
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:329:17-55
-		REJECTED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:65:17-51
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:324:17-55
+		REJECTED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:69:17-51
 		REJECTED from [gun0912.ted:tedbottompicker:2.0.1] C:\Users\dell\.gradle\caches\transforms-3\8220a1760290d71368a48392f7928799\transformed\jetified-tedbottompicker-2.0.1\AndroidManifest.xml:21:17-55
 	tools:replace
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:330:17-49
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:325:17-49
 	android:name
-		ADDED from E:\AndroidApp\KMPaisa\app\src\main\AndroidManifest.xml:328:17-67
-uses-permission#android.permission.WRITE_INTERNAL_STORAGE
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:12:5-81
+		ADDED from E:\KMPaisa\app\src\main\AndroidManifest.xml:323:17-67
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:14:5-76
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:12:22-78
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:14:22-73
 package#com.mantra.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:16:9-56
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:17:9-56
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:16:18-53
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:17:18-53
 package#com.scl.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:17:9-53
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:18:9-53
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:17:18-50
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:18:18-50
 package#com.precision.pb510.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:18:9-65
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:19:9-65
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:18:18-62
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:19:18-62
 package#com.secugen.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:19:9-57
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:20:9-57
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:19:18-54
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:20:18-54
 package#com.nextbiometrics.onetouchrdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:20:9-72
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:21:9-72
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:20:18-69
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:21:18-69
 package#com.acpl.registersdk
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:21:9-56
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:22:9-56
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:21:18-53
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:22:18-53
 package#co.aratek.asix_gms.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:22:9-64
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:23:9-64
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:22:18-61
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:23:18-61
 package#com.evolute.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:23:9-57
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:24:9-57
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:23:18-54
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:24:18-54
 package#com.mantra.mis100v2.rdservice
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:24:9-65
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:25:9-65
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:24:18-62
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:25:18-62
 uses-feature#android.hardware.camera
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:27:5-29:35
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:28:5-30:35
 	android:required
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:29:9-32
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:30:9-32
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:28:9-47
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:29:9-47
 uses-permission#android.permission.READ_PRECISE_PHONE_STATE
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:31:5-33:47
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:32:5-34:47
 	tools:ignore
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:33:9-44
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:34:9-44
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:32:9-67
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:33:9-67
 uses-permission#android.permission.READ_PRIVILEGED_PHONE_STATE
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:34:5-36:47
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:35:5-37:47
 	tools:ignore
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:36:9-44
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:37:9-44
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:35:9-70
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:36:9-70
+activity#com.paysprint.onboardinglib.activities.DetailShowFino
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:44:9-46:40
+	android:exported
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:45:13-81
 activity#com.paysprint.onboardinglib.activities.AadhaarVerification
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:43:9-95
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:47:9-95
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:43:19-92
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:47:19-92
 activity#com.paysprint.onboardinglib.activities.PanImageUpload
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:44:9-46:56
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:48:9-50:56
 	android:screenOrientation
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:46:13-53
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:50:13-53
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:45:13-81
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:49:13-81
 activity#com.paysprint.onboardinglib.activities.AddressUpdateActivity
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:47:9-97
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:51:9-97
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:47:19-94
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:51:19-94
 activity#com.paysprint.onboardinglib.activities.AadhaarEKYCActivity
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:48:9-95
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:52:9-95
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:48:19-92
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:52:19-92
 activity#com.paysprint.onboardinglib.activities.AadhaarVerificationActivity
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:49:9-103
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:53:9-103
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:49:19-100
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:53:19-100
 activity#com.paysprint.onboardinglib.activities.PanImageActivity
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:50:9-92
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:54:9-92
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:50:19-89
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:54:19-89
 activity#com.paysprint.onboardinglib.activities.PanActivity
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:51:9-87
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:55:9-87
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:51:19-84
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:55:19-84
 activity#com.paysprint.onboardinglib.activities.HostActivity
-ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:52:9-88
+ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:56:9-88
 	android:name
-		ADDED from [onboard_v1.0.9.aar] C:\Users\dell\.gradle\caches\transforms-3\2e9b35f5a4dc3b2610544d2d3b8855fd\transformed\jetified-onboard_v1.0.9\AndroidManifest.xml:52:19-85
+		ADDED from [onboardinglib_V.1.1.12.aar] C:\Users\dell\.gradle\caches\transforms-3\94e1a969c49060e23efce15a7b0f0c4d\transformed\jetified-onboardinglib_V.1.1.12\AndroidManifest.xml:56:19-85
 activity#com.karumi.dexter.DexterActivity
 ADDED from [com.karumi:dexter:6.2.3] C:\Users\dell\.gradle\caches\transforms-3\a8c565de842488e009d05b156ecf889e\transformed\jetified-dexter-6.2.3\AndroidManifest.xml:27:9-29:72
 	android:theme

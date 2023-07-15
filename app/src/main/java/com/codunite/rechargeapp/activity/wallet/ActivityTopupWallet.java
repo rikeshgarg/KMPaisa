@@ -227,26 +227,26 @@ public class ActivityTopupWallet extends AppCompatActivity implements View.OnCli
         } else {
             errrorScreen.showInternetError();
         }
-        //loadToolBar();
+        loadToolBar();
     }
 
     private void loadToolBar() {
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         txtHeading.setText(ActivityMain.UPI_ADD_MONEY);
 
-        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
-        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
-
-        TextView toolbar_txt_ewalletbal = (TextView) findViewById(R.id.toolbar_txt_ewalletbal);
-        toolbar_txt_ewalletbal.setText(ActivityMain.ShoweBalance(svContext));
-
-        LinearLayout imgToolBarWallet = (LinearLayout) findViewById(R.id.img_wallet);
-        imgToolBarWallet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ActivitySplash.OpenWalletActivity(svContext);
-            }
-        });
+//        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
+//        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
+//
+//        TextView toolbar_txt_ewalletbal = (TextView) findViewById(R.id.toolbar_txt_ewalletbal);
+//        toolbar_txt_ewalletbal.setText(ActivityMain.ShoweBalance(svContext));
+//
+//        LinearLayout imgToolBarWallet = (LinearLayout) findViewById(R.id.img_wallet);
+//        imgToolBarWallet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ActivitySplash.OpenWalletActivity(svContext);
+//            }
+//        });
     }
 
     private void hideKeyboard() {

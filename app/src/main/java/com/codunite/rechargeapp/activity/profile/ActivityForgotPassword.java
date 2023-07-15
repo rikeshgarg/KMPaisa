@@ -46,7 +46,7 @@ public class ActivityForgotPassword extends AppCompatActivity implements View.On
 
     private EditText edMobileNumber, edNewPawwword, edtConfirmPwd, edtTrancationPwd;
     private EditText[] edTexts = {edMobileNumber, edNewPawwword, edtConfirmPwd, edtTrancationPwd};
-    private String[] edTextsError = {"Enter member id", "Enter password", "Re-enter password",
+    private String[] edTextsError = {"Enter Member Id", "Enter password", "Re-enter password",
             "Enter transcation password"};
     private int[] editTextsClickId = {R.id.edt_forgetpass, R.id.edt_newpassword, R.id.edt_newRepassword,
             R.id.edt_transactionpassword};

@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -48,7 +49,7 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
     private CheckInternet checkNetwork;
     private NoInternetScreen errrorScreen;
 
-    private EditText edCurrentBal, edAmount, edDesc, edPhoneNumber;
+    private EditText edCurrentBal, edAmount, edDesc, edPhoneNumber,edt_avl_balance;
     private Button btnProceed, btnOtpAuth;
     private ImageView imgDrop, imgDropOne;
 
@@ -61,7 +62,7 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
     private String[] edTextsError = {"Enter current wallet Balance", "Enter Amount", "Enter Description"};
     private int[] editTextsClickId = {R.id.edtcurrentwalletbal, R.id.edt_enteramount, R.id.edt_desc};
     private Spinner spinnerCrDr, spinnerMemberList;
-    private List<String> listSpinnerCrDr, listSpinnerMemberListy;
+    private List<String> listSpinnerCrDr, listSpinnerMemberListy,listSpinnerWalletBal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,13 +81,31 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
         LoadAllData();
 
         listSpinnerCrDr = new ArrayList<>();
-        listSpinnerCrDr.add("-1#:#Add Credit");
+        //listSpinnerCrDr.add("-1#:#Add Credit");
         listSpinnerCrDr.add("1#:#CR");
-        listSpinnerCrDr.add("2#:#DR");
+        //listSpinnerCrDr.add("2#:#DR");
         SpinnerPopulateAdapter LegAdapter = new SpinnerPopulateAdapter(svContext, listSpinnerCrDr, true);
         spinnerCrDr.setAdapter(LegAdapter);
 
         ((EditText) findViewById(R.id.edtcurrentwalletbal)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, ""));
+        spinnerMemberList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+                if(position!=0) {
+                    edt_avl_balance.setText(String.valueOf(listSpinnerWalletBal.get(position)));
+                    //Toast.makeText(svContext, String.valueOf(listSpinnerWalletBal.get(position)), Toast.LENGTH_LONG).show();
+                } else {
+                    edt_avl_balance.setText("");
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
     }
 
     private void LoadAllData(){
@@ -177,12 +196,14 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
         edAmount = (EditText) editTexts[1];
         edDesc = (EditText) editTexts[2];
         edPhoneNumber = (EditText) findViewById(R.id.edt_entermobile);
+        edt_avl_balance= (EditText) findViewById(R.id.edt_avl_balance);
         edPhoneNumber.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {}
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if ((edPhoneNumber.getText().toString().trim()).length() == 10) {
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(edPhoneNumber.getText().toString().trim());
                     callWebService(ApiInterface.GETMEMBERBYMOBILE, lstUploadData);
                 }else if((edPhoneNumber.getText().toString().trim()).length() == 0){
@@ -298,6 +319,7 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
         }else if (url.contains(ApiInterface.GETMEMBERBYMOBILE)) {
             listSpinnerMemberListy = new ArrayList<>();
             listSpinnerMemberListy.add("-1#:#Select member");
+
             try {
                 JSONObject json = new JSONObject(result);
                 String str_message = json.getString(TAG_MESSAGE);
@@ -322,7 +344,9 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
             spinnerMemberList.setAdapter(LegAdapter);
         }else if (url.contains(ApiInterface.GETMEMBERLIST)) {
             listSpinnerMemberListy = new ArrayList<>();
+            listSpinnerWalletBal = new ArrayList<>();
             listSpinnerMemberListy.add("-1#:#Select member");
+            listSpinnerWalletBal.add("0.00");
             try {
                 JSONObject json = new JSONObject(result);
                 String str_message = json.getString(TAG_MESSAGE);
@@ -335,8 +359,9 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
                         JSONObject data_obj = data.getJSONObject(data_i);
                         String str_user_id = data_obj.getString("user_id");
                         String str_name = data_obj.getString("name")+" ("+data_obj.getString("user_code")+") ";
-
+                        String str_wallet_balance = data_obj.getString("e_wallet_balance");
                         listSpinnerMemberListy.add(str_user_id+"#:#"+str_name);
+                        listSpinnerWalletBal.add(str_wallet_balance);
                     }
                 }
             } catch (JSONException e) {

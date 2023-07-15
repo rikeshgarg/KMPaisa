@@ -34,7 +34,11 @@ import java.util.LinkedList;
 
 public class ActivityShare extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
     private TextView btnRate;
-
+    private Context svContext;
+    private ShowCustomToast customToast;
+    private CheckInternet checkNetwork;
+    private NoInternetScreen errrorScreen;
+    private ImageView imgToolBarBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,11 +78,6 @@ public class ActivityShare extends AppCompatActivity implements View.OnClickList
         return shareUrl;
     }
 
-    private Context svContext;
-    private ShowCustomToast customToast;
-    private CheckInternet checkNetwork;
-    private NoInternetScreen errrorScreen;
-
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
@@ -105,8 +104,6 @@ public class ActivityShare extends AppCompatActivity implements View.OnClickList
 
         loadToolBar();
     }
-
-    private ImageView imgToolBarBack;
 
     private void loadToolBar() {
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);

@@ -143,7 +143,7 @@
                     android:layout_height="match_parent"
                     android:layout_below="@+id/card_wallbal"
                     android:layout_marginLeft="@dimen/five"
-                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginTop="@dimen/five"
                     android:layout_marginRight="@dimen/five"
                     android:scrollbars="vertical"
                     android:scrollingCache="true" />

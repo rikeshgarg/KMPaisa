@@ -4,7 +4,7 @@
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -206,16 +206,23 @@
                         android:gravity="center"
                         android:text="Select to date" />
 
-                    <ImageView
-                        android:id="@+id/filter_search"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/forty"
                         android:layout_marginLeft="@dimen/five"
                         android:layout_weight="0.4"
-                        android:background="@color/colorPrimary"
+                        app:cardCornerRadius="4dp"
+                        >
+
+                    <ImageView
+                        android:id="@+id/filter_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/forty"
+                        android:background="@color/colorAccent"
                         android:gravity="center"
                         android:src="@drawable/ic_baseline_search_24"
                         android:text="Search" />
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
                 <androidx.appcompat.widget.SearchView
@@ -226,7 +233,7 @@
                     android:layout_marginStart="@dimen/twenty"
                     android:layout_marginTop="@dimen/ten"
                     android:layout_marginEnd="@dimen/twenty"
-                    android:background="@drawable/back_edittext_default"
+                    android:background="@drawable/back_searchview_spinner"
                     android:gravity="center_vertical"
                     android:padding="@dimen/three"
                     app:iconifiedByDefault="false"

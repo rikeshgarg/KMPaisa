@@ -67,7 +67,6 @@ public class ActivityDMRCommision extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_dmrcommision);
         StartApp();
-
         resumeApp();
     }
 
@@ -75,11 +74,11 @@ public class ActivityDMRCommision extends AppCompatActivity implements View.OnCl
         wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
         btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
-        txtWalletbal.setVisibility(View.INVISIBLE);
+        txtWalletbal.setVisibility(View.GONE);
         cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
         cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
-        cvAddWallet.setVisibility(View.INVISIBLE);
-        cardShowBalance.setVisibility(View.INVISIBLE);
+        cvAddWallet.setVisibility(View.GONE);
+        cardShowBalance.setVisibility(View.GONE);
         btnAddWallet.setOnClickListener(this);
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
@@ -199,10 +198,9 @@ public class ActivityDMRCommision extends AppCompatActivity implements View.OnCl
                 e.printStackTrace();
             }
 
-            cvAddWallet.setVisibility(View.VISIBLE);
-            cardShowBalance.setVisibility(View.VISIBLE);
-
-            txtWalletbal.setVisibility(View.VISIBLE);
+//            cvAddWallet.setVisibility(View.VISIBLE);
+//            cardShowBalance.setVisibility(View.VISIBLE);
+//            txtWalletbal.setVisibility(View.VISIBLE);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             wallethistoryrv.setLayoutManager(layoutManager);

@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -25,21 +25,21 @@ public final class ActMemberListBinding implements ViewBinding {
   public final Button btnAddmember;
 
   @NonNull
-  public final CardView cardview;
+  public final IncludeActionbarBinding layActionbar;
 
   @NonNull
-  public final IncludeActionbarBinding layActionbar;
+  public final RelativeLayout rlTop;
 
   @NonNull
   public final RecyclerView rvMembers;
 
   private ActMemberListBinding(@NonNull LinearLayout rootView, @NonNull Button btnAddmember,
-      @NonNull CardView cardview, @NonNull IncludeActionbarBinding layActionbar,
+      @NonNull IncludeActionbarBinding layActionbar, @NonNull RelativeLayout rlTop,
       @NonNull RecyclerView rvMembers) {
     this.rootView = rootView;
     this.btnAddmember = btnAddmember;
-    this.cardview = cardview;
     this.layActionbar = layActionbar;
+    this.rlTop = rlTop;
     this.rvMembers = rvMembers;
   }
 
@@ -76,12 +76,6 @@ public final class ActMemberListBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardview;
-      CardView cardview = ViewBindings.findChildViewById(rootView, id);
-      if (cardview == null) {
-        break missingId;
-      }
-
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
       if (layActionbar == null) {
@@ -89,14 +83,20 @@ public final class ActMemberListBinding implements ViewBinding {
       }
       IncludeActionbarBinding binding_layActionbar = IncludeActionbarBinding.bind(layActionbar);
 
+      id = R.id.rl_top;
+      RelativeLayout rlTop = ViewBindings.findChildViewById(rootView, id);
+      if (rlTop == null) {
+        break missingId;
+      }
+
       id = R.id.rv_members;
       RecyclerView rvMembers = ViewBindings.findChildViewById(rootView, id);
       if (rvMembers == null) {
         break missingId;
       }
 
-      return new ActMemberListBinding((LinearLayout) rootView, btnAddmember, cardview,
-          binding_layActionbar, rvMembers);
+      return new ActMemberListBinding((LinearLayout) rootView, btnAddmember, binding_layActionbar,
+          rlTop, rvMembers);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

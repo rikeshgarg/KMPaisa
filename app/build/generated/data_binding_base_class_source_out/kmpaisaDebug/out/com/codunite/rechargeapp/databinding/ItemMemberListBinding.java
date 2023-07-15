@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -21,7 +20,10 @@ public final class ItemMemberListBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final CardView cardview;
+  public final LinearLayout llBg;
+
+  @NonNull
+  public final LinearLayout llImage;
 
   @NonNull
   public final LinearLayout lytParent;
@@ -41,11 +43,13 @@ public final class ItemMemberListBinding implements ViewBinding {
   @NonNull
   public final TextView walletBal;
 
-  private ItemMemberListBinding(@NonNull LinearLayout rootView, @NonNull CardView cardview,
-      @NonNull LinearLayout lytParent, @NonNull TextView vmMemberid, @NonNull TextView vmName,
-      @NonNull TextView vmStatus, @NonNull TextView vmWallbal, @NonNull TextView walletBal) {
+  private ItemMemberListBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout llBg,
+      @NonNull LinearLayout llImage, @NonNull LinearLayout lytParent, @NonNull TextView vmMemberid,
+      @NonNull TextView vmName, @NonNull TextView vmStatus, @NonNull TextView vmWallbal,
+      @NonNull TextView walletBal) {
     this.rootView = rootView;
-    this.cardview = cardview;
+    this.llBg = llBg;
+    this.llImage = llImage;
     this.lytParent = lytParent;
     this.vmMemberid = vmMemberid;
     this.vmName = vmName;
@@ -81,9 +85,15 @@ public final class ItemMemberListBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardview;
-      CardView cardview = ViewBindings.findChildViewById(rootView, id);
-      if (cardview == null) {
+      id = R.id.ll_bg;
+      LinearLayout llBg = ViewBindings.findChildViewById(rootView, id);
+      if (llBg == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_image;
+      LinearLayout llImage = ViewBindings.findChildViewById(rootView, id);
+      if (llImage == null) {
         break missingId;
       }
 
@@ -119,8 +129,8 @@ public final class ItemMemberListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemMemberListBinding((LinearLayout) rootView, cardview, lytParent, vmMemberid,
-          vmName, vmStatus, vmWallbal, walletBal);
+      return new ItemMemberListBinding((LinearLayout) rootView, llBg, llImage, lytParent,
+          vmMemberid, vmName, vmStatus, vmWallbal, walletBal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

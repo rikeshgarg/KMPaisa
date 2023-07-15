@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,39 +25,47 @@ public final class ItemRequesthistoryBinding implements ViewBinding {
   public final TextView amount;
 
   @NonNull
-  public final CardView cardview;
+  public final CardView cvRecharge;
 
   @NonNull
   public final TextView datetime;
 
   @NonNull
-  public final ImageView imgRuppeSymbol;
+  public final ImageView ivOperator;
 
   @NonNull
   public final LinearLayout layAmount;
 
   @NonNull
-  public final RelativeLayout layTop;
+  public final LinearLayout llImg;
 
   @NonNull
   public final LinearLayout lytParent;
 
   @NonNull
-  public final TextView rechargedesc;
+  public final TextView tvRequestId;
+
+  @NonNull
+  public final TextView tvStatus;
+
+  @NonNull
+  public final TextView tvTxnId;
 
   private ItemRequesthistoryBinding(@NonNull LinearLayout rootView, @NonNull TextView amount,
-      @NonNull CardView cardview, @NonNull TextView datetime, @NonNull ImageView imgRuppeSymbol,
-      @NonNull LinearLayout layAmount, @NonNull RelativeLayout layTop,
-      @NonNull LinearLayout lytParent, @NonNull TextView rechargedesc) {
+      @NonNull CardView cvRecharge, @NonNull TextView datetime, @NonNull ImageView ivOperator,
+      @NonNull LinearLayout layAmount, @NonNull LinearLayout llImg, @NonNull LinearLayout lytParent,
+      @NonNull TextView tvRequestId, @NonNull TextView tvStatus, @NonNull TextView tvTxnId) {
     this.rootView = rootView;
     this.amount = amount;
-    this.cardview = cardview;
+    this.cvRecharge = cvRecharge;
     this.datetime = datetime;
-    this.imgRuppeSymbol = imgRuppeSymbol;
+    this.ivOperator = ivOperator;
     this.layAmount = layAmount;
-    this.layTop = layTop;
+    this.llImg = llImg;
     this.lytParent = lytParent;
-    this.rechargedesc = rechargedesc;
+    this.tvRequestId = tvRequestId;
+    this.tvStatus = tvStatus;
+    this.tvTxnId = tvTxnId;
   }
 
   @Override
@@ -94,9 +101,9 @@ public final class ItemRequesthistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardview;
-      CardView cardview = ViewBindings.findChildViewById(rootView, id);
-      if (cardview == null) {
+      id = R.id.cv_recharge;
+      CardView cvRecharge = ViewBindings.findChildViewById(rootView, id);
+      if (cvRecharge == null) {
         break missingId;
       }
 
@@ -106,9 +113,9 @@ public final class ItemRequesthistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.img_ruppe_symbol;
-      ImageView imgRuppeSymbol = ViewBindings.findChildViewById(rootView, id);
-      if (imgRuppeSymbol == null) {
+      id = R.id.iv_operator;
+      ImageView ivOperator = ViewBindings.findChildViewById(rootView, id);
+      if (ivOperator == null) {
         break missingId;
       }
 
@@ -118,22 +125,34 @@ public final class ItemRequesthistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.lay_top;
-      RelativeLayout layTop = ViewBindings.findChildViewById(rootView, id);
-      if (layTop == null) {
+      id = R.id.ll_img;
+      LinearLayout llImg = ViewBindings.findChildViewById(rootView, id);
+      if (llImg == null) {
         break missingId;
       }
 
       LinearLayout lytParent = (LinearLayout) rootView;
 
-      id = R.id.rechargedesc;
-      TextView rechargedesc = ViewBindings.findChildViewById(rootView, id);
-      if (rechargedesc == null) {
+      id = R.id.tv_request_id;
+      TextView tvRequestId = ViewBindings.findChildViewById(rootView, id);
+      if (tvRequestId == null) {
         break missingId;
       }
 
-      return new ItemRequesthistoryBinding((LinearLayout) rootView, amount, cardview, datetime,
-          imgRuppeSymbol, layAmount, layTop, lytParent, rechargedesc);
+      id = R.id.tv_status;
+      TextView tvStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvStatus == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_txn_id;
+      TextView tvTxnId = ViewBindings.findChildViewById(rootView, id);
+      if (tvTxnId == null) {
+        break missingId;
+      }
+
+      return new ItemRequesthistoryBinding((LinearLayout) rootView, amount, cvRecharge, datetime,
+          ivOperator, layAmount, llImg, lytParent, tvRequestId, tvStatus, tvTxnId);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

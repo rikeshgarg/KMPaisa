@@ -14,16 +14,17 @@
             android:id="@+id/lay_actionbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionbarheight"
-            android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/img_back"
                 android:layout_width="@dimen/fifty"
                 android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
                 android:contentDescription="@string/app_name"
-                android:padding="@dimen/twelve"
+                android:padding="@dimen/fifteen"
                 android:singleLine="true"
+                app:tint="@color/colorAccent"
                 android:src="@drawable/ico_left" />
 
             <LinearLayout
@@ -100,25 +101,23 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lay_actionbar"
-            android:orientation="vertical">
 
             <LinearLayout
+                android:layout_below="@+id/lay_actionbar"
                 android:id="@+id/prepaid_and_semilar_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/five"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:paddingBottom="25dp">
+                >
 
                 <LinearLayout
                     android:background="@drawable/bg_round_corner_white"
                     android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="@dimen/twenty"
+                    android:paddingRight="@dimen/twenty"
+                    android:paddingBottom="@dimen/twenty"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -127,11 +126,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/twenty"
-                        android:layout_marginLeft="@dimen/ten"
+                        android:layout_marginTop="@dimen/twentyfive"
                         android:foregroundGravity="center|left"
                         android:gravity="left"
-                        android:padding="@dimen/seven"
                         android:text="Mobile Recharge"
                         android:textColor="@color/colorAccent"
                         android:textSize="@dimen/ts_twenty"
@@ -139,7 +136,7 @@
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tabs"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="15dp"
                         android:background="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -152,7 +149,8 @@
                     <com.codunite.rechargeapp.utility.CustomViewPager
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_385"
+                        android:layout_marginTop="@dimen/five"
+                        android:layout_height="300dp"
                         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 </LinearLayout>
@@ -167,18 +165,32 @@
                     android:background="#3c3c3c"
                     android:padding="@dimen/twenty" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/history_rv"
-                    android:visibility="gone"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/ten"
-                    android:layout_marginTop="@dimen/ten"
-                    android:layout_marginRight="@dimen/ten"
+                    android:text="Recent Payments"
+                    android:layout_marginLeft="@dimen/dp_18"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_20"
+                    >
+
+                </TextView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/history_rv"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_20"
                     android:scrollbars="vertical"
                     android:scrollingCache="true" />
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+
+
     </RelativeLayout>
 
     <!--bottom sheet container-->

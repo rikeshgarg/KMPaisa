@@ -68,6 +68,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
     public static final String TAG_STATUS = "status";
     private EditText edtOtp;
     public static String strServiceId = "";
+    TextView tv_heading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -626,7 +627,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
     private void loadToolBar() {
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
-
+        tv_heading=(TextView)findViewById(R.id.tv_heading);
         Bundle extras = getIntent().getExtras();
         String servicetype = "";
         if (extras != null) {
@@ -634,7 +635,8 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
         }
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText(servicetype);
+        //txtHeading.setText(servicetype);
+        tv_heading.setText(servicetype);
     }
 
     @Override

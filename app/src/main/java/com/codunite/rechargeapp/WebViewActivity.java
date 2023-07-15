@@ -77,11 +77,11 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         TextView txtHeading = findViewById(R.id.heading);
         txtHeading.setText(PreferenceConnector.readString(this, PreferenceConnector.WEBHEADING, ""));
 
-        LinearLayout toolbar_txt_walletbal = findViewById(R.id.img_wallet);
-        toolbar_txt_walletbal.setVisibility(View.INVISIBLE);
-
-        LinearLayout toolbar_txt_ewalletbal = findViewById(R.id.img_ewallet);
-        toolbar_txt_ewalletbal.setVisibility(View.INVISIBLE);
+//        LinearLayout toolbar_txt_walletbal = findViewById(R.id.img_wallet);
+//        toolbar_txt_walletbal.setVisibility(View.INVISIBLE);
+//
+//        LinearLayout toolbar_txt_ewalletbal = findViewById(R.id.img_ewallet);
+//        toolbar_txt_ewalletbal.setVisibility(View.INVISIBLE);
     }
 
 

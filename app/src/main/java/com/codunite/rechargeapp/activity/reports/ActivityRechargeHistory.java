@@ -46,7 +46,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ActivityRechargeHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
-    private ImageView imgToolBarBack;
+    private ImageView imgToolBarBack,iv_from,iv_to;
     private TextView txtWalletbal;
     private Context svContext;
     private ShowCustomToast customToast;
@@ -75,6 +75,8 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
 
 //        btnAddWallet.setOnClickListener(this);
+        iv_from=(ImageView)findViewById(R.id.iv_from);
+        iv_to=(ImageView)findViewById(R.id.iv_to);
 
         layNestedScroll = (NestedScrollView) findViewById(R.id.lay_nestedscroll);
         wallethistoryrv = (RecyclerView) findViewById(R.id.history_rv);
@@ -102,7 +104,7 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
             }
         };
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txtDate = txtTo.getText().toString().trim();
@@ -118,7 +120,7 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
             }
         });
 
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txtDate = txtFrom.getText().toString().trim();
@@ -165,10 +167,10 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
         });
 
         layrefrsh.setColorSchemeColors(
-                getResources().getColor(android.R.color.holo_blue_bright),
-                getResources().getColor(android.R.color.holo_green_light),
-                getResources().getColor(android.R.color.holo_orange_light),
-                getResources().getColor(android.R.color.holo_red_light)
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent)
         );
 
     }
@@ -297,9 +299,9 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
                         String afterBalance = data_obj.getString("after_balance");
 
                         String operatorTranId = "";
-                        if (data_obj.has("operator_transcation_id")) {
-                            operatorTranId = data_obj.getString("operator_transcation_id");
-                        }
+//                        if (data_obj.has("operator_transcation_id")) {
+//                            operatorTranId = data_obj.getString("operator_transcation_id");
+//                        }
 
                         String memberDeatil = data_obj.getString("member_name") + " (" +
                                 data_obj.getString("member_code") + ")";
@@ -332,7 +334,8 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
                 public void onComplaintItemClick(View view, String obj, int position) {
                     Intent intent = new Intent(svContext, ActivityRaiseComplaint.class);
                     intent.putExtra("comp_from", false);
-                    intent.putExtra("rechg_id", lstItems.get(position).getStr_recharge_id());
+                    //intent.putExtra("rechg_id", lstItems.get(position).getStr_recharge_id());
+                    intent.putExtra("rechg_id", lstItems.get(position).getStr_order_id());
                     intent.putExtra("rechg_amount", lstItems.get(position).getStr_amount());
                     startActivity(intent);
                 }

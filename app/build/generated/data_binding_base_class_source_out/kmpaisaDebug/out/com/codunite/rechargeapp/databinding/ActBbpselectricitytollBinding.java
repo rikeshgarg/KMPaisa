@@ -75,6 +75,9 @@ public final class ActBbpselectricitytollBinding implements ViewBinding {
   public final Spinner spinnerElectricoperatorlist;
 
   @NonNull
+  public final TextView tvHeading;
+
+  @NonNull
   public final TextView txtCurrency;
 
   @NonNull
@@ -91,8 +94,9 @@ public final class ActBbpselectricitytollBinding implements ViewBinding {
       @NonNull ImageView imgDrop1, @NonNull IncludeActionbarBinding layActionbar,
       @NonNull LinearLayout layBiller, @NonNull RelativeLayout layCircle,
       @NonNull LinearLayout layDynamicLay, @NonNull NestedScrollView nestedScrollView,
-      @NonNull Spinner spinnerElectricoperatorlist, @NonNull TextView txtCurrency,
-      @NonNull TextView txtUsername, @NonNull TextView txtViewallplans) {
+      @NonNull Spinner spinnerElectricoperatorlist, @NonNull TextView tvHeading,
+      @NonNull TextView txtCurrency, @NonNull TextView txtUsername,
+      @NonNull TextView txtViewallplans) {
     this.rootView = rootView;
     this.btnElectricrecharge = btnElectricrecharge;
     this.btnFetch = btnFetch;
@@ -110,6 +114,7 @@ public final class ActBbpselectricitytollBinding implements ViewBinding {
     this.layDynamicLay = layDynamicLay;
     this.nestedScrollView = nestedScrollView;
     this.spinnerElectricoperatorlist = spinnerElectricoperatorlist;
+    this.tvHeading = tvHeading;
     this.txtCurrency = txtCurrency;
     this.txtUsername = txtUsername;
     this.txtViewallplans = txtViewallplans;
@@ -235,6 +240,12 @@ public final class ActBbpselectricitytollBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_heading;
+      TextView tvHeading = ViewBindings.findChildViewById(rootView, id);
+      if (tvHeading == null) {
+        break missingId;
+      }
+
       id = R.id.txt_currency;
       TextView txtCurrency = ViewBindings.findChildViewById(rootView, id);
       if (txtCurrency == null) {
@@ -256,7 +267,8 @@ public final class ActBbpselectricitytollBinding implements ViewBinding {
       return new ActBbpselectricitytollBinding((LinearLayout) rootView, btnElectricrecharge,
           btnFetch, btnOtpauth, btnOtpcancel, cardElectrical, cardOtp, edtOtp, electricityAmount,
           headlayout, imgDrop1, binding_layActionbar, layBiller, layCircle, layDynamicLay,
-          nestedScrollView, spinnerElectricoperatorlist, txtCurrency, txtUsername, txtViewallplans);
+          nestedScrollView, spinnerElectricoperatorlist, tvHeading, txtCurrency, txtUsername,
+          txtViewallplans);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

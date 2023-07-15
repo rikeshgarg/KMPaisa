@@ -64,7 +64,7 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             super(v);
             amountRecharge = (TextView) v.findViewById(R.id.vm_memberid);
             recharegDateTime = (TextView) v.findViewById(R.id.vm_name);
-            txtaccno = (TextView) v.findViewById(R.id.vm_accountno);
+            //txtaccno = (TextView) v.findViewById(R.id.vm_accountno);
             status = (TextView) v.findViewById(R.id.vm_wallbal);
             txtOperator = (TextView) v.findViewById(R.id.operator);
             txtMobile = (TextView) v.findViewById(R.id.mobile);
@@ -74,7 +74,7 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             txtID= (TextView) v.findViewById(R.id.txtId);
             btnComplain= (Button) v.findViewById(R.id.btn_complain);
             laymobile=(LinearLayout)v.findViewById(R.id.lay_mob);
-            layaccountno=(LinearLayout)v.findViewById(R.id.accountno);
+            //layaccountno=(LinearLayout)v.findViewById(R.id.accountno);
             memberDeatil= (TextView) v.findViewById(R.id.member_detail);
             cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
@@ -103,7 +103,7 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             view.memberDeatil.setText(items.get(position).getMemberDetail());
             view.txtAfterBal.setText(items.get(position).getAfterBalance());
             view.txtBeforeBal.setText(items.get(position).getBeforeBalance());
-            view.txtaccno.setText(items.get(position).getStr_account_number());
+            //view.txtaccno.setText(items.get(position).getStr_account_number());
 
 
             view.txtID.setText(items.get(position).getStr_order_id());
@@ -119,12 +119,12 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
                 view.status.setTextColor(ctx.getResources().getColor(R.color.red));
             }
 
-            if (items.get(position).getStr_account_number().equalsIgnoreCase("")){
-                view.layaccountno.setVisibility(View.GONE);
-            }else {
-                view.layaccountno.setVisibility(View.VISIBLE);
-
-            }
+//            if (items.get(position).getStr_account_number().equalsIgnoreCase("")){
+//                view.layaccountno.setVisibility(View.GONE);
+//            }else {
+//                view.layaccountno.setVisibility(View.VISIBLE);
+//
+//            }
             if (items.get(position).getMobile().equalsIgnoreCase("")){
                 view.laymobile.setVisibility(View.GONE);
             }else {

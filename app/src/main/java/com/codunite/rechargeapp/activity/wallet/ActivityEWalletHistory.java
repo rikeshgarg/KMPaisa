@@ -67,10 +67,16 @@ public class ActivityEWalletHistory extends AppCompatActivity implements View.On
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
     private TextView txtWalletbal;
-    private Button btnAddWallet;
+    private TextView btnAddWallet;
     private CardView cvAddWallet, cardShowBalance;
 
     CustomeProgressDialog customeProgressDialog;
+
+    boolean isDateFrom = true;
+    Calendar myCalendar;
+    TextView txtFrom, txtTo;
+    ImageView iv_from,iv_to;
+    LinearLayout layFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,27 +86,24 @@ public class ActivityEWalletHistory extends AppCompatActivity implements View.On
         resumeApp();
     }
 
-    boolean isDateFrom = true;
-    Calendar myCalendar;
-    TextView txtFrom, txtTo;
-    LinearLayout layFilter;
+
     public void resumeApp() {
         wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
-        btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
+        btnAddWallet = (TextView) findViewById(R.id.btn_addwallet);
+        iv_from=(ImageView)findViewById(R.id.iv_from);
+        iv_to=(ImageView)findViewById(R.id.iv_to);
         txtWalletbal.setVisibility(View.INVISIBLE);
-        cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
-        cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
+
         layFilter = (LinearLayout) findViewById(R.id.lay_filter);
         layFilter.setVisibility(View.INVISIBLE);
-        cvAddWallet.setVisibility(View.INVISIBLE);
-        cardShowBalance.setVisibility(View.INVISIBLE);
+
 
         btnAddWallet.setOnClickListener(this);
 
         TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
-        txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
-        txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
+        //txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
+        txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
 
         myCalendar = Calendar.getInstance();
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
@@ -128,7 +131,7 @@ public class ActivityEWalletHistory extends AppCompatActivity implements View.On
             }
         };
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = false;
@@ -140,7 +143,7 @@ public class ActivityEWalletHistory extends AppCompatActivity implements View.On
             }
         });
 
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = true;
@@ -316,9 +319,7 @@ public class ActivityEWalletHistory extends AppCompatActivity implements View.On
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-
-            cvAddWallet.setVisibility(View.VISIBLE);
-            cardShowBalance.setVisibility(View.VISIBLE);
+            
             layFilter.setVisibility(View.VISIBLE);
             txtWalletbal.setVisibility(View.VISIBLE);
             searchView.setVisibility(View.VISIBLE);

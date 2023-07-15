@@ -502,7 +502,6 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/avatar"
                     android:layout_width="@dimen/hundred"

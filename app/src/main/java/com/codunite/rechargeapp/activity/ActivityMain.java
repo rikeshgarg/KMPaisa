@@ -2,7 +2,6 @@ package com.codunite.rechargeapp.activity;
 
 import static com.codunite.rechargeapp.BaseApp.TAG;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
@@ -43,7 +42,6 @@ import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSHistory;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc;
 import com.codunite.rechargeapp.activity.bbps.ActivityBBPSCommision;
-import com.codunite.rechargeapp.activity.bbps.ActivityBBPSLiveCommision;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory;
 import com.codunite.rechargeapp.activity.commissionincome.ActivityAEPSCommision;
 import com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision;
@@ -63,7 +61,6 @@ import com.codunite.rechargeapp.activity.reports.ActivityBillPayHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityComisionWalletHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeCommisionHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory;
-import com.codunite.rechargeapp.activity.reports.ActivityRequestHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityWalletHistory;
 import com.codunite.rechargeapp.activity.support.ActivityComplaintList;
 import com.codunite.rechargeapp.activity.support.ActivityContact;
@@ -76,6 +73,7 @@ import com.codunite.rechargeapp.activity.wallet.ActivityAddFundRequestHistory;
 import com.codunite.rechargeapp.activity.wallet.ActivityEWalletHistory;
 import com.codunite.rechargeapp.activity.wallet.ActivityEWalletTransfer;
 import com.codunite.rechargeapp.activity.wallet.ActivityTopupWallet;
+import com.codunite.rechargeapp.activity.wallet.ActivityWallet;
 import com.codunite.rechargeapp.activity.wallet.ActivityWalletTransfer;
 import com.codunite.rechargeapp.adapter.ExpandableListAdapter;
 import com.codunite.commonutility.firebase.FirebaseMessageReceiver;
@@ -96,7 +94,6 @@ import com.codunite.commonutility.customfont.FontUtils;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSBankingService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
@@ -109,15 +106,10 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -127,6 +119,11 @@ import java.util.Random;
 
 public class ActivityMain extends AppCompatActivity implements View.OnClickListener, WebServiceListener,
         NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnItemSelectedListener {
+    private Context svContext;
+    private ShowCustomToast customToast;
+    Intent svIntent;
+    boolean loadApiInBackground = false;
+    LinkedList<String> lstUploadData = new LinkedList<>();
     private View[] allViewWithClick = {};
     private int[] allViewWithClickId = {};
     public NavigationView navigationView;
@@ -138,16 +135,26 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     public static final String UPI_ADD_MONEY = "Upi Add Money";
     public static String R_WALLET_MYFUNDREQUEST = "My Fund Request";
     public static String E_WALLET_MYFUNDREQUEST = "E Fund Request";
-
     public static List<SpinnerModel> lstCategoryData = new ArrayList<>();
-
     ExpandableListAdapter expandableListAdapter;
     ExpandableListView expandableListView;
     List<MenuModel> headerList = new ArrayList<>();
     HashMap<MenuModel, List<MenuModel>> childList = new HashMap<>();
+    private String[] strMenuItemMaster;
+    private String[][] strMenuChildItemMaster;
+    private String[] strMenuItemDistributor;
+    private String[][] strMenuChildItemDistributor;
+    private String[] strMenuItemRetailor;
+    private String[][] strMenuChildItemRetailor;
 
+    private int[] arr_ic_menus;
+    private String[] strMenuItem;
+    private String[][] strMenuChildItem;
     private DrawerLayout drawer;
-
+    private View viewUpdate;
+    public AppUpdateManager appUpdateManager;
+    private int UPDATE_TYPE = AppUpdateType.IMMEDIATE;
+    private final int APP_UPDATE_REQUEST_CODE = 1222;
     public static String ShowBalance(Context svContext) {
         return GlobalVariables.CURRENCYSYMBOL +
                 PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0");
@@ -156,18 +163,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     public static String ShoweBalance(Context svContext) {
         return GlobalVariables.CURRENCYSYMBOL +
                 PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0");
-    }
-
-    public static String random() {
-        Random generator = new Random();
-        StringBuilder randomStringBuilder = new StringBuilder();
-        int randomLength = generator.nextInt(5);
-        char tempChar;
-        for (int i = 0; i < randomLength; i++) {
-            tempChar = (char) (generator.nextInt(96) + 32);
-            randomStringBuilder.append(tempChar);
-        }
-        return randomStringBuilder.toString();
     }
 
     @Override
@@ -181,7 +176,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         checkInAppUpdate();
     }
 
-
     public void resumeApp() {
         headerList = new ArrayList<>();
         childList = new HashMap<>();
@@ -189,7 +183,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         expandableListView = findViewById(R.id.expandableListView);
-
 
         layBottomCircle = findViewById(R.id.lay_bottom_navigation_circle);
         btnCircleScan = findViewById(R.id.iv_circle_scan);
@@ -201,11 +194,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
         initMenuData();
         prepareMenuData(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "5"));
-        populateExpandableList();
+        populateExpandableList(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "5"));
         initBottomMenu();
-
         ImageView img_close = findViewById(R.id.img_close);
-
         RelativeLayout rl_main = findViewById(R.id.rl_main);
         LinearLayout ll_logout = findViewById(R.id.ll_logout);
         navigationView = findViewById(R.id.nav_view);
@@ -219,20 +210,13 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         switchContent(new FragHomeDashBoard());
         final float END_SCALE = 0.7f;
         drawer.setScrimColor(Color.TRANSPARENT);
-//
         ll_logout.setOnClickListener(v -> ShowConfirmLogout(svContext, "Logout", "Are you confirm?",
                 "Are you are ready to end your current session. You have to enter login detail again"));
     }
 
-    private Context svContext;
-    private ShowCustomToast customToast;
-
-
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
-
-
         FirebaseMessageReceiver.CreateNotificationChannel(svContext);
         ViewGroup root = (ViewGroup) findViewById(R.id.headlayout);
         if (!GlobalVariables.CUSTOMFONTNAME.equals("")) {
@@ -243,7 +227,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         SetLanguage("en");
     }
 
-    Intent svIntent;
 
     private void OnClickCombineDeclare(View[] allViewWithClick) {
         for (int j = 0; j < allViewWithClick.length; j++) {
@@ -260,7 +243,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     private void SetLanguage(String languageCode) {
         LocaleHelper.setLocale(svContext, languageCode);
     }
-
 
     @Override
     public void onClick(View v) {
@@ -287,30 +269,32 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         imm.hideSoftInputFromWindow(meraView.getWindowToken(), 0);
     }
 
-    boolean loadApiInBackground = false;
-    LinkedList<String> lstUploadData = new LinkedList<>();
-
-    public void loadUserData() {
+    public void loadUserData(boolean inBackground) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-        callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+        //callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+        if (inBackground) {
+            callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
+        } else {
+            callWebService(ApiInterface.UPDATEFCM, lstUploadData);
+        }
     }
 
-//    private void loadUserDataBackground() {
-//        lstUploadData = new LinkedList<>();
-//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
-//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
-//        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
-//    }
-//
-//    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
-//        loadApiInBackground = true;
-//        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
-//        webService.LoadDataRetrofit(webService.callReturn());
-//    }
+    private void loadUserDataBackground() {
+        lstUploadData = new LinkedList<>();
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
+    }
+
+    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
+        loadApiInBackground = true;
+        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
+        webService.LoadDataRetrofit(webService.callReturn());
+    }
 
     private void callWebService(String postUrl, LinkedList<String> lstUploadData) {
         loadApiInBackground = false;
@@ -327,7 +311,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             ActivitySplash.LoadUserData(result, svContext);
             initMenuData();
             prepareMenuData(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "5"));
-            populateExpandableList();
+            populateExpandableList(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "5"));
 
             initNavigationMenu(
                     PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERNAME, ""),
@@ -342,30 +326,12 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-        //loadUserDataBackground();
+//        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
+//        if (fragment instanceof FragHomeDashBoard) {
+//            loadUserData(true);
+//        }
+        loadUserDataBackground();
         hideKeyboard();
-    }
-
-    public static String getcurrentDate() {
-        Calendar today = Calendar.getInstance();
-        int date = today.get(Calendar.DATE);
-        int month = today.get(Calendar.MONTH);
-        int year = today.get(Calendar.YEAR);
-
-        return (date >= 10 ? date : "0" + date) + "" + (month >= 10 ? month : "0" + month) + "" + year;
-    }
-
-    public static String getFormatedcurrentTime() {
-        Calendar today = Calendar.getInstance();
-        int hour = today.get(Calendar.HOUR);
-        int minute = today.get(Calendar.MINUTE);
-        int second = today.get(Calendar.SECOND);
-
-        if (hour == 0) {
-            hour = 12;
-        }
-
-        return (hour >= 10 ? hour : "0" + hour) + "" + (minute >= 10 ? minute : "0" + minute) + "" + second;
     }
 
     @Override
@@ -386,12 +352,11 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     public void initToolbar() {
         imgMenu = (ImageView) findViewById(R.id.img_menu);
         imgMenu.setOnClickListener(view -> OpenDrawer());
-
-        LinearLayout imgToolBareWallet = (LinearLayout) findViewById(R.id.img_scancode);
-        imgToolBareWallet.setVisibility(View.VISIBLE);
-        imgToolBareWallet.setOnClickListener(view -> {
-            svIntent = new Intent(svContext, ActivityContact.class);
-            svContext.startActivity(svIntent);
+        LinearLayout img_notification = (LinearLayout) findViewById(R.id.img_notification);
+        img_notification.setVisibility(View.VISIBLE);
+        img_notification.setOnClickListener(view -> {
+            //svIntent = new Intent(svContext, ActivityContact.class);
+            //svContext.startActivity(svIntent);
         });
     }
 
@@ -469,7 +434,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         TextView tvMemberId = navigation_header.findViewById(R.id.menuheader_memberid);
         TextView tv_user_type = (TextView) navigation_header.findViewById(R.id.user_type);
 
-        ImageView avatar = navigation_header.findViewById(R.id.menuheader_dp);
+        CircularImageView avatar = (CircularImageView) navigation_header.findViewById(R.id.menuheader_dp);
         LinearLayout ll_close = navigation_header.findViewById(R.id.ll_close);
 
         tvName.setText(strName);
@@ -491,7 +456,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         avatar.setOnClickListener(view -> {
             svIntent = new Intent(svContext, ActivityProfile.class);
             startActivity(svIntent);
@@ -501,21 +465,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         ll_close.setOnClickListener(v -> {
             drawer.closeDrawer(Gravity.LEFT);
         });
-
-    }
-
-    public static boolean toggleArrow(View view) {
-        if (view.getRotation() == 0) {
-            view.animate().setDuration(200).rotation(180);
-            return true;
-        } else {
-            view.animate().setDuration(200).rotation(0);
-            return false;
-        }
-    }
-
-    public static boolean toggleArrow(boolean show, View view) {
-        return toggleArrow(show, view, true);
     }
 
     public static boolean toggleArrow(boolean show, View view, boolean delay) {
@@ -553,7 +502,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
     private static void LogOut(Context svContext) {
         PreferenceConnector.cleanPrefrences(svContext);
         Intent svIntent = new Intent(svContext, ActivityLogin.class);
@@ -580,19 +528,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private String[] strMenuItemMaster;
-    private String[][] strMenuChildItemMaster;
-
-    private String[] strMenuItemDistributor;
-    private String[][] strMenuChildItemDistributor;
-    private String[] strMenuItemRetailor;
-    private String[][] strMenuChildItemRetailor;
-
-    private int[] arr_ic_menus;
-
-    private String[] strMenuItem;
-    private String[][] strMenuChildItem;
-
     private void initMenuData() {
         String[] documentsMenuItems = new String[lstCategoryData.size()];
         for (int i = 0; i < lstCategoryData.size(); i++) {
@@ -611,14 +546,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 "Raise Ticket",
                 "View Complaint",
                 "Refer and Earn",
-                //"Privacy Policy",
-                //"AEPS Wallet",
-                //"Commisssion Wallet",
-                //"Point Wallet",
-                //"Pin",
-                //"Company Document",
-
-                "Useful Links",
+                "Privacy Policy",
         };
 
         strMenuChildItemMaster = new String[][]{
@@ -626,7 +554,8 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 {"Register", "Login", "Transfer Report"},
                 {"Add Member", "View All Member", "Distributor", "Retailer"},
                 {"Personal Profile", "Change Password"},
-                {UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                new String[0],
                 {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
                 {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
                 {"Transfer", "Payout Report"},
@@ -634,21 +563,13 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 {"Create Ticket", "View Ticket"},
                 new String[0],
                 new String[0],
-                //new String[0],
-                //{"AEPS Payout", "AEPS Payout Report", "AEPS Wallet Transfer", "AEPS Wallet History"},
-                //{"Commission Payout", "Commission Payout Report", "Commission Wallet Transfer", "Commission Wallet History"},
-                //{"Point Wallet History"},
-                //{"Request Pin", "Transfer Pin", "Pin List"},
-//                new String[0],
-                //documentsMenuItems,
-                {"Cancellation & refund policy", "Website Disclaimer", "Privacy Policy", "Terms and conditions"},
                 new String[0]};
 
 
         strMenuItemDistributor = new String[]{
                 "AEPS",
                 "Money Transfer",
-                "Member",
+                "Members",
                 "Profile",
                 "Wallet",
                 "Reports",
@@ -658,7 +579,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 "Raise Ticket",
                 "View Complaint",
                 "Refer and Earn",
-                "Useful Links",
+                "Privacy Policy",
         };
 
         strMenuChildItemDistributor = new String[][]{
@@ -666,7 +587,8 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 {"Register", "Login", "Transfer Report"},
                 {"Add Member", "View All Member", "Distributor", "Retailer"},
                 {"Personal Profile", "Change Password"},
-                {UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                new String[0],
                 {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
                 {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
                 {"Transfer", "Payout Report"},
@@ -674,7 +596,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 {"Create Ticket", "View Ticket"},
                 new String[0],
                 new String[0],
-                {"Cancellation & refund policy", "Website Disclaimer", "Privacy Policy", "Terms and conditions"},
                 new String[0]
         };
 
@@ -689,13 +610,14 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 "Raise Ticket",
                 "View Complaint",
                 "Refer and Earn",
-                "Useful Links",
+                "Privacy Policy",
         };
 
         strMenuChildItemRetailor = new String[][]{
                 {"Balance Enquiry", "Mini Statement", "Withdrawal", "Aadhar Pay", "AEPS History"},
                 {"Personal Profile", "Change Password"},
-                {UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
+                new String[0],
                 {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
                 {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
                 {"Transfer", "Payout Report"},
@@ -703,12 +625,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 {"Create Ticket", "View Ticket"},
                 new String[0],
                 new String[0],
-                {"Cancellation & refund policy", "Website Disclaimer", "Privacy Policy", "Terms and conditions"},
                 new String[0]
         };
-
     }
-
 
     private void prepareMenuData(String usertype) {
         String strVendorStatus = PreferenceConnector.readString(svContext, PreferenceConnector.VENDOR_STATUS, "0");
@@ -858,7 +777,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-
         headerList = new ArrayList<>();
         childList = new HashMap<>();
         for (Map.Entry map : HashMap.entrySet()) {
@@ -877,54 +795,63 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void populateExpandableList() {
+    private void populateExpandableList(String usertype) {
         int[] textureArrayWin = {
-                R.drawable.ic_aeps,
-                R.drawable.ic_money_transfer,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.iv_wallet,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_profile,
-
-
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_profile,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_bbps,
-                R.drawable.ic_profile,
-                R.drawable.ic_profile,
+                R.drawable.ic_menu_aeps,
+                R.drawable.ic_menu_money_transfer,
+                R.drawable.ic_menu_members,
+                R.drawable.ic_menu_profile,
+                R.drawable.ic_menu_wallet,
+                R.drawable.ic_menu_report,
+                R.drawable.ic_menu_commission,
+                R.drawable.ic_menu_virtual_account,
+                R.drawable.ic_menu_ticket,
+                R.drawable.ic_menu_complaint,
+                R.drawable.ic_menu_refer_earn,
+                R.drawable.ic_menu_aeps,
         };
-        expandableListAdapter = new ExpandableListAdapter(this, headerList, childList, textureArrayWin);
+
+        int[] textureArrayxpress = {
+                R.drawable.ic_menu_aeps,
+                R.drawable.ic_menu_money_transfer,
+                R.drawable.ic_menu_members,
+                R.drawable.ic_menu_profile,
+                R.drawable.ic_menu_wallet,
+                R.drawable.ic_menu_report,
+                R.drawable.ic_menu_commission,
+                R.drawable.ic_menu_virtual_account,
+                R.drawable.ic_menu_virtual_account,
+                R.drawable.ic_menu_ticket,
+                R.drawable.ic_menu_complaint,
+                R.drawable.ic_menu_refer_earn,
+                R.drawable.ic_menu_aeps,
+        };
+
+        int[] textureArrayretailers = {
+                R.drawable.ic_menu_aeps,
+                R.drawable.ic_menu_profile,
+                R.drawable.ic_menu_wallet,
+                R.drawable.ic_menu_report,
+                R.drawable.ic_menu_commission,
+                R.drawable.ic_menu_virtual_account,
+                R.drawable.ic_menu_virtual_account,
+                R.drawable.ic_menu_ticket,
+                R.drawable.ic_menu_complaint,
+                R.drawable.ic_menu_refer_earn,
+                R.drawable.ic_menu_aeps,
+        };
+
+
+        if (usertype.equals("3") || usertype.equals("4")) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false)) {
+                expandableListAdapter = new ExpandableListAdapter(this, headerList, childList, textureArrayxpress);
+            } else {
+                expandableListAdapter = new ExpandableListAdapter(this, headerList, childList, textureArrayWin);
+            }
+        } else if (usertype.equals("5") || usertype.equals("8")) {
+            expandableListAdapter = new ExpandableListAdapter(this, headerList, childList, textureArrayretailers);
+        }
+
         expandableListView.setAdapter(expandableListAdapter);
 
         expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> {
@@ -1007,7 +934,10 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         } else if (("Change Password").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityChangePassword.class);
             svContext.startActivity(svIntent);
-        } else if (title.equalsIgnoreCase(UPI_ADD_MONEY)) {
+        } else if (title.equalsIgnoreCase("Wallet")) {
+                svIntent = new Intent(svContext, ActivityWallet.class);
+                svContext.startActivity(svIntent);
+        }else if (title.equalsIgnoreCase(UPI_ADD_MONEY)) {
             if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRAZORPAYACTIVE, false)) {
                 svIntent = new Intent(svContext, ActivityTopupWallet.class);
                 svContext.startActivity(svIntent);
@@ -1104,11 +1034,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             svIntent = new Intent(svContext, ActivityRecharge.class);
             svIntent.putExtra("selecteditem", 2);
             svContext.startActivity(svIntent);
-        } else if (("Privacy Policy").equalsIgnoreCase(title)
-                || ("Website Disclaimer").equalsIgnoreCase(title)
-                || ("Cancellation & refund policy").equalsIgnoreCase(title)
-                || ("Terms and conditions").equalsIgnoreCase(title)) {
+        } else if (("Privacy Policy").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityPrivacyPolicy.class);
+            svIntent.putExtra("selecteditem", 2);
             svIntent.putExtra("actTitle", title);
             svContext.startActivity(svIntent);
         } else if (("Change T-Pin").equalsIgnoreCase(title)) {
@@ -1151,19 +1079,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             ShowConfirmLogout(svContext, "Logout", "Are you confirm?",
                     "Are you are ready to end your current session. You have to enter login detail again");
         }
-
-//         else if (("Recharge History").equalsIgnoreCase(title)) {
-//            svIntent = new Intent(svContext, ActivityRechargeHistory.class);
-//            svIntent.putExtra("selecteditem", 2);
-//            svContext.startActivity(svIntent);
-//        }else if (("Bill Pay History").equalsIgnoreCase(title)) {
-//            svIntent = new Intent(svContext, ActivityBillPayHistory.class);
-//            svContext.startActivity(svIntent);
-//        } else if (("BBPS History").equalsIgnoreCase(title)) {
-//            svIntent = new Intent(svContext, ActivityBbpsHistory.class);
-//            svContext.startActivity(svIntent);
-//        }
-
     }
 
     private static void showRateDialog(Context svContext) {
@@ -1241,11 +1156,6 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     /**
      * App Update Flow Process
      */
-    private View viewUpdate;
-    public AppUpdateManager appUpdateManager;
-    private int UPDATE_TYPE = AppUpdateType.IMMEDIATE;
-    private final int APP_UPDATE_REQUEST_CODE = 1222;
-
     private void checkInAppUpdate() {
         viewUpdate = (View) findViewById(R.id.lay_update);
         viewUpdate.setVisibility(View.GONE);
@@ -1374,10 +1284,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 svContext.startActivity(svIntent);
             }
         } else {
-            Intent svIntent = new Intent(svContext, ActivityFinoAEPSKyc.class);
-            svContext.startActivity(svIntent);
+//            Intent svIntent = new Intent(svContext, ActivityFinoAEPSKyc.class);
+//            svContext.startActivity(svIntent);
             customToast.showCustomToast(svContext, "AEPS Not active. Contact Admin", customToast.ToastyInfo);
         }
     }
-
 }

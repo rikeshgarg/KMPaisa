@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +33,10 @@ import java.util.List;
 public class FragSetting extends Fragment implements View.OnClickListener, WebServiceListener {
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
+    private RecyclerView rvMenu;
+    private List<SettingMenu> lstSlider = new ArrayList<>();
+    private Context svContext;
+    private ViewGroup root;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,8 +47,6 @@ public class FragSetting extends Fragment implements View.OnClickListener, WebSe
         return aiView;
     }
 
-    private RecyclerView rvMenu;
-    private List<SettingMenu> lstSlider = new ArrayList<>();
     public void resumeApp() {
         rvMenu = aiView.findViewById(R.id.rv_setting_menu);
         rvMenu.setLayoutManager(new LinearLayoutManager(svContext, RecyclerView.VERTICAL, false));
@@ -88,10 +91,6 @@ public class FragSetting extends Fragment implements View.OnClickListener, WebSe
         rvMenu.setAdapter(sliderSdapter);
     }
 
-
-
-    private Context svContext;
-    private ViewGroup root;
     private void StartApp() {
         svContext = getActivity();
         root = (ViewGroup) aiView.findViewById(R.id.mylayout);
@@ -112,7 +111,6 @@ public class FragSetting extends Fragment implements View.OnClickListener, WebSe
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-
     }
 
     @Override

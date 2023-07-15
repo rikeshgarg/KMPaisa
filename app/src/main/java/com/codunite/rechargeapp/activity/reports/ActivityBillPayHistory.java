@@ -21,7 +21,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.R;
+import com.codunite.rechargeapp.activity.support.ActivityRaiseComplaint;
 import com.codunite.rechargeapp.adapter.PaginationAdapter;
+import com.codunite.rechargeapp.adapter.RechargeHistoryAdapter;
 import com.codunite.rechargeapp.model.RechargeHistoryModel;
 import com.codunite.commonutility.GetFormattedDateTime;
 import com.codunite.commonutility.GlobalVariables;
@@ -43,7 +45,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ActivityBillPayHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
-    private ImageView imgToolBarBack;
+    private ImageView imgToolBarBack,iv_from,iv_to;
     private TextView txtWalletbal;
     private Context svContext;
     private ShowCustomToast customToast;
@@ -54,21 +56,24 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
     private int pageNumber = 1;
     private String strFromDate = "", strToDate = "";
     private String strSearchKey = "";
+    boolean isDateFrom = true;
+    Calendar myCalendar;
+    TextView txtFrom, txtTo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_billpayhistory);
+        //setContentView(R.layout.act_billpayhistory);
+        setContentView(R.layout.act_rechargehistory);
         StartApp();
 
         resumeApp();
     }
 
-    boolean isDateFrom = true;
-    Calendar myCalendar;
-    TextView txtFrom, txtTo;
+
     public void resumeApp() {
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
-
+        iv_from=(ImageView)findViewById(R.id.iv_from);
+        iv_to=(ImageView)findViewById(R.id.iv_to);
         layNestedScroll = (NestedScrollView) findViewById(R.id.lay_nestedscroll);
         wallethistoryrv = (RecyclerView) findViewById(R.id.history_rv);
         rvPagination = (RecyclerView) findViewById(R.id.rv_pagination);
@@ -103,7 +108,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
 
         };
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txtDate = txtTo.getText().toString().trim();
@@ -119,7 +124,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
             }
         });
 
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String txtDate = txtFrom.getText().toString().trim();
@@ -166,7 +171,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
         lstUploadData.add(strSearchKey);
-        lstUploadData.add("" + pageNumber);
+        //lstUploadData.add("" + pageNumber);
         callWebService(ApiInterface.GETBBSPHISTORY, lstUploadData);
     }
 
@@ -190,7 +195,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("BBPS Live History");
+        txtHeading.setText("Billpay History");
     }
 
     @Override
@@ -247,11 +252,11 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
                 String str_json_status = json.getString(TAG_STATUS);
 
 
-                try {
-                    strPageCount = Integer.parseInt(json.getString("pages"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    strPageCount = Integer.parseInt(json.getString("pages"));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
                 if (str_json_status.equalsIgnoreCase("0")) {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
@@ -296,11 +301,31 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
             int animation_type = ItemAnimation.LEFT_RIGHT;
-            layNestedScroll.scrollTo(0, 0);
-            if (isFirstLoad) {
-                isFirstLoad = false;
-                LoadPaginationView(strPageCount);
-            }
+            RechargeHistoryAdapter mAdapter = new RechargeHistoryAdapter(this, lstItems, animation_type, false);
+            wallethistoryrv.setAdapter(mAdapter);
+            mAdapter.setOnItemClickListener(new RechargeHistoryAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, String obj, int position) {
+
+                }
+            });
+
+            mAdapter.setOnComplaintItemClickListener(new RechargeHistoryAdapter.OnComplaintItemClickListener() {
+                @Override
+                public void onComplaintItemClick(View view, String obj, int position) {
+                    Intent intent = new Intent(svContext, ActivityRaiseComplaint.class);
+                    intent.putExtra("comp_from", true);
+                    intent.putExtra("rechg_id", lstItems.get(position).getStr_order_id());
+                    intent.putExtra("rechg_amount", lstItems.get(position).getStr_amount());
+                    startActivity(intent);
+                }
+            });
+
+//            layNestedScroll.scrollTo(0, 0);
+//            if (isFirstLoad) {
+//                isFirstLoad = false;
+//                LoadPaginationView(strPageCount);
+//            }
         }
     }
 

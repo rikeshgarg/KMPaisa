@@ -49,7 +49,7 @@ public class ActivityAddFundRequestHistory extends AppCompatActivity implements 
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
     private TextView txtWalletbal;
-    private Button btnAddRequest;
+    private TextView btnAddRequest;
     private String actType = "";
 
     private RelativeLayout layConnection, progressbarInternet;
@@ -79,10 +79,10 @@ public class ActivityAddFundRequestHistory extends AppCompatActivity implements 
 
         if (actType.equals(ActivityMain.R_WALLET_MYFUNDREQUEST)) {
             txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, ""));
-            //callWebService(ApiInterface.REQUESTHISTORY, lstUploadData);
+            callWebService(ApiInterface.REQUESTHISTORY, lstUploadData);
         } else if (actType.equals(ActivityMain.E_WALLET_MYFUNDREQUEST)) {
             txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, ""));
-            //callWebService(ApiInterface.E_REQUESTHISTORY, lstUploadData);
+            callWebService(ApiInterface.E_REQUESTHISTORY, lstUploadData);
         }
 
     }

@@ -92,7 +92,7 @@
                     android:paddingRight="@dimen/dp_20"
                     android:text="GET STARTED"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/sp_14" />
+                    android:textSize="@dimen/sp_17" />
 
             </LinearLayout>
 

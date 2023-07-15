@@ -70,15 +70,8 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
     }
 
     public void resumeApp() {
-        // btntransfer = (Button) findViewById(R.id.btn_transfer);
-
-        //   btntransfer.setOnClickListener(this);
-        wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
-
-        //       TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
-        //      txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
-
-        myCalendar = Calendar.getInstance();
+         wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
+         myCalendar = Calendar.getInstance();
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
         txtTo = (TextView) findViewById(R.id.datePicker_to);
 
@@ -145,7 +138,7 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
         lstUploadData.add(strSearchKey);
-        callWebService(ApiInterface.GETMONEYTRANSFERHISTORY, lstUploadData);
+        callWebService(ApiInterface.MTRANSFERHISTORY, lstUploadData);
     }
 
 
@@ -273,7 +266,7 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
     @Override
     public void onWebServiceActionComplete(String result, String url) {
         System.out.println(result + ".........jsonresponse....." + url);
-        if (url.contains(ApiInterface.GETMONEYTRANSFERHISTORY)) {
+        if (url.contains(ApiInterface.MTRANSFERHISTORY)) {
             try {
                 lstItems = new ArrayList<>();
 
@@ -287,9 +280,9 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
                     for (int data_i = 0; data_i < (data).length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
                         String str_amount = data_obj.getString("transfer_amount");
-                        String str_datetime = data_obj.getString("date");
+                        String str_datetime = data_obj.getString("datetime");
                         String str_status = data_obj.getString("status");
-                        String str_member_id = data_obj.getString("memberID");
+                        String str_member_id = data_obj.getString("member_id");
 
                         String str_ifsc = data_obj.getString("ifsc");
                         String mobile = data_obj.getString("mobile");

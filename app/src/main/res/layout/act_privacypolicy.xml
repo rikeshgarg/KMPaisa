@@ -46,6 +46,7 @@
                     android:layout_marginLeft="20.0dip"
                     android:layout_marginRight="20.0dip"
                     android:padding="@dimen/five"
+                    android:text="Privacy Content"
                     android:scrollbars="vertical"
                     android:textColor="@color/checkboxcolor"
                     android:textSize="@dimen/ts_seventeen" />

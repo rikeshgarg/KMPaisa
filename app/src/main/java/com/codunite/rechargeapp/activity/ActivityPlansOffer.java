@@ -72,6 +72,7 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
         String sessionId = getIntent().getStringExtra("filename");
         if (sessionId.equalsIgnoreCase("offer_recharge")) {
             lstUploadData = new LinkedList<>();
+            lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
             lstUploadData.add(FragPrePostRecharge.strMobile);
             lstUploadData.add(FragPrePostRecharge.strOperatorCode);
             callWebService(ApiInterface.ROFFERS, lstUploadData);
@@ -461,6 +462,7 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
                     strSelectedOperator = (listSpinnerOperatorList.get(spinnerOperatorList.getSelectedItemPosition()).split("#:#")[0]);
                     strSelectedCirecle = (listSpinnerCircleList.get(spinnerCircleList.getSelectedItemPosition()).split("#:#")[0]);
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(strSelectedCirecle);
                     lstUploadData.add(strSelectedOperator);
                     callWebService(ApiInterface.VIEWALLPLANS, lstUploadData);

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -49,6 +50,7 @@ public class MemberListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         public TextView vnMemberId, vmName, vmWallbal, vmStatus, usercode, walletBal;
         public CardView cardView;
         public View lyt_parent;
+        LinearLayout ll_bg;
 
         public OriginalViewHolder(View v) {
             super(v);
@@ -58,7 +60,7 @@ public class MemberListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             vmStatus = (TextView) v.findViewById(R.id.vm_status);
             walletBal = (TextView) v.findViewById(R.id.wallet_bal);
 
-            cardView = (CardView) v.findViewById(R.id.cardview);
+            ll_bg = (LinearLayout) v.findViewById(R.id.ll_bg);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
 
         }
@@ -76,6 +78,14 @@ public class MemberListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof OriginalViewHolder) {
             OriginalViewHolder view = (OriginalViewHolder) holder;
+            if(position %2 == 1)
+            {
+                view.ll_bg.setBackgroundResource(R.drawable.img_bg_mamber_card);
+            }
+            else
+            {
+                view.ll_bg.setBackgroundResource(R.drawable.bg_dashboard_blue);
+            }
             view.vnMemberId.setText(items.get(position).getUserCode());
             view.vmName.setText(items.get(position).getName());
             view.vmWallbal.setText(items.get(position).getWalBal());

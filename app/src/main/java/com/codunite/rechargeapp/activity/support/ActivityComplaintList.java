@@ -43,6 +43,8 @@ public class ActivityComplaintList extends AppCompatActivity implements View.OnC
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
     private Button btnAddTicket;
+    private Context svContext;
+    private ShowCustomToast customToast;
 
 
     @Override
@@ -64,11 +66,6 @@ public class ActivityComplaintList extends AppCompatActivity implements View.OnC
         btnAddTicket.setOnClickListener(this);
     }
 
-    private Context svContext;
-    private ShowCustomToast customToast;
-
-    
-
     private void StartApp() {
         svContext = this;
         customToast = new ShowCustomToast(svContext);
@@ -86,9 +83,6 @@ public class ActivityComplaintList extends AppCompatActivity implements View.OnC
         }
 
         hideKeyboard();
-
-        
-
         loadToolBar();
     }
 

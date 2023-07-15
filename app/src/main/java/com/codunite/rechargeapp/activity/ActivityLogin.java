@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -74,7 +75,8 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
     private EditText[] edTexts = {edUsername, edPassword};
     private int[] editTextsClickId = {R.id.edt_loginID, R.id.edt_password};
     private int[] allViewWithClickId = {R.id.btnSignIn, R.id.btnSignUp, R.id.btn_forgetpassword, R.id.btn_transaction_password, R.id.goback, R.id.img_back,R.id.iv_eye};
-    private CardView layoutLogin, layoutTransactionpassword;
+    private CardView layoutTransactionpassword;
+    LinearLayout layoutLogin;
 
     RelativeLayout layoutLoginBg;
 
@@ -216,7 +218,7 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
 
     public void resumeApp() {
         iv_eye = (ImageView)findViewById(R.id.iv_eye);
-        layoutLogin = (CardView) findViewById(R.id.layoutLogin);
+        layoutLogin = (LinearLayout) findViewById(R.id.layoutLogin);
         layoutLoginBg= (RelativeLayout) findViewById(R.id.layoutLoginBg);
         layoutTransactionpassword = (CardView) findViewById(R.id.layout_transactionpassword);
         PreferenceConnector.writeString(this, PreferenceConnector.DEVICE_ID, GlobalData.getDeviceId(this));

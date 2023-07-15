@@ -5,11 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -19,10 +19,7 @@ import java.lang.String;
 
 public final class ItemTopRechargehistoryBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
-
-  @NonNull
-  public final LinearLayout accountno;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final TextView afterBalance;
@@ -34,16 +31,16 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
   public final AppCompatButton btnComplain;
 
   @NonNull
-  public final CardView cardview;
-
-  @NonNull
-  public final LinearLayout layHeadChange;
-
-  @NonNull
   public final LinearLayout layMob;
 
   @NonNull
-  public final LinearLayout lytParent;
+  public final View line2;
+
+  @NonNull
+  public final LinearLayout llLeft;
+
+  @NonNull
+  public final RelativeLayout lytParent;
 
   @NonNull
   public final TextView memberDetail;
@@ -61,9 +58,6 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
   public final TextView type;
 
   @NonNull
-  public final TextView vmAccountno;
-
-  @NonNull
   public final TextView vmMemberid;
 
   @NonNull
@@ -72,29 +66,26 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
   @NonNull
   public final TextView vmWallbal;
 
-  private ItemTopRechargehistoryBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout accountno, @NonNull TextView afterBalance,
-      @NonNull TextView beforeBalance, @NonNull AppCompatButton btnComplain,
-      @NonNull CardView cardview, @NonNull LinearLayout layHeadChange, @NonNull LinearLayout layMob,
-      @NonNull LinearLayout lytParent, @NonNull TextView memberDetail, @NonNull TextView mobile,
-      @NonNull TextView operator, @NonNull TextView txtId, @NonNull TextView type,
-      @NonNull TextView vmAccountno, @NonNull TextView vmMemberid, @NonNull TextView vmName,
-      @NonNull TextView vmWallbal) {
+  private ItemTopRechargehistoryBinding(@NonNull RelativeLayout rootView,
+      @NonNull TextView afterBalance, @NonNull TextView beforeBalance,
+      @NonNull AppCompatButton btnComplain, @NonNull LinearLayout layMob, @NonNull View line2,
+      @NonNull LinearLayout llLeft, @NonNull RelativeLayout lytParent,
+      @NonNull TextView memberDetail, @NonNull TextView mobile, @NonNull TextView operator,
+      @NonNull TextView txtId, @NonNull TextView type, @NonNull TextView vmMemberid,
+      @NonNull TextView vmName, @NonNull TextView vmWallbal) {
     this.rootView = rootView;
-    this.accountno = accountno;
     this.afterBalance = afterBalance;
     this.beforeBalance = beforeBalance;
     this.btnComplain = btnComplain;
-    this.cardview = cardview;
-    this.layHeadChange = layHeadChange;
     this.layMob = layMob;
+    this.line2 = line2;
+    this.llLeft = llLeft;
     this.lytParent = lytParent;
     this.memberDetail = memberDetail;
     this.mobile = mobile;
     this.operator = operator;
     this.txtId = txtId;
     this.type = type;
-    this.vmAccountno = vmAccountno;
     this.vmMemberid = vmMemberid;
     this.vmName = vmName;
     this.vmWallbal = vmWallbal;
@@ -102,7 +93,7 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -127,12 +118,6 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.accountno;
-      LinearLayout accountno = ViewBindings.findChildViewById(rootView, id);
-      if (accountno == null) {
-        break missingId;
-      }
-
       id = R.id.after_balance;
       TextView afterBalance = ViewBindings.findChildViewById(rootView, id);
       if (afterBalance == null) {
@@ -151,25 +136,25 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardview;
-      CardView cardview = ViewBindings.findChildViewById(rootView, id);
-      if (cardview == null) {
-        break missingId;
-      }
-
-      id = R.id.lay_head_change;
-      LinearLayout layHeadChange = ViewBindings.findChildViewById(rootView, id);
-      if (layHeadChange == null) {
-        break missingId;
-      }
-
       id = R.id.lay_mob;
       LinearLayout layMob = ViewBindings.findChildViewById(rootView, id);
       if (layMob == null) {
         break missingId;
       }
 
-      LinearLayout lytParent = (LinearLayout) rootView;
+      id = R.id.line2;
+      View line2 = ViewBindings.findChildViewById(rootView, id);
+      if (line2 == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_left;
+      LinearLayout llLeft = ViewBindings.findChildViewById(rootView, id);
+      if (llLeft == null) {
+        break missingId;
+      }
+
+      RelativeLayout lytParent = (RelativeLayout) rootView;
 
       id = R.id.member_detail;
       TextView memberDetail = ViewBindings.findChildViewById(rootView, id);
@@ -201,12 +186,6 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.vm_accountno;
-      TextView vmAccountno = ViewBindings.findChildViewById(rootView, id);
-      if (vmAccountno == null) {
-        break missingId;
-      }
-
       id = R.id.vm_memberid;
       TextView vmMemberid = ViewBindings.findChildViewById(rootView, id);
       if (vmMemberid == null) {
@@ -225,9 +204,9 @@ public final class ItemTopRechargehistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemTopRechargehistoryBinding((LinearLayout) rootView, accountno, afterBalance,
-          beforeBalance, btnComplain, cardview, layHeadChange, layMob, lytParent, memberDetail,
-          mobile, operator, txtId, type, vmAccountno, vmMemberid, vmName, vmWallbal);
+      return new ItemTopRechargehistoryBinding((RelativeLayout) rootView, afterBalance,
+          beforeBalance, btnComplain, layMob, line2, llLeft, lytParent, memberDetail, mobile,
+          operator, txtId, type, vmMemberid, vmName, vmWallbal);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

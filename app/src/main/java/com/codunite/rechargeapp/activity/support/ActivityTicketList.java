@@ -43,7 +43,13 @@ public class ActivityTicketList extends AppCompatActivity implements View.OnClic
     private ImageView imgToolBarBack;
     private RecyclerView wallethistoryrv;
     private Button btnAddTicket;
+    private List<TicketListModel> lstItems = new ArrayList<>();
 
+    public static final String TAG_DATETIME="datetime";
+    public static final String TAG_SUBJECT="subject";
+    public static final String TAG_TICKET_ID="ticket_id";
+    public static final String TAG_TYPE="type";
+    public static final String TAG_JSON_STATUS="status";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,12 +84,7 @@ public class ActivityTicketList extends AppCompatActivity implements View.OnClic
             Typeface font = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAME);
             FontUtils.setFont(root, font);
         }
-        
-
         hideKeyboard();
-
-        
-
         loadToolBar();
     }
 
@@ -130,14 +131,6 @@ public class ActivityTicketList extends AppCompatActivity implements View.OnClic
         WebService webService = new WebService(svContext, postUrl, lstUploadData, this);
         webService.LoadDataRetrofit(webService.callReturn());
     }
-
-    private List<TicketListModel> lstItems = new ArrayList<>();
-
-    public static final String TAG_DATETIME="datetime";
-    public static final String TAG_SUBJECT="subject";
-    public static final String TAG_TICKET_ID="ticket_id";
-    public static final String TAG_TYPE="type";
-    public static final String TAG_JSON_STATUS="status";
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {

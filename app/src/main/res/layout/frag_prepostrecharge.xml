@@ -40,13 +40,9 @@
                         android:id="@+id/card_prepaidpostpaid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="@dimen/five"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="5dp"
+
                         android:orientation="vertical"
-                        android:paddingLeft="9dp"
-                        android:paddingRight="9dp"
+
                         android:visibility="visible">
 
                         <RadioGroup
@@ -78,65 +74,6 @@
                                 android:visibility="gone" />
                         </RadioGroup>
 
-                        <TextView
-                            android:visibility="gone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:layout_marginTop="@dimen/five"
-                            android:text="Enter Mobile Number"
-                            android:textSize="@dimen/ts_forteen" />
-
-<!--                        <RelativeLayout-->
-<!--                            android:background="@drawable/back_edittext_default"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginTop="@dimen/dp_5"-->
-
-<!--                            >-->
-<!--                            <TextView-->
-<!--                                android:id="@+id/txt_country_number"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_alignParentStart="true"-->
-<!--                                android:layout_centerVertical="true"-->
-<!--                                android:layout_marginStart="@dimen/ten"-->
-<!--                                android:text="+91"-->
-<!--                                android:textColor="@color/fontcoloreditext"-->
-<!--                                android:textSize="@dimen/ts_seventeen" />-->
-
-<!--                            <com.google.android.material.textfield.TextInputLayout-->
-<!--                                android:id="@+id/filledTextField"-->
-<!--                                android:layout_toRightOf="@+id/txt_country_number"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                app:boxStrokeWidth="0dp"-->
-<!--                                app:boxStrokeWidthFocused="0dp"-->
-<!--                                android:hint="Enter Mobile Number"-->
-<!--                                android:layout_toLeftOf="@+id/img_contacts"-->
-<!--                                android:textColorHint="@color/colorAccent"-->
-<!--                                >-->
-
-<!--                                <EditText-->
-<!--                                    android:id="@+id/edt_number"-->
-<!--                                    android:textColor="@color/black"-->
-<!--                                    android:background="@android:color/transparent"-->
-<!--                                    android:layout_width="match_parent"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:singleLine="true"-->
-<!--                                    />-->
-
-<!--                            </com.google.android.material.textfield.TextInputLayout>-->
-<!--                            <ImageView-->
-<!--                                android:id="@+id/img_contacts"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_alignParentEnd="true"-->
-<!--                                android:layout_centerVertical="true"-->
-<!--                                android:layout_marginEnd="@dimen/ten"-->
-<!--                                android:src="@drawable/ic_round_contacts_24"-->
-<!--                                app:tint="@color/black" />-->
-<!--                        </RelativeLayout>-->
 
                         <RelativeLayout
                             android:visibility="visible"
@@ -398,22 +335,31 @@
                                 android:layout_alignParentRight="true"
                                 android:padding="@dimen/seven"
                                 android:text="Click for R Offers"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@color/colorAccent"
                                 android:textSize="@dimen/ts_fifteen"
                                 android:visibility="visible" />
+
+                            <TextView
+                                android:layout_below="@+id/txt_roffers"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@+id/txt_roffers"
+                                android:padding="@dimen/three"
+                                android:textColor="@color/green_900"
+                                android:textSize="@dimen/ts_fifteen" />
                         </RelativeLayout>
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btn_prepaidrecharge"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/ten"
-                            android:layout_marginBottom="@dimen/ten"
+                            android:layout_marginTop="@dimen/seven"
                             android:background="@drawable/blue_button_background"
                             android:gravity="center"
                             android:paddingLeft="@dimen/thirty"
                             android:paddingRight="@dimen/thirty"
+                            android:textSize="@dimen/ts_sixteen"
                             android:text="Preceed To Recharge"
                             android:textColor="#ffffffff" />
                     </LinearLayout>

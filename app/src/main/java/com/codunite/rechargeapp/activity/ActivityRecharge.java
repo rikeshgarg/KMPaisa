@@ -38,6 +38,7 @@ import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.rechargeapp.adapter.ContactAdapter;
+import com.codunite.rechargeapp.adapter.RecentRechargeHistoryAdapter;
 import com.codunite.rechargeapp.adapter.TopRechargeHistoryAdapter;
 import com.codunite.rechargeapp.fragment.FragMtransfer;
 import com.codunite.rechargeapp.model.ContactModel;
@@ -46,6 +47,7 @@ import com.codunite.rechargeapp.fragment.FragDth;
 import com.codunite.rechargeapp.fragment.FragLandline;
 import com.codunite.rechargeapp.fragment.FragNew;
 import com.codunite.rechargeapp.fragment.FragPrePostRecharge;
+import com.codunite.rechargeapp.model.RecentRechargeHistoryModel;
 import com.codunite.rechargeapp.model.RechargeHistoryModel;
 import com.codunite.commonutility.AppExecutors;
 import com.codunite.commonutility.GlobalVariables;
@@ -144,17 +146,22 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         mBehavior = BottomSheetBehavior.from(bottomSheet);
 
         pageNumber = 1;
-        //LoadRechargeHistory("", "");
+        LoadRechargeHistory(pageIndex);
         //OpenDemoLink();
     }
 
-    private void LoadRechargeHistory(String fromDate, String toDate) {
+    private void LoadRechargeHistory(int pageIndex) {
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        lstUploadData.add(fromDate);
-        lstUploadData.add(toDate);
-        lstUploadData.add("" + pageNumber);
-        callWebService(ApiInterface.RECHARGEHISTORY, lstUploadData);
+        if(pageIndex==0){
+            lstUploadData.add("1");
+        } else if(pageIndex==1){
+            lstUploadData.add("3");
+        }
+
+        lstUploadData.add("0");
+        //lstUploadData.add("" + pageNumber);
+        callWebService(ApiInterface.RECENTRECHARGEHISTORY, lstUploadData);
     }
 
     public static String getLastMonthDate() {
@@ -256,7 +263,7 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         webService.LoadDataRetrofit(webService.callReturn());
     }
 
-    public List<RechargeHistoryModel> lstItems = new ArrayList<>();
+    public List<RecentRechargeHistoryModel> lstItems = new ArrayList<>();
     public static final String TAG_DATA = "data";
     public static final String TAG_AMOUNT = "amount";
     public static final String TAG_DATETIME = "datetime";
@@ -282,7 +289,7 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        } else if (url.contains(ApiInterface.RECHARGEHISTORY)) {
+        } else if (url.contains(ApiInterface.RECENTRECHARGEHISTORY)) {
             try {
                 lstItems = new ArrayList<>();
 
@@ -295,29 +302,14 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < (data).length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_amount = data_obj.getString(TAG_AMOUNT);
-                        String str_datetime = data_obj.getString(TAG_DATETIME);
-                        String str_order_id = data_obj.getString(TAG_ORDER_ID);
+                        String str_amount = data_obj.getString("amount");
+                        String str_datetime = data_obj.getString("datetime");
                         String str_status = data_obj.getString(TAG_STATUS);
-                        String str_recharge_id = data_obj.getString("recharge_id");
-
-                        String operator = data_obj.getString("operator");
                         String mobile = data_obj.getString("mobile");
                         String type = data_obj.getString("type");
-                        String txtId = data_obj.getString("txid");
+                        String icon = data_obj.getString("icon");
 
-                        String beforeBalance = data_obj.getString("before_balance");
-                        String afterBalance = data_obj.getString("after_balance");
-
-                        String memberDeatil = data_obj.getString("member_name") + " (" +
-                                data_obj.getString("member_code") + ")";
-
-                        String operatorTranId = "";
-                        if (data_obj.has("operator_transcation_id")) {
-                            operatorTranId = data_obj.getString("operator_transcation_id");
-                        }
-                        lstItems.add(new RechargeHistoryModel(str_recharge_id, memberDeatil, str_order_id, str_amount, str_datetime, str_status,
-                                operator, mobile, type, beforeBalance, afterBalance, txtId, operatorTranId));
+                        lstItems.add(new RecentRechargeHistoryModel(type, mobile, str_amount, str_status, icon,str_datetime));
                     }
 
 
@@ -325,11 +317,12 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
                     wallethistoryrv.setLayoutManager(layoutManager);
                     wallethistoryrv.setHasFixedSize(true);
                     int animation_type = ItemAnimation.LEFT_RIGHT;
-
-                    TopRechargeHistoryAdapter mAdapter = new TopRechargeHistoryAdapter(svContext, lstItems, animation_type, true);
+                    RecentRechargeHistoryAdapter mAdapter = new RecentRechargeHistoryAdapter(svContext, lstItems, animation_type, true);
                     wallethistoryrv.setAdapter(mAdapter);
                 }
             } catch (JSONException e) {
+
+
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }

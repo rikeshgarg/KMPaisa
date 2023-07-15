@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.codunite.commonutility.ImageLoading;
 import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.commonutility.CheckValidation;
 import com.codunite.commonutility.GlobalVariables;
@@ -96,6 +98,19 @@ public class ActivityChangePassword extends AppCompatActivity implements WebServ
         svContext = this;
         customToast = new ShowCustomToast(svContext);
         ViewGroup root = (ViewGroup) findViewById(R.id.headlayout);
+        TextView tvName = (TextView)findViewById(R.id.menuheader_name);
+        TextView tvMemberId = (TextView)findViewById(R.id.menuheader_memberid);
+        ImageView imgAvatar =(ImageView)findViewById(R.id.avatar);
+        tvName.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERNAME, ""));
+        tvMemberId.setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINMEMBERID, "memberid"));
+        String imageUrl = PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERPROFILEPIC, "");
+        if(imageUrl!="") {
+            try {
+                ImageLoading.loadImages(imageUrl, imgAvatar, R.drawable.users);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         new NoInternetScreen(svContext, root, ActivityChangePassword.this);
         if (!GlobalVariables.CUSTOMFONTNAME.equals("")) {
             Typeface font = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAME);

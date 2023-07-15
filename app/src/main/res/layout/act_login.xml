@@ -73,27 +73,17 @@
             android:layout_below="@+id/rl_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_marginTop="@dimen/twenty"
             android:paddingTop="@dimen/dp_25">
 
-            <androidx.cardview.widget.CardView
 
-                android:id="@+id/layoutLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-               >
 
                 <LinearLayout
-                    android:id="@+id/linearLayout"
+                    android:id="@+id/layoutLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:foregroundGravity="center"
-                    android:gravity="center"
                     android:orientation="vertical"
                     >
-
-
                     <RelativeLayout
                         android:background="@drawable/back_edittext_default"
                         android:layout_width="match_parent"
@@ -201,7 +191,6 @@
 
                     </RelativeLayout>
 
-
                     <RelativeLayout
                         android:visibility="gone"
                         android:layout_width="match_parent"
@@ -249,10 +238,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginLeft="@dimen/dp_25"
+                        android:layout_marginLeft="@dimen/dp_15"
                         android:layout_marginTop="@dimen/dp_10"
                         android:padding="@dimen/fifteen"
-                        android:layout_marginRight="@dimen/dp_25"
+                        android:layout_marginRight="@dimen/dp_15"
                         android:background="@drawable/blue_button_background"
                         android:orientation="horizontal">
 
@@ -289,15 +278,13 @@
                             android:textColor="@color/colorPrimary"
                             >
                         </TextView>
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_login_bottom"/>
 
                     </LinearLayout>
-            </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/layout_transactionpassword"
@@ -468,6 +455,13 @@
 
             </androidx.cardview.widget.CardView>
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_170"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@drawable/bg_login_bottom" />
+
         </RelativeLayout>
 
         <include
@@ -508,5 +502,7 @@
                     android:textSize="@dimen/sp_15" />
             </LinearLayout>
         </LinearLayout>
+
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

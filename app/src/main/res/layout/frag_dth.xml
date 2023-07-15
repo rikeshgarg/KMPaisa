@@ -35,13 +35,7 @@
                     android:id="@+id/card_dth"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="@dimen/five"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="5dp"
-                    android:orientation="vertical"
-                    android:paddingLeft="9dp"
-                    android:paddingRight="9dp"
+                     android:orientation="vertical"
                     android:visibility="visible">
 
 
@@ -55,18 +49,8 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:visibility="gone"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="left"
-                                android:layout_marginTop="@dimen/five"
-                                android:layout_marginBottom="@dimen/five"
-                                android:text="Select operator"
-                                android:textSize="@dimen/ts_forteen" />
-
                             <RelativeLayout
-                                android:layout_marginTop="@dimen/ten"
+                                android:layout_marginTop="@dimen/twelve"
                                 android:layout_marginBottom="@dimen/five"
                                 android:id="@+id/lay_operator"
                                 android:layout_width="match_parent"
@@ -74,6 +58,7 @@
                                 android:background="@drawable/back_edittext_default">
 
                                 <Spinner
+                                    android:background="@android:color/transparent"
                                     android:id="@+id/spinner_dthoperatorlist"
                                     android:layout_width="fill_parent"
                                     android:layout_height="match_parent"
@@ -101,7 +86,6 @@
                                     android:layout_marginBottom="@dimen/five"
                                     android:indeterminateDrawable="@drawable/progress_icon" />
                             </RelativeLayout>
-
 
                         </LinearLayout>
 
@@ -161,17 +145,8 @@
 
 
                         </LinearLayout>
-                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_marginBottom="@dimen/five"
-                        android:visibility="gone"
-                        android:text="Enter dth/account number"
-                        android:textSize="@dimen/ts_forteen" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_marginTop="@dimen/ten"
@@ -187,11 +162,11 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="1dp"
                             android:backgroundTint="#ffffff"
-                            android:inputType="text"
+                            android:inputType="number"
                             android:paddingLeft="@dimen/fifteen"
                             android:singleLine="true"
                             android:background="@android:color/transparent"
-                            android:hint="Enter dth/account number"
+                            android:hint="Enter DTH Account Number"
                             android:textColor="@color/c_black"
                             android:textColorHint="@color/c_gray2"
                             android:textCursorDrawable="@drawable/color_cursor"
@@ -287,7 +262,6 @@
                             android:id="@+id/txt_availbalance"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/txt_roffers"
                             android:padding="@dimen/three"
                             android:textColor="@color/green_900"
                             android:textSize="@dimen/ts_fifteen" />
@@ -306,7 +280,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_dthrecharge"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/ten"
@@ -315,12 +289,14 @@
                         android:gravity="center"
                         android:paddingLeft="@dimen/thirty"
                         android:paddingRight="@dimen/thirty"
+                        android:textSize="@dimen/ts_sixteen"
                         android:text="Preceed To Recharge"
                         android:textColor="#ffffffff" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/card_otp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

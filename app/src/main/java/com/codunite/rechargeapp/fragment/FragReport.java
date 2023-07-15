@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,10 +15,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.codunite.commonutility.CheckInternet;
 import com.codunite.commonutility.GlobalData;
@@ -33,6 +38,7 @@ import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.activity.wallet.ActivityWalletHistory;
 import com.codunite.rechargeapp.adapter.DashboardAdapter;
+import com.codunite.rechargeapp.adapter.SliderAdapter;
 import com.codunite.rechargeapp.model.DashboardModel;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -47,10 +53,11 @@ public class FragReport extends Fragment implements OnClickListener {
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
     private List<DashboardModel> lstDashBoard = new ArrayList<>();
-    public static String[] selectedItem = {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History","Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"};
-    private int[] allDrawable = {R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history,
-            R.drawable.main_wallet_history, R.drawable.main_wallet_history, R.drawable.main_wallet_history};
+    public static String[] selectedItem = {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"};
+    private int[] allDrawable = {R.drawable.ic_recharge_history, R.drawable.ic_bill_pay_history, R.drawable.ic_bbps_history, R.drawable.ic_money_transfer_history, R.drawable.ic_recharge_commision,
+            R.drawable.ic_bbps_commision, R.drawable.ic_dmr_commision, R.drawable.ic_aeps_commision};
 
+    private int[] allDrawableBgColor = {R.color.bg_postpaid, R.color.bg_prepaid, R.color.bg_datacard, R.color.bg_metro, R.color.bg_dth, R.color.bg_fasttag, R.color.bg_dth, R.color.bg_postpaid};
     private TextView totalSuccess, totalPending, totalFailed;
     private FrameLayout cardRecharge;
     private Context svContext;
@@ -58,7 +65,11 @@ public class FragReport extends Fragment implements OnClickListener {
     private CheckInternet checkNetwork;
     private ViewGroup root;
 
-    public FragReport() {}
+    private ViewPager2 viewPager2;
+    private Handler sliderHandler = new Handler();
+
+    public FragReport() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,7 +89,6 @@ public class FragReport extends Fragment implements OnClickListener {
             mAlreadyLoaded = true;
             aiView = getView();
         }
-
         resumeApp();
     }
 
@@ -89,7 +99,7 @@ public class FragReport extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.img_back:
                 break;
-              default:
+            default:
                 break;
         }
     }
@@ -101,9 +111,10 @@ public class FragReport extends Fragment implements OnClickListener {
                 .replace(R.id.container, fragment)
                 .commit();
     }
+
     public void resumeApp() {
         cardRecharge = (FrameLayout) aiView.findViewById(R.id.card_recharge);
-
+        viewPager2 =(ViewPager2) aiView.findViewById(R.id.viewPagerImageSlider);
         totalSuccess = (TextView) aiView.findViewById(R.id.total_success);
         totalPending = (TextView) aiView.findViewById(R.id.total_pending);
         totalFailed = (TextView) aiView.findViewById(R.id.total_failed);
@@ -122,10 +133,10 @@ public class FragReport extends Fragment implements OnClickListener {
         for (int j = 0; j < selectedItem.length; j++) {
             if ((selectedItem[j]).equals("M Transfer")) {
                 if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISTRANSFERACTIVE, false)) {
-                    lstDashBoard.add(new DashboardModel(selectedItem[j], allDrawable[j], false,0));
+                    lstDashBoard.add(new DashboardModel(selectedItem[j], allDrawable[j], false, allDrawableBgColor[j]));
                 }
             } else {
-                lstDashBoard.add(new DashboardModel(selectedItem[j], allDrawable[j], false,0));
+                lstDashBoard.add(new DashboardModel(selectedItem[j], allDrawable[j], false, allDrawableBgColor[j]));
             }
 
         }
@@ -144,7 +155,7 @@ public class FragReport extends Fragment implements OnClickListener {
         mAdapter.setOnItemClickListener(new DashboardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, String obj, int position) {
-                ActivityMain.onDrawerItemClick(obj,view.getContext());
+                ActivityMain.onDrawerItemClick(obj, view.getContext());
             }
         });
     }
@@ -181,15 +192,43 @@ public class FragReport extends Fragment implements OnClickListener {
 
         CardView cardSlider = aiView.findViewById(R.id.card_slider);
         if (FragHomeDashBoard.lstSlider != null && FragHomeDashBoard.lstSlider.size() > 0) {
-            cardSlider.setVisibility(View.VISIBLE);
+            cardSlider.setVisibility(View.GONE);
+            viewPager2.setVisibility(View.VISIBLE);
         } else {
             cardSlider.setVisibility(View.GONE);
+            viewPager2.setVisibility(View.GONE);
             return;
         }
 
         for (int j = 0; j < FragHomeDashBoard.lstSlider.size(); j++) {
             imageList.add(new SlideModel((FragHomeDashBoard.lstSlider.get(j).getBanner_img()).replaceAll("\\/", "/"), ScaleTypes.FIT));
         }
+
+
+        viewPager2.setAdapter(new SliderAdapter(FragHomeDashBoard.lstSlider,viewPager2));
+        viewPager2.setClipToPadding(false);
+        viewPager2.setClipChildren(false);
+        viewPager2.setOffscreenPageLimit(3);
+        //viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(30));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+                //page.setScaleY(0.85f + r * 0.15f);
+            }
+        });
+        viewPager2.setPageTransformer(compositePageTransformer);
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable, 2000); // slide duration 2 seconds
+            }
+        });
 
         sliderView.setImageList(imageList, ScaleTypes.FIT);
         sliderView.setItemClickListener(new ItemClickListener() {
@@ -205,4 +244,17 @@ public class FragReport extends Fragment implements OnClickListener {
             }
         });
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        sliderHandler.postDelayed(sliderRunnable, 2000);
+    }
+
+    private Runnable sliderRunnable = new Runnable() {
+        @Override
+        public void run() {
+            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+        }
+    };
 }

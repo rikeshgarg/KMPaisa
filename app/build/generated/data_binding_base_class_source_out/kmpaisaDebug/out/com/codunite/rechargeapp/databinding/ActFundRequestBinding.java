@@ -55,9 +55,6 @@ public final class ActFundRequestBinding implements ViewBinding {
   public final ImageView imgScrrenshot;
 
   @NonNull
-  public final IncludeDemourlBinding includeDemourl;
-
-  @NonNull
   public final IncludeActionbarBinding layActionbar;
 
   @NonNull
@@ -85,11 +82,11 @@ public final class ActFundRequestBinding implements ViewBinding {
       @NonNull AppCompatButton btnproceedtopay, @NonNull AppCompatButton chooseScrrenshot,
       @NonNull TextView currentBal, @NonNull EditText edtenteramount, @NonNull EditText edttransid,
       @NonNull ConstraintLayout headlayout, @NonNull TextView historyLabel,
-      @NonNull ImageView imgScrrenshot, @NonNull IncludeDemourlBinding includeDemourl,
-      @NonNull IncludeActionbarBinding layActionbar, @NonNull CardView layTopwallet,
-      @NonNull LinearLayout linearLayout, @NonNull TextView nofileScrrenshot,
-      @NonNull AppCompatButton removeScrrenshot, @NonNull TextView tvCurrentBal,
-      @NonNull RecyclerView wallethistoryRv, @NonNull WebViewSuite webViewSuite) {
+      @NonNull ImageView imgScrrenshot, @NonNull IncludeActionbarBinding layActionbar,
+      @NonNull CardView layTopwallet, @NonNull LinearLayout linearLayout,
+      @NonNull TextView nofileScrrenshot, @NonNull AppCompatButton removeScrrenshot,
+      @NonNull TextView tvCurrentBal, @NonNull RecyclerView wallethistoryRv,
+      @NonNull WebViewSuite webViewSuite) {
     this.rootView = rootView;
     this.btnViewQr = btnViewQr;
     this.btnproceedtopay = btnproceedtopay;
@@ -100,7 +97,6 @@ public final class ActFundRequestBinding implements ViewBinding {
     this.headlayout = headlayout;
     this.historyLabel = historyLabel;
     this.imgScrrenshot = imgScrrenshot;
-    this.includeDemourl = includeDemourl;
     this.layActionbar = layActionbar;
     this.layTopwallet = layTopwallet;
     this.linearLayout = linearLayout;
@@ -188,13 +184,6 @@ public final class ActFundRequestBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.include_demourl;
-      View includeDemourl = ViewBindings.findChildViewById(rootView, id);
-      if (includeDemourl == null) {
-        break missingId;
-      }
-      IncludeDemourlBinding binding_includeDemourl = IncludeDemourlBinding.bind(includeDemourl);
-
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
       if (layActionbar == null) {
@@ -246,8 +235,8 @@ public final class ActFundRequestBinding implements ViewBinding {
 
       return new ActFundRequestBinding((ConstraintLayout) rootView, btnViewQr, btnproceedtopay,
           chooseScrrenshot, currentBal, edtenteramount, edttransid, headlayout, historyLabel,
-          imgScrrenshot, binding_includeDemourl, binding_layActionbar, layTopwallet, linearLayout,
-          nofileScrrenshot, removeScrrenshot, tvCurrentBal, wallethistoryRv, webViewSuite);
+          imgScrrenshot, binding_layActionbar, layTopwallet, linearLayout, nofileScrrenshot,
+          removeScrrenshot, tvCurrentBal, wallethistoryRv, webViewSuite);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
