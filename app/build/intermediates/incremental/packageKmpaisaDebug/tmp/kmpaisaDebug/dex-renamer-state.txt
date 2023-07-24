@@ -1,4 +1,4 @@
-#Sat Jul 15 18:39:02 IST 2023
+#Fri Jul 21 17:41:35 IST 2023
 base.0=E\:\\KMPaisa\\app\\build\\intermediates\\dex\\kmpaisaDebug\\mergeExtDexKmpaisaDebug\\classes.dex
 base.1=E\:\\KMPaisa\\app\\build\\intermediates\\dex\\kmpaisaDebug\\mergeProjectDexKmpaisaDebug\\0\\classes.dex
 base.10=E\:\\KMPaisa\\app\\build\\intermediates\\dex\\kmpaisaDebug\\mergeProjectDexKmpaisaDebug\\5\\classes.dex

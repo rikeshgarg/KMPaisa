@@ -19,6 +19,8 @@
     <dimen name="ts_thirty">30sp</dimen>
     <dimen name="ts_fortyfive">45sp</dimen>
 
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_13">13sp</dimen>
     <dimen name="sp_14">14sp</dimen>
     <dimen name="sp_15">15sp</dimen>
     <dimen name="sp_16">16sp</dimen>
@@ -94,6 +96,7 @@
     <dimen name="dp_12">12dp</dimen>
     <dimen name="dp_15">15dp</dimen>
     <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_19">19dp</dimen>
     <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_25">25dp</dimen>
     <dimen name="dp_30">30dp</dimen>

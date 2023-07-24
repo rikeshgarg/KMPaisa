@@ -2282,6 +2282,7 @@ dimen dp_140
 dimen dp_15
 dimen dp_170
 dimen dp_18
+dimen dp_19
 dimen dp_2
 dimen dp_20
 dimen dp_200
@@ -2769,6 +2770,8 @@ dimen seventeen
 dimen seventy
 dimen seventyfive
 dimen sixty
+dimen sp_12
+dimen sp_13
 dimen sp_14
 dimen sp_15
 dimen sp_16
@@ -3008,6 +3011,7 @@ drawable bg_cardview_history
 drawable bg_circle_shadow
 drawable bg_circle_white
 drawable bg_dashboard_blue
+drawable bg_dotted_line
 drawable bg_green
 drawable bg_login_bottom
 drawable bg_more
@@ -3695,6 +3699,7 @@ id dark
 id dataBinding
 id date
 id datePicker_from
+id datePicker_from1
 id datePicker_to
 id datePicker_to1
 id date_picker_actions
@@ -3855,7 +3860,6 @@ id evolute_Container
 id evolute_icon
 id ewallet
 id ewalletbal
-id ewalletbal1
 id exitUntilCollapsed
 id expand_activities_button
 id expandableListView
@@ -3870,6 +3874,7 @@ id fill_vertical
 id filled
 id filledTextField
 id filter_search
+id filter_search1
 id fitToContents
 id fixed
 id flat_aeps_commision
@@ -4028,10 +4033,12 @@ id iv_refercode
 id iv_repassword
 id iv_selected
 id iv_shop
+id iv_status
 id iv_thumbnail
 id iv_to
 id iv_trans_password
 id iv_trpassword
+id iv_type
 id jumpToEnd
 id jumpToStart
 id kyc_Charge
@@ -4069,6 +4076,7 @@ id lay_district
 id lay_dynamic_lay
 id lay_e_wallet
 id lay_filter
+id lay_filter1
 id lay_form_two_button
 id lay_head_change
 id lay_kyc_doc_verify
@@ -4138,6 +4146,7 @@ id ll_get_start
 id ll_image
 id ll_img
 id ll_left
+id ll_line
 id ll_loader
 id ll_logout
 id ll_menu
@@ -5017,6 +5026,7 @@ layout item_section
 layout item_setting
 layout item_spinner
 layout item_top_rechargehistory
+layout item_top_rechargehistory_new
 layout item_viewallplans
 layout item_viewticket
 layout item_virtual_account_report

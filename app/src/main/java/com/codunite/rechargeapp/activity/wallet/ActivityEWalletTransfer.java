@@ -111,7 +111,14 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
     private void LoadAllData(){
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        callWebService(ApiInterface.GETMEMBERLIST, lstUploadData);
+        if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("3")) {
+            lstUploadData.add("3");
+        } else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("4")) {
+            lstUploadData.add("4");
+        }
+
+        //lstUploadData.add("3");
+        callWebService(ApiInterface.GETFUNDMEMBERLIST, lstUploadData);
     }
 
     private void ProceedWalletTransfer() {
@@ -342,7 +349,7 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
             }
             SpinnerPopulateAdapter LegAdapter = new SpinnerPopulateAdapter(svContext, listSpinnerMemberListy, true);
             spinnerMemberList.setAdapter(LegAdapter);
-        }else if (url.contains(ApiInterface.GETMEMBERLIST)) {
+        }else if (url.contains(ApiInterface.GETFUNDMEMBERLIST)) {
             listSpinnerMemberListy = new ArrayList<>();
             listSpinnerWalletBal = new ArrayList<>();
             listSpinnerMemberListy.add("-1#:#Select member");

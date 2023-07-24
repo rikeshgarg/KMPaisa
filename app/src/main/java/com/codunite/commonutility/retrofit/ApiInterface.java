@@ -70,6 +70,8 @@ public interface ApiInterface {
     String GetSTATELIST = "getStateList";
     String GetCITYLIST = "getCityList";
     String GETMEMBERLIST = "getMemberList";//unused
+
+    String GETFUNDMEMBERLIST="getFundMemberList";
     String RECHARGEAUTH = "rechargeAuth";//unused
     String ELECTRICRECHARGEAUTH = "electricityAuth";
     String UPADATEUSERDATA = "updateuserdata";
@@ -926,15 +928,20 @@ public interface ApiInterface {
                                           @Field("otp_code") String otp);
 
 
-    @GET(GETBBSPSERVICELIST)
-    Call<String> getBbpsServiceList();
+    @FormUrlEncoded
+    @POST(GETBBSPSERVICELIST)
+    Call<String> getBbpsServiceList(@Field("user_id") String user_id);
 
-    @GET(GETBBSPSERVICEOPERATOR)
-    Call<String> GetServiceOperatorList(@Query("service_id") String user_id);
+    @FormUrlEncoded
+    @POST(GETBBSPSERVICEOPERATOR)
+    Call<String> GetServiceOperatorList(@Field("user_id") String user_id,
+                                        @Field("service_id") String service_id);
 
-    @GET(GETBBSPSERVICEFORM)
-    Call<String> GetBBPSFORm(@Query("service_id") String user_id,
-                             @Query("biller_id") String biller_id);
+    @FormUrlEncoded
+    @POST(GETBBSPSERVICEFORM)
+    Call<String> GetBBPSFORm(@Field("user_id") String user_id,
+                             @Field("service_id") String service_id,
+                             @Field("biller_id") String biller_id);
 
 
     @FormUrlEncoded
@@ -976,8 +983,7 @@ public interface ApiInterface {
                                     @Field("para6") String para6,
                                     @Field("para7") String para7,
                                     @Field("para8") String para8,
-                                    @Field("amount") String amount,
-                                    @Field("txn_pass") String txn_pass);
+                                    @Field("amount") String amount);
 
     @FormUrlEncoded
     @POST(GETBBSPSERVICEBILLPAY)
@@ -1007,23 +1013,24 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(RAISERECHGCOMPALINT)
-    Call<String> RaiseComplaintAUth(@Field("userID") String user_id,
+    Call<String> RaiseComplaintAUth(@Field("user_id") String user_id,
                                     @Field("recharge_id") String biller_id,
                                     @Field("description") String para1);
 
     @FormUrlEncoded
     @POST(RAISEBBPSCOMPALINT)
-    Call<String> RaiseBBPPSComplaintAUth(@Field("userID") String user_id,
+    Call<String> RaiseBBPPSComplaintAUth(@Field("user_id") String user_id,
                                          @Field("recharge_id") String biller_id,
                                          @Field("description") String para1);
 
-    @GET(GETBBSPFASTTAGOPERATOR)
-    Call<String> getBbpsFAstagOperator();
+    @FormUrlEncoded
+    @POST(GETBBSPFASTTAGOPERATOR)
+    Call<String> getBbpsFAstagOperator(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GETBBSPFASTAGFORM)
-    Call<String> FAstagBillFetchAuth(
-            @Field("biller_id") String billerId);
+    Call<String> FAstagBillFetchAuth(@Field("user_id") String user_id,
+                                     @Field("biller_id") String billerId);
 
     @FormUrlEncoded
     @POST(GETBBSPFASTTAGBILLFETCH)
@@ -1040,15 +1047,15 @@ public interface ApiInterface {
                                    @Field("para1") String para1,
                                    @Field("para2") String para2,
                                    @Field("para3") String para3,
-                                   @Field("amount") String amount,
-                                   @Field("txn_pass") String txn_pass);
+                                   @Field("amount") String amount);
 
-    @GET(GETBBSPELECTOPERATOR)
-    Call<String> getBbpsElectricityOperator();
+    @FormUrlEncoded
+    @POST(GETBBSPELECTOPERATOR)
+    Call<String> getBbpsElectricityOperator(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GETBBSPELECTFORM)
-    Call<String> electricityBillFetchAuth(
+    Call<String> electricityBillFetchAuth(@Field("user_id") String user_id,
             @Field("biller_id") String billerId);
 
     @FormUrlEncoded
@@ -1085,7 +1092,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETRECHARGECOMMISIONLIST)
-    Call<String> getRechargeCommisionList(@Field("userID") String code);
+    Call<String> getRechargeCommisionList(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GETRECHARGEINCOME)
@@ -1097,7 +1104,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETBBPSCOMMISIONLIST)
-    Call<String> getBBPSCommisionList(@Field("userID") String code);
+    Call<String> getBBPSCommisionList(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GETBBPSLIVECOMMISIONLIST)
@@ -1105,11 +1112,11 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETMONEYTRANSFERCOMMISIONLIST)
-    Call<String> getMoneyTransferCommisionList(@Field("user_id") String code);
+    Call<String> getMoneyTransferCommisionList(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GETAEPSCOMMISIONLIST)
-    Call<String> getAEPSCommisionList(@Field("user_id") String code);
+    Call<String> getAEPSCommisionList(@Field("user_id") String user_id);
 
     @GET(GET_CONTACT_CONTENT)
     Call<String> getContactContent();
@@ -1153,7 +1160,11 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(GETMEMBERLIST)
-    Call<String> GETMEMBERLIST(@Field("user_id") String code);
+    Call<String> GETMEMBERLIST(@Field("user_id") String code,@Field("role_id") String role_id);
+
+    @FormUrlEncoded
+    @POST(GETFUNDMEMBERLIST)
+    Call<String> GETFUNDMEMBERLIST(@Field("user_id") String code,@Field("role_id") String role_id);
 
     @FormUrlEncoded
     @POST(GETTICKETLIST)
@@ -1455,7 +1466,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST(RECHARGECOMMISIONHISTORY)
-    Call<String> GetRechargeCommisionHistory(@Field("userID") String userId);
+    Call<String> GetRechargeCommisionHistory(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(GETCREDITCARDHISTORY)

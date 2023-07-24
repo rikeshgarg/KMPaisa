@@ -155,7 +155,7 @@ public class FragReport extends Fragment implements OnClickListener {
         mAdapter.setOnItemClickListener(new DashboardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, String obj, int position) {
-                ActivityMain.onDrawerItemClick(obj, view.getContext());
+                ActivityMain.onDrawerItemClick(obj, view.getContext(),"");
             }
         });
     }

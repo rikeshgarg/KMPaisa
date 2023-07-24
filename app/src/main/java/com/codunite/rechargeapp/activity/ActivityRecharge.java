@@ -355,9 +355,9 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         if (actReferTo.equalsIgnoreCase("dth")) {
             ((FragDth) page).RechargeProcess();
         }
-        if (actReferTo.equalsIgnoreCase("datacard")) {
-            ((FragDatacard) page).RechargeProcess();
-        }
+//        if (actReferTo.equalsIgnoreCase("datacard")) {
+//            ((FragDatacard) page).RechargeProcess();
+//        }
     }
 
     @Override

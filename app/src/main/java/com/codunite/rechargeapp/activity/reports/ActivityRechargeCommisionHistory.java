@@ -1,5 +1,7 @@
 package com.codunite.rechargeapp.activity.reports;
 
+import android.app.DatePickerDialog;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -8,16 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.codunite.commonutility.CheckInternet;
+import com.codunite.commonutility.GetFormattedDateTime;
 import com.codunite.commonutility.GlobalData;
 import com.codunite.commonutility.GlobalVariables;
 import com.codunite.commonutility.ItemAnimation;
@@ -38,6 +44,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,11 +60,17 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
     public static final String TAG_TYPE = "type";
     public static final String TAG_MESSAGE = "message";
     public static final String TAG_STATUS = "status";
-    private ImageView imgToolBarBack;
+    private ImageView imgToolBarBack, iv_from, iv_to;
     private RecyclerView wallethistoryrv;
     private TextView txtWalletbal;
+    private String strSearchKey = "";
     private Button btnAddWallet;
     private CardView cvAddWallet, cardShowBalance;
+    private String strFromDate = "", strToDate = "";
+    boolean isDateFrom = true;
+    Calendar myCalendar;
+    TextView txtFrom, txtTo;
+    private SwipeRefreshLayout layrefrsh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,24 +84,147 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
     public void resumeApp() {
         wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
-        btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
-        txtWalletbal.setVisibility(View.INVISIBLE);
-        cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
-        cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
-        cvAddWallet.setVisibility(View.INVISIBLE);
-        cardShowBalance.setVisibility(View.INVISIBLE);
-
-        btnAddWallet.setOnClickListener(this);
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        callWebService(ApiInterface.RECHARGECOMMISIONHISTORY, lstUploadData);
-
+        iv_from = (ImageView) findViewById(R.id.iv_from);
+        iv_to = (ImageView) findViewById(R.id.iv_to);
         TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
         txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
+        //btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
+        //txtWalletbal.setVisibility(View.INVISIBLE);
+        //cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
+        //cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
+        //cvAddWallet.setVisibility(View.INVISIBLE);
+        //cardShowBalance.setVisibility(View.INVISIBLE);
+
+        //btnAddWallet.setOnClickListener(this);
+
+        myCalendar = Calendar.getInstance();
+        layrefrsh = (SwipeRefreshLayout) findViewById(R.id.layrefrsh);
+        txtFrom = (TextView) findViewById(R.id.datePicker_from);
+        txtTo = (TextView) findViewById(R.id.datePicker_to);
+
+        txtFrom.setText(GetFormattedDateTime.getcurrentcalDate());
+        txtTo.setText(GetFormattedDateTime.getcurrentcalDate());
+
+        setSearchView();
+
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                int month = monthOfYear + 1;
+                String selectedDate = year + "-" + (month >= 10 ? month : "0" + month)
+                        + "-" + (dayOfMonth >= 10 ? dayOfMonth : "0" + dayOfMonth);
+                if (isDateFrom) {
+                    txtFrom.setText(selectedDate);
+                } else {
+                    txtTo.setText(selectedDate);
+                }
+            }
+        };
+
+        iv_to.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isDateFrom = false;
+                String[] strDate = txtTo.getText().toString().trim().split("-");
+                new DatePickerDialog(svContext, date,
+                        Integer.parseInt(strDate[0]),
+                        Integer.parseInt(strDate[1]) - 1,
+                        Integer.parseInt(strDate[2])).show();
+            }
+        });
+        iv_from.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isDateFrom = true;
+                String[] strDate = txtFrom.getText().toString().trim().split("-");
+                new DatePickerDialog(svContext, date,
+                        Integer.parseInt(strDate[0]),
+                        Integer.parseInt(strDate[1]) - 1,
+                        Integer.parseInt(strDate[2])).show();
+            }
+        });
+
+        ImageView imgSearch = (ImageView) findViewById(R.id.filter_search);
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((txtFrom.getText().toString().trim()).equalsIgnoreCase("Select from date")) {
+                    customToast.showCustomToast(svContext, "Please select from date first", customToast.ToastyInfo);
+                } else if ((txtTo.getText().toString().trim()).equalsIgnoreCase("Select to date")) {
+                    customToast.showCustomToast(svContext, "Please select to date first", customToast.ToastyInfo);
+                } else {
+                    LoadRechargeHistory(txtFrom.getText().toString().trim(), txtTo.getText().toString().trim());
+                }
+            }
+        });
+
+        layrefrsh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadUserDataBackground();
+                layrefrsh.setRefreshing(false);
+            }
+        });
+
+        layrefrsh.setColorSchemeColors(
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent)
+        );
+
+//        lstUploadData = new LinkedList<>();
+//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+//        callWebService(ApiInterface.RECHARGECOMMISIONHISTORY, lstUploadData);
+        LoadRechargeHistory(txtFrom.getText().toString().trim(), txtTo.getText().toString().trim());
+
+    }
+    private void LoadRechargeHistory(String fromDate, String toDate) {
+        lstUploadData = new LinkedList<>();
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        lstUploadData.add(fromDate);
+        lstUploadData.add(toDate);
+        lstUploadData.add(strSearchKey);
+        callWebService(ApiInterface.RECHARGECOMMISIONHISTORY, lstUploadData);
+    }
+    private void loadUserDataBackground() {
+        lstUploadData = new LinkedList<>();
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
     }
 
+    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
+        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
+        webService.LoadDataRetrofit(webService.callReturn());
+    }
 
+    private void setSearchView() {
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) findViewById(R.id.searchview);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+
+        // listening to search query text change
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                strSearchKey = query;
+                //mAdapter.getFilter().filter(query);
+                return false;
+            }
+        });
+    }
 
     private void StartApp() {
         svContext = this;
@@ -122,7 +258,7 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
         imgToolBarBack.setOnClickListener(this);
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("Recharge Commission");
+        txtHeading.setText("Recharge Commission History");
 
 //        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
 //        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
@@ -205,10 +341,9 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
                 e.printStackTrace();
             }
 
-            cvAddWallet.setVisibility(View.VISIBLE);
-            cardShowBalance.setVisibility(View.VISIBLE);
-
-            txtWalletbal.setVisibility(View.VISIBLE);
+            //cvAddWallet.setVisibility(View.VISIBLE);
+            //cardShowBalance.setVisibility(View.VISIBLE);
+            //txtWalletbal.setVisibility(View.VISIBLE);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             wallethistoryrv.setLayoutManager(layoutManager);
@@ -223,6 +358,9 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
 
                 }
             });
+        }else if (url.contains(ApiInterface.UPDATEFCM)) {
+            ActivitySplash.LoadUserData(result, svContext);
+            loadToolBar();
         }
     }
 

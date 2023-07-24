@@ -157,7 +157,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         imgToolBarBack.setOnClickListener(this);
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("Raise Ticket");
+        txtHeading.setText("Create Ticket");
     }
 
     private void hideKeyboard() {

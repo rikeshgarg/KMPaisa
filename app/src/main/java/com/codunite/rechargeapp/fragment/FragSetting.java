@@ -86,7 +86,7 @@ public class FragSetting extends Fragment implements View.OnClickListener, WebSe
         lstSlider.add(new SettingMenu("Logout", R.drawable.ic_profile));
         SettingMenuAdapter sliderSdapter = new SettingMenuAdapter(svContext, lstSlider);
         sliderSdapter.setOnItemClickListener((view, obj) -> {
-            ActivityMain.onDrawerItemClick(obj, svContext);
+            ActivityMain.onDrawerItemClick(obj, svContext,"");
         });
         rvMenu.setAdapter(sliderSdapter);
     }

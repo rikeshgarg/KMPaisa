@@ -289,7 +289,7 @@ public class ActivityBillPayHistory extends AppCompatActivity implements View.On
 //                        String str_recharge_id = data_obj.getString("recharge_id");
                         lstItems.add(new RechargeHistoryModel("", memberDetail,str_order_id, str_amount, str_datetime,
                                 str_status, operator,mobile, type, beforeBalance, afterBalance, txtId,str_account_number,
-                                operatorTranId));
+                                operatorTranId,""));
                     }
                 }
             } catch (JSONException e) {

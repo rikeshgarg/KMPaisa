@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/headlayout"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -84,12 +85,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/card_addwallet"
-                    android:layout_marginLeft="@dimen/five"
+                    android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/ten"
-                    android:layout_marginRight="@dimen/five"
+                    android:layout_marginRight="@dimen/dp_15"
                     android:scrollbars="vertical"
                     android:scrollingCache="true" />
             </RelativeLayout>
         </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -119,7 +119,7 @@ public class FragProfile extends Fragment implements OnClickListener, WebService
         DashboardAdapter mAdapter = new DashboardAdapter(svContext, lstDashBoard, animation_type);
         recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener((view, obj, position) -> {
-            ActivityMain.onDrawerItemClick(obj, svContext);
+            ActivityMain.onDrawerItemClick(obj, svContext,"");
         });
         LoadSlider();
     }

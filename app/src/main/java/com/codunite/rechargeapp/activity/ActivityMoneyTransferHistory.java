@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
 import com.codunite.commonutility.CheckInternet;
@@ -48,18 +49,23 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ActivityMoneyTransferHistory extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
-    private ImageView imgToolBarBack;
+    private ImageView imgToolBarBack, iv_from, iv_to;
     private RecyclerView wallethistoryrv;
     private Button btntransfer;
     boolean isDateFrom = true;
     Calendar myCalendar;
     TextView txtFrom, txtTo;
+    private TextView txtWalletbal;
     private String strSearchKey = "";
     private Context svContext;
     private ShowCustomToast customToast;
     private CheckInternet checkNetwork;
     private NoInternetScreen errrorScreen;
     private List<PayoutTransferReportModel> lstItems = new ArrayList<>();
+
+    private String strFromDate = "", strToDate = "";
+    private SwipeRefreshLayout layrefrsh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +76,16 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
     }
 
     public void resumeApp() {
-         wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
-         myCalendar = Calendar.getInstance();
+        txtWalletbal = (TextView) findViewById(R.id.walletbal);
+        iv_from = (ImageView) findViewById(R.id.iv_from);
+        iv_to = (ImageView) findViewById(R.id.iv_to);
+        wallethistoryrv = (RecyclerView) findViewById(R.id.wallethistory_rv);
+        TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
+        txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
+        txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
+
+        myCalendar = Calendar.getInstance();
+        layrefrsh = (SwipeRefreshLayout) findViewById(R.id.layrefrsh);
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
         txtTo = (TextView) findViewById(R.id.datePicker_to);
 
@@ -94,7 +108,7 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
             }
         };
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = false;
@@ -105,7 +119,7 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
                         Integer.parseInt(strDate[2])).show();
             }
         });
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = true;
@@ -130,6 +144,34 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
                 }
             }
         });
+
+        layrefrsh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadUserDataBackground();
+                layrefrsh.setRefreshing(false);
+            }
+        });
+
+        layrefrsh.setColorSchemeColors(
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent)
+        );
+    }
+
+    private void loadUserDataBackground() {
+        lstUploadData = new LinkedList<>();
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
+    }
+
+    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
+        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
+        webService.LoadDataRetrofit(webService.callReturn());
     }
 
     private void LoadRechargeHistory(String fromDate, String toDate) {
@@ -223,7 +265,7 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
                 finish();
                 break;
             case R.id.btn_transfer:
-                ActivityMain.onDrawerItemClick("Transfer", svContext);
+                ActivityMain.onDrawerItemClick("Transfer", svContext,"");
                 break;
             default:
                 break;
@@ -251,7 +293,6 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
         WebService webService = new WebService(svContext, postUrl, lstUploadData, this);
         webService.LoadDataRetrofit(webService.callReturn());
     }
-
 
 
     public static final String TAG_DATA = "data";
@@ -296,7 +337,7 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
                         }
 
                         lstItems.add(new PayoutTransferReportModel(str_member_id, str_txn_id, str_amount,
-                                str_datetime, str_status, str_rrn, mobile, str_name, str_ifsc,str_account_no));
+                                str_datetime, str_status, str_rrn, mobile, str_name, str_ifsc, str_account_no));
                     }
                 }
             } catch (JSONException e) {
@@ -327,7 +368,11 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
             //           startActivity(intent);
             //       }
             //    });
+        } else if (url.contains(ApiInterface.UPDATEFCM)) {
+            ActivitySplash.LoadUserData(result, svContext);
+            loadToolBar();
         }
+
     }
 
     @Override

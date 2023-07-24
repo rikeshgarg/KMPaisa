@@ -4,17 +4,16 @@ package com.codunite.rechargeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -24,13 +23,7 @@ import java.lang.String;
 
 public final class ActMoneyTransferBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
-
-  @NonNull
-  public final Button btnAddBeneficiary;
-
-  @NonNull
-  public final CardView cardPayoutTransfer;
+  private final LinearLayout rootView;
 
   @NonNull
   public final TextView datePickerFrom;
@@ -39,13 +32,22 @@ public final class ActMoneyTransferBinding implements ViewBinding {
   public final TextView datePickerTo;
 
   @NonNull
-  public final EditText edtMobile;
+  public final TextView datePickerTo1;
+
+  @NonNull
+  public final TextView ewalletbal;
 
   @NonNull
   public final ImageView filterSearch;
 
   @NonNull
-  public final ConstraintLayout headlayout;
+  public final LinearLayout headlayout;
+
+  @NonNull
+  public final ImageView ivFrom;
+
+  @NonNull
+  public final ImageView ivTo;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
@@ -54,34 +56,62 @@ public final class ActMoneyTransferBinding implements ViewBinding {
   public final LinearLayout layFilter;
 
   @NonNull
+  public final NestedScrollView layNestedscroll;
+
+  @NonNull
+  public final SwipeRefreshLayout layrefrsh;
+
+  @NonNull
+  public final LinearLayout llWallet;
+
+  @NonNull
+  public final RelativeLayout rlTop;
+
+  @NonNull
+  public final RecyclerView rvPagination;
+
+  @NonNull
   public final SearchView searchview;
+
+  @NonNull
+  public final TextView walletbal;
 
   @NonNull
   public final RecyclerView wallethistoryRv;
 
-  private ActMoneyTransferBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button btnAddBeneficiary, @NonNull CardView cardPayoutTransfer,
-      @NonNull TextView datePickerFrom, @NonNull TextView datePickerTo, @NonNull EditText edtMobile,
-      @NonNull ImageView filterSearch, @NonNull ConstraintLayout headlayout,
-      @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout layFilter,
-      @NonNull SearchView searchview, @NonNull RecyclerView wallethistoryRv) {
+  private ActMoneyTransferBinding(@NonNull LinearLayout rootView, @NonNull TextView datePickerFrom,
+      @NonNull TextView datePickerTo, @NonNull TextView datePickerTo1, @NonNull TextView ewalletbal,
+      @NonNull ImageView filterSearch, @NonNull LinearLayout headlayout, @NonNull ImageView ivFrom,
+      @NonNull ImageView ivTo, @NonNull IncludeActionbarBinding layActionbar,
+      @NonNull LinearLayout layFilter, @NonNull NestedScrollView layNestedscroll,
+      @NonNull SwipeRefreshLayout layrefrsh, @NonNull LinearLayout llWallet,
+      @NonNull RelativeLayout rlTop, @NonNull RecyclerView rvPagination,
+      @NonNull SearchView searchview, @NonNull TextView walletbal,
+      @NonNull RecyclerView wallethistoryRv) {
     this.rootView = rootView;
-    this.btnAddBeneficiary = btnAddBeneficiary;
-    this.cardPayoutTransfer = cardPayoutTransfer;
     this.datePickerFrom = datePickerFrom;
     this.datePickerTo = datePickerTo;
-    this.edtMobile = edtMobile;
+    this.datePickerTo1 = datePickerTo1;
+    this.ewalletbal = ewalletbal;
     this.filterSearch = filterSearch;
     this.headlayout = headlayout;
+    this.ivFrom = ivFrom;
+    this.ivTo = ivTo;
     this.layActionbar = layActionbar;
     this.layFilter = layFilter;
+    this.layNestedscroll = layNestedscroll;
+    this.layrefrsh = layrefrsh;
+    this.llWallet = llWallet;
+    this.rlTop = rlTop;
+    this.rvPagination = rvPagination;
     this.searchview = searchview;
+    this.walletbal = walletbal;
     this.wallethistoryRv = wallethistoryRv;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -106,18 +136,6 @@ public final class ActMoneyTransferBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_add_beneficiary;
-      Button btnAddBeneficiary = ViewBindings.findChildViewById(rootView, id);
-      if (btnAddBeneficiary == null) {
-        break missingId;
-      }
-
-      id = R.id.card_payout_transfer;
-      CardView cardPayoutTransfer = ViewBindings.findChildViewById(rootView, id);
-      if (cardPayoutTransfer == null) {
-        break missingId;
-      }
-
       id = R.id.datePicker_from;
       TextView datePickerFrom = ViewBindings.findChildViewById(rootView, id);
       if (datePickerFrom == null) {
@@ -130,9 +148,15 @@ public final class ActMoneyTransferBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.edt_mobile;
-      EditText edtMobile = ViewBindings.findChildViewById(rootView, id);
-      if (edtMobile == null) {
+      id = R.id.datePicker_to1;
+      TextView datePickerTo1 = ViewBindings.findChildViewById(rootView, id);
+      if (datePickerTo1 == null) {
+        break missingId;
+      }
+
+      id = R.id.ewalletbal;
+      TextView ewalletbal = ViewBindings.findChildViewById(rootView, id);
+      if (ewalletbal == null) {
         break missingId;
       }
 
@@ -142,7 +166,19 @@ public final class ActMoneyTransferBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout headlayout = (ConstraintLayout) rootView;
+      LinearLayout headlayout = (LinearLayout) rootView;
+
+      id = R.id.iv_from;
+      ImageView ivFrom = ViewBindings.findChildViewById(rootView, id);
+      if (ivFrom == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_to;
+      ImageView ivTo = ViewBindings.findChildViewById(rootView, id);
+      if (ivTo == null) {
+        break missingId;
+      }
 
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
@@ -157,9 +193,45 @@ public final class ActMoneyTransferBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.lay_nestedscroll;
+      NestedScrollView layNestedscroll = ViewBindings.findChildViewById(rootView, id);
+      if (layNestedscroll == null) {
+        break missingId;
+      }
+
+      id = R.id.layrefrsh;
+      SwipeRefreshLayout layrefrsh = ViewBindings.findChildViewById(rootView, id);
+      if (layrefrsh == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_wallet;
+      LinearLayout llWallet = ViewBindings.findChildViewById(rootView, id);
+      if (llWallet == null) {
+        break missingId;
+      }
+
+      id = R.id.rl_top;
+      RelativeLayout rlTop = ViewBindings.findChildViewById(rootView, id);
+      if (rlTop == null) {
+        break missingId;
+      }
+
+      id = R.id.rv_pagination;
+      RecyclerView rvPagination = ViewBindings.findChildViewById(rootView, id);
+      if (rvPagination == null) {
+        break missingId;
+      }
+
       id = R.id.searchview;
       SearchView searchview = ViewBindings.findChildViewById(rootView, id);
       if (searchview == null) {
+        break missingId;
+      }
+
+      id = R.id.walletbal;
+      TextView walletbal = ViewBindings.findChildViewById(rootView, id);
+      if (walletbal == null) {
         break missingId;
       }
 
@@ -169,9 +241,10 @@ public final class ActMoneyTransferBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActMoneyTransferBinding((ConstraintLayout) rootView, btnAddBeneficiary,
-          cardPayoutTransfer, datePickerFrom, datePickerTo, edtMobile, filterSearch, headlayout,
-          binding_layActionbar, layFilter, searchview, wallethistoryRv);
+      return new ActMoneyTransferBinding((LinearLayout) rootView, datePickerFrom, datePickerTo,
+          datePickerTo1, ewalletbal, filterSearch, headlayout, ivFrom, ivTo, binding_layActionbar,
+          layFilter, layNestedscroll, layrefrsh, llWallet, rlTop, rvPagination, searchview,
+          walletbal, wallethistoryRv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

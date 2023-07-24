@@ -4,7 +4,7 @@
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,10 +34,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_marginLeft="@dimen/fifteen"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/fifteen">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_payout_transfer"
@@ -92,12 +91,113 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/card_payout_transfer"
+                    android:layout_centerHorizontal="true"
+                    android:weightSum="2.6">
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:background="@drawable/blue_button_background"
+                        android:backgroundTint="#1A245295"
+                        android:layout_weight="1.1"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_5"
+                        android:layout_height="@dimen/forty">
+
+                        <TextView
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/datePicker_from"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/forty"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp_14"
+                            android:text="Select from date"
+                            android:textColor="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/iv_from"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginLeft="@dimen/dp_2"
+                            android:layout_marginRight="@dimen/dp_8"
+                            android:src="@drawable/ic_calendar"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:background="@drawable/blue_button_background"
+                        android:backgroundTint="#1A245295"
+                        android:layout_weight="1.1"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_5"
+                        android:layout_height="@dimen/forty">
+
+                        <TextView
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/datePicker_to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/forty"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp_14"
+                            android:text="Select from date"
+                            android:textColor="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/iv_to"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginLeft="@dimen/dp_2"
+                            android:layout_marginRight="@dimen/dp_8"
+                            android:src="@drawable/ic_calendar"
+                            android:layout_centerVertical="true"
+                            />
+
+                    </RelativeLayout>
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/forty"
+                        android:layout_marginLeft="@dimen/five"
+                        android:layout_weight="0.4"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardCornerRadius="8dp">
+
+                        <ImageView
+                            android:id="@+id/filter_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_30"
+                            android:src="@drawable/ic_search"
+                            android:layout_gravity="center"
+                            android:text="Search" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/lay_filter1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_payout_transfer"
                     android:layout_marginLeft="@dimen/twenty"
                     android:layout_marginTop="@dimen/twenty"
                     android:layout_marginRight="@dimen/twenty">
 
                     <TextView
-                        android:id="@+id/datePicker_from"
+                        android:id="@+id/datePicker_from1"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/forty"
                         android:layout_marginRight="@dimen/five"
@@ -107,7 +207,7 @@
                         android:text="Select from date" />
 
                     <TextView
-                        android:id="@+id/datePicker_to"
+                        android:id="@+id/datePicker_to1"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/forty"
                         android:layout_marginLeft="@dimen/five"
@@ -117,7 +217,7 @@
                         android:text="Select to date" />
 
                     <ImageView
-                        android:id="@+id/filter_search"
+                        android:id="@+id/filter_search1"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/forty"
                         android:layout_marginLeft="@dimen/five"
@@ -133,10 +233,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/fortyfive"
                     android:layout_below="@+id/lay_filter"
-                    android:layout_marginStart="@dimen/twenty"
                     android:layout_marginTop="@dimen/ten"
-                    android:layout_marginEnd="@dimen/twenty"
-                    android:background="@drawable/back_searchview_spinner"
+                    android:background="@drawable/bg_searchview"
                     android:gravity="center_vertical"
                     android:padding="@dimen/three"
                     app:iconifiedByDefault="false"

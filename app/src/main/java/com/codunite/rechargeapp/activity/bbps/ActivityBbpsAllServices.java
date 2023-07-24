@@ -20,6 +20,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
+import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.model.ParamDataModel;
 import com.codunite.rechargeapp.activity.ActivityCompletion;
 import com.codunite.rechargeapp.R;
@@ -108,7 +109,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
         }
 
         hideOtpLayout();
-        OpenDemoLink();
+        //OpenDemoLink();
     }
 
     @Override
@@ -129,6 +130,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
 
     private void LoadOperatorList(String serviceId) {
         lstUploadData = new LinkedList<>();
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add(serviceId);
         callWebService(ApiInterface.GETBBSPSERVICEOPERATOR, lstUploadData);
     }
@@ -163,7 +165,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
                             hideOtpLayout();
                             break;
                         case R.id.btn_otpauth:
-                            RechargeProcess(svContext);
+                            //RechargeProcess(svContext);
                             break;
                     }
                 }
@@ -259,7 +261,6 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
                 } else {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
                 }
-
                 PopulateEltricOperatorList();
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
@@ -505,6 +506,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
                 item.removeAllViews();
                 if (!strOperatorCode.equalsIgnoreCase("-1")) {
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(serviceId);
                     lstUploadData.add(strOperatorCode);
                     callWebService(ApiInterface.GETBBSPSERVICEFORM, lstUploadData);
@@ -563,12 +565,20 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
             }
         }
 
+//        if (response == 0) {
+//            ShowOtpLayout();
+//        }
         if (response == 0) {
-            ShowOtpLayout();
+            Float amount = Float.parseFloat(edRechargeAmount.getText().toString().trim());
+            ActivityMain act = new ActivityMain();
+            boolean isWalletLoading = act.checkEWalletAndAddWallet(amount, "Service", svContext,lstEditext,strOperatorCode,edRechargeAmount.getText().toString().trim(),serviceId);
+            if (!isWalletLoading) {
+                RechargeProcess(svContext,lstEditext,strOperatorCode,edRechargeAmount.getText().toString().trim(),serviceId);
+            }
         }
     }
 
-    public void RechargeProcess(Context svContext) {
+    public void RechargeProcess(Context svContext,List<EditText> lstEditext,String strOperatorCode,String amount,String serviceId) {
         String paramOne = "", paramTwo = "", paramThree = "";
         String paramFour = "", paramFive = "", paramSix = "";
         String paramSeven = "", paramEight = "";
@@ -615,8 +625,8 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
         lstUploadData.add(paramSix);
         lstUploadData.add(paramSeven);
         lstUploadData.add(paramEight);
-        lstUploadData.add(edRechargeAmount.getText().toString().trim());
-        lstUploadData.add(edtOtp.getText().toString().trim());
+        lstUploadData.add(amount);
+        //lstUploadData.add(edtOtp.getText().toString().trim());
         WebService webService = new WebService(svContext, ApiInterface.GETBBSPSERVICEBILLPAY, lstUploadData, this);
         webService.LoadDataRetrofit(webService.callReturn());
     }
@@ -665,16 +675,16 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
     }
 
     private String strDemoServiceName = "", dtrDemoServiceUrl = "";
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("4");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
-
-        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
-    }
+//    private void OpenDemoLink() {
+//        lstUploadData = new LinkedList<>();
+//        lstUploadData.add("4");
+//        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
+//
+//        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
+//            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
+//            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
+//            Intent svIntent = new Intent(svContext, WebViewActivity.class);
+//            svContext.startActivity(svIntent);
+//        });
+//    }
 }

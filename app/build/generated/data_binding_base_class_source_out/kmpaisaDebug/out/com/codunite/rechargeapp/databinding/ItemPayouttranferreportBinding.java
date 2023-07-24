@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -19,9 +18,6 @@ import java.lang.String;
 public final class ItemPayouttranferreportBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
-
-  @NonNull
-  public final CardView cardview;
 
   @NonNull
   public final LinearLayout layAccNo;
@@ -62,14 +58,13 @@ public final class ItemPayouttranferreportBinding implements ViewBinding {
   @NonNull
   public final TextView tvTrnscId;
 
-  private ItemPayouttranferreportBinding(@NonNull LinearLayout rootView, @NonNull CardView cardview,
+  private ItemPayouttranferreportBinding(@NonNull LinearLayout rootView,
       @NonNull LinearLayout layAccNo, @NonNull LinearLayout layHeadChange,
       @NonNull LinearLayout lytParent, @NonNull TextView memberDetail, @NonNull TextView mobile,
       @NonNull TextView name, @NonNull TextView tvAccNo, @NonNull TextView tvAmount,
       @NonNull TextView tvDatetime, @NonNull TextView tvIfsc, @NonNull TextView tvRrn,
       @NonNull TextView tvStatus, @NonNull TextView tvTrnscId) {
     this.rootView = rootView;
-    this.cardview = cardview;
     this.layAccNo = layAccNo;
     this.layHeadChange = layHeadChange;
     this.lytParent = lytParent;
@@ -112,12 +107,6 @@ public final class ItemPayouttranferreportBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardview;
-      CardView cardview = ViewBindings.findChildViewById(rootView, id);
-      if (cardview == null) {
-        break missingId;
-      }
-
       id = R.id.lay_acc_no;
       LinearLayout layAccNo = ViewBindings.findChildViewById(rootView, id);
       if (layAccNo == null) {
@@ -192,9 +181,9 @@ public final class ItemPayouttranferreportBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemPayouttranferreportBinding((LinearLayout) rootView, cardview, layAccNo,
-          layHeadChange, lytParent, memberDetail, mobile, name, tvAccNo, tvAmount, tvDatetime,
-          tvIfsc, tvRrn, tvStatus, tvTrnscId);
+      return new ItemPayouttranferreportBinding((LinearLayout) rootView, layAccNo, layHeadChange,
+          lytParent, memberDetail, mobile, name, tvAccNo, tvAmount, tvDatetime, tvIfsc, tvRrn,
+          tvStatus, tvTrnscId);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

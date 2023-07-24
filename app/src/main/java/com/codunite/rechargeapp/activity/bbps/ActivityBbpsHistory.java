@@ -18,8 +18,10 @@ import androidx.appcompat.widget.SearchView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
+import com.codunite.rechargeapp.activity.ActivitySplash;
 import com.codunite.rechargeapp.adapter.PaginationAdapter;
 import com.codunite.rechargeapp.activity.support.ActivityRaiseComplaint;
 import com.codunite.rechargeapp.R;
@@ -54,6 +56,12 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
     private int pageNumber = 1;
     private String strFromDate = "", strToDate = "";
 
+    private SwipeRefreshLayout layrefrsh;
+
+    boolean isDateFrom = true;
+    Calendar myCalendar;
+    TextView txtFrom, txtTo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +72,6 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
         resumeApp();
     }
 
-    boolean isDateFrom = true;
-    Calendar myCalendar;
-    TextView txtFrom, txtTo;
 
     public void resumeApp() {
         txtWalletbal = (TextView) findViewById(R.id.walletbal);
@@ -82,6 +87,7 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
         txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
 
         myCalendar = Calendar.getInstance();
+        layrefrsh = (SwipeRefreshLayout) findViewById(R.id.layrefrsh);
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
         txtTo = (TextView) findViewById(R.id.datePicker_to);
 
@@ -151,6 +157,33 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
         pageNumber = 1;
         LoadRechargeHistory(strFromDate, strToDate);
         setSearchView();
+        layrefrsh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadUserDataBackground();
+                layrefrsh.setRefreshing(false);
+            }
+        });
+
+        layrefrsh.setColorSchemeColors(
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent),
+                getResources().getColor(R.color.colorAccent)
+        );
+    }
+
+    private void loadUserDataBackground() {
+        lstUploadData = new LinkedList<>();
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.FCMID, ""));
+        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.DEVICE_ID, ""));
+        callWebServiceWithoutLoader(ApiInterface.UPDATEFCM, lstUploadData);
+    }
+
+    private void callWebServiceWithoutLoader(String postUrl, LinkedList<String> lstUploadData) {
+        WebService webService = new WebService(svContext, postUrl, lstUploadData, this, false);
+        webService.LoadDataRetrofit(webService.callReturn());
     }
     private void setSearchView() {
         // Associate searchable configuration with the SearchView
@@ -303,7 +336,7 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
                         }
 
                         lstItems.add(new RechargeHistoryModel(str_recharge_id, memberDeatil, str_order_id, str_amount, str_datetime, str_status,
-                                operator, mobile, type, beforeBalance, afterBalance, txtId, str_account_number, operatorTranId));
+                                operator, mobile, type, beforeBalance, afterBalance, txtId, str_account_number, operatorTranId,""));
                     }
                 }
             } catch (JSONException e) {
@@ -339,6 +372,9 @@ public class ActivityBbpsHistory extends AppCompatActivity implements View.OnCli
 //                isFirstLoad = false;
 //                LoadPaginationView(strPageCount);
 //            }
+        }else if (url.contains(ApiInterface.UPDATEFCM)) {
+            ActivitySplash.LoadUserData(result, svContext);
+            loadToolBar();
         }
     }
 

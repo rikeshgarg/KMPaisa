@@ -18,9 +18,9 @@
 
     <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
         <item name="android:textSize">@dimen/ts_fifteen</item>
-        <item name="android:textColor">@color/c_gray2</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:hint">Select Country</item>
-        <item name="color">@color/c_gray2</item>
+        <item name="color">@color/colorAccent</item>
     </style>
 
     <style name="TransparentProgressDialog" parent="@android:style/Theme.Dialog">

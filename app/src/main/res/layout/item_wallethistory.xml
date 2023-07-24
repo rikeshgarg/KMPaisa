@@ -151,8 +151,8 @@
                 <LinearLayout
                     android:layout_centerInParent="true"
                     android:id="@+id/ll_desc"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -163,6 +163,7 @@
                         android:text="Description:"
                         android:textColor="@color/white"
                         android:textSize="@dimen/ts_forteen"
+                        android:visibility="gone"
                         android:textStyle="bold" />
 
                     <TextView
@@ -170,13 +171,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/four"
-                        android:ellipsize="marquee"
-                        android:fadingEdge="horizontal"
-                        android:marqueeRepeatLimit="marquee_forever"
-                        android:scrollHorizontally="true"
                         android:singleLine="true"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/ts_forteen"
+                        android:textSize="@dimen/sp_13"
                         android:textStyle="italic" />
                 </LinearLayout>
 

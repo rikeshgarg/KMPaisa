@@ -154,7 +154,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
 //        });
 
         (aiView.findViewById(R.id.ll_addfund)).setOnClickListener(view -> {
-            ActivityAddFundRequest.OpenAddFundRequest(svContext);
+            ActivityAddFundRequest.OpenAddFundRequest(svContext,"");
         });
 
         (aiView.findViewById(R.id.ll_passbook)).setOnClickListener(view -> {
@@ -396,7 +396,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
                 startActivity(svIntent);
                 getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             } else if (position == 1) {
-                ActivityMain.onDrawerItemClick("Transfer", svContext);
+                ActivityMain.onDrawerItemClick("Transfer", svContext,"");
             } else if (position == 3 || position == 4) {
                 ActivityMain.OpenAeps(obj, svContext, customToast);
             } else {

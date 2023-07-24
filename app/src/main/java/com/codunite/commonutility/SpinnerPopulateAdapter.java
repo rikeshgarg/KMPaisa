@@ -1,5 +1,6 @@
 package com.codunite.commonutility;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -40,6 +41,7 @@ public class SpinnerPopulateAdapter extends BaseAdapter {
 		return position;
 	}
 
+	@SuppressLint("ResourceAsColor")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final ListContent holder;

@@ -22,6 +22,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,7 +43,10 @@ import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSHistory;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc;
 import com.codunite.rechargeapp.activity.bbps.ActivityBBPSCommision;
+import com.codunite.rechargeapp.activity.bbps.ActivityBbpsAllServices;
+import com.codunite.rechargeapp.activity.bbps.ActivityBbpsElectricity;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory;
+import com.codunite.rechargeapp.activity.bbps.ActivityBbpsTollTax;
 import com.codunite.rechargeapp.activity.commissionincome.ActivityAEPSCommision;
 import com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest;
@@ -107,6 +111,9 @@ import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.razorpay.Checkout;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -155,6 +162,10 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     public AppUpdateManager appUpdateManager;
     private int UPDATE_TYPE = AppUpdateType.IMMEDIATE;
     private final int APP_UPDATE_REQUEST_CODE = 1222;
+
+    String actReferTo = "";
+    private String addAmountToWallet;
+
     public static String ShowBalance(Context svContext) {
         return GlobalVariables.CURRENCYSYMBOL +
                 PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0");
@@ -543,7 +554,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 "Commission",
                 "Xpress Payout",
                 "Virtual Account",
-                "Raise Ticket",
+                "Support Ticket",
                 "View Complaint",
                 "Refer and Earn",
                 "Privacy Policy",
@@ -576,7 +587,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 "Commission",
                 "Xpress Payout",
                 "Virtual Account",
-                "Raise Ticket",
+                "Support Ticket",
                 "View Complaint",
                 "Refer and Earn",
                 "Privacy Policy",
@@ -585,7 +596,8 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         strMenuChildItemDistributor = new String[][]{
                 {"Balance Enquiry", "Mini Statement", "Withdrawal", "Aadhar Pay", "AEPS History"},
                 {"Register", "Login", "Transfer Report"},
-                {"Add Member", "View All Member", "Distributor", "Retailer"},
+                //{"Add Member", "View All Member", "Distributor", "Retailer"},
+                {"Add Member", "View All Member", "Retailer"},
                 {"Personal Profile", "Change Password"},
                 //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
                 new String[0],
@@ -607,7 +619,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 "Commission",
                 "Xpress Payout",
                 "Virtual Account",
-                "Raise Ticket",
+                "Support Ticket",
                 "View Complaint",
                 "Refer and Earn",
                 "Privacy Policy",
@@ -856,7 +868,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
         expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> {
             if ((headerList.get(groupPosition).strMenuChildItem).length < 1) {
-                onDrawerItemClick(headerList.get(groupPosition).menuName, svContext);
+                onDrawerItemClick(headerList.get(groupPosition).menuName, svContext,"");
                 CloseDrawer();
             }
             return false;
@@ -878,7 +890,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
         expandableListView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
             MenuModel model = childList.get(headerList.get(groupPosition)).get(childPosition);
-            onDrawerItemClick(model.menuName, svContext);
+            onDrawerItemClick(model.menuName, svContext,"");
             CloseDrawer();
             return false;
         });
@@ -888,7 +900,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         return getSupportFragmentManager().findFragmentById(R.id.container);
     }
 
-    public static void onDrawerItemClick(String title, Context svContext) {
+    public static void onDrawerItemClick(String title, Context svContext,String type) {
         ShowCustomToast customToast = new ShowCustomToast(svContext);
         Intent svIntent;
 
@@ -927,8 +939,21 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             svContext.startActivity(svIntent);
         } else if (("View All Member").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, AllMemberList.class);
+            if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("3")) {
+                svIntent.putExtra("role_id", 3);
+            } else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("4")) {
+                svIntent.putExtra("role_id", 5);
+            }
             svContext.startActivity(svIntent);
-        } else if (("Personal Profile").equalsIgnoreCase(title)) {
+        } else if (("Distributor").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, AllMemberList.class);
+            svIntent.putExtra("role_id", 4);
+            svContext.startActivity(svIntent);
+        }else if (("Retailer").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, AllMemberList.class);
+            svIntent.putExtra("role_id", 5);
+            svContext.startActivity(svIntent);
+        }else if (("Personal Profile").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityProfile.class);
             svContext.startActivity(svIntent);
         } else if (("Change Password").equalsIgnoreCase(title)) {
@@ -942,7 +967,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 svIntent = new Intent(svContext, ActivityTopupWallet.class);
                 svContext.startActivity(svIntent);
             } else {
-                ActivityAddFundRequest.OpenAddFundRequest(svContext);
+                ActivityAddFundRequest.OpenAddFundRequest(svContext,type);
             }
         } else if (title.equalsIgnoreCase("R-Wallet Transfer")) {
             svIntent = new Intent(svContext, ActivityWalletTransfer.class);
@@ -1080,6 +1105,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                     "Are you are ready to end your current session. You have to enter login detail again");
         }
     }
+
 
     private static void showRateDialog(Context svContext) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(svContext);
@@ -1287,6 +1313,83 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 //            Intent svIntent = new Intent(svContext, ActivityFinoAEPSKyc.class);
 //            svContext.startActivity(svIntent);
             customToast.showCustomToast(svContext, "AEPS Not active. Contact Admin", customToast.ToastyInfo);
+        }
+    }
+
+    public boolean checkEWalletAndAddWallet(Float rechargeAmount, String actRefer, Context svContext,List<EditText> lstEditext,String strOperatorCode,String amount,String serviceId) {
+        actReferTo = actRefer;
+        boolean isWalletToLoad = false;
+        float requiredAmountToAdd = 0;
+        float walletAmount = Float.parseFloat(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, ""));
+        if (rechargeAmount > walletAmount) {
+            requiredAmountToAdd = rechargeAmount - walletAmount;
+            isWalletToLoad = true;
+        } else {
+            requiredAmountToAdd = 0;
+            isWalletToLoad = false;
+        }
+
+        if (isWalletToLoad) {
+            if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISRAZORPAYACTIVE, false)) {
+                startPayment(requiredAmountToAdd, svContext);
+            } else {
+                ProcessRecharge(svContext,lstEditext,strOperatorCode,amount,serviceId);
+            }
+        } else {
+
+        }
+        return isWalletToLoad;
+    }
+
+
+    private void ProcessRecharge(Context svContext,List<EditText> lstEditext,String strOperatorCode,String amount,String serviceId) {
+        if (actReferTo.equalsIgnoreCase("electric")) {
+            ActivityBbpsElectricity frag = new ActivityBbpsElectricity();
+            frag.RechargeProcess(svContext,lstEditext,strOperatorCode,amount);
+
+
+        } else if (actReferTo.equalsIgnoreCase("Toll")) {
+            ActivityBbpsTollTax frag = new ActivityBbpsTollTax();
+            frag.RechargeProcess(svContext);
+
+        } else if (actReferTo.equalsIgnoreCase("Service")) {
+            ActivityBbpsAllServices frag = new ActivityBbpsAllServices();
+            frag.RechargeProcess(svContext,lstEditext,strOperatorCode,amount,serviceId);
+
+        }
+
+    }
+
+    public void startPayment(float strAmount, Context svContext) {
+        ShowCustomToast cToast = new ShowCustomToast(svContext);
+        addAmountToWallet = strAmount + "";
+        final Activity activity = ((Activity) svContext);
+        String strRazorPayId = PreferenceConnector.readString(svContext, PreferenceConnector.RAZORPAYID, "");
+        final Checkout co = new Checkout();
+        co.setKeyID(strRazorPayId);
+        if (strRazorPayId.length() == 0) {
+            cToast.showCustomToast(svContext, "Razorpay Key Not Available", cToast.ToastyError);
+        } else {
+            try {
+                JSONObject options = new JSONObject();
+                options.put("name", activity.getResources().getString(R.string.app_name));
+                options.put("description", "Add amount to wallet");
+                //You can omit the image option to fetch the image from dashboard
+                options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+                options.put("currency", "INR");
+                options.put("amount", (strAmount * 100) + "");
+
+                JSONObject preFill = new JSONObject();
+                preFill.put("email", PreferenceConnector.readString(activity, PreferenceConnector.LOGINUSEREMAIL, ""));
+                preFill.put("contact", PreferenceConnector.readString(activity, PreferenceConnector.LOGINUSERPHONE, ""));
+
+                options.put("prefill", preFill);
+
+                co.open(activity, options);
+            } catch (Exception e) {
+                cToast.showCustomToast(svContext, "Error in payment: " + e.getMessage(), cToast.ToastyError);
+                e.printStackTrace();
+            }
         }
     }
 }

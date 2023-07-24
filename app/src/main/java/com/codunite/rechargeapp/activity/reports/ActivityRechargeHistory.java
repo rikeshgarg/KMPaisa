@@ -289,6 +289,7 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
                         String str_order_id = data_obj.getString(TAG_ORDER_ID);
                         String str_status = data_obj.getString(TAG_STATUS);
                         String str_recharge_id = data_obj.getString("recharge_id");
+                        String str_icon = data_obj.getString("icon");
 
                         String operator = data_obj.getString("operator");
                         String mobile = data_obj.getString("mobile");
@@ -307,7 +308,7 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
                                 data_obj.getString("member_code") + ")";
 
                         lstItems.add(new RechargeHistoryModel(str_recharge_id, memberDeatil, str_order_id, str_amount, str_datetime, str_status,
-                                operator, mobile, type, beforeBalance, afterBalance, txtId, operatorTranId));
+                                operator, mobile, type, beforeBalance, afterBalance, txtId, operatorTranId,str_icon));
 //
                     }
                 }

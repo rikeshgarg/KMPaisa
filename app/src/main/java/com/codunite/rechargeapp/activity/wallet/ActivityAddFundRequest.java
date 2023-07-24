@@ -87,9 +87,9 @@ public class ActivityAddFundRequest extends AppCompatActivity implements View.On
     private String encodeFPTxnId = "";
     private String actType = "";
 
-    public static void OpenAddFundRequest(Context context) {
+    public static void OpenAddFundRequest(Context context,String type) {
         Intent svIntent = new Intent(context, ActivityAddFundRequest.class);
-        svIntent.putExtra("actType", "");
+        svIntent.putExtra("actType", type);
         context.startActivity(svIntent);
     }
 
@@ -132,6 +132,18 @@ public class ActivityAddFundRequest extends AppCompatActivity implements View.On
         listSpinnerSelectWallet.add(new SpinnerModel("1", "My Wallet - " + rWalletBal + " RS"));
         listSpinnerSelectWallet.add(new SpinnerModel("2", "E Wallet - " + eWalletBal + " RS"));
 
+
+        if(actType.equals("R-Wallet")){
+            findViewById(R.id.lay_select_wallet).setClickable(false);
+            spinnerDataWallet = new SpinnerModel("1", "My Wallet - " + rWalletBal + " RS");
+            txt_spinner_selectwallet.setText(spinnerDataWallet.getTitle());
+        } else if(actType.equals("E-Wallet")){
+            findViewById(R.id.lay_select_wallet).setClickable(false);
+            spinnerDataWallet = new SpinnerModel("2", "E Wallet - " + eWalletBal + " RS");
+            txt_spinner_selectwallet.setText(spinnerDataWallet.getTitle());
+        } else {
+            findViewById(R.id.lay_select_wallet).setClickable(true);
+        }
     }
 
     private void LoadPaymentTo() {
@@ -148,7 +160,9 @@ public class ActivityAddFundRequest extends AppCompatActivity implements View.On
 
         if (response == 0 && spinnerDataWallet == null) {
             response++;
-            customToast.showCustomToast(svContext, "Select wallet first", customToast.ToastyError);
+            if(actType.equals("")) {
+                customToast.showCustomToast(svContext, "Select wallet first", customToast.ToastyError);
+            }
         }
 
 //        if (response == 0 && spinnerDataPaymentTo == null) {

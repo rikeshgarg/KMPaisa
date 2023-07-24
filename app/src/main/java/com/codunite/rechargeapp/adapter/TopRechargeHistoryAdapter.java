@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.codunite.commonutility.ImageLoading;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.model.RechargeHistoryModel;
 import com.codunite.commonutility.GlobalVariables;
@@ -53,12 +55,13 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
-        public TextView amountRecharge, recharegDateTime, status, txtID,txtaccno;
+        public TextView amountRecharge, recharegDateTime, status, txtID,txtaccno,tv_recharge_type;
         public TextView txtOperator, txtMobile, txtType, memberDeatil, txtAfterBal, txtBeforeBal;
         public CardView cardView;
         public View lyt_parent;
         public View layaccountno,laymobile;
         public Button btnComplain;
+        ImageView iv_operator;
 
         public OriginalViewHolder(View v) {
             super(v);
@@ -66,25 +69,27 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             recharegDateTime = (TextView) v.findViewById(R.id.vm_name);
             //txtaccno = (TextView) v.findViewById(R.id.vm_accountno);
             status = (TextView) v.findViewById(R.id.vm_wallbal);
-            txtOperator = (TextView) v.findViewById(R.id.operator);
+            //txtOperator = (TextView) v.findViewById(R.id.operator);
             txtMobile = (TextView) v.findViewById(R.id.mobile);
-            txtType= (TextView) v.findViewById(R.id.type);
-            txtAfterBal= (TextView) v.findViewById(R.id.after_balance);
-            txtBeforeBal= (TextView) v.findViewById(R.id.before_balance);
+            //txtType= (TextView) v.findViewById(R.id.type);
+            //txtAfterBal= (TextView) v.findViewById(R.id.after_balance);
+            //txtBeforeBal= (TextView) v.findViewById(R.id.before_balance);
             txtID= (TextView) v.findViewById(R.id.txtId);
-            btnComplain= (Button) v.findViewById(R.id.btn_complain);
+            //btnComplain= (Button) v.findViewById(R.id.btn_complain);
             laymobile=(LinearLayout)v.findViewById(R.id.lay_mob);
             //layaccountno=(LinearLayout)v.findViewById(R.id.accountno);
-            memberDeatil= (TextView) v.findViewById(R.id.member_detail);
-            cardView = (CardView) v.findViewById(R.id.cardview);
+            //memberDeatil= (TextView) v.findViewById(R.id.member_detail);
+            //cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
+            tv_recharge_type=(TextView) v.findViewById(R.id.tv_recharge_type);
+            iv_operator=(ImageView)v.findViewById(R.id.iv_operator);
         }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_top_rechargehistory, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_top_rechargehistory_new, parent, false);
         vh = new OriginalViewHolder(v);
         return vh;
     }
@@ -95,19 +100,22 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
         if (holder instanceof OriginalViewHolder) {
             OriginalViewHolder view = (OriginalViewHolder) holder;
 
-            view.amountRecharge.setText(GlobalVariables.CURRENCYSYMBOL+items.get(position).getStr_amount());
+            view.amountRecharge.setText(items.get(position).getStr_amount());
             view.recharegDateTime.setText(items.get(position).getStr_datetime());
-            view.txtOperator.setText(items.get(position).getOperator());
+            //view.txtOperator.setText(items.get(position).getOperator());
             view.txtMobile.setText(items.get(position).getMobile());
-            view.txtType.setText(items.get(position).getType());
-            view.memberDeatil.setText(items.get(position).getMemberDetail());
-            view.txtAfterBal.setText(items.get(position).getAfterBalance());
-            view.txtBeforeBal.setText(items.get(position).getBeforeBalance());
+            //view.txtType.setText(items.get(position).getType());
+            view.tv_recharge_type.setText(items.get(position).getType() + " Recharge");
+            //view.memberDeatil.setText(items.get(position).getMemberDetail());
+            //view.txtAfterBal.setText(items.get(position).getAfterBalance());
+            //view.txtBeforeBal.setText(items.get(position).getBeforeBalance());
             //view.txtaccno.setText(items.get(position).getStr_account_number());
 
 
             view.txtID.setText(items.get(position).getStr_order_id());
-
+            if(items.get(position).getStrIcon()!=""){
+                ImageLoading.loadImages(items.get(position).getStrIcon(), view.iv_operator, 0);
+            }
             if (items.get(position).getStr_status().equalsIgnoreCase("1")){
                 view.status.setText("Pending");
                 view.status.setTextColor(ctx.getResources().getColor(R.color.orange_900));
@@ -126,9 +134,9 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
 //
 //            }
             if (items.get(position).getMobile().equalsIgnoreCase("")){
-                view.laymobile.setVisibility(View.GONE);
+                view.txtMobile.setVisibility(View.GONE);
             }else {
-                view.laymobile.setVisibility(View.VISIBLE);
+                view.txtMobile.setVisibility(View.VISIBLE);
 
             }
 
@@ -147,19 +155,19 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
                 }
             });
 
-            if (isComplaint) {
-                view.btnComplain.setVisibility(View.VISIBLE);
-            }else{
-                view.btnComplain.setVisibility(View.GONE);
-            }
-            view.btnComplain.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (mOnComplaintItemClickListener != null) {
-                        mOnComplaintItemClickListener.onComplaintItemClick(view, items.get(position).getStr_datetime(), position);
-                    }
-                }
-            });
+//            if (isComplaint) {
+//                view.btnComplain.setVisibility(View.VISIBLE);
+//            }else{
+//                view.btnComplain.setVisibility(View.GONE);
+//            }
+//            view.btnComplain.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    if (mOnComplaintItemClickListener != null) {
+//                        mOnComplaintItemClickListener.onComplaintItemClick(view, items.get(position).getStr_datetime(), position);
+//                    }
+//                }
+//            });
             setAnimation(view.itemView, position);
         }
     }

@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class ActTicketlistBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final Button btnAddwallet;
@@ -28,7 +28,7 @@ public final class ActTicketlistBinding implements ViewBinding {
   public final CardView cardAddwallet;
 
   @NonNull
-  public final ConstraintLayout headlayout;
+  public final LinearLayout headlayout;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
@@ -36,8 +36,8 @@ public final class ActTicketlistBinding implements ViewBinding {
   @NonNull
   public final RecyclerView wallethistoryRv;
 
-  private ActTicketlistBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnAddwallet,
-      @NonNull CardView cardAddwallet, @NonNull ConstraintLayout headlayout,
+  private ActTicketlistBinding(@NonNull LinearLayout rootView, @NonNull Button btnAddwallet,
+      @NonNull CardView cardAddwallet, @NonNull LinearLayout headlayout,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull RecyclerView wallethistoryRv) {
     this.rootView = rootView;
     this.btnAddwallet = btnAddwallet;
@@ -49,7 +49,7 @@ public final class ActTicketlistBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -86,7 +86,7 @@ public final class ActTicketlistBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout headlayout = (ConstraintLayout) rootView;
+      LinearLayout headlayout = (LinearLayout) rootView;
 
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
@@ -101,7 +101,7 @@ public final class ActTicketlistBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActTicketlistBinding((ConstraintLayout) rootView, btnAddwallet, cardAddwallet,
+      return new ActTicketlistBinding((LinearLayout) rootView, btnAddwallet, cardAddwallet,
           headlayout, binding_layActionbar, wallethistoryRv);
     }
     String missingId = rootView.getResources().getResourceName(id);

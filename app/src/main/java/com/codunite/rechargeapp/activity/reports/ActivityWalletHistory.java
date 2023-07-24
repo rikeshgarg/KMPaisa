@@ -250,7 +250,7 @@ public class ActivityWalletHistory extends AppCompatActivity implements View.OnC
                 onBackPressed();
                 break;
             case R.id.btn_addwallet:
-                ActivityAddFundRequest.OpenAddFundRequest(svContext);
+                ActivityAddFundRequest.OpenAddFundRequest(svContext,"");
                 break;
             default:
                 break;

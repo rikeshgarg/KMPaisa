@@ -35,19 +35,37 @@ public final class ActVirtualAccountReportBinding implements ViewBinding {
   public final TextView datePickerFrom;
 
   @NonNull
+  public final TextView datePickerFrom1;
+
+  @NonNull
   public final TextView datePickerTo;
+
+  @NonNull
+  public final TextView datePickerTo1;
 
   @NonNull
   public final ImageView filterSearch;
 
   @NonNull
+  public final ImageView filterSearch1;
+
+  @NonNull
   public final ConstraintLayout headlayout;
+
+  @NonNull
+  public final ImageView ivFrom;
+
+  @NonNull
+  public final ImageView ivTo;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
 
   @NonNull
   public final LinearLayout layFilter;
+
+  @NonNull
+  public final LinearLayout layFilter1;
 
   @NonNull
   public final SearchView searchview;
@@ -57,19 +75,28 @@ public final class ActVirtualAccountReportBinding implements ViewBinding {
 
   private ActVirtualAccountReportBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button btnTransfer, @NonNull CardView cardPayoutTransfer,
-      @NonNull TextView datePickerFrom, @NonNull TextView datePickerTo,
-      @NonNull ImageView filterSearch, @NonNull ConstraintLayout headlayout,
+      @NonNull TextView datePickerFrom, @NonNull TextView datePickerFrom1,
+      @NonNull TextView datePickerTo, @NonNull TextView datePickerTo1,
+      @NonNull ImageView filterSearch, @NonNull ImageView filterSearch1,
+      @NonNull ConstraintLayout headlayout, @NonNull ImageView ivFrom, @NonNull ImageView ivTo,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull LinearLayout layFilter,
-      @NonNull SearchView searchview, @NonNull RecyclerView wallethistoryRv) {
+      @NonNull LinearLayout layFilter1, @NonNull SearchView searchview,
+      @NonNull RecyclerView wallethistoryRv) {
     this.rootView = rootView;
     this.btnTransfer = btnTransfer;
     this.cardPayoutTransfer = cardPayoutTransfer;
     this.datePickerFrom = datePickerFrom;
+    this.datePickerFrom1 = datePickerFrom1;
     this.datePickerTo = datePickerTo;
+    this.datePickerTo1 = datePickerTo1;
     this.filterSearch = filterSearch;
+    this.filterSearch1 = filterSearch1;
     this.headlayout = headlayout;
+    this.ivFrom = ivFrom;
+    this.ivTo = ivTo;
     this.layActionbar = layActionbar;
     this.layFilter = layFilter;
+    this.layFilter1 = layFilter1;
     this.searchview = searchview;
     this.wallethistoryRv = wallethistoryRv;
   }
@@ -119,9 +146,21 @@ public final class ActVirtualAccountReportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.datePicker_from1;
+      TextView datePickerFrom1 = ViewBindings.findChildViewById(rootView, id);
+      if (datePickerFrom1 == null) {
+        break missingId;
+      }
+
       id = R.id.datePicker_to;
       TextView datePickerTo = ViewBindings.findChildViewById(rootView, id);
       if (datePickerTo == null) {
+        break missingId;
+      }
+
+      id = R.id.datePicker_to1;
+      TextView datePickerTo1 = ViewBindings.findChildViewById(rootView, id);
+      if (datePickerTo1 == null) {
         break missingId;
       }
 
@@ -131,7 +170,25 @@ public final class ActVirtualAccountReportBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.filter_search1;
+      ImageView filterSearch1 = ViewBindings.findChildViewById(rootView, id);
+      if (filterSearch1 == null) {
+        break missingId;
+      }
+
       ConstraintLayout headlayout = (ConstraintLayout) rootView;
+
+      id = R.id.iv_from;
+      ImageView ivFrom = ViewBindings.findChildViewById(rootView, id);
+      if (ivFrom == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_to;
+      ImageView ivTo = ViewBindings.findChildViewById(rootView, id);
+      if (ivTo == null) {
+        break missingId;
+      }
 
       id = R.id.lay_actionbar;
       View layActionbar = ViewBindings.findChildViewById(rootView, id);
@@ -143,6 +200,12 @@ public final class ActVirtualAccountReportBinding implements ViewBinding {
       id = R.id.lay_filter;
       LinearLayout layFilter = ViewBindings.findChildViewById(rootView, id);
       if (layFilter == null) {
+        break missingId;
+      }
+
+      id = R.id.lay_filter1;
+      LinearLayout layFilter1 = ViewBindings.findChildViewById(rootView, id);
+      if (layFilter1 == null) {
         break missingId;
       }
 
@@ -159,8 +222,9 @@ public final class ActVirtualAccountReportBinding implements ViewBinding {
       }
 
       return new ActVirtualAccountReportBinding((ConstraintLayout) rootView, btnTransfer,
-          cardPayoutTransfer, datePickerFrom, datePickerTo, filterSearch, headlayout,
-          binding_layActionbar, layFilter, searchview, wallethistoryRv);
+          cardPayoutTransfer, datePickerFrom, datePickerFrom1, datePickerTo, datePickerTo1,
+          filterSearch, filterSearch1, headlayout, ivFrom, ivTo, binding_layActionbar, layFilter,
+          layFilter1, searchview, wallethistoryRv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

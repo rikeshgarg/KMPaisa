@@ -73,13 +73,19 @@ public class AllMemberList extends AppCompatActivity implements View.OnClickList
         checkNetwork = new CheckInternet(svContext);
         ViewGroup root = (ViewGroup) findViewById(R.id.headlayout);
         errrorScreen = new NoInternetScreen(svContext, root, AllMemberList.this);
-        loadToolBar();
-        resumeApp();
+        int role_id=3;
+        if(getIntent().getIntExtra("role_id",3)!=0){
+            role_id = getIntent().getIntExtra("role_id",3);
+        }
+        loadToolBar(role_id);
+        resumeApp(role_id);
     }
 
-    private void resumeApp() {
+    private void resumeApp(int role_id) {
+
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+        lstUploadData.add(String.valueOf(role_id));
         callWebService(ApiInterface.GETMEMBERLIST, lstUploadData);
 
         rv_members = (RecyclerView) findViewById(R.id.rv_members);
@@ -94,7 +100,7 @@ public class AllMemberList extends AppCompatActivity implements View.OnClickList
 //        });
     }
 
-    private void loadToolBar() {
+    private void loadToolBar(int role_id) {
         ImageView imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +109,14 @@ public class AllMemberList extends AppCompatActivity implements View.OnClickList
             }
         });
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("View All Member");
+        if(role_id==3){
+            txtHeading.setText("View All Member");
+        }else if(role_id==4){
+            txtHeading.setText("Distributor");
+        }else if(role_id==5){
+            txtHeading.setText("Retailer");
+        }
+
     }
 
     @Override

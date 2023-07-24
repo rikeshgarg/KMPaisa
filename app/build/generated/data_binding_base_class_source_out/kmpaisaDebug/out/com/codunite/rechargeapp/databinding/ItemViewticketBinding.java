@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.codunite.rechargeapp.R;
@@ -23,9 +22,6 @@ public final class ItemViewticketBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final CardView cardview;
-
-  @NonNull
   public final TextView complaintype;
 
   @NonNull
@@ -36,6 +32,12 @@ public final class ItemViewticketBinding implements ViewBinding {
 
   @NonNull
   public final RelativeLayout layHeadChange;
+
+  @NonNull
+  public final ImageView line2;
+
+  @NonNull
+  public final LinearLayout llLine;
 
   @NonNull
   public final LinearLayout lytParent;
@@ -52,17 +54,18 @@ public final class ItemViewticketBinding implements ViewBinding {
   @NonNull
   public final TextView ticketid;
 
-  private ItemViewticketBinding(@NonNull LinearLayout rootView, @NonNull CardView cardview,
-      @NonNull TextView complaintype, @NonNull TextView datetime, @NonNull ImageView imgTicket,
-      @NonNull RelativeLayout layHeadChange, @NonNull LinearLayout lytParent,
-      @NonNull TextView message, @NonNull TextView status, @NonNull TextView subject,
-      @NonNull TextView ticketid) {
+  private ItemViewticketBinding(@NonNull LinearLayout rootView, @NonNull TextView complaintype,
+      @NonNull TextView datetime, @NonNull ImageView imgTicket,
+      @NonNull RelativeLayout layHeadChange, @NonNull ImageView line2, @NonNull LinearLayout llLine,
+      @NonNull LinearLayout lytParent, @NonNull TextView message, @NonNull TextView status,
+      @NonNull TextView subject, @NonNull TextView ticketid) {
     this.rootView = rootView;
-    this.cardview = cardview;
     this.complaintype = complaintype;
     this.datetime = datetime;
     this.imgTicket = imgTicket;
     this.layHeadChange = layHeadChange;
+    this.line2 = line2;
+    this.llLine = llLine;
     this.lytParent = lytParent;
     this.message = message;
     this.status = status;
@@ -97,12 +100,6 @@ public final class ItemViewticketBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardview;
-      CardView cardview = ViewBindings.findChildViewById(rootView, id);
-      if (cardview == null) {
-        break missingId;
-      }
-
       id = R.id.complaintype;
       TextView complaintype = ViewBindings.findChildViewById(rootView, id);
       if (complaintype == null) {
@@ -124,6 +121,18 @@ public final class ItemViewticketBinding implements ViewBinding {
       id = R.id.lay_head_change;
       RelativeLayout layHeadChange = ViewBindings.findChildViewById(rootView, id);
       if (layHeadChange == null) {
+        break missingId;
+      }
+
+      id = R.id.line2;
+      ImageView line2 = ViewBindings.findChildViewById(rootView, id);
+      if (line2 == null) {
+        break missingId;
+      }
+
+      id = R.id.ll_line;
+      LinearLayout llLine = ViewBindings.findChildViewById(rootView, id);
+      if (llLine == null) {
         break missingId;
       }
 
@@ -153,8 +162,8 @@ public final class ItemViewticketBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemViewticketBinding((LinearLayout) rootView, cardview, complaintype, datetime,
-          imgTicket, layHeadChange, lytParent, message, status, subject, ticketid);
+      return new ItemViewticketBinding((LinearLayout) rootView, complaintype, datetime, imgTicket,
+          layHeadChange, line2, llLine, lytParent, message, status, subject, ticketid);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

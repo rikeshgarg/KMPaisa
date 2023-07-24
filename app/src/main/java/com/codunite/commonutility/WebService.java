@@ -196,9 +196,9 @@ public class WebService {
             case ApiInterface.GETCOMPLAINTLIST:
                 return apiService.GetComplaintList(lstUploadData.get(0));
             case ApiInterface.GETBBSPSERVICEOPERATOR:
-                return apiService.GetServiceOperatorList(lstUploadData.get(0));
+                return apiService.GetServiceOperatorList(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.GETBBSPSERVICEFORM:
-                return apiService.GetBBPSFORm(lstUploadData.get(0), lstUploadData.get(1));
+                return apiService.GetBBPSFORm(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.GETBBSPSERVICEBILLFETCH:
                 return apiService.getServicePayBillHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5),
@@ -347,7 +347,7 @@ public class WebService {
                     return apiService.ServiceBillPayAuth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                             lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6),
                             lstUploadData.get(7), lstUploadData.get(8),
-                            lstUploadData.get(9), lstUploadData.get(10), lstUploadData.get(11), lstUploadData.get(12));
+                            lstUploadData.get(9), lstUploadData.get(10), lstUploadData.get(11));
                 }
             case ApiInterface.GETMEMBERBYMOBILE:
                 return apiService.GetMemberByMobile(lstUploadData.get(0),lstUploadData.get(1));
@@ -370,25 +370,25 @@ public class WebService {
                 return apiService.getStringForth();
 
             case ApiInterface.GETBBSPFASTTAGOPERATOR:
-                return apiService.getBbpsFAstagOperator();
+                return apiService.getBbpsFAstagOperator(lstUploadData.get(0));
             case ApiInterface.GETBBSPFASTAGFORM:
-                return apiService.FAstagBillFetchAuth(lstUploadData.get(0));
+                return apiService.FAstagBillFetchAuth(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.GETBBSPFASTTAGBILLFETCH:
                 return apiService.getFAstagPayBillHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
                         lstUploadData.get(3), lstUploadData.get(4));
             case ApiInterface.GETBBSPFASTTAGBILLPAY:
                 return apiService.FAstagBillPayAuth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2),
-                        lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5), lstUploadData.get(6));
+                        lstUploadData.get(3), lstUploadData.get(4), lstUploadData.get(5));
             case ApiInterface.RAISERECHGCOMPALINT:
                 return apiService.RaiseComplaintAUth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.RAISEBBPSCOMPALINT:
                 return apiService.RaiseBBPPSComplaintAUth(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2));
             case ApiInterface.GETBBSPSERVICELIST:
-                return apiService.getBbpsServiceList();
+                return apiService.getBbpsServiceList(lstUploadData.get(0));
             case ApiInterface.GETBBSPELECTOPERATOR:
-                return apiService.getBbpsElectricityOperator();
+                return apiService.getBbpsElectricityOperator(lstUploadData.get(0));
             case ApiInterface.GETBBSPELECTFORM:
-                return apiService.electricityBillFetchAuth(lstUploadData.get(0));
+                return apiService.electricityBillFetchAuth(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.MAINWALLETPAYOUTREPORT:
                 return apiService.getMainPayout(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.AEPSWALLETPAYOUTREPORT:
@@ -436,7 +436,10 @@ public class WebService {
             case ApiInterface.GETOPERATORID:
                 return apiService.GetOperatorList(lstUploadData.get(0),lstUploadData.get(1));
             case ApiInterface.GETMEMBERLIST:
-                return apiService.GETMEMBERLIST(lstUploadData.get(0));
+                return apiService.GETMEMBERLIST(lstUploadData.get(0),lstUploadData.get(1));
+            case ApiInterface.GETFUNDMEMBERLIST:
+                return apiService.GETFUNDMEMBERLIST(lstUploadData.get(0),lstUploadData.get(1));
+
             case ApiInterface.GETRECHARGECOMMISIONLIST:
                 return apiService.getRechargeCommisionList(lstUploadData.get(0));
             case ApiInterface.GETRECHARGEINCOME:

@@ -48,7 +48,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class VirtualTransactionReport extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
-    private ImageView imgToolBarBack;
+    private ImageView imgToolBarBack,iv_from,iv_to;
     private RecyclerView wallethistoryrv;
     private Button btntransfer;
 
@@ -80,6 +80,8 @@ public class VirtualTransactionReport extends AppCompatActivity implements View.
         //      txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
 
         myCalendar = Calendar.getInstance();
+        iv_from=(ImageView)findViewById(R.id.iv_from);
+        iv_to=(ImageView)findViewById(R.id.iv_to);
         txtFrom = (TextView) findViewById(R.id.datePicker_from);
         txtTo = (TextView) findViewById(R.id.datePicker_to);
         layrefrsh = (SwipeRefreshLayout) findViewById(R.id.layrefrsh);
@@ -103,7 +105,7 @@ public class VirtualTransactionReport extends AppCompatActivity implements View.
             }
         };
 
-        txtTo.setOnClickListener(new View.OnClickListener() {
+        iv_to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = false;
@@ -115,7 +117,7 @@ public class VirtualTransactionReport extends AppCompatActivity implements View.
             }
         });
 
-        txtFrom.setOnClickListener(new View.OnClickListener() {
+        iv_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isDateFrom = true;
@@ -231,7 +233,7 @@ public class VirtualTransactionReport extends AppCompatActivity implements View.
                 finish();
                 break;
             case R.id.btn_transfer:
-                ActivityMain.onDrawerItemClick("My Virtual Account", svContext);
+                ActivityMain.onDrawerItemClick("My Virtual Account", svContext,"");
                 break;
             default:
                 break;

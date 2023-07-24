@@ -75,7 +75,8 @@ public class ActivityWallet extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new DashboardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, String obj, int position) {
-                ActivityMain.onDrawerItemClick(obj, view.getContext());
+                ActivityMain.onDrawerItemClick(obj, view.getContext(),"R-Wallet");
+                //ActivityMain.onWalletDrawerItemClick(obj, view.getContext(),"1");
             }
         });
 
@@ -90,7 +91,8 @@ public class ActivityWallet extends AppCompatActivity {
         mAdaptere.setOnItemClickListener(new DashboardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, String obj, int position) {
-                ActivityMain.onDrawerItemClick(obj, view.getContext());
+                ActivityMain.onDrawerItemClick(obj, view.getContext(),"E-Wallet");
+                //ActivityMain.onWalletDrawerItemClick(obj, view.getContext(),"1");
             }
         });
 

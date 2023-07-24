@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -42,8 +43,8 @@ public class TicketListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public TextView ticketId, subject, message, type, status, datetime;
         public CardView cardView;
-        public ImageView imgTicket;
-        public View lyt_parent;
+        public ImageView imgTicket,line2;
+        public LinearLayout lyt_parent;
         public OriginalViewHolder(View v) {
             super(v);
             ticketId = (TextView) v.findViewById(R.id.ticketid);
@@ -55,7 +56,8 @@ public class TicketListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             imgTicket = v.findViewById(R.id.img_ticket);
 
             cardView = (CardView) v.findViewById(R.id.cardview);
-            lyt_parent = (View) v.findViewById(R.id.lyt_parent);
+            lyt_parent = (LinearLayout) v.findViewById(R.id.lyt_parent);
+            line2= (ImageView) v.findViewById(R.id.line2);
         }
     }
 
@@ -78,10 +80,13 @@ public class TicketListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             view.message.setText(items.get(position).getStr_message());
             view.status.setText(items.get(position).getStr_data_status());
             view.datetime.setText(items.get(position).getStr_datetime());
-
-            if(items.get(position).getImgUrl()!="") {
+            view.line2.setBackgroundResource(R.drawable.iv_line);
+            if(!items.get(position).getImgUrl().equals("")) {
+                view.imgTicket.setVisibility(View.VISIBLE);
                 String strImgUrl = items.get(position).getImgUrl();
                 ImageLoading.loadImages(strImgUrl, view.imgTicket, 0);
+            } else {
+                view.imgTicket.setVisibility(View.INVISIBLE);
             }
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {

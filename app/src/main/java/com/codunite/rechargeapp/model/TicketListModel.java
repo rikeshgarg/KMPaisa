@@ -2,8 +2,7 @@ package com.codunite.rechargeapp.model;
 
 public class TicketListModel {
     private String str_ticket_id, str_message, str_subject,
-            str_datetime, str_type, str_data_status;
-    private String imgUrl = "";
+            str_datetime, str_type, str_data_status,imgUrl;
     public TicketListModel(String str_ticket_id, String str_message, String str_subject, String str_datetime,
                            String str_type, String str_data_status) {
         this.str_ticket_id = str_ticket_id;

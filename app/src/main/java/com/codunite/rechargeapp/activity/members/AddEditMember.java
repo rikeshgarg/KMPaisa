@@ -85,9 +85,16 @@ public class AddEditMember extends AppCompatActivity implements WebServiceListen
         lstMemberType = new ArrayList<>();
         lststatus = new ArrayList<>();
         lstCountry=new ArrayList<>();
-        lstMemberType.add("0" + "#:#" + "Member Type");
-        lstMemberType.add("1" + "#:#" + "Distributor");
-        lstMemberType.add("2" + "#:#" + "Retailer");
+        if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("3")){
+            lstMemberType.add("0" + "#:#" + "Member Type");
+            lstMemberType.add("1" + "#:#" + "Distributor");
+            lstMemberType.add("2" + "#:#" + "Retailer");
+        } else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("4")){
+            lstMemberType.add("0" + "#:#" + "Member Type");
+            //lstMemberType.add("1" + "#:#" + "Distributor");
+            lstMemberType.add("2" + "#:#" + "Retailer");
+        }
+
 
         lststatus.add("1" + "#:#" + "Active");
         lststatus.add("2" + "#:#" + "Deactive");

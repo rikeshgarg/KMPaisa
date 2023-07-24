@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.R;
+import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.model.ParamDataModel;
 import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.commonutility.CheckValidation;
@@ -134,7 +135,9 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
             allViewWithClick[j].setOnClickListener(v -> {
                 switch (v.getId()) {
                     case R.id.btn_fetch:
-                        FetchandBill(lstEditext.get(0));
+                        if (lstEditext != null && lstEditext.size() > 0) {
+                            FetchandBill(lstEditext.get(0));
+                        }
                         break;
                     case R.id.btn_electricrecharge:
                         EletricRecharge();
@@ -146,7 +149,7 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
                         hideOtpLayout();
                         break;
                     case R.id.btn_otpauth:
-                        RechargeProcess(svContext);
+                        //RechargeProcess(svContext,lstEditext);
                         break;
                 }
             });
@@ -369,21 +372,6 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
 
             txtUserName.setText(str_customername);
             edRechargeAmount.setText(str_amount);
-        }else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
         }
     }
 
@@ -473,6 +461,7 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
                 item.removeAllViews();
                 if (!strOperatorCode.equalsIgnoreCase("-1")) {
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(strOperatorCode);
                     callWebService(ApiInterface.GETBBSPELECTFORM, lstUploadData);
                 }
@@ -509,12 +498,21 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         }
 
 
+//        if (response == 0) {
+//            ShowOtpLayout();
+//        }
+
         if (response == 0) {
-            ShowOtpLayout();
+            Float amount = Float.parseFloat(edRechargeAmount.getText().toString().trim());
+            ActivityMain act = new ActivityMain();
+            boolean isWalletLoading = act.checkEWalletAndAddWallet(amount, "electric", svContext,lstEditext,strOperatorCode,edRechargeAmount.getText().toString().trim(),"");
+            if (!isWalletLoading) {
+                RechargeProcess(svContext,lstEditext,strOperatorCode,edRechargeAmount.getText().toString().trim());
+            }
         }
     }
 
-    public void RechargeProcess(Context svContext) {
+    public void RechargeProcess(Context svContext,List<EditText> lstEditext,String strOperatorCode,String amount) {
         String paramOne = "", paramTwo = "", paramThree = "";
         paramOne = lstEditext.get(0).getText().toString().trim();
         if (lstEditext.size() > 1) {
@@ -530,8 +528,9 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         lstUploadData.add(paramOne);
         lstUploadData.add(paramTwo);
         lstUploadData.add(paramThree);
-        lstUploadData.add(edRechargeAmount.getText().toString().trim());
-        lstUploadData.add(edtOtp.getText().toString().trim());
+        lstUploadData.add(amount);
+        //lstUploadData.add(edRechargeAmount.getText().toString().trim());
+        //lstUploadData.add(edtOtp.getText().toString().trim());
         callWebService(ApiInterface.GETBBSPBILLPAY, lstUploadData);
     }
 

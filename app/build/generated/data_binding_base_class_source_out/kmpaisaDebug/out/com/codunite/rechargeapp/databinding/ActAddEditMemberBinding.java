@@ -80,7 +80,13 @@ public final class ActAddEditMemberBinding implements ViewBinding {
   public final ImageView ivPassword;
 
   @NonNull
+  public final ImageView ivStatus;
+
+  @NonNull
   public final ImageView ivTransPassword;
+
+  @NonNull
+  public final ImageView ivType;
 
   @NonNull
   public final IncludeActionbarBinding layActionbar;
@@ -125,7 +131,8 @@ public final class ActAddEditMemberBinding implements ViewBinding {
       @NonNull ImageView imgDrawable, @NonNull ImageView imgDrawable1,
       @NonNull ImageView imgMemberType, @NonNull ImageView imgState, @NonNull ImageView imgStatus,
       @NonNull ImageView ivCity, @NonNull ImageView ivEmail, @NonNull ImageView ivMobile,
-      @NonNull ImageView ivName, @NonNull ImageView ivPassword, @NonNull ImageView ivTransPassword,
+      @NonNull ImageView ivName, @NonNull ImageView ivPassword, @NonNull ImageView ivStatus,
+      @NonNull ImageView ivTransPassword, @NonNull ImageView ivType,
       @NonNull IncludeActionbarBinding layActionbar, @NonNull RelativeLayout layState,
       @NonNull LinearLayout mylayout, @NonNull LinearLayout nestedScrollView,
       @NonNull RelativeLayout rlCountry, @NonNull RelativeLayout rlMemberType,
@@ -151,7 +158,9 @@ public final class ActAddEditMemberBinding implements ViewBinding {
     this.ivMobile = ivMobile;
     this.ivName = ivName;
     this.ivPassword = ivPassword;
+    this.ivStatus = ivStatus;
     this.ivTransPassword = ivTransPassword;
+    this.ivType = ivType;
     this.layActionbar = layActionbar;
     this.layState = layState;
     this.mylayout = mylayout;
@@ -301,9 +310,21 @@ public final class ActAddEditMemberBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.iv_status;
+      ImageView ivStatus = ViewBindings.findChildViewById(rootView, id);
+      if (ivStatus == null) {
+        break missingId;
+      }
+
       id = R.id.iv_trans_password;
       ImageView ivTransPassword = ViewBindings.findChildViewById(rootView, id);
       if (ivTransPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_type;
+      ImageView ivType = ViewBindings.findChildViewById(rootView, id);
+      if (ivType == null) {
         break missingId;
       }
 
@@ -379,9 +400,9 @@ public final class ActAddEditMemberBinding implements ViewBinding {
       return new ActAddEditMemberBinding((LinearLayout) rootView, btnSubmit, etCity, etEmail,
           etMobile, etName, etPassword, etTransPassword, imgCountry, imgDrawable, imgDrawable1,
           imgMemberType, imgState, imgStatus, ivCity, ivEmail, ivMobile, ivName, ivPassword,
-          ivTransPassword, binding_layActionbar, layState, mylayout, nestedScrollView, rlCountry,
-          rlMemberType, rlStatus, scrollView2, spinnerCountry, spinnerMemberType, spinnerStatus,
-          txtState);
+          ivStatus, ivTransPassword, ivType, binding_layActionbar, layState, mylayout,
+          nestedScrollView, rlCountry, rlMemberType, rlStatus, scrollView2, spinnerCountry,
+          spinnerMemberType, spinnerStatus, txtState);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

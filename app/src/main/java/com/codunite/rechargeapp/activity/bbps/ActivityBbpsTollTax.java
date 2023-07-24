@@ -60,7 +60,7 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
     private String str_minLength;
     private LinearLayout layBiller;
     private LinearLayout item;
-
+    private String ServiceType = "BBPS Toll Tax";
     public static final String TAG_DATA = "data";
     public static final String TAG_MESSAGE = "message";
     public static final String TAG_STATUS = "status";
@@ -101,8 +101,8 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
         spinnerOperatorList = (Spinner) findViewById(R.id.spinner_electricoperatorlist);
         LoadOperatorList();
 
-        hideOtpLayout();
-        OpenDemoLink();
+        //hideOtpLayout();
+        //OpenDemoLink();
     }
 
     @Override
@@ -361,21 +361,6 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
 
             txtUserName.setText(str_customername);
             edRechargeAmount.setText(str_amount);
-        }else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
         }
     }
 
@@ -460,6 +445,7 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
                 item.removeAllViews();
                 if (!strOperatorCode.equalsIgnoreCase("-1")) {
                     lstUploadData = new LinkedList<>();
+                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
                     lstUploadData.add(strOperatorCode);
                     callWebService(ApiInterface.GETBBSPFASTAGFORM, lstUploadData);
                 }
@@ -518,7 +504,7 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
         lstUploadData.add(paramTwo);
         lstUploadData.add(paramThree);
         lstUploadData.add(edRechargeAmount.getText().toString().trim());
-        lstUploadData.add(edtOtp.getText().toString().trim());
+        //lstUploadData.add(edtOtp.getText().toString().trim());
         callWebService(ApiInterface.GETBBSPFASTTAGBILLPAY, lstUploadData);
     }
 
