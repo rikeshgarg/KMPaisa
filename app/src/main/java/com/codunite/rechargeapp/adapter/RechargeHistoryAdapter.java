@@ -74,8 +74,8 @@ public class RechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             //txtOperator = (TextView) v.findViewById(R.id.operator);
             txtMobile = (TextView) v.findViewById(R.id.mobile);
             //txtType= (TextView) v.findViewById(R.id.type);
-            //txtAfterBal= (TextView) v.findViewById(R.id.after_balance);
-            //txtBeforeBal= (TextView) v.findViewById(R.id.before_balance);
+            txtAfterBal= (TextView) v.findViewById(R.id.after_balance);
+            txtBeforeBal= (TextView) v.findViewById(R.id.before_balance);
             txtID= (TextView) v.findViewById(R.id.txtId);
             //btnComplain= (Button) v.findViewById(R.id.btn_complain);
             laymobile=(LinearLayout)v.findViewById(R.id.lay_mob);
@@ -107,16 +107,16 @@ public class RechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             view.amountRecharge.setText(items.get(position).getStr_amount());
             view.recharegDateTime.setText(items.get(position).getStr_datetime());
             //view.txtOperator.setText(items.get(position).getOperator());
-            view.txtMobile.setText(items.get(position).getMobile());
+            view.txtMobile.setText("Mobile: "+items.get(position).getMobile());
             //view.txtType.setText(items.get(position).getType());
             view.tv_recharge_type.setText(items.get(position).getType() + " Recharge");
             //view.memberDeatil.setText(items.get(position).getMemberDetail());
-            //view.txtAfterBal.setText(items.get(position).getAfterBalance());
-            //view.txtBeforeBal.setText(items.get(position).getBeforeBalance());
+            view.txtAfterBal.setText("Closing Bal: "+items.get(position).getAfterBalance());
+            view.txtBeforeBal.setText("Opening Bal: "+items.get(position).getBeforeBalance());
             //view.txtaccno.setText(items.get(position).getStr_account_number());
 
 
-            view.txtID.setText(items.get(position).getTxtId());
+            view.txtID.setText("Txn Id: "+items.get(position).getTxtId());
             getImage(items.get(position).getType().trim(),view);
             //view.iv_operator.setColorFilter(R.color.colorAccent);
             view.iv_operator.setColorFilter(ContextCompat.getColor(ctx,

@@ -4,7 +4,7 @@
     android:id="@+id/item_head"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/ripple_spinner_row_item"
+    android:background="@drawable/back_dash_menuone"
     android:paddingLeft="@dimen/thirty"
     android:paddingTop="@dimen/spacing_middle"
     android:paddingRight="@dimen/thirty"
@@ -15,6 +15,7 @@
         android:layout_width="@dimen/spacing_xmlarge"
         android:layout_height="@dimen/spacing_xmlarge"
         android:layout_centerVertical="true"
+        android:visibility="gone"
         android:layout_marginEnd="@dimen/spacing_middle" />
 
     <RelativeLayout

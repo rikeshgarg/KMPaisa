@@ -88,9 +88,21 @@
                                 android:id="@+id/spinner_electricoperatorlist"
                                 android:layout_width="fill_parent"
                                 android:layout_height="@dimen/fortyfive"
+                                android:visibility="gone"
                                 android:layout_centerHorizontal="true"
                                 android:layout_toLeftOf="@+id/img_drop_1"
                                 android:theme="@style/mySpinnerItemStyle" />
+
+                            <TextView
+                                android:id="@+id/spinner_electricoperatorlist_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/ten"
+                                android:layout_toLeftOf="@+id/img_drop_1"
+                                android:text="Select Operator"
+                                android:textColor="@color/fontcolortextview"
+                                android:textSize="@dimen/ts_seventeen" />
 
                             <ImageView
                                 android:id="@+id/img_drop_1"
@@ -231,6 +243,7 @@
                         android:padding="@dimen/twenty" />
 
                     <LinearLayout
+                        android:visibility="gone"
                         android:id="@+id/card_otp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

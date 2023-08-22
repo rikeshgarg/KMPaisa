@@ -68,8 +68,16 @@ public class DMRCommisionAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             view.txtstartrange.setText(items.get(position).getStrstartrange());
             view.txtendrange.setText(items.get(position).getStrendrange());
-            view.txtflat.setText(items.get(position).getStrflat());
+            //view.txtflat.setText(items.get(position).getStrflat());
             view.txtsurcharge.setText(items.get(position).getStrsurcharge());
+
+            if(items.get(position).getStrflat().equals("1")){
+                view.txtflat.setText("Yes");
+                view.txtflat.setTextColor(ctx.getResources().getColor(R.color.green));
+            } else {
+                view.txtflat.setText("No");
+                view.txtflat.setTextColor(ctx.getResources().getColor(R.color.red));
+            }
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override

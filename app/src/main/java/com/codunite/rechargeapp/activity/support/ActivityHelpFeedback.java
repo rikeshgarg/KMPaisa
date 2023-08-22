@@ -98,7 +98,6 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebService(ApiInterface.GETTICKETTYPELIST, lstUploadData);
 
-        //OpenDemoLink();
     }
 
     private void PopulateSpinner(){
@@ -229,21 +228,6 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        }else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
         }
     }
 
@@ -364,17 +348,4 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         @Override public void onNothingSelected(AdapterView<?> parent) { }
     };
 
-    private String strDemoServiceName = "", dtrDemoServiceUrl = "";
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("13");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
-
-        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
-    }
 }

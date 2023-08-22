@@ -42,11 +42,15 @@ import com.codunite.rechargeapp.R;
 import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSHistory;
 import com.codunite.rechargeapp.activity.aepsnew.ActivityFinoAEPSKyc;
+import com.codunite.rechargeapp.activity.bbps.ActivityAadharKYCCommision;
+import com.codunite.rechargeapp.activity.bbps.ActivityAccountVerifyCommision;
 import com.codunite.rechargeapp.activity.bbps.ActivityBBPSCommision;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsAllServices;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsElectricity;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsHistory;
 import com.codunite.rechargeapp.activity.bbps.ActivityBbpsTollTax;
+import com.codunite.rechargeapp.activity.bbps.ActivityBillPayCommision;
+import com.codunite.rechargeapp.activity.bbps.ActivityPanCardCommision;
 import com.codunite.rechargeapp.activity.commissionincome.ActivityAEPSCommision;
 import com.codunite.rechargeapp.activity.commissionincome.ActivityDMRCommision;
 import com.codunite.rechargeapp.activity.mainwallet.ActivityFundRequest;
@@ -60,9 +64,11 @@ import com.codunite.rechargeapp.activity.profile.ActivityChangePassword;
 import com.codunite.rechargeapp.activity.profile.ActivityChangeTPassword;
 import com.codunite.rechargeapp.activity.profile.ActivityKyc;
 import com.codunite.rechargeapp.activity.profile.ActivityProfile;
+import com.codunite.rechargeapp.activity.reports.ActivityAEPSCommisionHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityAepsWalletHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityBillPayHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityComisionWalletHistory;
+import com.codunite.rechargeapp.activity.reports.ActivityFundTransferCommisionHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeCommisionHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory;
 import com.codunite.rechargeapp.activity.reports.ActivityWalletHistory;
@@ -546,7 +552,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         }
         strMenuItemMaster = new String[]{
                 "AEPS",
-                "Money Transfer",
+                "DMT",
                 "Members",
                 "Profile",
                 "Wallet",
@@ -567,8 +573,8 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 {"Personal Profile", "Change Password"},
                 //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
                 new String[0],
-                {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
-                {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
+                {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history","Fund Transfer Commission","AEPS Commission Report"},
+                {"Recharge Commission", "Bill Pay Commission", "BBPS Commission" ,"DMR Commission","Account Verify Charge","Aadhar eKyc Charge","UTI Pancard Charge", "AEPS Commission"},
                 {"Transfer", "Payout Report"},
                 {"My Virtual Account", "Transaction Report"},
                 {"Create Ticket", "View Ticket"},
@@ -579,7 +585,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
         strMenuItemDistributor = new String[]{
                 "AEPS",
-                "Money Transfer",
+                "DMT",
                 "Members",
                 "Profile",
                 "Wallet",
@@ -602,7 +608,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
                 new String[0],
                 {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
-                {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
+                {"Recharge Commission", "Bill Pay Commission", "DMR Commission", "AEPS Commission"},
                 {"Transfer", "Payout Report"},
                 {"My Virtual Account", "Transaction Report"},
                 {"Create Ticket", "View Ticket"},
@@ -631,7 +637,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                 //{UPI_ADD_MONEY, "R-Wallet Transfer", "E-Wallet Transfer", "R-Wallet History", "E-Wallet History", R_WALLET_MYFUNDREQUEST, E_WALLET_MYFUNDREQUEST},
                 new String[0],
                 {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission history"},
-                {"Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"},
+                {"Recharge Commission", "Bill Pay Commission", "DMR Commission", "AEPS Commission"},
                 {"Transfer", "Payout Report"},
                 {"My Virtual Account", "Transaction Report"},
                 {"Create Ticket", "View Ticket"},
@@ -666,7 +672,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                         }
                         Log.e(TAG, strMenuItemMaster[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false));
                         break;
-                    case "Money Transfer":
+                    case "DMT":
                         if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDMTACTIVE, false)) {
                             HashMap.put(strMenuItemMaster[j], strMenuChildItemMaster[j]);
                             strMenuItem[j] = strMenuItemMaster[j];
@@ -722,7 +728,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                         }
                         Log.e(TAG, strMenuItemDistributor[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false));
                         break;
-                    case "Money Transfer":
+                    case "DMT":
                         if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDMTACTIVE, false)) {
                             HashMap.put(strMenuItemDistributor[j], strMenuChildItemDistributor[j]);
                             strMenuItem[j] = strMenuItemDistributor[j];
@@ -766,7 +772,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
                         }
                         Log.e(TAG, strMenuItemRetailor[j] + " : " + PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISXPRESSPAYOUTACTIVE, false));
                         break;
-                    case "Money Transfer":
+                    case "DMT":
                         if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDMTACTIVE, false)) {
                             HashMap.put(strMenuItemRetailor[j], strMenuChildItemRetailor[j]);
                             strMenuItem[j] = strMenuItemRetailor[j];
@@ -1001,16 +1007,35 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         } else if (title.equalsIgnoreCase("Recharge Commission History")) {
             svIntent = new Intent(svContext, ActivityRechargeCommisionHistory.class);
             svContext.startActivity(svIntent);
+        } else if (title.equalsIgnoreCase("Fund Transfer Commission")) {
+            svIntent = new Intent(svContext, ActivityFundTransferCommisionHistory.class);
+            svContext.startActivity(svIntent);
+        }else if (title.equalsIgnoreCase("AEPS Commission Report")) {
+            svIntent = new Intent(svContext, ActivityAEPSCommisionHistory.class);
+            svContext.startActivity(svIntent);
         } else if (title.equalsIgnoreCase("Recharge Commission")) {
             svIntent = new Intent(svContext, ActivityRechargeCommision.class);
+            svContext.startActivity(svIntent);
+        } else if (("Bill Pay Commission").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityBillPayCommision.class);
             svContext.startActivity(svIntent);
         } else if (("BBPS Commission").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityBBPSCommision.class);
             svContext.startActivity(svIntent);
-        } else if (("DMR Commission").equalsIgnoreCase(title)) {
+        }else if (("Aadhar eKyc Charge").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityAadharKYCCommision.class);
+            svContext.startActivity(svIntent);
+        }else if (("UTI Pancard Charge").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityPanCardCommision.class);
+            svContext.startActivity(svIntent);
+            //
+        }else if (("DMR Commission").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityDMRCommision.class);
             svContext.startActivity(svIntent);
-        } else if (("AEPS Commission").equalsIgnoreCase(title)) {
+        } else if (("Account Verify Charge").equalsIgnoreCase(title)) {
+            svIntent = new Intent(svContext, ActivityAccountVerifyCommision.class);
+            svContext.startActivity(svIntent);
+        }else if (("AEPS Commission").equalsIgnoreCase(title)) {
             svIntent = new Intent(svContext, ActivityAEPSCommision.class);
             svContext.startActivity(svIntent);
         } else if (title.equalsIgnoreCase("Transfer")) {
@@ -1350,7 +1375,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
         } else if (actReferTo.equalsIgnoreCase("Toll")) {
             ActivityBbpsTollTax frag = new ActivityBbpsTollTax();
-            frag.RechargeProcess(svContext);
+            frag.RechargeProcess(svContext,lstEditext,strOperatorCode,amount);
 
         } else if (actReferTo.equalsIgnoreCase("Service")) {
             ActivityBbpsAllServices frag = new ActivityBbpsAllServices();

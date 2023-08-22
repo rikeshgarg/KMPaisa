@@ -74,7 +74,7 @@ public class ActivityBBPSLiveCommision extends AppCompatActivity implements View
         btnAddWallet.setOnClickListener(this);
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        callWebService(ApiInterface.GETBBPSLIVECOMMISIONLIST, lstUploadData);
+        callWebService(ApiInterface.GETBBPSFIXCOMMISIONLIST, lstUploadData);
 
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
     }
@@ -103,7 +103,7 @@ public class ActivityBBPSLiveCommision extends AppCompatActivity implements View
         imgToolBarBack.setOnClickListener(this);
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
-        txtHeading.setText("BBPS Commission");
+        txtHeading.setText("Bill Pay Commission");
     }
 
     @Override
@@ -146,7 +146,7 @@ public class ActivityBBPSLiveCommision extends AppCompatActivity implements View
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-        if (url.contains(ApiInterface.GETBBPSLIVECOMMISIONLIST)) {
+        if (url.contains(ApiInterface.GETBBPSFIXCOMMISIONLIST)) {
             try {
                 lstItems = new ArrayList<>();
 

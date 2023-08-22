@@ -75,8 +75,24 @@ public class RechargeCommisionAdapter extends RecyclerView.Adapter<RecyclerView.
             view.txtcode.setText(items.get(position).getStrcode());
             view.txtType.setText(items.get(position).getStrType());
             view.txtcommision.setText(items.get(position).getStrcommision());
-            view.txtflat.setText(items.get(position).getStrflat());
-            view.txtsurcharge.setText(items.get(position).getStrsurcharge());
+//            view.txtflat.setText(items.get(position).getStrflat());
+//            view.txtsurcharge.setText(items.get(position).getStrsurcharge());
+
+            if(items.get(position).getStrflat().equals("1")){
+                view.txtflat.setText("Yes");
+                view.txtflat.setTextColor(ctx.getResources().getColor(R.color.green));
+            } else {
+                view.txtflat.setText("No");
+                view.txtflat.setTextColor(ctx.getResources().getColor(R.color.red));
+            }
+
+            if(items.get(position).getStrsurcharge().equals("1")){
+                view.txtsurcharge.setText("Yes");
+                view.txtsurcharge.setTextColor(ctx.getResources().getColor(R.color.green));
+            } else {
+                view.txtsurcharge.setText("No");
+                view.txtsurcharge.setTextColor(ctx.getResources().getColor(R.color.red));
+            }
 
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override

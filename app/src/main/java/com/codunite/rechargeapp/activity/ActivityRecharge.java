@@ -35,6 +35,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
+import com.codunite.commonutility.spinner.ActivitySpinner;
+import com.codunite.commonutility.spinner.SpinnerModel;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.WebViewActivity;
 import com.codunite.rechargeapp.adapter.ContactAdapter;
@@ -95,6 +97,12 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
     private String addAmountToWallet;
     TextView tv_heading;
 
+    public static final int FRAG_RECHARGE_CIRCLE_REQUEST_CODE = 435;
+    public static final int FRAG_RECHARGE_OPERATOR_REQUEST_CODE = 436;
+    public static final int FRAG_DTH_CIRCLE_REQUEST_CODE = 437;
+    public static final int FRAG_DTH_OPERATOR_REQUEST_CODE = 438;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,7 +155,7 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
 
         pageNumber = 1;
         LoadRechargeHistory(pageIndex);
-        //OpenDemoLink();
+
     }
 
     private void LoadRechargeHistory(int pageIndex) {
@@ -156,7 +164,7 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
         if(pageIndex==0){
             lstUploadData.add("1");
         } else if(pageIndex==1){
-            lstUploadData.add("3");
+            lstUploadData.add("2");
         }
 
         lstUploadData.add("0");
@@ -323,21 +331,6 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
             } catch (JSONException e) {
 
 
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
-        } else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
-                }
-            } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
@@ -689,18 +682,7 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
     }
 
     private String strDemoServiceName = "", dtrDemoServiceUrl = "";
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("1");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
 
-        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
-    }
 
     public void startPayment(float strAmount) {
         addAmountToWallet = strAmount + "";
@@ -730,6 +712,42 @@ public class ActivityRecharge extends AppCompatActivity implements View.OnClickL
             } catch (Exception e) {
                 customToast.showCustomToast(svContext, "Error in payment: " + e.getMessage(), customToast.ToastyError);
                 e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (resultCode == RESULT_OK) {
+            Bundle extras = intent.getExtras();
+            if (extras == null) return;
+            Fragment page = getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewPager + ":" + viewPager.getCurrentItem());
+            int position;
+            SpinnerModel selectedSpinner;
+            switch (requestCode) {
+                case FRAG_RECHARGE_CIRCLE_REQUEST_CODE:
+                    position = intent.getIntExtra(ActivitySpinner.EXTRA_SPINNER_POSITION, 0);
+                    selectedSpinner = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
+                    break;
+                case FRAG_RECHARGE_OPERATOR_REQUEST_CODE:
+                    position = intent.getIntExtra(ActivitySpinner.EXTRA_SPINNER_POSITION, 0);
+                    selectedSpinner = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
+
+                    if (page instanceof FragPrePostRecharge) {
+                        ((FragPrePostRecharge) page).PopulateOperatorList(position, selectedSpinner);
+                    }
+                    break;
+                case FRAG_DTH_OPERATOR_REQUEST_CODE:
+                    position = intent.getIntExtra(ActivitySpinner.EXTRA_SPINNER_POSITION, 0);
+                    selectedSpinner = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
+
+                    if (page instanceof FragDth) {
+                        ((FragDth) page).PopulateDthOperatorList(position, selectedSpinner);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     }

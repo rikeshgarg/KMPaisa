@@ -38,7 +38,9 @@ import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.activity.ActivitySplash;
 import com.codunite.rechargeapp.adapter.CommisionHistoryAdapter;
+import com.codunite.rechargeapp.adapter.RechargeCommisionReportHistoryAdapter;
 import com.codunite.rechargeapp.model.CommisionHistoryModel;
+import com.codunite.rechargeapp.model.RechargeCommisionReportHistoryModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -89,14 +91,6 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
         TextView txteWalletbal = (TextView) findViewById(R.id.ewalletbal);
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
         txteWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, "0"));
-        //btnAddWallet = (Button) findViewById(R.id.btn_addwallet);
-        //txtWalletbal.setVisibility(View.INVISIBLE);
-        //cvAddWallet = (CardView) findViewById(R.id.card_addwallet);
-        //cardShowBalance = (CardView) findViewById(R.id.card_wallbal);
-        //cvAddWallet.setVisibility(View.INVISIBLE);
-        //cardShowBalance.setVisibility(View.INVISIBLE);
-
-        //btnAddWallet.setOnClickListener(this);
 
         myCalendar = Calendar.getInstance();
         layrefrsh = (SwipeRefreshLayout) findViewById(R.id.layrefrsh);
@@ -174,9 +168,6 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
                 getResources().getColor(R.color.colorAccent)
         );
 
-//        lstUploadData = new LinkedList<>();
-//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-//        callWebService(ApiInterface.RECHARGECOMMISIONHISTORY, lstUploadData);
         LoadRechargeHistory(txtFrom.getText().toString().trim(), txtTo.getText().toString().trim());
 
     }
@@ -186,7 +177,7 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
         lstUploadData.add(fromDate);
         lstUploadData.add(toDate);
         lstUploadData.add(strSearchKey);
-        callWebService(ApiInterface.RECHARGECOMMISIONHISTORY, lstUploadData);
+        callWebService(ApiInterface.RECHARGECOMMISIONREPORTLIST, lstUploadData);
     }
     private void loadUserDataBackground() {
         lstUploadData = new LinkedList<>();
@@ -236,11 +227,6 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
             Typeface font = Typeface.createFromAsset(getAssets(), GlobalVariables.CUSTOMFONTNAME);
             FontUtils.setFont(root, font);
         }
-        if (PreferenceConnector.readBoolean(svContext, PreferenceConnector.ISDARKTHEME, false)) {
-// FontUtils.setThemeColor(root, svContext, true);
-        } else {
-// FontUtils.setThemeColor(root, svContext, false);
-        }
 
         hideKeyboard();
         GlobalData.SetLanguage(svContext);
@@ -259,20 +245,6 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         txtHeading.setText("Recharge Commission History");
-
-//        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
-//        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
-//
-//        TextView toolbar_txt_ewalletbal = (TextView) findViewById(R.id.toolbar_txt_ewalletbal);
-//        toolbar_txt_ewalletbal.setText(ActivityMain.ShoweBalance(svContext));
-//
-//        LinearLayout imgToolBarWallet = (LinearLayout) findViewById(R.id.img_wallet);
-//        imgToolBarWallet.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ActivitySplash.OpenWalletActivity(svContext);
-//            }
-//        });
     }
 
     @Override
@@ -311,12 +283,12 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
         webService.LoadDataRetrofit(webService.callReturn());
     }
 
-    private List<CommisionHistoryModel> lstItems = new ArrayList<>();
+    private List<RechargeCommisionReportHistoryModel> lstItems = new ArrayList<>();
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
         System.out.println(result + ".........jsonresponse....." + url);
-        if (url.contains(ApiInterface.RECHARGECOMMISIONHISTORY)) {
+        if (url.contains(ApiInterface.RECHARGECOMMISIONREPORTLIST)) {
             try {
                 lstItems = new ArrayList<>();
 
@@ -329,11 +301,13 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < ((JSONArray) data).length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String str_description = data_obj.getString("order_id");
-                        String str_amount = data_obj.getString("amount");
+                        String str_user_code = data_obj.getString("user_code");
+                        String str_member_name = data_obj.getString("member_name");
+                        String str_txn_id = data_obj.getString("txn_id");
+                        String str_commision_amount = data_obj.getString("commision_amount");
                         String str_datetime = data_obj.getString("datetime");
 
-                        lstItems.add(new CommisionHistoryModel(str_amount, str_datetime, str_description));
+                        lstItems.add(new RechargeCommisionReportHistoryModel(str_user_code,str_member_name, str_txn_id,str_commision_amount, str_datetime));
                     }
                 }
             } catch (JSONException e) {
@@ -341,18 +315,15 @@ public class ActivityRechargeCommisionHistory extends AppCompatActivity implemen
                 e.printStackTrace();
             }
 
-            //cvAddWallet.setVisibility(View.VISIBLE);
-            //cardShowBalance.setVisibility(View.VISIBLE);
-            //txtWalletbal.setVisibility(View.VISIBLE);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
             int animation_type = ItemAnimation.LEFT_RIGHT;
-            CommisionHistoryAdapter mAdapter = new CommisionHistoryAdapter(this, lstItems, animation_type);
+            RechargeCommisionReportHistoryAdapter mAdapter = new RechargeCommisionReportHistoryAdapter(this, lstItems, animation_type);
             wallethistoryrv.setNestedScrollingEnabled(false);
             wallethistoryrv.setAdapter(mAdapter);
-            mAdapter.setOnItemClickListener(new CommisionHistoryAdapter.OnItemClickListener() {
+            mAdapter.setOnItemClickListener(new RechargeCommisionReportHistoryAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, String obj, int position) {
 

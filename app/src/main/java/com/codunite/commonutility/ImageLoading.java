@@ -44,7 +44,6 @@ public class ImageLoading {
             Glide.with(imgView.getContext())
                     .load(imageUrl)
                     .thumbnail(0.5f)
-                    .centerCrop()
                     .error(defaultImg)
                     .placeholder(R.drawable.loader)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)

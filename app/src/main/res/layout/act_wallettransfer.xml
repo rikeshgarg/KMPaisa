@@ -124,6 +124,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/fortyfive"
                             android:layout_marginTop="@dimen/ten"
@@ -140,6 +141,41 @@
 
                             <ImageView
                                 android:id="@+id/img_drop_2"
+                                android:layout_width="@dimen/twentyfive"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/five"
+                                android:src="@drawable/ic_arrow_drop"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/fortyfive"
+                            android:layout_marginTop="@dimen/ten"
+                            android:background="@drawable/back_edittext_default">
+
+                            <TextView
+                                android:id="@+id/tv_select_member"
+                                android:paddingLeft="@dimen/fifteen"
+                                android:paddingRight="@dimen/ten"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Select Member"
+                                android:layout_centerVertical="true"
+                                android:textSize="@dimen/ts_seventeen"
+                                android:textColor="@color/c_black"
+                                android:textColorHighlight="@color/white"
+                                android:textColorHint="@color/c_gray2"
+                                android:layout_toLeftOf="@+id/img_drop_3"
+                                >
+
+                            </TextView>
+
+                            <ImageView
+                                android:id="@+id/img_drop_3"
                                 android:layout_width="@dimen/twentyfive"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentRight="true"

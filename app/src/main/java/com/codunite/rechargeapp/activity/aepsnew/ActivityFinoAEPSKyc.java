@@ -169,7 +169,7 @@ public class ActivityFinoAEPSKyc extends AppCompatActivity implements View.OnCli
 
         gpsTracker = new GPSTracker(this);
         checkPermissions();
-        OpenDemoLink();
+
     }
 
     int deviceType = 0;
@@ -549,7 +549,7 @@ public class ActivityFinoAEPSKyc extends AppCompatActivity implements View.OnCli
                             .setTitleText("Info")
                             .setContentText(detailedResponse)
                             .setContentTextSize(17)
-                            .setCustomImage(R.drawable.logo)
+                            .setCustomImage(R.drawable.logo_color)
                             .setConfirmButton("OK", sweetAlertDialog -> {
                                 sweetAlertDialog.dismiss();
                                 if (status && response != 0) {
@@ -859,21 +859,6 @@ public class ActivityFinoAEPSKyc extends AppCompatActivity implements View.OnCli
         } else if (url.contains(ApiInterface.UPDATEFCM)) {
             ActivitySplash.LoadUserData(result, svContext);
             onBackPressed();
-        } else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
         }
     }
 
@@ -918,16 +903,5 @@ public class ActivityFinoAEPSKyc extends AppCompatActivity implements View.OnCli
 
     private String strDemoServiceName = "", dtrDemoServiceUrl = "";
 
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("3");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
 
-        (findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
-    }
 }

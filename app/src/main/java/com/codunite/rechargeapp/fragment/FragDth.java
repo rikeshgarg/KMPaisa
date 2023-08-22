@@ -22,6 +22,8 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
+import com.codunite.commonutility.spinner.ActivitySpinner;
+import com.codunite.commonutility.spinner.SpinnerModel;
 import com.codunite.rechargeapp.activity.ActivityCompletion;
 import com.codunite.rechargeapp.activity.ActivityPlansOfferDth;
 import com.codunite.rechargeapp.activity.ActivityRecharge;
@@ -69,8 +71,11 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
     private int[] allViewWithClickId = {R.id.btn_dthrecharge, R.id.lay_operator,
             R.id.lay_circle, R.id.txt_viewallplans, R.id.txt_roffers, R.id.btn_otpcancel, R.id.btn_otpauth};
     private List<String> listSpinnerCircleList = new ArrayList<>();
-    private List<String> listSpinnerOperatorList = new ArrayList<>();
+    private SpinnerModel selectedOperatorSpinner;
+    private List<SpinnerModel> listSpinnerOperatorList = new ArrayList<>();
     private ProgressBar pbLoadOperator, pbLoadCircle;
+
+    private TextView txtSpinnerOperatorList;
 
     public FragDth() {
     }
@@ -118,23 +123,25 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
     }
 
     public void resumeApp() {
+        txtSpinnerOperatorList = (TextView) aiView.findViewById(R.id.spinner_dthoperatorlist_txt);
         edDthRechargeAmount = (EditText) aiView.findViewById(R.id.dth_amount);
-        spinnerDthOperatorList = (Spinner) aiView.findViewById(R.id.spinner_dthoperatorlist);
-        listSpinnerOperatorList.add("-1" + "#:#" + "Select Operator");
-        listSpinnerCircleList.add("-1" + "#:#" + "Select Circle");
-        edtOtp = aiView.findViewById(R.id.edt_otp);
+
+//        spinnerDthOperatorList = (Spinner) aiView.findViewById(R.id.spinner_dthoperatorlist);
+//        listSpinnerOperatorList.add("-1" + "#:#" + "Select Operator");
+//        listSpinnerCircleList.add("-1" + "#:#" + "Select Circle");
+//        edtOtp = aiView.findViewById(R.id.edt_otp);
         pbLoadOperator = (ProgressBar) aiView.findViewById(R.id.progressbar_load_two);
         pbLoadCircle = (ProgressBar) aiView.findViewById(R.id.progressbar_load_one);
         pbLoadOperator.setVisibility(View.GONE);
         pbLoadCircle.setVisibility(View.GONE);
-        PopulateDthOperatorList();
-        PopulateDthCircleList();
-        pbLoadCircle.setVisibility(View.VISIBLE);
+//        PopulateDthOperatorList();
+//        PopulateDthCircleList();
+        //pbLoadCircle.setVisibility(View.VISIBLE);
         pbLoadOperator.setVisibility(View.VISIBLE);
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        callWebServiceWithoutLoader(ApiInterface.CIRCLELIST, lstUploadData);
-
+//        lstUploadData = new LinkedList<>();
+//        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+//        callWebServiceWithoutLoader(ApiInterface.CIRCLELIST, lstUploadData);
+        LoadOperatorList("dth");
         hideOtpLayout();
     }
 
@@ -178,12 +185,21 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                             break;
                         case R.id.txt_viewallplans:
                             if (listSpinnerOperatorList.size() != 0) {
+//                                strDthMobile = edCardNumber.getText().toString().trim();
+//                                strDthOperatorCode = (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]);
+//
+//                                Intent svIntent = new Intent(svContext, ActivityPlansOfferDth.class);
+//                                svIntent.putExtra("filename", "plans_d2h");
+//                                svContext.startActivity(svIntent);
                                 strDthMobile = edCardNumber.getText().toString().trim();
-                                strDthOperatorCode = (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]);
-
-                                Intent svIntent = new Intent(svContext, ActivityPlansOfferDth.class);
-                                svIntent.putExtra("filename", "plans_d2h");
-                                svContext.startActivity(svIntent);
+                                if (selectedOperatorSpinner == null) {
+                                    customToast.showCustomToast(svContext, "Please select operator", customToast.ToastyError);
+                                } else {
+                                    strDthOperatorCode = selectedOperatorSpinner.getId();
+                                    Intent svIntent = new Intent(svContext, ActivityPlansOfferDth.class);
+                                    svIntent.putExtra("filename", "offer_d2h");
+                                    svContext.startActivity(svIntent);
+                                }
                             }
                             break;
                         case R.id.txt_roffers:
@@ -195,7 +211,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                             hideOtpLayout();
                             break;
                         case R.id.lay_operator:
-                            spinnerDthOperatorList.performClick();
+                            ActivitySpinner.showSpinner(svContext, listSpinnerOperatorList, "Select Operator", ActivityRecharge.FRAG_DTH_OPERATOR_REQUEST_CODE);
                             break;
                         case R.id.lay_circle:
                             spinnerDthCircleList.performClick();
@@ -211,7 +227,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         int response = 0;
 //        response = CheckValidation.emptyEditTextError(edDthRecharge, edDthTextsError);
 
-        if (spinnerDthOperatorList.getSelectedItemPosition() == 0) {
+        if (selectedOperatorSpinner == null) {
             response++;
             customToast.showCustomToast(svContext, "Please select operator", customToast.ToastyError);
         }
@@ -228,8 +244,8 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
 
         if (response == 0) {
             strDthMobile = edCardNumber.getText().toString().trim();
-            strDthOperatorCode = (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]);
-
+            //strDthOperatorCode = (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]);
+            strDthOperatorCode = selectedOperatorSpinner.getId();
             lstUploadData = new LinkedList<>();
             lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
             lstUploadData.add(strDthMobile);
@@ -284,7 +300,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                 String str_message = json.getString(TAG_MESSAGE);
                 String str_status = json.getString(TAG_STATUS);
 
-                listSpinnerOperatorList.add("-1" + "#:#" + "Select Operator");
+                //listSpinnerOperatorList.add("-1" + "#:#" + "Select Operator");
 
                 if (str_status.equalsIgnoreCase("0")) {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
@@ -294,11 +310,15 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                         JSONObject data_obj = data.getJSONObject(data_i);
                         String str_code = data_obj.getString("operator_id");
                         String str_name = data_obj.getString("operator_name");
-
-                        listSpinnerOperatorList.add(str_code + "#:#" + str_name);
+                        String strIconUrl = null;
+                        if (data_obj.has("icon")) {
+                            strIconUrl = data_obj.getString("icon");
+                        }
+                        listSpinnerOperatorList.add(new SpinnerModel(str_code, str_name, "", "", strIconUrl));
+                        //listSpinnerOperatorList.add(str_code + "#:#" + str_name);
                     }
 
-                    PopulateDthOperatorList();
+                    //PopulateDthOperatorList();
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
@@ -349,7 +369,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                         listSpinnerCircleList.add(str_code + "#:#" + str_name);
                     }
                 }
-                LoadOperatorList("dth");
+                //LoadOperatorList("dth");
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
@@ -431,31 +451,24 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
 
             }
         });
-        PopulateDthOperatorList();
+        //PopulateDthOperatorList();
     }
 
-    private void PopulateDthOperatorList() {
-        SpinnerPopulateAdapter spindapter = new SpinnerPopulateAdapter(svContext, listSpinnerOperatorList, true);
-        spinnerDthOperatorList.setAdapter(spindapter);
-
-        spinnerDthOperatorList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+    public void PopulateDthOperatorList(int position, SpinnerModel spinnerModel) {
+        this.selectedOperatorSpinner = spinnerModel;
+        if (selectedOperatorSpinner == null) {
+            txtSpinnerOperatorList.setText("Select Operator");
+        } else {
+            txtSpinnerOperatorList.setText(selectedOperatorSpinner.getTitle());
+            strDthOperatorCode = selectedOperatorSpinner.getId();
+        }
     }
 
     private void DthRecharge() {
         int response = 0;
         response = CheckValidation.emptyEditTextError(edDthRecharge, edDthTextsError);
 
-        if (spinnerDthOperatorList.getSelectedItemPosition() == 0) {
+        if (selectedOperatorSpinner == null) {
             response++;
             customToast.showCustomToast(svContext, "Please select operator", customToast.ToastyError);
         }
@@ -472,10 +485,12 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
 
         String type = "2", strRechargePostType = "1";
 
-        String strMessage = "DTH Recharge\nDTH Id: " + edCardNumber.getText().toString().trim() + "\nOperator: " +
-                (listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[1]) +
-                "\nAmount: " + edDthRechargeAmount.getText().toString().trim();
+
         if (response == 0) {
+            String strMessage = ""
+                    + "DTH Recharge\nDTH Id: " + edCardNumber.getText().toString().trim()
+                    + "\nOperator: " + selectedOperatorSpinner.getTitle()
+                    + "\nAmount: " + edDthRechargeAmount.getText().toString().trim();
             ((ActivityRecharge) getActivity()).ShowConfirmDialog(svContext, strMessage, "dth");
         }
     }
@@ -495,7 +510,8 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         lstUploadData.add((edCardNumber.getText().toString().trim()));
-        lstUploadData.add((listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]));
+        lstUploadData.add(selectedOperatorSpinner.getId());
+        //lstUploadData.add((listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]));
         lstUploadData.add("");
         lstUploadData.add(edDthRechargeAmount.getText().toString().trim());
         callWebService(ApiInterface.RECHARGEAUTH, lstUploadData);

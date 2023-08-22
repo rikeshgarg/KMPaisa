@@ -94,7 +94,6 @@ public class ActivityTopupWalletRazorpay extends AppCompatActivity implements Vi
             }
         });
 
-        OpenDemoLink();
     }
 
     private String firstLetterInUpperCase(String str) {
@@ -165,7 +164,7 @@ public class ActivityTopupWalletRazorpay extends AppCompatActivity implements Vi
 //        strRazorPayId = "rzp_test_ySSHvBEqxc6f7Q";
         final Checkout co = new Checkout();
         co.setKeyID(strRazorPayId);
-        co.setImage(R.drawable.logo);
+        co.setImage(R.drawable.logo_color);
         if (strRazorPayId.length() == 0) {
             customToast.showCustomToast(svContext, "Razorpay Key Not Available", customToast.ToastyError);
         } else {
@@ -383,21 +382,6 @@ public class ActivityTopupWalletRazorpay extends AppCompatActivity implements Vi
             mAdapter.setOnItemClickListener((view, obj, position) -> {
 
             });
-        } else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
         }
     }
 
@@ -414,16 +398,4 @@ public class ActivityTopupWalletRazorpay extends AppCompatActivity implements Vi
 
     private String strDemoServiceName = "", dtrDemoServiceUrl = "";
 
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("10");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
-
-        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
-    }
 }

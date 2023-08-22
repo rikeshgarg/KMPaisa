@@ -452,12 +452,20 @@ public class WebService {
                 return apiService.getBBPSLiveHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.GETBBPSCOMMISIONLIST:
                 return apiService.getBBPSCommisionList(lstUploadData.get(0));
-            case ApiInterface.GETBBPSLIVECOMMISIONLIST:
-                return apiService.getBBPSLiveCommisionList(lstUploadData.get(0));
+            case ApiInterface.GETBBPSFIXCOMMISIONLIST:
+                return apiService.getBBPSFixCommisionList(lstUploadData.get(0));
+            case ApiInterface.GETAADHARKYCCOMMISIONLIST:
+                return apiService.getAadharKycCommisionList(lstUploadData.get(0));
+            case ApiInterface.GETACCOUNTVERIFYCOMMISIONLIST:
+                return apiService.getAccountVerifyCommisionList(lstUploadData.get(0));
+            case ApiInterface.GETUTIPANCARDCOMMISIONLIST:
+                return apiService.getUTIPancardCommisionList(lstUploadData.get(0));
+//            case ApiInterface.GETBBPSLIVECOMMISIONLIST:
+//                return apiService.getBBPSLiveCommisionList(lstUploadData.get(0));
             case ApiInterface.GETMONEYTRANSFERCOMMISIONLIST:
                 return apiService.getMoneyTransferCommisionList(lstUploadData.get(0));
-            case ApiInterface.GETAEPSCOMMISIONLIST:
-                return apiService.getAEPSCommisionList(lstUploadData.get(0));
+            case ApiInterface.GETAEPSCOMMISIONCHARGE:
+                return apiService.getAEPSCommisionCharge(lstUploadData.get(0));
             case ApiInterface.GETTICKETLIST:
                 return apiService.GetTicketKList(lstUploadData.get(0));
             case ApiInterface.SUBMITCOMPALINT:
@@ -559,6 +567,12 @@ public class WebService {
                 return apiService.GetSUBCATEGORY(lstUploadData.get(0));
             case ApiInterface.RECHARGEHISTORY:
                 return apiService.GetRechargeHistory(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
+            case ApiInterface.RECHARGECOMMISIONREPORTLIST:
+                return apiService.GetRechargeCommissionReportList(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
+            case ApiInterface.AEPSCOMMISIONREPORTLIST:
+                return apiService.GetAEPSCommissionReportList(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
+            case ApiInterface.FUNDTRANSFERCOMMISIONREPORTLIST:
+                return apiService.GetFundTransCommissionReportList(lstUploadData.get(0), lstUploadData.get(1), lstUploadData.get(2), lstUploadData.get(3));
             case ApiInterface.RECHARGECOMMISIONHISTORY:
                 return apiService.GetRechargeCommisionHistory(lstUploadData.get(0));
             case ApiInterface.GETCREDITCARDHISTORY:

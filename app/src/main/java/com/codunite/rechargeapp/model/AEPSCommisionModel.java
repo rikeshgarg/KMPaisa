@@ -1,14 +1,15 @@
 package com.codunite.rechargeapp.model;
 
 public class AEPSCommisionModel {
-    private String strstartrange, strendrange, strcommsion,strtype,  strflat;
+    private String strstartrange, strendrange, strcommsion,strtype,strflat,strsurcharge;
 
-    public AEPSCommisionModel(String strstartrange, String strendrange, String strcommsion, String strtype, String strflat) {
+    public AEPSCommisionModel(String strstartrange, String strendrange, String strcommsion, String strtype, String strflat, String strsurcharge) {
         this.strstartrange = strstartrange;
         this.strendrange = strendrange;
         this.strcommsion = strcommsion;
         this.strtype = strtype;
         this.strflat = strflat;
+        this.strsurcharge = strsurcharge;
     }
 
     public String getStrstartrange() {
@@ -49,5 +50,13 @@ public class AEPSCommisionModel {
 
     public void setStrflat(String strflat) {
         this.strflat = strflat;
+    }
+
+    public String getStrsurcharge() {
+        return strsurcharge;
+    }
+
+    public void setStrsurcharge(String strsurcharge) {
+        this.strsurcharge = strsurcharge;
     }
 }

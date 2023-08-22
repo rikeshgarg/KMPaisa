@@ -94,7 +94,7 @@ public class ActivitySpinner extends AppCompatActivity implements View.OnClickLi
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, DividerItemDecoration.VERTICAL, 30));
+        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, DividerItemDecoration.VERTICAL, 0));
         recyclerView.setAdapter(mAdapter);
         progressbarLoad.setVisibility(View.GONE);
     }

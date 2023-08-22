@@ -14,12 +14,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.codunite.commonutility.retrofit.ApiInterface;
+import com.codunite.commonutility.spinner.ActivitySpinner;
+import com.codunite.commonutility.spinner.SpinnerModel;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.activity.ActivityMain;
 import com.codunite.rechargeapp.model.ParamDataModel;
@@ -45,20 +48,22 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
 
-    private List<String> listSpinnerOperatorList = new ArrayList<>();
-    private List<String> listSpinnerShowData = new ArrayList<>();
+//    private List<String> listSpinnerOperatorList = new ArrayList<>();
+//    private List<String> listSpinnerShowData = new ArrayList<>();
 
     private Button btnElectricRecharge,btnFetch, btnOtpVerify, btnCancelOtp;
     private ImageView imgDropOperator;
     private TextView txtUserName;
+
+    RelativeLayout lay_circle;
 
     private EditText edRechargeAmount;
     private EditText[] edRecharge = {edRechargeAmount};
     private String[] edTextsError = {"Enter recharge amount"};
     private int[] editTextDthClickId = {R.id.electricity_amount};
 
-    private View[] allViewWithClick = {btnElectricRecharge,btnFetch, imgDropOperator, btnOtpVerify, btnCancelOtp};
-    private int[] allViewWithClickId = {R.id.btn_electricrecharge,R.id.btn_fetch, R.id.img_drop_1, R.id.btn_otpcancel, R.id.btn_otpauth};
+    private View[] allViewWithClick = {btnElectricRecharge,btnFetch, imgDropOperator, btnOtpVerify, btnCancelOtp,lay_circle};
+    private int[] allViewWithClickId = {R.id.btn_electricrecharge,R.id.btn_fetch, R.id.img_drop_1, R.id.btn_otpcancel, R.id.btn_otpauth,R.id.lay_circle};
 
     private String str_minLength;
     private LinearLayout layBiller;
@@ -69,6 +74,11 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
     public static final String TAG_STATUS = "status";
     TextView tv_heading;
     private EditText edtOtp;
+    private TextView txtSpinnerOperatorList;
+
+    private SpinnerModel selectedOperatorSpinner;
+    private List<SpinnerModel> listSpinnerOperatorList = new ArrayList<>();
+    private static final int REQUEST_CODE_OPERATOR = 435;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,11 +109,11 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         layBiller.setVisibility(View.INVISIBLE);
         item = (LinearLayout) findViewById(R.id.lay_dynamic_lay);
         txtUserName = (TextView) findViewById(R.id.txt_username);
+        txtSpinnerOperatorList = findViewById(R.id.spinner_electricoperatorlist_txt);
         spinnerOperatorList = (Spinner) findViewById(R.id.spinner_electricoperatorlist);
         LoadOperatorList();
 
         hideOtpLayout();
-        //OpenDemoLink();
     }
 
     @Override
@@ -142,8 +152,11 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
                     case R.id.btn_electricrecharge:
                         EletricRecharge();
                         break;
+                    case R.id.lay_circle:
+                        ActivitySpinner.showSpinner(svContext, listSpinnerOperatorList, "Select Operator", REQUEST_CODE_OPERATOR);
+                        break;
                     case R.id.img_drop_1:
-                        spinnerOperatorList.performClick();
+                        ActivitySpinner.showSpinner(svContext, listSpinnerOperatorList, "Select Operator", REQUEST_CODE_OPERATOR);
                         break;
                     case R.id.btn_otpcancel:
                         hideOtpLayout();
@@ -151,13 +164,14 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
                     case R.id.btn_otpauth:
                         //RechargeProcess(svContext,lstEditext);
                         break;
+
                 }
             });
         }
     }
     private void FetchandBill(View v) {
         int edtTextxId = v.getId();
-        if (spinnerOperatorList.getSelectedItemPosition() != 0 &&
+        if (selectedOperatorSpinner != null &&
                 ((EditText) v).getText().toString().trim().length() != 0) {
 
             String paramOne = "", paramTwo = "", paramThree = "";
@@ -184,6 +198,9 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
                 callWebService(ApiInterface.GETBBSPELECBILLFETCH, lstUploadData);
             }
         }
+//        else {
+//            customToast.showCustomToast(svContext, "Please Enter " + ((EditText) v).getHint().toString(), customToast.ToastyError);
+//        }
     }
 
 
@@ -250,13 +267,13 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         if (url.contains(ApiInterface.GETBBSPELECTOPERATOR)) {
             try {
                 listSpinnerOperatorList = new ArrayList<>();
-                listSpinnerShowData = new ArrayList<>();
+                //listSpinnerShowData = new ArrayList<>();
                 JSONObject json = new JSONObject(result);
 
                 String str_message = json.getString(TAG_MESSAGE);
                 String str_status = json.getString(TAG_STATUS);
 
-                listSpinnerOperatorList.add("-1" + "#:#" + "Select Biller");
+                //listSpinnerOperatorList.add("-1" + "#:#" + "Select Biller");
 
                 if (str_status.equalsIgnoreCase("1")) {
                     JSONArray data = json.getJSONArray(TAG_DATA);
@@ -267,8 +284,15 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
                         String str_billerAliasName = data_obj.getString("billerAliasName");
                         String is_fetch = data_obj.getString("is_fetch");
 
-                        listSpinnerOperatorList.add(str_code + "#:#" + str_name);
-                        listSpinnerShowData.add(str_code);
+//                        listSpinnerOperatorList.add(str_code + "#:#" + str_name);
+//                        listSpinnerShowData.add(str_code);
+                        String strIconUrl = null;
+                        if (data_obj.has("icon")) {
+                            strIconUrl = data_obj.getString("icon");
+                        }
+
+                        listSpinnerOperatorList.add(new SpinnerModel(str_code, str_name, "", str_billerAliasName, strIconUrl));
+
                     }
                 } else {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
@@ -383,12 +407,16 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         lstEditext = new ArrayList<>();
         for (int i = 0; i < lstParam.size(); i++) {
             View child = getLayoutInflater().inflate(R.layout.item_dynamiclay, null);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int) getResources().getDimension(R.dimen.fortyfive));
+            lp.setMargins(0, 0, 0, (int) getResources().getDimension(R.dimen.fifteen));
             EditText edItem = (child).findViewById(R.id.param_name);
             edItem.setHint(lstParam.get(i).getParamName());
 //            edItem.setFilters(new InputFilter[]{new InputFilterMinMax(lstParam.get(i).getMinlength(),
 //                    lstParam.get(i).getMaxlength())});
 
+
             edItem.setId(i);
+            edItem.setLayoutParams(lp);
             edItem.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
@@ -451,27 +479,27 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
     Spinner spinnerOperatorList;
 
     private void PopulateEltricOperatorList() {
-        SpinnerPopulateAdapter spindapter = new SpinnerPopulateAdapter(svContext, listSpinnerOperatorList, true);
-        spinnerOperatorList.setAdapter(spindapter);
-
-        spinnerOperatorList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                strOperatorCode = (listSpinnerOperatorList.get(i)).split("#:#")[0];
-                item.removeAllViews();
-                if (!strOperatorCode.equalsIgnoreCase("-1")) {
-                    lstUploadData = new LinkedList<>();
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-                    lstUploadData.add(strOperatorCode);
-                    callWebService(ApiInterface.GETBBSPELECTFORM, lstUploadData);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//        SpinnerPopulateAdapter spindapter = new SpinnerPopulateAdapter(svContext, listSpinnerOperatorList, true);
+//        spinnerOperatorList.setAdapter(spindapter);
+//
+//        spinnerOperatorList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                strOperatorCode = (listSpinnerOperatorList.get(i)).split("#:#")[0];
+//                item.removeAllViews();
+//                if (!strOperatorCode.equalsIgnoreCase("-1")) {
+//                    lstUploadData = new LinkedList<>();
+//                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+//                    lstUploadData.add(strOperatorCode);
+//                    callWebService(ApiInterface.GETBBSPELECTFORM, lstUploadData);
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
     }
 
     private String strOperatorCode;
@@ -480,7 +508,7 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         int response = 0;
         response = CheckValidation.emptyEditTextError(edRecharge, edTextsError);
 
-        if (spinnerOperatorList.getSelectedItemPosition() == 0) {
+        if (selectedOperatorSpinner == null) {
             response++;
             customToast.showCustomToast(svContext, "Please select operator", customToast.ToastyError);
         }
@@ -535,16 +563,32 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
     }
 
     private String strDemoServiceName = "", dtrDemoServiceUrl = "";
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("4");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
 
-        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (resultCode == RESULT_OK) {
+            Bundle extras = intent.getExtras();
+            if (extras == null) return;
+            switch (requestCode) {
+                case REQUEST_CODE_OPERATOR:
+                    int pos2 = intent.getIntExtra(ActivitySpinner.EXTRA_SPINNER_POSITION, 0);
+                    selectedOperatorSpinner = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
+                    if (selectedOperatorSpinner == null) {
+                        txtSpinnerOperatorList.setText("Select Operator");
+                    } else {
+                        txtSpinnerOperatorList.setText(selectedOperatorSpinner.getTitle());
+                        strOperatorCode = selectedOperatorSpinner.getId();
+                        item.removeAllViews();
+                        lstUploadData = new LinkedList<>();
+                        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+                        lstUploadData.add(strOperatorCode);
+                        callWebService(ApiInterface.GETBBSPELECTFORM, lstUploadData);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

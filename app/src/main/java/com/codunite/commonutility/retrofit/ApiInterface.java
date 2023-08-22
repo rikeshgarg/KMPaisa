@@ -56,6 +56,15 @@ public interface ApiInterface {
     String RECHARGEHISTORY = "getRechargeHistory";
     String RECENTRECHARGEHISTORY = "getRecentRechargeHistory";
     String RECHARGECOMMISIONHISTORY = "getRechargeCommisionHistory";
+
+    String RECHARGECOMMISIONREPORTLIST = "getRechargeCommissionReportList";
+
+    String AEPSCOMMISIONREPORTLIST = "getAepsCommissionReportList";
+
+    String FUNDTRANSFERCOMMISIONREPORTLIST = "getFundTransferCommissionReportList";
+
+    //
+
     String GETELECTRICITYBILLERDETAIL = "getElectricityBillerDetail";//unused
     String ADDWALLET = "addWallet";//unused
     String WALLETTRANSFER = "walletAuth";//unused
@@ -111,12 +120,21 @@ public interface ApiInterface {
     //String GETRECHARGECOMMISIONLIST = "getRechargeCommission";
     String GETRECHARGECOMMISIONLIST = "getRechargeCommisionList";
     String GETBBPSCOMMISIONLIST = "getBBPSCommisionList";
-    String GETBBPSLIVECOMMISIONLIST = "getBbpsCommission";
+    //String GETBBPSLIVECOMMISIONLIST = "getBbpsCommission";
+
+    String GETBBPSFIXCOMMISIONLIST = "getBbpsCommission";
+
+    String GETAADHARKYCCOMMISIONLIST = "getAdharEKycCharge";
+
+    String GETACCOUNTVERIFYCOMMISIONLIST = "getAccountVerifyCharge";
+
+    String GETUTIPANCARDCOMMISIONLIST = "getUtiPancardCharge";
+
     String GETRECHARGEINCOME = "getRechargeIncome";
     String GETBBPSINCOME = "getBbpsIncome";
 
     String GETMONEYTRANSFERCOMMISIONLIST = "getMoneyTransferCommisionList";
-    String GETAEPSCOMMISIONLIST = "getAEPSCommisionList";
+    String GETAEPSCOMMISIONCHARGE = "getAepsCommissionCharge";
     String GETBBSPHISTORY = "getBBSPHistory";
     String GETBBSPLIVEHISTORY = "getBBPSLiveHistory";
 
@@ -1107,16 +1125,34 @@ public interface ApiInterface {
     Call<String> getBBPSCommisionList(@Field("user_id") String user_id);
 
     @FormUrlEncoded
-    @POST(GETBBPSLIVECOMMISIONLIST)
-    Call<String> getBBPSLiveCommisionList(@Field("userID") String code);
+    @POST(GETBBPSFIXCOMMISIONLIST)
+    Call<String> getBBPSFixCommisionList(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(GETAADHARKYCCOMMISIONLIST)
+    Call<String> getAadharKycCommisionList(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(GETACCOUNTVERIFYCOMMISIONLIST)
+    Call<String> getAccountVerifyCommisionList(@Field("user_id") String user_id);
+
+
+    @FormUrlEncoded
+    @POST(GETUTIPANCARDCOMMISIONLIST)
+    Call<String> getUTIPancardCommisionList(@Field("user_id") String user_id);
+
+
+//    @FormUrlEncoded
+//    @POST(GETBBPSLIVECOMMISIONLIST)
+//    Call<String> getBBPSLiveCommisionList(@Field("userID") String code);
 
     @FormUrlEncoded
     @POST(GETMONEYTRANSFERCOMMISIONLIST)
     Call<String> getMoneyTransferCommisionList(@Field("user_id") String user_id);
 
     @FormUrlEncoded
-    @POST(GETAEPSCOMMISIONLIST)
-    Call<String> getAEPSCommisionList(@Field("user_id") String user_id);
+    @POST(GETAEPSCOMMISIONCHARGE)
+    Call<String> getAEPSCommisionCharge(@Field("user_id") String user_id);
 
     @GET(GET_CONTACT_CONTENT)
     Call<String> getContactContent();
@@ -1463,6 +1499,28 @@ public interface ApiInterface {
                                     @Field("startDate") String startDate,
                                     @Field("endDate") String endDate,
                                     @Field("keyword") String keyword);
+
+
+    @FormUrlEncoded
+    @POST(RECHARGECOMMISIONREPORTLIST)
+    Call<String> GetRechargeCommissionReportList(@Field("user_id") String user_id,
+                                    @Field("startDate") String startDate,
+                                    @Field("endDate") String endDate,
+                                    @Field("keyword") String keyword);
+
+    @FormUrlEncoded
+    @POST(AEPSCOMMISIONREPORTLIST)
+    Call<String> GetAEPSCommissionReportList(@Field("user_id") String user_id,
+                                                 @Field("startDate") String startDate,
+                                                 @Field("endDate") String endDate,
+                                                 @Field("keyword") String keyword);
+
+    @FormUrlEncoded
+    @POST(FUNDTRANSFERCOMMISIONREPORTLIST)
+    Call<String> GetFundTransCommissionReportList(@Field("user_id") String user_id,
+                                             @Field("startDate") String startDate,
+                                             @Field("endDate") String endDate,
+                                             @Field("keyword") String keyword);
 
     @FormUrlEncoded
     @POST(RECHARGECOMMISIONHISTORY)

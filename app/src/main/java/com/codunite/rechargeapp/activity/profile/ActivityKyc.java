@@ -133,7 +133,6 @@ public class ActivityKyc extends AppCompatActivity implements View.OnClickListen
             callWebService(ApiInterface.USERKYCDETAIL, lstUploadData);
         }
 
-        OpenDemoLink();
     }
 
     private void ProcessingKyc() {
@@ -408,12 +407,12 @@ public class ActivityKyc extends AppCompatActivity implements View.OnClickListen
                         }
                         if (data.has("aadhar_back")) {
                             String strAadharFront = data.getString("aadhar_back");
-                            ImageLoading.loadImages(strAadharFront, imgBackAadharCard, R.drawable.logo);
+                            ImageLoading.loadImages(strAadharFront, imgBackAadharCard, R.drawable.logo_color);
                         }
                         if (data.has("pan_card")) {
                             String strAadharFront = data.getString("pan_card");
                             ImageLoading.loadImages(strAadharFront,
-                                    imgPanCard, R.drawable.logo);
+                                    imgPanCard, R.drawable.logo_color);
                         }
                         imgFrontAadharcard.setVisibility(View.VISIBLE);
                         imgBackAadharCard.setVisibility(View.VISIBLE);
@@ -434,21 +433,6 @@ public class ActivityKyc extends AppCompatActivity implements View.OnClickListen
                         txStatus.setTextColor(getResources().getColor(R.color.red_900));
                     }
                     DiableAllViews(nested_scroll_view);
-                }
-            } catch (JSONException e) {
-                customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
-                e.printStackTrace();
-            }
-        }else if (url.contains(ApiInterface.GETDEMOLINK)) {
-            try {
-                JSONObject json = new JSONObject(result);
-                String str_status = json.getString("status");
-                String str_msg = json.getString("message");
-                if (str_status.equalsIgnoreCase("0")) {
-                    customToast.showCustomToast(svContext, str_msg, customToast.ToastyError);
-                } else {
-                    strDemoServiceName = json.getString("service");
-                    dtrDemoServiceUrl = json.getString("demo_link");
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
@@ -487,17 +471,5 @@ public class ActivityKyc extends AppCompatActivity implements View.OnClickListen
     public void onBackPressed() {
         super.onBackPressed();
     }
-    private String strDemoServiceName = "", dtrDemoServiceUrl = "";
-    private void OpenDemoLink() {
-        lstUploadData = new LinkedList<>();
-        lstUploadData.add("18");
-        callWebService(ApiInterface.GETDEMOLINK, lstUploadData);
 
-        ((View) findViewById(R.id.lay_demo_url)).setOnClickListener(v -> {
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, strDemoServiceName);
-            PreferenceConnector.writeString(svContext, PreferenceConnector.WEBURL, dtrDemoServiceUrl);
-            Intent svIntent = new Intent(svContext, WebViewActivity.class);
-            svContext.startActivity(svIntent);
-        });
-    }
 }

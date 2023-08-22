@@ -148,7 +148,7 @@
                 android:layout_width="@dimen/fifty"
                 android:layout_height="@dimen/fifty"
                 android:elevation="@dimen/ten"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo_color" />
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

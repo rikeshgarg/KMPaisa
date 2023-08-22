@@ -82,6 +82,7 @@
                             android:background="@drawable/back_edittext_default">
 
                             <Spinner
+                                android:visibility="gone"
                                 android:background="@android:color/transparent"
                                 android:id="@+id/spinner_serviceoperator"
                                 android:layout_width="fill_parent"
@@ -89,8 +90,20 @@
                                 android:layout_centerHorizontal="true"
                                 android:theme="@style/mySpinnerItemStyle" />
 
+                            <TextView
+                                android:id="@+id/spinner_serviceoperator_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/ten"
+                                android:layout_toLeftOf="@+id/img_serviceoperator"
+                                android:text="Select Service"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textColor="@color/fontcolortextview"
+                                android:textSize="@dimen/ts_seventeen" />
+
                             <ImageView
-                                android:id="@+id/img_drop_10"
+                                android:id="@+id/img_serviceoperator"
                                 android:layout_width="@dimen/twentyfive"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentRight="true"
@@ -103,19 +116,32 @@
 
 
                         <RelativeLayout
-                            android:id="@+id/lay_circle"
+                            android:id="@+id/lay_spinner_operator"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/fortyfive"
                             android:layout_marginTop="@dimen/fifteen"
                             android:background="@drawable/back_edittext_default">>
 
                             <Spinner
+                                android:visibility="gone"
                                 android:background="@android:color/transparent"
                                 android:id="@+id/spinner_electricoperatorlist"
                                 android:layout_width="fill_parent"
                                 android:layout_height="@dimen/fortyfive"
                                 android:layout_centerHorizontal="true"
                                 android:theme="@style/mySpinnerItemStyle" />
+
+                            <TextView
+                                android:id="@+id/spinner_electricoperator_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/ten"
+                                android:layout_toLeftOf="@+id/img_drop_1"
+                                android:text="Select Operator"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textColor="@color/fontcolortextview"
+                                android:textSize="@dimen/ts_seventeen" />
 
                             <ImageView
                                 android:id="@+id/img_drop_1"
@@ -250,6 +276,7 @@
                         android:padding="@dimen/twenty" />
 
                     <LinearLayout
+                        android:visibility="gone"
                         android:id="@+id/card_otp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

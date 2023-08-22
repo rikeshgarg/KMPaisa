@@ -5,7 +5,7 @@
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_bottomsheet">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -69,6 +69,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="none"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="@dimen/twelve"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="@dimen/five"
+                    android:background="@drawable/back_dash_menuone"
                     tools:listitem="@layout/spinner_row_item" />
 
             </RelativeLayout>

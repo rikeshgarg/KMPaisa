@@ -20,6 +20,7 @@ import com.codunite.commonutility.retrofit.ApiInterface;
 import com.codunite.rechargeapp.adapter.BBPSCommisionAdapter;
 import com.codunite.rechargeapp.activity.reports.ActivityRechargeHistory;
 import com.codunite.rechargeapp.R;
+import com.codunite.rechargeapp.adapter.BBPSFixCommisionAdapter;
 import com.codunite.rechargeapp.model.BBPSCommisionModel;
 import com.codunite.commonutility.GlobalVariables;
 import com.codunite.commonutility.ItemAnimation;
@@ -29,6 +30,7 @@ import com.codunite.commonutility.ShowCustomToast;
 import com.codunite.commonutility.WebService;
 import com.codunite.commonutility.WebServiceListener;
 import com.codunite.commonutility.customfont.FontUtils;
+import com.codunite.rechargeapp.model.BBPSFixCommisionModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -74,7 +76,7 @@ public class ActivityBBPSCommision extends AppCompatActivity implements View.OnC
         btnAddWallet.setOnClickListener(this);
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        callWebService(ApiInterface.GETBBPSCOMMISIONLIST, lstUploadData);
+        callWebService(ApiInterface.GETBBPSFIXCOMMISIONLIST, lstUploadData);
 
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
     }
@@ -143,11 +145,11 @@ public class ActivityBBPSCommision extends AppCompatActivity implements View.OnC
         webService.LoadDataRetrofit(webService.callReturn());
     }
 
-    private List<BBPSCommisionModel> lstItems = new ArrayList<>();
+    private List<BBPSFixCommisionModel> lstItems = new ArrayList<>();
 
     @Override
     public void onWebServiceActionComplete(String result, String url) {
-        if (url.contains(ApiInterface.GETBBPSCOMMISIONLIST)) {
+        if (url.contains(ApiInterface.GETBBPSFIXCOMMISIONLIST)) {
             try {
                 lstItems = new ArrayList<>();
 
@@ -160,13 +162,11 @@ public class ActivityBBPSCommision extends AppCompatActivity implements View.OnC
                     JSONArray data = json.getJSONArray(TAG_DATA);
                     for (int data_i = 0; data_i < ((JSONArray) data).length(); data_i++) {
                         JSONObject data_obj = data.getJSONObject(data_i);
-                        String strOperator = data_obj.getString("operator_name");
-                        String strcode = data_obj.getString("operator_code");
-                        String strType = data_obj.getString("type");
-                        String strcommision = data_obj.getString("commision");
+                        String strName = data_obj.getString("title");
+                        String strCommission = data_obj.getString("commision");
                         String strflat = data_obj.getString("is_flat");
                         String strsurcharge = data_obj.getString("is_surcharge");
-                        lstItems.add(new BBPSCommisionModel(strOperator, strcode, strType, strcommision,strflat,strsurcharge));
+                        lstItems.add(new BBPSFixCommisionModel(strName, strCommission,strflat,strsurcharge));
                     }
                 }
             } catch (JSONException e) {
@@ -174,23 +174,15 @@ public class ActivityBBPSCommision extends AppCompatActivity implements View.OnC
                 e.printStackTrace();
             }
 
-//            cvAddWallet.setVisibility(View.VISIBLE);
-//            cardShowBalance.setVisibility(View.VISIBLE);
-//            txtWalletbal.setVisibility(View.VISIBLE);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             wallethistoryrv.setLayoutManager(layoutManager);
             wallethistoryrv.setHasFixedSize(true);
             int animation_type = ItemAnimation.LEFT_RIGHT;
-            BBPSCommisionAdapter mAdapter = new BBPSCommisionAdapter(this, lstItems, animation_type);
+            BBPSFixCommisionAdapter mAdapter = new BBPSFixCommisionAdapter(this, lstItems, animation_type);
             wallethistoryrv.setNestedScrollingEnabled(false);
             wallethistoryrv.setAdapter(mAdapter);
-            mAdapter.setOnItemClickListener(new BBPSCommisionAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClick(View view, String obj, int position) {
 
-                }
-            });
         }
     }
 

@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.codunite.commonutility.ImageLoading;
 import com.codunite.rechargeapp.R;
 import com.codunite.rechargeapp.model.SliderModel;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -57,13 +58,14 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
         }
 
         void setImage(SliderModel sliderItems) {
+            ImageLoading.loadImages(sliderItems.getBanner_img(), imageView, 0);
         //use glide or picasso in case you get image from internet
-            Glide.with(imageView.getContext())
-                    .load(Uri.parse(sliderItems.getBanner_img()))
-                    .placeholder(R.drawable.loader)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .dontAnimate()
-                    .into(imageView);
+//            Glide.with(imageView.getContext())
+//                    .load(Uri.parse(sliderItems.getBanner_img()))
+//                    .placeholder(R.drawable.loader)
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .dontAnimate()
+//                    .into(imageView);
             //imageView.setImageURI(Uri.parse(sliderItems.getBanner_img()));
         }
     }

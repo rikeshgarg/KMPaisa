@@ -39,7 +39,7 @@ public class AEPSCommisionAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtstartrange, txtendrange,txtcommsion, txttype, txtflat;
+        public TextView txtstartrange, txtendrange,txtcommsion, txttype, txtflat,txtsurcharge;
         public CardView cardView;
         public View lyt_parent;
 
@@ -52,7 +52,7 @@ public class AEPSCommisionAdapter extends RecyclerView.Adapter<RecyclerView.View
             txttype = (TextView) v.findViewById(R.id.type_aeps_commision);
 
             txtflat = (TextView) v.findViewById(R.id.flat_aeps_commision);
-
+            txtsurcharge= (TextView) v.findViewById(R.id.surcharge_re_commision);
             cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
         }
@@ -74,9 +74,24 @@ public class AEPSCommisionAdapter extends RecyclerView.Adapter<RecyclerView.View
 
             view.txtstartrange.setText(items.get(position).getStrstartrange());
             view.txtendrange.setText(items.get(position).getStrendrange());
-            view.txtflat.setText(items.get(position).getStrflat());
+            //view.txtflat.setText(items.get(position).getStrflat());
             view.txttype.setText(items.get(position).getStrtype());
             view.txtcommsion.setText(items.get(position).getStrcommsion());
+            view.txtflat.setText(items.get(position).getStrflat());
+            view.txtsurcharge.setText(items.get(position).getStrsurcharge());
+            if(items.get(position).getStrflat().equals("Yes")){
+                view.txtflat.setTextColor(ctx.getResources().getColor(R.color.green));
+            } else {
+                view.txtflat.setTextColor(ctx.getResources().getColor(R.color.red));
+            }
+
+            if(items.get(position).getStrsurcharge().equals("Yes")){
+                view.txtsurcharge.setTextColor(ctx.getResources().getColor(R.color.green));
+            } else {
+                view.txtsurcharge.setTextColor(ctx.getResources().getColor(R.color.red));
+            }
+
+
             view.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

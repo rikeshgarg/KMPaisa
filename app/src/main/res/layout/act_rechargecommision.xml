@@ -4,7 +4,7 @@
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -144,9 +144,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/card_wallbal"
-                    android:layout_marginLeft="@dimen/five"
-                    android:layout_marginTop="@dimen/five"
-                    android:layout_marginRight="@dimen/five"
+                    android:layout_marginLeft="@dimen/fifteen"
+                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginRight="@dimen/fifteen"
                     android:scrollbars="vertical"
                     android:scrollingCache="true" />
 

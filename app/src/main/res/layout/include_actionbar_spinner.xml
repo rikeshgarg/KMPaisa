@@ -19,7 +19,7 @@
             android:padding="@dimen/twelve"
             android:singleLine="true"
             android:src="@drawable/ico_left"
-            app:tint="@color/black" />
+            app:tint="@color/colorAccent" />
 
         <View
             android:id="@+id/img_view3"
@@ -37,7 +37,7 @@
             android:maxLines="1"
             android:padding="@dimen/ten"
             android:singleLine="true"
-            android:textColor="@color/black"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/ts_seventeen"
             android:textStyle="bold" />
     </RelativeLayout>

@@ -82,7 +82,7 @@ public class ActivityAEPSCommision extends AppCompatActivity implements View.OnC
         btnAddWallet.setOnClickListener(this);
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-        callWebService(ApiInterface.GETAEPSCOMMISIONLIST, lstUploadData);
+        callWebService(ApiInterface.GETAEPSCOMMISIONCHARGE, lstUploadData);
 
         txtWalletbal.setText(PreferenceConnector.readString(svContext, PreferenceConnector.WALLETBAL, "0"));
     }
@@ -112,23 +112,8 @@ public class ActivityAEPSCommision extends AppCompatActivity implements View.OnC
     private void loadToolBar() {
         imgToolBarBack = (ImageView) findViewById(R.id.img_back);
         imgToolBarBack.setOnClickListener(this);
-
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         txtHeading.setText("AEPS Commission");
-
-//        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
-//        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
-//
-//        TextView toolbar_txt_ewalletbal = (TextView) findViewById(R.id.toolbar_txt_ewalletbal);
-//        toolbar_txt_ewalletbal.setText(ActivityMain.ShoweBalance(svContext));
-//
-//        LinearLayout imgToolBarWallet = (LinearLayout) findViewById(R.id.img_wallet);
-//        imgToolBarWallet.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ActivitySplash.OpenWalletActivity(svContext);
-//            }
-//        });
     }
 
     @Override
@@ -172,7 +157,7 @@ public class ActivityAEPSCommision extends AppCompatActivity implements View.OnC
     @Override
     public void onWebServiceActionComplete(String result, String url) {
         System.out.println(result + ".........jsonresponse....." + url);
-        if (url.contains(ApiInterface.GETAEPSCOMMISIONLIST)) {
+        if (url.contains(ApiInterface.GETAEPSCOMMISIONCHARGE)) {
             try {
                 lstItems = new ArrayList<>();
 
@@ -187,10 +172,11 @@ public class ActivityAEPSCommision extends AppCompatActivity implements View.OnC
                         JSONObject data_obj = data.getJSONObject(data_i);
                         String strstartrange = data_obj.getString("start_range");
                         String strendrange = data_obj.getString("end_range");
-                        String strtype = data_obj.getString("com_type");
-                        String strcommsion = data_obj.getString("commission");
+                        String strtype = data_obj.getString("commission_type");
+                        String strcommsion = data_obj.getString("commision");
                         String strflat = data_obj.getString("is_flat");
-                        lstItems.add(new AEPSCommisionModel(strstartrange, strendrange, strcommsion, strtype, strflat));
+                        String strsurcharge = data_obj.getString("is_surcharge");
+                        lstItems.add(new AEPSCommisionModel(strstartrange, strendrange, strcommsion, strtype, strflat,strsurcharge));
                     }
                 }
             } catch (JSONException e) {

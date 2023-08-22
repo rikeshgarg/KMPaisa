@@ -78,9 +78,12 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
     private int[] allDrawableBBPS = {R.drawable.bbps_boardband, R.drawable.fastag, R.drawable.bbps_electricity, R.drawable.bbps_water,R.drawable.bbps_lpg_gas,R.drawable.bbps_insurance,R.drawable.bbps_loan,R.drawable.ic_more};
     private int[] allDrawableBgColorBBPS = {R.color.bg_datacard, R.color.bg_fasttag, R.color.bg_postpaid, R.color.bg_prepaid,R.color.bg_metro,R.color.bg_prepaid,R.color.bg_landline,0};
 
-    public static String[] aepsliveItemList = {"Money Transfer","Xpress IMPS","Micro ATM","AEPS", "Aadhar pay"};
-    private int[] allDrawableaeps = {R.drawable.ic_money_transfer, R.drawable.ic_express_imps, R.drawable.ic_microatm,R.drawable.ic_aeps, R.drawable.ic_aadhaar_pay};
-    private int[] allDrawableaepsColors = {R.color.bg_prepaid, R.color.bg_metro, R.color.bg_datacard, R.color.bg_dth,R.color.bg_postpaid};
+    //public static String[] aepsliveItemList = {"Money Transfer","Xpress IMPS","Micro ATM","AEPS", "Aadhar pay"};
+    public static String[] aepsliveItemList = {"Money Transfer","AEPS", "Aadhar pay"};
+    //private int[] allDrawableaeps = {R.drawable.ic_money_transfer, R.drawable.ic_express_imps, R.drawable.ic_microatm,R.drawable.ic_aeps, R.drawable.ic_aadhaar_pay};
+    private int[] allDrawableaeps = {R.drawable.ic_money_transfer,R.drawable.ic_aeps, R.drawable.ic_aadhaar_pay};
+    //private int[] allDrawableaepsColors = {R.color.bg_prepaid, R.color.bg_metro, R.color.bg_datacard, R.color.bg_dth,R.color.bg_postpaid};
+    private int[] allDrawableaepsColors = {R.color.bg_prepaid, R.color.bg_dth,R.color.bg_postpaid};
 
     private CardView cardMarquee;
     private SwipeRefreshLayout layrefrsh;
@@ -143,7 +146,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
 
     public void resumeApp() {
         //layIsFundRequest = (View) aiView.findViewById(R.id.lay_isfundrequest);
-        cardMarquee = (CardView) aiView.findViewById(R.id.card_marque);
+        //cardMarquee = (CardView) aiView.findViewById(R.id.card_marque);
         layrefrsh = (SwipeRefreshLayout) aiView.findViewById(R.id.layrefrsh);
         viewPager2 =(ViewPager2) aiView.findViewById(R.id.viewPagerImageSlider);
 
@@ -185,11 +188,11 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
 
         TextView txtMarquee = (TextView) aiView.findViewById(R.id.text_marquee);
         String dashNEws = PreferenceConnector.readString(svContext, PreferenceConnector.DASHNEWS, "");
-        if (dashNEws.equals("")) {
-            cardMarquee.setVisibility(View.GONE);
-        } else {
-            cardMarquee.setVisibility(View.VISIBLE);
-        }
+//        if (dashNEws.equals("")) {
+//            cardMarquee.setVisibility(View.GONE);
+//        } else {
+//            cardMarquee.setVisibility(View.VISIBLE);
+//        }
         txtMarquee.setText(dashNEws);
         txtMarquee.setSelected(true);
 
@@ -383,7 +386,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
             lstDashBoardAeps.add(new DashboardModel(aepsliveItemList[j], allDrawableaeps[j], false,allDrawableaepsColors[j]));
         }
 
-        GridLayoutManager layoutManager = new GridLayoutManager(svContext, 4);
+        GridLayoutManager layoutManager = new GridLayoutManager(svContext, 3);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
@@ -490,7 +493,7 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
         });
 
 
-        sliderView.setImageList(imageList, ScaleTypes.FIT);
+        sliderView.setImageList(imageList, ScaleTypes.CENTER_CROP);
 
         sliderView.setItemClickListener(i -> {
             PreferenceConnector.writeString(svContext, PreferenceConnector.WEBHEADING, FragHomeDashBoard.lstSlider.get(i).getBanner_name());

@@ -116,20 +116,6 @@ public class ActivityDMRCommision extends AppCompatActivity implements View.OnCl
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         txtHeading.setText("DMR Commission");
-
-//        TextView toolbar_txt_walletbal = (TextView) findViewById(R.id.toolbar_txt_walletbal);
-//        toolbar_txt_walletbal.setText(ActivityMain.ShowBalance(svContext));
-//
-//        TextView toolbar_txt_ewalletbal = (TextView) findViewById(R.id.toolbar_txt_ewalletbal);
-//        toolbar_txt_ewalletbal.setText(ActivityMain.ShoweBalance(svContext));
-//
-//        LinearLayout imgToolBarWallet = (LinearLayout) findViewById(R.id.img_wallet);
-//        imgToolBarWallet.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ActivitySplash.OpenWalletActivity(svContext);
-//            }
-//        });
     }
 
     @Override

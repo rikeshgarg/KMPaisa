@@ -53,11 +53,14 @@ public class FragReport extends Fragment implements OnClickListener {
     private View aiView = null;
     private boolean mAlreadyLoaded = false;
     private List<DashboardModel> lstDashBoard = new ArrayList<>();
-    public static String[] selectedItem = {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission", "BBPS Commission", "DMR Commission", "AEPS Commission"};
-    private int[] allDrawable = {R.drawable.ic_recharge_history, R.drawable.ic_bill_pay_history, R.drawable.ic_bbps_history, R.drawable.ic_money_transfer_history, R.drawable.ic_recharge_commision,
-            R.drawable.ic_bbps_commision, R.drawable.ic_dmr_commision, R.drawable.ic_aeps_commision};
+    //public static String[] selectedItem = {"Recharge History", "Bill Pay History", "BBPS History", "Money Transfer History", "Recharge Commission", "Bill Pay Commission", "DMR Commission", "AEPS Commission"};
+    public static String[] selectedItem = {"Recharge History", "BBPS History", "Money Transfer History", "Recharge Commission", "Bill Pay Commission", "DMR Commission", "AEPS Commission"};
+//    private int[] allDrawable = {R.drawable.ic_recharge_history, R.drawable.ic_bill_pay_history, R.drawable.ic_bbps_history, R.drawable.ic_money_transfer_history, R.drawable.ic_recharge_commision,
+//            R.drawable.ic_bbps_commision, R.drawable.ic_dmr_commision, R.drawable.ic_aeps_commision};
+private int[] allDrawable = {R.drawable.ic_recharge_history, R.drawable.ic_bbps_history, R.drawable.ic_money_transfer_history, R.drawable.ic_recharge_commision,
+        R.drawable.ic_bbps_commision, R.drawable.ic_dmr_commision, R.drawable.ic_aeps_commision};
 
-    private int[] allDrawableBgColor = {R.color.bg_postpaid, R.color.bg_prepaid, R.color.bg_datacard, R.color.bg_metro, R.color.bg_dth, R.color.bg_fasttag, R.color.bg_dth, R.color.bg_postpaid};
+    private int[] allDrawableBgColor = {R.color.bg_postpaid, R.color.bg_datacard, R.color.bg_metro, R.color.bg_dth, R.color.bg_fasttag, R.color.bg_dth, R.color.bg_postpaid};
     private TextView totalSuccess, totalPending, totalFailed;
     private FrameLayout cardRecharge;
     private Context svContext;
