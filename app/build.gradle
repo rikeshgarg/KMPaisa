@@ -30,7 +30,7 @@ android {
     productFlavors {
         kmpaisa {
             dimension "build"
-            applicationIdSuffix ".kmpaisa"
+            applicationIdSuffix "kmpaisa"
             manifestPlaceholders = [hostName: "www.kmpaisa.in"]
             copy {
                 from 'src/kmpaisa/'
@@ -163,7 +163,7 @@ dependencies {
     // ImagePicker, Ucrop, Permission
     implementation 'com.karumi:dexter:6.2.3'
     implementation 'com.github.krokyze:ucropnedit:2.2.6'
-    implementation 'gun0912.ted:tedbottompicker:2.0.1'
+    //implementation 'gun0912.ted:tedbottompicker:2.0.1'
     // Design, Animation and Improvement Code
     implementation "com.airbnb.android:lottie:5.2.0"
     implementation 'com.github.GrenderG:Toasty:1.4.2'
@@ -191,4 +191,6 @@ dependencies {
     implementation 'com.github.salehyarahmadi:AndExAlertDialog:v1.0.1'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation project(':tedbottompicker')
+    implementation 'gun0912.ted:tedpermission:2.2.0'
 }

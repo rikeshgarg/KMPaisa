@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mylayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:visibility="visible">
+
+    <include
+        android:id="@+id/lay_actionbar"
+        layout="@layout/include_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3c3c3c"
+        android:padding="@dimen/twenty" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@drawable/bg_round_corner_white"
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="@dimen/ten"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:scrollingCache="true">
+
+            <LinearLayout
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+            <RelativeLayout
+                android:id="@+id/rl_member_type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginTop="@dimen/ten"
+                android:background="@drawable/back_edittext_default">
+
+                <ImageView
+                    android:id="@+id/iv_type"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:src="@drawable/ic_user_name"
+                    app:tint="@color/colorAccent" />
+
+
+                <Spinner
+                    android:layout_toRightOf="@+id/iv_type"
+                    android:id="@+id/spinner_member_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:theme="@style/mySpinnerItemStyle" />
+
+                <ImageView
+                    android:id="@+id/img_member_type"
+                    android:layout_width="@dimen/twentyfive"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/ten"
+                    android:src="@drawable/ic_arrow_drop" />
+
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/back_edittext_default"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_name"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:src="@drawable/ic_user_name"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_name"
+                        android:hint="Enter Name"
+                        android:textColorHint="@color/colorAccent"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@android:color/transparent"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/back_edittext_default"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_email"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:src="@drawable/ic_mail"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_email"
+                        android:hint="Enter Email"
+                        android:textColorHint="@color/colorAccent"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+
+                        <EditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/back_edittext_default"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_mobile"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:src="@drawable/ic_mobile"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_mobile"
+                        android:hint="Enter Mobile No."
+                        android:textColorHint="@color/colorAccent"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+
+                        <EditText
+                            android:id="@+id/et_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/back_edittext_default"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_password"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:src="@drawable/ic_password"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_password"
+                        android:hint="Enter Password"
+                        android:textColorHint="@color/colorAccent"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+
+                        <EditText
+                            android:id="@+id/et_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/back_edittext_default"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_trans_password"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:src="@drawable/ic_password"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_trans_password"
+                        android:hint="Enter Transaction Password"
+                        android:textColorHint="@color/colorAccent"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+
+                        <EditText
+                            android:id="@+id/et_trans_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:maxLength="6"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_name"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fortyfive"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default"-->
+<!--                android:hint="Enter Name"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingLeft="@dimen/fifteen"-->
+<!--                android:textColor="@color/c_black"-->
+<!--                android:textCursorDrawable="@drawable/color_cursor"-->
+<!--                android:textSize="@dimen/ts_seventeen" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_email"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fortyfive"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default"-->
+<!--                android:hint="Enter Email"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:paddingLeft="@dimen/fifteen"-->
+<!--                android:textColor="@color/c_black"-->
+<!--                android:textCursorDrawable="@drawable/color_cursor"-->
+<!--                android:textSize="@dimen/ts_seventeen" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_mobile"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fortyfive"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default"-->
+<!--                android:hint="Enter Mobile No."-->
+<!--                android:inputType="phone"-->
+<!--                android:maxLength="10"-->
+<!--                android:paddingLeft="@dimen/fifteen"-->
+<!--                android:textColor="@color/c_black"-->
+<!--                android:textCursorDrawable="@drawable/color_cursor"-->
+<!--                android:textSize="@dimen/ts_seventeen" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_password"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fortyfive"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default"-->
+<!--                android:hint="Enter Password"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:paddingLeft="@dimen/fifteen"-->
+<!--                android:textColor="@color/c_black"-->
+<!--                android:textCursorDrawable="@drawable/color_cursor"-->
+<!--                android:textSize="@dimen/ts_seventeen" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_trans_password"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fortyfive"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default"-->
+<!--                android:hint="Enter Transaction Password"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:paddingLeft="@dimen/fifteen"-->
+<!--                android:textColor="@color/c_black"-->
+<!--                android:textCursorDrawable="@drawable/color_cursor"-->
+<!--                android:textSize="@dimen/ts_seventeen" />-->
+
+            <RelativeLayout
+                android:id="@+id/rl_country"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginTop="@dimen/fifteen"
+                android:background="@drawable/back_edittext_default">
+
+                <ImageView
+                    android:id="@+id/img_drawable"
+                    android:layout_width="@dimen/twentyfive"
+                    android:layout_height="@dimen/thirtyfive"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:padding="@dimen/two"
+                    android:src="@drawable/region"
+                    app:tint="@color/colorAccent" />
+
+                <Spinner
+                    android:background="@android:color/transparent"
+                    android:layout_toRightOf="@+id/img_drawable"
+                    android:id="@+id/spinner_country"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toLeftOf="@+id/img_country"
+                    android:theme="@style/mySpinnerItemStyle" />
+
+                <ImageView
+                    android:id="@+id/img_country"
+                    android:layout_width="@dimen/twentyfive"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/ten"
+                    android:src="@drawable/ic_arrow_drop" />
+
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lay_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:layout_marginTop="@dimen/ten"
+                    android:background="@drawable/back_edittext_default"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingEnd="@dimen/five">
+
+                    <ImageView
+                        android:id="@+id/img_drawable1"
+                        android:layout_width="@dimen/twentyfive"
+                        android:layout_height="@dimen/thirtyfive"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:padding="@dimen/two"
+                        android:src="@drawable/region"
+                        app:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/txt_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/fifteen"
+                        android:layout_toRightOf="@+id/img_drawable1"
+                        android:gravity="center_vertical"
+                        android:hint="Select State"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorAccent"
+                        android:textSize="@dimen/ts_seventeen" />
+
+                    <ImageView
+                        android:id="@+id/img_state"
+                        android:layout_width="@dimen/twentyfive"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/ten"
+                        android:padding="@dimen/two"
+                        android:src="@drawable/ic_arrow_drop"
+                        />
+
+                </RelativeLayout>
+
+<!--            <RelativeLayout-->
+<!--                android:visibility="gone"-->
+<!--                android:id="@+id/rl_state"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fifty"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/img_drawable_state"-->
+<!--                    android:layout_width="@dimen/twentyfive"-->
+<!--                    android:layout_height="@dimen/thirtyfive"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_marginLeft="@dimen/twenty"-->
+<!--                    android:padding="@dimen/two"-->
+<!--                    android:src="@drawable/region"-->
+<!--                    app:tint="@color/colorAccent"-->
+<!--                    />-->
+
+<!--                <Spinner-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:layout_toRightOf="@+id/img_drawable_state"-->
+<!--                    android:layout_toLeftOf="@+id/img_state"-->
+<!--                    android:id="@+id/spinner_state"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:theme="@style/mySpinnerItemStyle" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/img_state"-->
+<!--                    android:layout_width="@dimen/twentyfive"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginRight="@dimen/ten"-->
+<!--                    android:src="@drawable/ic_arrow_drop" />-->
+
+<!--            </RelativeLayout>-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fifty"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:background="@drawable/back_edittext_default"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_city"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:src="@drawable/region"
+                        app:tint="@color/colorAccent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_city"
+                        android:hint="Enter City"
+                        android:textColorHint="@color/colorAccent"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+
+                        <EditText
+                            android:id="@+id/et_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/black" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_city"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/fortyfive"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginTop="@dimen/fifteen"-->
+<!--                android:background="@drawable/back_edittext_default"-->
+<!--                android:hint="Enter City"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingLeft="@dimen/fifteen"-->
+<!--                android:textColor="@color/c_black"-->
+<!--                android:textCursorDrawable="@drawable/color_cursor"-->
+<!--                android:textSize="@dimen/ts_seventeen" />-->
+
+            <RelativeLayout
+                android:visibility="visible"
+                android:id="@+id/rl_status"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginTop="@dimen/fifteen"
+                android:background="@drawable/back_edittext_default">
+
+                <ImageView
+                    android:id="@+id/iv_status"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:src="@drawable/ic_user_name"
+                    app:tint="@color/colorAccent" />
+
+
+                <Spinner
+                    android:layout_toRightOf="@+id/iv_status"
+                    android:id="@+id/spinner_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:theme="@style/mySpinnerItemStyle" />
+
+                <ImageView
+                    android:id="@+id/img_status"
+                    android:layout_width="@dimen/twentyfive"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/ten"
+                    android:src="@drawable/ic_arrow_drop" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/twenty"
+                android:layout_marginBottom="@dimen/ten"
+                android:background="@drawable/blue_button_background"
+                android:gravity="center"
+                android:paddingLeft="@dimen/thirty"
+                android:paddingRight="@dimen/thirty"
+                android:text="SUBMIT"
+                android:textColor="#ffffffff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:visibility="visible"
+            layout="@layout/include_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3c3c3c"
+            android:padding="@dimen/twenty" />
+
+    </RelativeLayout>
+
+</LinearLayout>

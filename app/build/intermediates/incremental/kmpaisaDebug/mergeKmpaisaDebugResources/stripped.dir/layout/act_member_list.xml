@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/lay_actionbar"
+        layout="@layout/include_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3c3c3c"
+        android:padding="@dimen/twenty" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:background="@drawable/bg_report_header"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/fifteen"
+            android:layout_marginRight="@dimen/fifteen"
+            android:layout_marginTop="@dimen/ten"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:paddingTop="@dimen/ten"
+                android:paddingBottom="@dimen/ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/ten"
+                    android:scaleType="fitStart"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/forty"
+                    android:src="@drawable/logo_color" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_addmember"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/blue_button_background"
+                android:maxLines="1"
+                android:text="Add Member"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/btn_addmember"
+                android:layout_alignParentRight="true"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/img_bg_shape" />
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/rl_top"
+            android:visibility="visible"
+            android:id="@+id/rv_members"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_member_list" />
+
+        <include
+            android:visibility="visible"
+            layout="@layout/include_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3c3c3c"
+            android:padding="@dimen/twenty" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

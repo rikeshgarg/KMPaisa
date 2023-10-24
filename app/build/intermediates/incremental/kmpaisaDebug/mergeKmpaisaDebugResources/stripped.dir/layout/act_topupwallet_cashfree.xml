@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/headlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/lay_actionbar"
+            layout="@layout/include_actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/twenty" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lay_actionbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/lay_topwallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten"
+                    android:elevation="@dimen/five">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/card_item_corner"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:text="Current Balance"
+                                    android:textColor="@color/fontcolortextview"
+                                    android:textSize="@dimen/ts_forteen" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/fortyfive"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginRight="@dimen/twenty">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/seven"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/currency_symbol"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_twenty" />
+
+                                    <TextView
+                                        android:id="@+id/current_bal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/seven"
+                                        android:gravity="center_vertical"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_twenty" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/one"
+                                    android:layout_marginTop="@dimen/five"
+                                    android:background="@color/colorPrimary" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:paddingStart="@dimen/four"
+                                    android:text="Wallet"
+                                    android:visibility="gone"
+                                    android:textColor="@color/fontcolortextview"
+                                    android:textSize="@dimen/ts_forteen" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/ten"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:text="Request money to your wallet and make one click payment"
+                                    android:textColor="@color/fontcolortextview"
+                                    android:textSize="@dimen/ts_twelve" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/fortyfive"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/five"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:background="@drawable/back_edittext_default">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/five"
+                                        app:tint="@color/colorPrimary" />
+
+                                    <EditText
+                                        android:id="@+id/edtenteramount"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/one"
+                                        android:background="@color/transparent"
+                                        android:hint="Enter Amount"
+                                        android:inputType="number"
+                                        android:paddingLeft="@dimen/five"
+                                        android:singleLine="true"
+                                        android:textColor="@color/fontcoloreditext"
+                                        android:textColorHighlight="@color/colorPrimary"
+                                        android:textColorHint="@color/fontcoloreditexthint"
+                                        android:textCursorDrawable="@drawable/color_cursor"
+                                        android:textSize="@dimen/ts_seventeen" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:layout_marginTop="@dimen/fifteen"
+                                    android:layout_marginRight="@dimen/twenty"
+                                    android:layout_marginBottom="@dimen/five"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/btn_amount100"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/thirtythree"
+                                        android:background="@drawable/back_edittext_default"
+                                        android:gravity="center"
+                                        android:paddingStart="@dimen/five"
+                                        android:paddingEnd="@dimen/five"
+                                        android:text="₹ 100"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_fifteen" />
+
+                                    <TextView
+                                        android:id="@+id/btn_amount500"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/thirtythree"
+                                        android:layout_marginStart="@dimen/ten"
+                                        android:background="@drawable/back_edittext_default"
+                                        android:gravity="center"
+                                        android:paddingStart="@dimen/five"
+                                        android:paddingEnd="@dimen/five"
+                                        android:text="₹ 500"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_fifteen" />
+
+                                    <TextView
+                                        android:id="@+id/btn_amount1000"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/thirtythree"
+                                        android:layout_marginStart="@dimen/ten"
+                                        android:background="@drawable/back_edittext_default"
+                                        android:gravity="center"
+                                        android:paddingStart="@dimen/five"
+                                        android:paddingEnd="@dimen/five"
+                                        android:text="₹ 1000"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_fifteen" />
+
+                                    <TextView
+                                        android:id="@+id/btn_amount1500"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/thirtythree"
+                                        android:layout_marginStart="@dimen/ten"
+                                        android:background="@drawable/back_edittext_default"
+                                        android:gravity="center"
+                                        android:paddingStart="@dimen/five"
+                                        android:paddingEnd="@dimen/five"
+                                        android:singleLine="true"
+                                        android:text="₹ 1500"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_fifteen" />
+
+                                    <TextView
+                                        android:id="@+id/btn_amount2000"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/thirtythree"
+                                        android:layout_marginStart="@dimen/ten"
+                                        android:background="@drawable/back_edittext_default"
+                                        android:gravity="center"
+                                        android:paddingStart="@dimen/five"
+                                        android:paddingEnd="@dimen/five"
+                                        android:singleLine="true"
+                                        android:text="₹ 2000"
+                                        android:textColor="@color/fontcolortextview"
+                                        android:textSize="@dimen/ts_fifteen" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/twenty"
+                                    android:layout_marginEnd="@dimen/twenty"
+                                    android:paddingStart="@dimen/four"
+                                    android:visibility="gone"
+                                    android:text="If you want to add amount more than ₹ 2000 Please Do Fund Request"
+                                    android:textColor="@color/red_500"
+                                    android:textSize="@dimen/ts_twelve" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <include
+                            layout="@layout/include_connection"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/twenty" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/card_item_corner"
+                            app:cardElevation="2dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/ten"
+                                android:layout_marginRight="@dimen/ten"
+                                android:layout_marginBottom="@dimen/five"
+                                android:orientation="vertical"
+                                android:paddingLeft="9dp"
+                                android:paddingRight="9dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/three"
+                                    android:text="Debit From"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/ts_seventeen" />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/fortyfive"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/three"
+                                    android:layout_marginBottom="@dimen/five"
+                                    android:gravity="center_vertical"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/debit_upi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="@dimen/ten"
+                                        android:padding="@dimen/five"
+                                        android:text="UPI"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/ts_fifteen" />
+
+                                    <TextView
+                                        android:id="@+id/debit_card"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/ten"
+                                        android:layout_toRightOf="@+id/debit_upi"
+                                        android:padding="@dimen/five"
+                                        android:text="Debit Card"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/ts_fifteen"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/ten"
+                                        android:layout_toRightOf="@+id/debit_card"
+                                        android:padding="@dimen/five"
+                                        android:text="Credit Card"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/ts_fifteen"
+                                        android:visibility="gone" />
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <RadioGroup
+                                        android:id="@+id/rg_txttype"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/twenty"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/two">
+
+                                        <androidx.appcompat.widget.AppCompatRadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/gray_35"
+                                            android:text="Phone Pe"
+                                            android:textColor="@color/grey_90" />
+
+                                        <androidx.appcompat.widget.AppCompatRadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/gray_35"
+                                            android:text="Google Pay"
+                                            android:textColor="@color/grey_90" />
+
+                                        <androidx.appcompat.widget.AppCompatRadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/gray_35"
+                                            android:text="Amazon Pay"
+                                            android:textColor="@color/grey_90"/>
+
+                                        <androidx.appcompat.widget.AppCompatRadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/gray_35"
+                                            android:text="Paytm"
+                                            android:textColor="@color/grey_90" />
+
+                                        <androidx.appcompat.widget.AppCompatRadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="@dimen/five"
+                                            android:buttonTint="@color/gray_35"
+                                            android:text="Other"
+                                            android:textColor="@color/grey_90" />
+
+                                        <androidx.appcompat.widget.AppCompatRadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/gray_35"
+                                            android:text="Cards"
+                                            android:visibility="gone"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                            android:textColor="@color/grey_90" />
+                                    </RadioGroup>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/fifteen"
+                            android:layout_marginBottom="@dimen/three"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnproceedtopay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/thirtyfive"
+                                android:background="@drawable/blue_button_background"
+                                android:elevation="4dp"
+                                android:paddingLeft="@dimen/fifteen"
+                                android:paddingRight="@dimen/fifteen"
+                                android:text="Continue"
+                                android:textColor="@color/fontcolorbutton" />
+                        </LinearLayout>
+
+                        <include
+                            layout="@layout/include_demourl"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/five"
+                            android:background="#3c3c3c"
+                            android:padding="@dimen/twenty" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/history_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay_topwallet"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginTop="@dimen/ten"
+                    android:text="Main Wallet History"
+                    android:textColor="@color/fontcolortextview"
+                    android:textSize="@dimen/ts_seventeen"
+                    android:visibility="invisible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wallethistory_rv"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/history_label"
+                    android:layout_marginLeft="@dimen/five"
+                    android:layout_marginTop="@dimen/five"
+                    android:layout_marginRight="@dimen/five"
+                    android:scrollbars="vertical"
+                    android:scrollingCache="true" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

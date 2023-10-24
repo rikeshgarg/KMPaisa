@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:fitsSystemWindows="true"
-    tools:context=".activity.ActivityMain"
+    tools:context="com.rechargeapp.activity.ActivityMain"
     tools:openDrawer="start">
 
     <RelativeLayout
@@ -110,9 +110,9 @@
             <RelativeLayout
                 android:id="@+id/lay_bottom_navigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/sixty"
                 android:layout_alignParentBottom="true"
-                android:background="@color/background">
+                android:background="@drawable/img_footer_bg">
 
                 <ImageView
                     android:id="@+id/img_footer_nav"
@@ -121,7 +121,7 @@
                     android:elevation="@dimen/four"
                     android:scaleType="centerCrop"
                     android:src="@drawable/img_footer_bg"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottom_navigation"
@@ -158,6 +158,7 @@
             android:layout_height="match_parent"
             android:background="#3c3c3c"
             android:padding="@dimen/dp_20" />
+
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

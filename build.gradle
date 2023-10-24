@@ -22,7 +22,7 @@ allprojects {
 
 ext {
     configuration = [
-            package          : "com.codunite",
+            package          : "com",
             compileSdkVersion: 33,
             targetSdkVersion : 33,
             minSdkVersion    : 23,

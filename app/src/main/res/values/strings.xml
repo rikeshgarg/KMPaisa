@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Codunite Pay"><!ENTITY package "com.codunite.sonikapay">]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "KM Paisa"><!ENTITY package "com.kmpaisa">]>
 
 <resources>
     <string name="app_name">&appname;</string>
