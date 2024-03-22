@@ -55,7 +55,7 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
         public TextView amountRecharge, recharegDateTime, status, txtID,txtaccno,tv_recharge_type;
-        public TextView txtOperator, txtMobile, txtType, memberDeatil, txtAfterBal, txtBeforeBal;
+        public TextView txtmember,txtOperator, txtMobile, txtType, memberDeatil, txtAfterBal, txtBeforeBal;
         public CardView cardView;
         public View lyt_parent;
         public View layaccountno,laymobile;
@@ -77,11 +77,12 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             btnComplain= (AppCompatButton) v.findViewById(R.id.btn_complain);
             laymobile=(LinearLayout)v.findViewById(R.id.lay_mob);
             //layaccountno=(LinearLayout)v.findViewById(R.id.accountno);
-            //memberDeatil= (TextView) v.findViewById(R.id.member_detail);
+            txtmember= (TextView) v.findViewById(R.id.txtmember);
             //cardView = (CardView) v.findViewById(R.id.cardview);
             lyt_parent = (View) v.findViewById(R.id.lyt_parent);
             tv_recharge_type=(TextView) v.findViewById(R.id.tv_recharge_type);
             iv_operator=(ImageView)v.findViewById(R.id.iv_operator);
+            txtmember.setVisibility(View.VISIBLE);
         }
     }
 
@@ -102,10 +103,15 @@ public class TopRechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView
             view.amountRecharge.setText(items.get(position).getStr_amount());
             view.recharegDateTime.setText(items.get(position).getStr_datetime());
             //view.txtOperator.setText(items.get(position).getOperator());
-            view.txtMobile.setText("Mobile: "+items.get(position).getMobile());
+
             //view.txtType.setText(items.get(position).getType());
             view.tv_recharge_type.setText(items.get(position).getType() + " Recharge");
-            //view.memberDeatil.setText(items.get(position).getMemberDetail());
+            if(items.get(position).getType().equals("DTH")){
+                view.txtMobile.setText("Card No: "+items.get(position).getMobile());
+            } else {
+                view.txtMobile.setText("Mobile: "+items.get(position).getMobile());
+            }
+            view.txtmember.setText(items.get(position).getMemberDetail());
             view.txtAfterBal.setText("Closing Bal: "+items.get(position).getAfterBalance());
             view.txtBeforeBal.setText("Opening Bal: "+items.get(position).getBeforeBalance());
             //view.txtaccno.setText(items.get(position).getStr_account_number());

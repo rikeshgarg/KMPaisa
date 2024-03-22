@@ -43,7 +43,7 @@
             android:maxLines="1"
             android:minLines="1"
             android:text="itemname"
-            android:textColor="@color/black"
+            android:textColor="@color/et_textcolor"
             android:textSize="@dimen/ts_twelve" />
     </LinearLayout>
 </RelativeLayout>

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
 
 import com.commonutility.CheckInternet;
@@ -44,7 +45,8 @@ import java.util.LinkedList;
 public class ActivityRegisterTransfer extends AppCompatActivity implements View.OnClickListener, WebServiceListener, MessageListener {
 
     private EditText edFName, edLName, edPhone, edAddress, edPincode;
-    private Button btnBack, btnRegister, btnsucessfulregister;
+    private AppCompatButton btnBack, btnRegister;
+            Button btnsucessfulregister;
     private TextView goback, tvlogin, txtDob;
 
     private View[] allViewWithClick = {btnBack, btnRegister, btnsucessfulregister, goback, tvlogin};

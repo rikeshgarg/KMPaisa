@@ -105,7 +105,8 @@ public class RechargeHistoryAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             view.amountRecharge.setText(items.get(position).getStr_amount());
             view.recharegDateTime.setText(items.get(position).getStr_datetime());
             //view.txtOperator.setText(items.get(position).getOperator());
-            view.txtMobile.setText("Mobile: "+items.get(position).getMobile());
+            //view.txtMobile.setText("Mobile: "+items.get(position).getMobile());
+            view.txtMobile.setText(items.get(position).getMobile());
             //view.txtType.setText(items.get(position).getType());
             view.tv_recharge_type.setText(items.get(position).getType() + " Recharge");
             //view.memberDeatil.setText(items.get(position).getMemberDetail());

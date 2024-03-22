@@ -80,10 +80,6 @@
         "source": "com.codunite.rechargeapp-main-71:/layout/nav_header_main.xml"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_main_wallet.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/ic_main_wallet.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_color_cursor.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/color_cursor.xml"
     },
@@ -300,10 +296,6 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/trophy.png"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_change_tpin.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/change_tpin.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_back_bottomsheet.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/back_bottomsheet.xml"
     },
@@ -348,12 +340,12 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/back_edittext_default.xml"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/layout_act_privacypolicy.xml.flat",
-        "source": "com.codunite.rechargeapp-main-71:/layout/act_privacypolicy.xml"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_act_notification.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/act_notification.xml"
+    },
+    {
+        "merged": "com.codunite.rechargeapp-merged_res-67:/layout_act_privacypolicy.xml.flat",
+        "source": "com.codunite.rechargeapp-main-71:/layout/act_privacypolicy.xml"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_upi.png.flat",
@@ -600,10 +592,6 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/ic_menu_money_transfer.png"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_per_qr.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/per_qr.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_arrow_up.png.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/ic_arrow_up.png"
     },
@@ -648,10 +636,6 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/back_edittext_login.xml"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_recharge_footer.jpg.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/recharge_footer.jpg"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_item_rechargeincome.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/item_rechargeincome.xml"
     },
@@ -670,10 +654,6 @@
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_blue_button_background.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/blue_button_background.xml"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_rwallet.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/rwallet.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_back_dash_card.xml.flat",
@@ -726,10 +706,6 @@
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_users.png.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/users.png"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_per_change_pass.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/per_change_pass.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_bg_circle_white.xml.flat",
@@ -848,10 +824,6 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/ic_personal_profile.png"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_login_back_arrow.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/ic_login_back_arrow.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_img_member.png.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/img_member.png"
     },
@@ -882,10 +854,6 @@
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_act_share.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/act_share.xml"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_recharge_commission_history.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/recharge_commission_history.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/raw_refer_earn.json.flat",
@@ -1056,20 +1024,12 @@
         "source": "com.codunite.rechargeapp-main-71:/anim/rotate_close_animation.xml"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_change_pwd.jpg.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/change_pwd.jpg"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_act_billpayhistory.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/act_billpayhistory.xml"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_bg_green.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/bg_green.xml"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_fund_request.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/fund_request.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_bg_cardview_history.xml.flat",
@@ -1114,10 +1074,6 @@
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_item_beneficiarydetails.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/item_beneficiarydetails.xml"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_point_wallet_history.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/point_wallet_history.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/font_font_bold.ttf.flat",
@@ -1296,10 +1252,6 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/ic_fund_request.png"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_img_splash_shape.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/img_splash_shape.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_mini_bal.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/mini_bal.xml"
     },
@@ -1336,12 +1288,12 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/back_spinner.xml"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_profile.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/ic_profile.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_postpaid.png.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/postpaid.png"
+    },
+    {
+        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_profile.png.flat",
+        "source": "com.codunite.rechargeapp-main-71:/drawable/ic_profile.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_bbps_hospital.png.flat",
@@ -1356,16 +1308,8 @@
         "source": "com.codunite.rechargeapp-main-71:/drawable/ic_close.png"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ewallet.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/ewallet.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_refral_id.png.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/ic_refral_id.png"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_recharge_history.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/recharge_history.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_ic_menu_virtual_account.png.flat",
@@ -1588,20 +1532,12 @@
         "source": "com.codunite.rechargeapp-main-71:/layout/item_headtab.xml"
     },
     {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_img_intro_shape.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/img_intro_shape.png"
-    },
-    {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_frag_setting.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/layout/frag_setting.xml"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_dth.png.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/dth.png"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_pancard.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/pancard.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_circletwitter.xml.flat",
@@ -1634,10 +1570,6 @@
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_back_notification_txt.xml.flat",
         "source": "com.codunite.rechargeapp-main-71:/drawable/back_notification_txt.xml"
-    },
-    {
-        "merged": "com.codunite.rechargeapp-merged_res-67:/drawable_per_change_pin.png.flat",
-        "source": "com.codunite.rechargeapp-main-71:/drawable/per_change_pin.png"
     },
     {
         "merged": "com.codunite.rechargeapp-merged_res-67:/layout_act_update_sender_details.xml.flat",

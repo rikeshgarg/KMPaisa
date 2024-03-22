@@ -70,7 +70,7 @@
                             android:foregroundGravity="center|left"
                             android:gravity="left"
                             android:text="sfhjkhfjksf"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/et_textcolor"
                             android:textSize="@dimen/ts_twenty"
                             />
 
@@ -99,7 +99,7 @@
                                 android:layout_toLeftOf="@+id/img_serviceoperator"
                                 android:text="Select Service"
                                 android:paddingLeft="@dimen/dp_5"
-                                android:textColor="@color/fontcolortextview"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_seventeen" />
 
                             <ImageView
@@ -140,7 +140,7 @@
                                 android:layout_toLeftOf="@+id/img_drop_1"
                                 android:text="Select Operator"
                                 android:paddingLeft="@dimen/dp_5"
-                                android:textColor="@color/fontcolortextview"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_seventeen" />
 
                             <ImageView
@@ -152,6 +152,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginRight="@dimen/five"
                                 android:src="@drawable/ic_arrow_drop"
+                                app:tint="@color/hintcolor"
                                 />
                         </RelativeLayout>
 
@@ -187,6 +188,7 @@
                                 android:id="@+id/txt_username"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_fifteen" />
 
                             <RelativeLayout
@@ -203,7 +205,7 @@
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="@dimen/ten"
                                     android:text="@string/currency_symbol"
-                                    android:textColor="@color/gray_dimtextcolor"
+                                    android:textColor="@color/et_textcolor"
                                     android:textSize="@dimen/ts_twentyfive" />
 
                                 <EditText
@@ -218,10 +220,8 @@
                                     android:hint="Amount"
                                     android:inputType="numberDecimal"
                                     android:paddingLeft="@dimen/five"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="#ffffff"
-                                    android:textCursorDrawable="@drawable/color_cursor"
-                                    app:hintTextColor="?attr/colorPrimary" />
+                                    android:textColor="@color/et_textcolor"
+                                    android:textColorHint="@color/hintcolor" />
 
                                 <TextView
                                     android:id="@+id/txt_viewallplans"
@@ -250,9 +250,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="25dp"
                                 android:text="Paying this bill allow us to fetch your curent and future bills so that you can view and pay them"
-                                android:textSize="@dimen/ts_twelve" />
+                                android:textSize="@dimen/ts_twelve"
+                                android:textColor="@color/et_textcolor"/>
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_electricrecharge"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/fortyfive"

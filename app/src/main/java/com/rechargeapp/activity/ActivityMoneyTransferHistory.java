@@ -178,6 +178,9 @@ public class ActivityMoneyTransferHistory extends AppCompatActivity implements V
         lstUploadData.add(toDate);
         lstUploadData.add(strSearchKey);
         callWebService(ApiInterface.MTRANSFERHISTORY, lstUploadData);
+
+        //getMoneyTransferHistory
+        //callWebService(ApiInterface.GETMONEYTRANSFERHISTORY, lstUploadData);
     }
 
 

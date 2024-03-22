@@ -121,8 +121,8 @@
                                         android:layout_marginStart="@dimen/fifteen"
                                         android:layout_toStartOf="@+id/img_drop_1"
                                         android:hint="Select Wallet"
-                                        android:textColor="@color/black"
-                                        android:textColorHint="@color/colorAccent"
+                                        android:textColor="@color/et_textcolor"
+                                        android:textColorHint="@color/hintcolor"
                                         android:textSize="@dimen/ts_seventeen" />
 
                                     <ImageView
@@ -134,6 +134,7 @@
                                         android:layout_gravity="center"
                                         android:layout_marginEnd="@dimen/five"
                                         android:src="@drawable/ic_arrow_drop"
+
                                         />
 
                                 </RelativeLayout>
@@ -145,7 +146,8 @@
                                     android:layout_marginTop="@dimen/nine"
                                     android:layout_marginRight="@dimen/twenty"
                                     android:text="Payment To"
-                                    android:textColor="@color/fontcolortextview"
+                                    android:textColor="@color/et_textcolor"
+                                    android:textColorHint="@color/hintcolor"
                                     android:textSize="@dimen/ts_fifteen"
                                     android:visibility="gone" />
 
@@ -168,7 +170,8 @@
                                         android:layout_marginStart="@dimen/ten"
                                         android:layout_toStartOf="@+id/img_drop_2"
                                         android:text="Select"
-                                        android:textColor="@color/fontcolortextview"
+                                        android:textColor="@color/et_textcolor"
+                                        android:textColorHint="@color/hintcolor"
                                         android:textSize="@dimen/ts_fifteen" />
 
                                     <ImageView
@@ -180,6 +183,7 @@
                                         android:layout_gravity="center"
                                         android:layout_marginEnd="@dimen/five"
                                         android:src="@drawable/ic_arrow_drop"
+                                        app:tint="@color/hintcolor"
                                         />
 
                                 </RelativeLayout>
@@ -188,7 +192,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Enter amount"
-                                    android:textColorHint="@color/colorAccent"
+                                    app:hintTextColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
                                     app:boxStrokeWidth="0dp"
                                     app:boxStrokeWidthFocused="0dp">
 
@@ -204,7 +209,7 @@
                                     android:paddingLeft="@dimen/fifteen"
                                     android:paddingRight="@dimen/fifteen"
                                     android:singleLine="true"
-                                    android:textColor="@color/fontcoloreditext"
+                                    android:textColor="@color/et_textcolor"
                                     android:textColorHighlight="@color/ed_highlight_color"
                                     android:textColorHint="@color/fontcoloreditexthint"
                                     android:textCursorDrawable="@drawable/color_cursor"
@@ -216,7 +221,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Enter Transaction ID"
-                                    android:textColorHint="@color/colorAccent"
+                                    app:hintTextColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
                                     app:boxStrokeWidth="0dp"
                                     app:boxStrokeWidthFocused="0dp">
 
@@ -232,9 +238,7 @@
                                     android:paddingLeft="@dimen/fifteen"
                                     android:paddingRight="@dimen/fifteen"
                                     android:singleLine="true"
-                                    android:textColor="@color/fontcoloreditext"
-                                    android:textColorHighlight="@color/ed_highlight_color"
-                                    android:textColorHint="@color/fontcoloreditexthint"
+                                    android:textColor="@color/et_textcolor"
                                     android:textCursorDrawable="@drawable/color_cursor"
                                     android:textSize="@dimen/ts_seventeen" />
                                 </com.google.android.material.textfield.TextInputLayout>
@@ -243,7 +247,8 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="Enter Remark"
-                                    android:textColorHint="@color/colorAccent"
+                                    app:hintTextColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
                                     app:boxStrokeWidth="0dp"
                                     app:boxStrokeWidthFocused="0dp">
 
@@ -259,9 +264,7 @@
                                     android:paddingLeft="@dimen/fifteen"
                                     android:paddingRight="@dimen/fifteen"
                                     android:singleLine="true"
-                                    android:textColor="@color/fontcoloreditext"
-                                    android:textColorHighlight="@color/ed_highlight_color"
-                                    android:textColorHint="@color/fontcoloreditexthint"
+                                    android:textColor="@color/et_textcolor"
                                     android:textCursorDrawable="@drawable/color_cursor"
                                     android:textSize="@dimen/ts_seventeen" />
                                 </com.google.android.material.textfield.TextInputLayout>
@@ -272,7 +275,7 @@
                                     android:layout_marginTop="@dimen/nine"
                                     android:layout_marginRight="@dimen/twenty"
                                     android:text="Attach a picture or screenshot (Optional)"
-                                    android:textColor="@color/fontcolortextview"
+                                    android:textColor="@color/et_textcolor"
                                     android:textSize="@dimen/ts_fifteen" />
 
                                 <LinearLayout
@@ -282,7 +285,7 @@
                                     android:layout_marginLeft="@dimen/twenty"
                                     android:layout_marginTop="@dimen/one"
                                     android:layout_marginRight="@dimen/twenty"
-                                    android:background="#ffffff"
+                                    android:background="@color/bg_login"
                                     android:elevation="@dimen/one"
                                     android:orientation="vertical">
 
@@ -293,6 +296,7 @@
                                         android:layout_marginStart="@dimen/ten"
                                         android:layout_marginTop="@dimen/one"
                                         android:src="@drawable/ic_upload_photo"
+                                        app:tint="@color/hintcolor"
                                         android:visibility="visible" />
 
                                     <LinearLayout
@@ -317,7 +321,7 @@
                                                 android:paddingStart="@dimen/fifteen"
                                                 android:paddingEnd="@dimen/fifteen"
                                                 android:text="Choose File"
-                                                android:textColor="@color/fontcolorbutton" />
+                                                android:textColor="@color/white" />
 
                                             <androidx.appcompat.widget.AppCompatButton
                                                 android:id="@+id/remove_picture"
@@ -328,7 +332,7 @@
                                                  android:paddingStart="@dimen/fifteen"
                                                 android:paddingEnd="@dimen/fifteen"
                                                 android:text="Remove"
-                                                android:textColor="@color/fontcolorbutton" />
+                                                android:textColor="@color/white" />
                                         </LinearLayout>
 
                                         <View
@@ -343,7 +347,7 @@
                                             android:layout_marginStart="@dimen/ten"
                                             android:layout_marginTop="@dimen/one"
                                             android:text="@string/documents_kyc"
-                                            android:textColor="@color/fontcolortextview" />
+                                            android:textColor="@color/et_textcolor" />
                                     </LinearLayout>
 
                                 </LinearLayout>
@@ -369,7 +373,7 @@
                                         android:background="@drawable/blue_button_background"
                                         android:gravity="center"
                                         android:text="Submit Request"
-                                        android:textColor="@color/fontcolorbutton" />
+                                        android:textColor="@color/white" />
                                 </LinearLayout>
 
                             </LinearLayout>

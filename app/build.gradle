@@ -24,10 +24,27 @@ android {
             keyAlias "coduniteb2b"
             keyPassword "123456"
         }
+        rechargetrade {
+            storeFile file('../rechargetrade.jks')
+            storePassword "123456"
+            keyAlias "rechargetrade"
+            keyPassword "123456"
+        }
     }
 
     flavorDimensions "build"
     productFlavors {
+        rechargetrade {
+            dimension "build"
+            applicationIdSuffix "rechargetrade"
+            manifestPlaceholders = [hostName: "www.rechargetrade.online"]
+            copy {
+                from 'src/rechargetrade/'
+                include '*'
+                into '.'
+            }
+            signingConfig signingConfigs.rechargetrade
+        }
         kmpaisa {
             dimension "build"
             applicationIdSuffix "kmpaisa"
@@ -43,6 +60,17 @@ android {
             dimension "build"
             applicationIdSuffix ".coduniteb2b"
             manifestPlaceholders = [hostName: "www.coduniteb2b.in"]
+            copy {
+                from 'src/coduniteb2b/'
+                include '*'
+                into '.'
+            }
+            signingConfig signingConfigs.coduniteb2b
+        }
+        rechargetrade {
+            dimension "build"
+            applicationIdSuffix "rechargetrade"
+            manifestPlaceholders = [hostName: "www.rechargetrade.online"]
             copy {
                 from 'src/coduniteb2b/'
                 include '*'

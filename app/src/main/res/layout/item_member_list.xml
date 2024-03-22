@@ -181,7 +181,7 @@
                     android:layout_marginLeft="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_25"
                     android:text="Wallet balance"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/et_textcolor"
                     android:textSize="@dimen/ts_forteen"
                     android:textStyle="bold" />
 
@@ -193,7 +193,7 @@
                     android:layout_marginTop="@dimen/dp_25"
                     android:layout_marginRight="@dimen/dp_10"
                     android:text="54757"
-                    android:textColor="@color/fontcolortextview"
+                    android:textColor="@color/et_textcolor"
                     android:textSize="@dimen/ts_forteen"
                     android:textStyle="bold" />
 

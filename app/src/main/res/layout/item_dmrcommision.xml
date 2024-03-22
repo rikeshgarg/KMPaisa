@@ -29,7 +29,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Start Range"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -59,7 +59,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="End Range"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -88,7 +88,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Surcharge"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -99,7 +99,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -118,7 +118,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Is Flat?"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -129,7 +129,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>

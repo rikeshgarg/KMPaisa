@@ -941,7 +941,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("3")) {
                 svIntent.putExtra("role_id", 3);
             } else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("4")) {
-                svIntent.putExtra("role_id", 5);
+                svIntent.putExtra("role_id", 4);
             }
             svContext.startActivity(svIntent);
         } else if (("Distributor").equalsIgnoreCase(title)) {

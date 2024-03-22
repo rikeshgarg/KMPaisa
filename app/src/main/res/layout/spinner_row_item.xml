@@ -29,7 +29,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/fontcolortextview"
+            android:textColor="@color/et_textcolor"
             android:textSize="15sp" />
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
-            android:textColor="@color/fontcolortextview"
+            android:textColor="@color/et_textcolor"
             android:textSize="12sp" />
 
     </RelativeLayout>

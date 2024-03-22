@@ -318,17 +318,25 @@ public class ActivityBeneficiaryList extends AppCompatActivity implements View.O
         confirmDialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Float Str_amnt = Float.parseFloat(textDesc.getText().toString().trim());
-                if (Str_amnt <= 100) {
-                    customToast.showCustomToast(svContext, "please enter amount greater than 100", customToast.ToastyInfo);
+                if(!textDesc.getText().toString().trim().equals("")) {
+                    int int_amount = Integer.parseInt(textDesc.getText().toString().trim());
+                    //Float Str_amnt = Float.parseFloat(textDesc.getText().toString().trim());
+                    if (int_amount <= 100) {
+                        customToast.showCustomToast(svContext, "please enter amount greater than 100", customToast.ToastyInfo);
+
+                    } else {
+                        lstUploadData = new LinkedList<>();
+                        lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
+                        lstUploadData.add(benId);
+                        lstUploadData.add(textDesc.getText().toString().trim());
+                        callWebService(ApiInterface.MONEYTRANSFERAUTH, lstUploadData);
+                        dialog.dismiss();
+                    }
+
                 } else {
-                    lstUploadData = new LinkedList<>();
-                    lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
-                    lstUploadData.add(benId);
-                    lstUploadData.add(textDesc.getText().toString().trim());
-                    callWebService(ApiInterface.MONEYTRANSFERAUTH, lstUploadData);
+                    customToast.showCustomToast(svContext, "please enter amount", customToast.ToastyInfo);
+
                 }
-                dialog.dismiss();
             }
         });
 

@@ -45,7 +45,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/back_dash_menuone_inner"
+                    android:background="@drawable/back_dash_menuone"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -64,7 +64,7 @@
                             android:gravity="left"
                             android:padding="@dimen/seven"
                             android:text="R-Wallet"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/rv_title"
                             android:textSize="@dimen/ts_eighteen"
 
                              />
@@ -82,7 +82,7 @@
                             android:paddingTop="5dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="5dp"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/rv_title"
                             android:textSize="@dimen/ts_fifteen" />
 
                     </RelativeLayout>
@@ -113,7 +113,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/back_dash_menuone_inner"
+                    android:background="@drawable/back_dash_menuone"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -132,7 +132,7 @@
                             android:gravity="left"
                             android:padding="@dimen/seven"
                             android:text="E-Wallet"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/rv_title"
                             android:textSize="@dimen/ts_eighteen"
 
                             />
@@ -150,7 +150,7 @@
                             android:paddingTop="5dp"
                             android:paddingRight="15dp"
                             android:paddingBottom="5dp"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/rv_title"
                             android:textSize="@dimen/ts_fifteen"
                             />
 

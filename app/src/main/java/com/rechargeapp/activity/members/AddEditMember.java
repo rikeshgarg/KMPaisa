@@ -141,6 +141,7 @@ public class AddEditMember extends AppCompatActivity implements WebServiceListen
         spinner_member_type.setAdapter(LegAdapter);
         spinner_member_type.setOnItemSelectedListener(onItemSelectedListener);
         spinner_member_type.setSelection(0, true);
+        //spinner_member_type.setOnItemSelectedListener(onItemSelectedListener);
     }
 
     private void PopulateStatusSpinner(){
@@ -162,7 +163,7 @@ public class AddEditMember extends AppCompatActivity implements WebServiceListen
             if(textView.getText().toString().equals("Member Type")){
                 textView.setTextColor(getResources().getColor(R.color.c_gray2));
             } else {
-                textView.setTextColor(getResources().getColor(R.color.fontcoloreditext));
+                textView.setTextColor(getResources().getColor(R.color.et_textcolor));
             }
             //textView.setTextColor(getResources().getColor(R.color.fontcoloreditext));
         }

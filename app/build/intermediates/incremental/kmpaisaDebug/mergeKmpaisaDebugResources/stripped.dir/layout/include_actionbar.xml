@@ -18,7 +18,7 @@
             android:contentDescription="@string/app_name"
             android:padding="@dimen/fifteen"
             android:singleLine="true"
-            app:tint="@color/colorAccent"
+            app:tint="@color/login_head1"
             android:src="@drawable/ico_left" />
 
         <View
@@ -38,8 +38,9 @@
             android:maxLines="1"
             android:padding="@dimen/ten"
             android:singleLine="true"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/login_head1"
             android:textSize="@dimen/ts_seventeen"
             android:textStyle="bold" />
     </RelativeLayout>
+
 </FrameLayout>

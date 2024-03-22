@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.commonutility.retrofit.ApiInterface;
 import com.commonutility.spinner.ActivitySpinner;
@@ -48,7 +50,8 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
 //    private List<String> listSpinnerOperatorList = new ArrayList<>();
 //    private List<String> listSpinnerShowData = new ArrayList<>();
 
-    private Button btnElectricRecharge,btnFetch, btnOtpVerify, btnCancelOtp;
+    private Button btnFetch, btnOtpVerify, btnCancelOtp;
+    AppCompatButton btnElectricRecharge;
     private ImageView imgDropOperator;
     private TextView txtUserName;
 
@@ -238,6 +241,7 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
         TextView txtHeading = (TextView)findViewById(R.id.heading);
         //txtHeading.setText("BBPS Electricity");
         tv_heading.setText("BBPS Electricity");
+        tv_heading.setTextColor(getResources().getColor(R.color.hintcolor));
     }
 
     public static void hideFragmentkeyboard(Context meraContext, View meraView) {
@@ -414,6 +418,8 @@ public class ActivityBbpsElectricity extends AppCompatActivity implements OnClic
 
             edItem.setId(i);
             edItem.setLayoutParams(lp);
+            edItem.setTextColor(getResources().getColor(R.color.et_textcolor));
+            edItem.setHintTextColor(getResources().getColor(R.color.hintcolor));
             edItem.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {

@@ -1,0 +1,558 @@
+[
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_aepshistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_aepshistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_qrcode.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_qrcode.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_kyc.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_kyc.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_aepskyc.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_aepskyc.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_add_fund_request.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_add_fund_request.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\dialog_header_twobutton.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\dialog_header_twobutton.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_main.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_actionbar_spinner.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_actionbar_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_rechargecommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_rechargecommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_bottomsheet.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_bottomsheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_login.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_money_transfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_money_transfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_prepostrecharge.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_prepostrecharge.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_bbpscommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_bbpscommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_topupwallet.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_topupwallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_dashboard_recharge.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_dashboard_recharge.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_rechargehistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_rechargehistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_aepswallethistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_aepswallethistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_beneficiary_list.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_beneficiary_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_register.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_member_search_list.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_member_search_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_wallethistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_wallethistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\lay_push_notification.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\lay_push_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_forgotpassword.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_forgotpassword.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_dashboard.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_bottomsheet_allplans.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_bottomsheet_allplans.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_new.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_member_list.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_member_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_dashboard_bbps.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_dashboard_bbps.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_viewallplans.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_viewallplans.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_changepassword.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_changepassword.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_connection.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_connection.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_home.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_billpayhistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_billpayhistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_virtual_account.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_virtual_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_bbpselectricitytoll.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_bbpselectricitytoll.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_headtab.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_headtab.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_fundrequest_history.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_fundrequest_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_bbpsallservices.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_bbpsallservices.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\activity_bbps_dashboard.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\activity_bbps_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\slide_item_container.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\slide_item_container.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_viewplansoffer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_viewplansoffer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_section.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_section.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\nav_header_main.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\bank_name.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\bank_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_actionbar.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_actionbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_payout_transfer_report.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_payout_transfer_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_custom_spinner.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_custom_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_complaint.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_complaint.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_recentrechargehistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_recentrechargehistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_setting.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_requesthistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_requesthistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_rechargeoffers.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_rechargeoffers.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_change_account.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_change_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_demourl.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_demourl.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_bbpslivehome.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_bbpslivehome.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_virtual_account_report.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_virtual_account_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\mini_bal.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\mini_bal.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_payouttranferreport.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_payouttranferreport.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_top_rechargehistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_top_rechargehistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_topupwallet_cashfree.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_topupwallet_cashfree.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_help.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_help.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_wallethistory_wallet.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_wallethistory_wallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\list_group_child.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\list_group_child.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_rechargehistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_rechargehistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\layout_searchable_spinner.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\layout_searchable_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_new_aepspayout_kyc.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_new_aepspayout_kyc.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_splash.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_splash.xml"
+    },
+    {
+        "merged": "com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:/layout/act_aepscommision.xml",
+        "source": "com.codunite.rechargeapp-main-69:/layout/act_aepscommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_requesthistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_requesthistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\list_group_header.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\list_group_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_add_edit_member.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_add_edit_member.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_fund_request.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_fund_request.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_personprofile.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_personprofile.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\lay_uploadimage.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\lay_uploadimage.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_wallettransfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_wallettransfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_viewticket.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_viewticket.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_dth.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_dth.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_appupdate.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_appupdate.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_dmrcommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_dmrcommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_report.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_dmrcommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_dmrcommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_contact.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_dynamiclay.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_dynamiclay.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_rechargeincome.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_rechargeincome.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_bbpscommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_bbpscommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\spinner_row_item.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\spinner_row_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\activity_aepsbanking.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\activity_aepsbanking.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_beneficiarydetails.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_beneficiarydetails.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_login_transfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_login_transfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_setting.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_bbpslivecommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_bbpslivecommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_recharge_commission_history_report.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_recharge_commission_history_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_withdrawalrequest.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_withdrawalrequest.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_completion.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_completion.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_new_aepspayout_addbene.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_new_aepspayout_addbene.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\include_actionbar_main.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\include_actionbar_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_aepswalletpayouttransfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_aepswalletpayouttransfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_addbeneficery_transfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_addbeneficery_transfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_aepscommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_aepscommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_pagination.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_pagination.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_mtransfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_mtransfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_top_rechargehistory_new.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_top_rechargehistory_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_member_list.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_member_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_intro.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_intro.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_fund_request_history.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_fund_request_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_ticketlist.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_ticketlist.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\lay_customprogessdialog.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\lay_customprogessdialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_spinner.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_register_transfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_register_transfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_commissionwallethistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_commissionwallethistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_mainwallettransfer.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_mainwallettransfer.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_notification.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_notification.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_rechargecommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_rechargecommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_commisionhistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_commisionhistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\dialog_topup_via.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\dialog_topup_via.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_privacypolicy.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_privacypolicy.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_update_sender_details.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_update_sender_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_aepshistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_aepshistory.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_webview.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_webview.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_contact.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_browsecropimage.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_browsecropimage.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_transactionpassword.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_transactionpassword.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_dashboard_anim.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_dashboard_anim.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_requesthistory_wallet.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_requesthistory_wallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_share.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_share.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_recharge.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_recharge.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_bbpsfixcommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_bbpsfixcommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_profile.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_notification_list.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_notification_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_aepscommision.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_aepscommision.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\dialog_header_transferamount.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\dialog_header_transferamount.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\bs_select_contact.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\bs_select_contact.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\frag_new.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\frag_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_virtual_account_report.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_virtual_account_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_populatespinner.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_populatespinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\item_aeps_commission_history_report.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\item_aeps_commission_history_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_wallet.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_wallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-mergeRechargetradeDebugResources-66:\\layout\\act_wallethistory.xml",
+        "source": "C:\\Users\\dell\\.gradle\\daemon\\7.5\\com.codunite.rechargeapp-main-69:\\layout\\act_wallethistory.xml"
+    }
+]

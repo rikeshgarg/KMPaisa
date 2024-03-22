@@ -64,11 +64,6 @@
                     android:orientation="vertical"
                     android:padding="@dimen/two">
 
-                    <ImageView
-                        android:layout_width="@dimen/thirtyfive"
-                        android:layout_height="@dimen/thirty"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/rwallet" />
 
                     <TextView
                         android:id="@+id/toolbar_txt_walletbal"
@@ -87,12 +82,6 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="@dimen/two">
-
-                    <ImageView
-                        android:layout_width="@dimen/thirtyfive"
-                        android:layout_height="@dimen/thirty"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ewallet" />
 
                     <TextView
                         android:id="@+id/toolbar_txt_ewalletbal"

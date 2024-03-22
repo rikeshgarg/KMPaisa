@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.commonutility.CheckInternet;
 import com.commonutility.GlobalData;
@@ -30,7 +31,7 @@ import org.json.JSONObject;
 import java.util.LinkedList;
 
 public class ActivityShare extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
-    private TextView btnRate;
+    private AppCompatButton btnRate;
     private Context svContext;
     private ShowCustomToast customToast;
     private CheckInternet checkNetwork;
@@ -46,7 +47,7 @@ public class ActivityShare extends AppCompatActivity implements View.OnClickList
     }
 
     public void resumeApp() {
-        btnRate = (Button) findViewById(R.id.btn_submit);
+        btnRate = (AppCompatButton) findViewById(R.id.btn_submit);
         ((TextView) findViewById(R.id.refer_code)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINMEMBERID, ""));
 
         btnRate.setOnClickListener(new View.OnClickListener() {

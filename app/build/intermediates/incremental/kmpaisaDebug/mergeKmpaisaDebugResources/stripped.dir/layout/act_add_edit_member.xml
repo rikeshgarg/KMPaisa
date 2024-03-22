@@ -67,10 +67,11 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/twenty"
                     android:src="@drawable/ic_user_name"
-                    app:tint="@color/colorAccent" />
+                    app:tint="@color/hintcolor" />
 
 
                 <Spinner
+                    android:background="@android:color/transparent"
                     android:layout_toRightOf="@+id/iv_type"
                     android:id="@+id/spinner_member_type"
                     android:layout_width="fill_parent"
@@ -86,7 +87,8 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/ten"
-                    android:src="@drawable/ic_arrow_drop" />
+                    android:src="@drawable/ic_arrow_drop"
+                    app:tint="@color/hintcolor"/>
 
             </RelativeLayout>
 
@@ -105,14 +107,15 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/twenty"
                         android:src="@drawable/ic_user_name"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/iv_name"
                         android:hint="Enter Name"
-                        android:textColorHint="@color/colorAccent"
+                        app:hintTextColor="@color/hintcolor"
+                        android:textColorHint="@color/hintcolor"
                         app:boxStrokeWidth="0dp"
                         app:boxStrokeWidthFocused="0dp">
 
@@ -123,7 +126,7 @@
                             android:background="@android:color/transparent"
                             android:inputType="text"
                             android:singleLine="true"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/et_textcolor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,14 +147,15 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/twenty"
                         android:src="@drawable/ic_mail"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/iv_email"
                         android:hint="Enter Email"
-                        android:textColorHint="@color/colorAccent"
+                        app:hintTextColor="@color/hintcolor"
+                        android:textColorHint="@color/hintcolor"
                         app:boxStrokeWidth="0dp"
                         app:boxStrokeWidthFocused="0dp">
 
@@ -162,7 +166,7 @@
                             android:background="@android:color/transparent"
                             android:inputType="textEmailAddress"
                             android:singleLine="true"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/et_textcolor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,14 +186,15 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/twenty"
                         android:src="@drawable/ic_mobile"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/iv_mobile"
                         android:hint="Enter Mobile No."
-                        android:textColorHint="@color/colorAccent"
+                        app:hintTextColor="@color/hintcolor"
+                        android:textColorHint="@color/hintcolor"
                         app:boxStrokeWidth="0dp"
                         app:boxStrokeWidthFocused="0dp">
 
@@ -201,7 +206,7 @@
                             android:inputType="phone"
                             android:maxLength="10"
                             android:singleLine="true"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/et_textcolor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -222,14 +227,15 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/twenty"
                         android:src="@drawable/ic_password"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/iv_password"
                         android:hint="Enter Password"
-                        android:textColorHint="@color/colorAccent"
+                        app:hintTextColor="@color/hintcolor"
+                        android:textColorHint="@color/hintcolor"
                         app:boxStrokeWidth="0dp"
                         app:boxStrokeWidthFocused="0dp">
 
@@ -240,7 +246,7 @@
                             android:background="@android:color/transparent"
                             android:inputType="textPassword"
                             android:singleLine="true"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/et_textcolor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -261,14 +267,15 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/twenty"
                         android:src="@drawable/ic_password"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/iv_trans_password"
                         android:hint="Enter Transaction Password"
-                        android:textColorHint="@color/colorAccent"
+                        app:hintTextColor="@color/hintcolor"
+                        android:textColorHint="@color/hintcolor"
                         app:boxStrokeWidth="0dp"
                         app:boxStrokeWidthFocused="0dp">
 
@@ -280,7 +287,7 @@
                             android:inputType="textPassword"
                             android:singleLine="true"
                             android:maxLength="6"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/et_textcolor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -374,7 +381,7 @@
                     android:layout_marginLeft="@dimen/twenty"
                     android:padding="@dimen/two"
                     android:src="@drawable/region"
-                    app:tint="@color/colorAccent" />
+                    app:tint="@color/hintcolor" />
 
                 <Spinner
                     android:background="@android:color/transparent"
@@ -394,7 +401,8 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/ten"
-                    android:src="@drawable/ic_arrow_drop" />
+                    android:src="@drawable/ic_arrow_drop"
+                    app:tint="@color/hintcolor"/>
 
             </RelativeLayout>
 
@@ -418,7 +426,7 @@
                         android:layout_marginLeft="@dimen/twenty"
                         android:padding="@dimen/two"
                         android:src="@drawable/region"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <TextView
                         android:id="@+id/txt_state"
@@ -428,8 +436,8 @@
                         android:layout_toRightOf="@+id/img_drawable1"
                         android:gravity="center_vertical"
                         android:hint="Select State"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorAccent"
+                        android:textColor="@color/et_textcolor"
+                        android:textColorHint="@color/hintcolor"
                         android:textSize="@dimen/ts_seventeen" />
 
                     <ImageView
@@ -442,6 +450,7 @@
                         android:layout_marginRight="@dimen/ten"
                         android:padding="@dimen/two"
                         android:src="@drawable/ic_arrow_drop"
+                        app:tint="@color/hintcolor"
                         />
 
                 </RelativeLayout>
@@ -504,14 +513,14 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/twenty"
                         android:src="@drawable/region"
-                        app:tint="@color/colorAccent" />
+                        app:tint="@color/hintcolor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/iv_city"
                         android:hint="Enter City"
-                        android:textColorHint="@color/colorAccent"
+                        android:textColorHint="@color/hintcolor"
                         app:boxStrokeWidth="0dp"
                         app:boxStrokeWidthFocused="0dp">
 
@@ -558,10 +567,11 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/twenty"
                     android:src="@drawable/ic_user_name"
-                    app:tint="@color/colorAccent" />
+                    app:tint="@color/hintcolor" />
 
 
                 <Spinner
+                    android:background="@android:color/transparent"
                     android:layout_toRightOf="@+id/iv_status"
                     android:id="@+id/spinner_status"
                     android:layout_width="fill_parent"
@@ -577,7 +587,8 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/ten"
-                    android:src="@drawable/ic_arrow_drop" />
+                    android:src="@drawable/ic_arrow_drop"
+                    app:tint="@color/hintcolor"/>
 
             </RelativeLayout>
 
@@ -593,7 +604,7 @@
                 android:paddingLeft="@dimen/thirty"
                 android:paddingRight="@dimen/thirty"
                 android:text="SUBMIT"
-                android:textColor="#ffffffff" />
+                android:textColor="@color/white" />
 
             </LinearLayout>
 

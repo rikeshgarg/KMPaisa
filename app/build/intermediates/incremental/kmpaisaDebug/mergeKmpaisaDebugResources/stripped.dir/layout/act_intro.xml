@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Welcome to"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/login_head1"
                     android:textSize="@dimen/ts_twentyfive"
                     android:textStyle="bold"></TextView>
 
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Quick and Easy"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/login_head1"
                     android:textSize="@dimen/ts_twentyfive"></TextView>
 
                 <TextView
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Payment"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/intro"
                     android:textSize="@dimen/ts_twentyfive"
                     android:textStyle="bold"></TextView>
 
@@ -86,7 +86,6 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/dp_20"
                     android:background="@drawable/blue_button_background"
-                    android:backgroundTint="@color/colorAccent"
                     android:gravity="center"
                     android:paddingLeft="@dimen/dp_20"
                     android:paddingRight="@dimen/dp_20"

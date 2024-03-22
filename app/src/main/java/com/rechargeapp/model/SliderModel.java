@@ -3,7 +3,7 @@ package com.rechargeapp.model;
 public class SliderModel {
     String banner_id, banner_name = "", banner_url, banner_desc = "", banner_img;
     public boolean expanded = false;
-
+    int img;
     public SliderModel(String banner_id, String banner_name, String banner_url, String banner_desc, String banner_img) {
         this.banner_id = banner_id;
         this.banner_name = banner_name;
@@ -17,6 +17,13 @@ public class SliderModel {
         this.banner_id = banner_id;
         this.banner_url = banner_url;
         this.banner_img = banner_img;
+    }
+
+    public SliderModel(String banner_id, String banner_url, String banner_img,int img) {
+        this.banner_id = banner_id;
+        this.banner_url = banner_url;
+        this.banner_img = banner_img;
+        this.img = img;
     }
 
     public String getBanner_id() {
@@ -65,5 +72,13 @@ public class SliderModel {
 
     public void setExpanded(boolean expanded) {
         this.expanded = expanded;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }

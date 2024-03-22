@@ -87,9 +87,8 @@
                             android:paddingLeft="@dimen/fifteen"
                             android:paddingRight="@dimen/ten"
                             android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
+                            android:textColor="@color/et_textcolor"
+                            android:textColorHint="@color/hintcolor"
                             android:textSize="@dimen/ts_seventeen" />
 
                         <RelativeLayout
@@ -98,7 +97,6 @@
                             android:visibility="visible"
                             android:layout_marginTop="@dimen/ten"
                             android:background="@drawable/back_edittext_default">
-
 
                             <Spinner
                                 android:background="@android:color/transparent"
@@ -119,6 +117,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginRight="@dimen/five"
                                 android:src="@drawable/ic_arrow_drop"
+                                app:tint="@color/hintcolor"
                                 />
 
                         </RelativeLayout>
@@ -166,9 +165,8 @@
                                 android:text="Select Member"
                                 android:layout_centerVertical="true"
                                 android:textSize="@dimen/ts_seventeen"
-                                android:textColor="@color/c_black"
-                                android:textColorHighlight="@color/white"
-                                android:textColorHint="@color/c_gray2"
+                                android:textColor="@color/et_textcolor"
+                                android:textColorHint="@color/hintcolor"
                                 android:layout_toLeftOf="@+id/img_drop_3"
                                 >
 
@@ -183,6 +181,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginRight="@dimen/five"
                                 android:src="@drawable/ic_arrow_drop"
+                                app:tint="@color/hintcolor"
                                 />
                         </RelativeLayout>
 
@@ -199,9 +198,8 @@
                             android:paddingLeft="@dimen/fifteen"
                             android:paddingRight="@dimen/ten"
                             android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
+                            android:textColor="@color/et_textcolor"
+                            android:textColorHint="@color/hintcolor"
                             android:textSize="@dimen/ts_seventeen" />
 
                         <EditText
@@ -217,9 +215,8 @@
                             android:paddingLeft="@dimen/fifteen"
                             android:paddingRight="@dimen/ten"
                             android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
+                            android:textColor="@color/et_textcolor"
+                            android:textColorHint="@color/hintcolor"
                             android:textSize="@dimen/ts_seventeen" />
 
 
@@ -235,9 +232,8 @@
                             android:paddingLeft="@dimen/fifteen"
                             android:paddingRight="@dimen/ten"
                             android:singleLine="true"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
+                            android:textColor="@color/et_textcolor"
+                            android:textColorHint="@color/hintcolor"
                             android:textSize="@dimen/ts_seventeen" />
 
                         <EditText
@@ -252,9 +248,8 @@
                             android:paddingTop="@dimen/ten"
                             android:paddingLeft="@dimen/fifteen"
                             android:paddingRight="@dimen/ten"
-                            android:textColor="@color/c_black"
-                            android:textColorHighlight="@color/white"
-                            android:textColorHint="@color/c_gray2"
+                            android:textColor="@color/et_textcolor"
+                            android:textColorHint="@color/hintcolor"
                             android:textSize="@dimen/ts_seventeen" />
 
                         <View
@@ -275,15 +270,14 @@
                             android:gravity="center"
                             android:orientation="horizontal">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_proceed"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/fortyfive"
                                 android:layout_gravity="center_horizontal"
                                 android:background="@drawable/blue_button_background"
-                                android:backgroundTint="@color/them_color"
                                 android:text="Proceed"
-                                android:textColor="#ffffffff" />
+                                android:textColor="@color/white" />
 
                         </LinearLayout>
                     </LinearLayout>

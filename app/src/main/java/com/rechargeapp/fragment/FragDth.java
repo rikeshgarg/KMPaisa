@@ -191,7 +191,11 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                                 strDthMobile = edCardNumber.getText().toString().trim();
                                 if (selectedOperatorSpinner == null) {
                                     customToast.showCustomToast(svContext, "Please select operator", customToast.ToastyError);
-                                } else {
+                                } else if ((edCardNumber.getText().toString().trim()).length() == 0) {
+                                    customToast.showCustomToast(svContext, "Please enter correct card number", customToast.ToastyError);
+                                }
+
+                                else {
                                     strDthOperatorCode = selectedOperatorSpinner.getId();
                                     Intent svIntent = new Intent(svContext, ActivityPlansOfferDth.class);
                                     svIntent.putExtra("filename", "offer_d2h");
@@ -383,9 +387,9 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
                 if (str_status.equalsIgnoreCase("0")) {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
                 } else {
-                    edCardNumber.setText("");
-                    edDthRechargeAmount.setText("");
-                    spinnerDthOperatorList.setSelection(0);
+                    //edCardNumber.setText("");
+                    //edDthRechargeAmount.setText("");
+                    //spinnerDthOperatorList.setSelection(0);
 
                     customToast.showCustomToast(svContext, str_message, customToast.ToastySuccess);
 
@@ -455,8 +459,10 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         this.selectedOperatorSpinner = spinnerModel;
         if (selectedOperatorSpinner == null) {
             txtSpinnerOperatorList.setText("Select Operator");
+            txtSpinnerOperatorList.setTextColor(getResources().getColor(R.color.et_textcolor));
         } else {
             txtSpinnerOperatorList.setText(selectedOperatorSpinner.getTitle());
+            txtSpinnerOperatorList.setTextColor(getResources().getColor(R.color.et_textcolor));
             strDthOperatorCode = selectedOperatorSpinner.getId();
         }
     }
@@ -511,6 +517,7 @@ public class FragDth extends Fragment implements OnClickListener, WebServiceList
         //lstUploadData.add((listSpinnerOperatorList.get(spinnerDthOperatorList.getSelectedItemPosition()).split("#:#")[0]));
         lstUploadData.add("");
         lstUploadData.add(edDthRechargeAmount.getText().toString().trim());
+        lstUploadData.add("2");
         callWebService(ApiInterface.RECHARGEAUTH, lstUploadData);
     }
 

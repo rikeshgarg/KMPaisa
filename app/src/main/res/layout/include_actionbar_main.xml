@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_70">
+    android:layout_height="@dimen/dp_70"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:id="@+id/lay_top"
@@ -23,7 +24,8 @@
                 android:layout_height="@dimen/dp_35"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_menu"
+                app:tint="@color/hintcolor"/>
 
             <ImageView
                 android:id="@+id/img_close"
@@ -32,6 +34,7 @@
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_close"
+                app:tint="@color/hintcolor"
                 android:visibility="gone" />
         </LinearLayout>
 
@@ -81,7 +84,8 @@
                 android:layout_width="@dimen/dp_35"
                 android:layout_height="@dimen/dp_30"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_notifiction" />
+                android:src="@drawable/ic_notifiction"
+                app:tint="@color/hintcolor"/>
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

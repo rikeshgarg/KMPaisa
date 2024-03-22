@@ -393,7 +393,7 @@ public class WebService {
                         lstUploadData.get(3), lstUploadData.get(4));
             case ApiInterface.RECHARGEAUTH:
                 return apiService.RECHARGEAUTH(lstUploadData.get(0), lstUploadData.get(1),
-                        lstUploadData.get(2), lstUploadData.get(3),lstUploadData.get(4));
+                        lstUploadData.get(2), lstUploadData.get(3),lstUploadData.get(4),lstUploadData.get(5));
             case ApiInterface.GETUSERNAME:
                 return apiService.GetUsername(lstUploadData.get(0));
             case ApiInterface.REQUESTAMOUNT:

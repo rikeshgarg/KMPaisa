@@ -1,0 +1,10 @@
+#Mon Jan 29 16:58:53 IST 2024
+base.0=E\:\\KMPaisa\\app\\build\\intermediates\\dex\\rechargetradeDebugAndroidTest\\mergeExtDexRechargetradeDebugAndroidTest\\classes.dex
+base.1=E\:\\KMPaisa\\app\\build\\intermediates\\dex\\rechargetradeDebugAndroidTest\\mergeProjectDexRechargetradeDebugAndroidTest\\0\\classes.dex
+base.2=E\:\\KMPaisa\\app\\build\\intermediates\\dex\\rechargetradeDebugAndroidTest\\mergeProjectDexRechargetradeDebugAndroidTest\\8\\classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=8/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

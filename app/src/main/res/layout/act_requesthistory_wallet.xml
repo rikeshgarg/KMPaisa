@@ -57,7 +57,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:text="Current Balance"
-                            android:textColor="@color/black"
+                            android:textColor="@color/et_textcolor"
                             android:textSize="@dimen/ts_forteen" />
 
                         <LinearLayout
@@ -69,7 +69,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="@dimen/five"
                                 android:text="@string/currency_symbol"
-                                android:textColor="@color/black"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_seventeen"
                                 android:textStyle="bold" />
 
@@ -81,7 +81,7 @@
                                 android:maxLines="1"
                                 android:singleLine="true"
                                 android:text="75695476"
-                                android:textColor="@color/black"
+                                android:textColor="@color/et_textcolor"
                                 android:textStyle="bold"
                                 android:textSize="@dimen/ts_seventeen" />
                         </LinearLayout>

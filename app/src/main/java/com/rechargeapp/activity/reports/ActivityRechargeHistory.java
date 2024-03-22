@@ -153,7 +153,8 @@ public class ActivityRechargeHistory extends AppCompatActivity implements View.O
                 }
             }
         });
-
+        strFromDate = txtFrom.getText().toString().trim();
+        strToDate = txtTo.getText().toString().trim();
         isFirstLoad = true;
         pageNumber = 1;
         LoadRechargeHistory(strFromDate, strToDate);

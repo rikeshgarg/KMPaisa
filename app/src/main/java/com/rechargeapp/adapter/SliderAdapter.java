@@ -53,7 +53,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
         }
 
         void setImage(SliderModel sliderItems) {
-            ImageLoading.loadImages(sliderItems.getBanner_img(), imageView, 0);
+            ImageLoading.loadImages(sliderItems.getBanner_img(), imageView, sliderItems.getImg());
         //use glide or picasso in case you get image from internet
 //            Glide.with(imageView.getContext())
 //                    .load(Uri.parse(sliderItems.getBanner_img()))

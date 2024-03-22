@@ -2,8 +2,12 @@
 <resources>
     <color name="colorPrimary">#EBBC00</color>
     <color name="colorAccent">#245295</color>
-    <color name="darkcolorPrimary">#102D39</color>
-    <color name="background">#F8F9FD</color>
+    <color name="login_head1">#245295</color>
+    <color name="login_head2">#000000</color>
+    <color name="intro">#EBBC00</color>
+    <color name="bg_edittext">#F2F8FD</color>
+    <color name="hintcolor">#ffffff</color>
+    <color name="bg_edittext_stroke">#CEDBEA</color>
 
     <color name="bg_prepaid">#EAEAFF</color>
     <color name="bg_postpaid">#FFE7C4</color>
@@ -11,7 +15,14 @@
     <color name="bg_datacard">#D1FBFF</color>
     <color name="bg_landline">#FFE7C4</color>
     <color name="bg_fasttag">#B1F3BF</color>
+    <color name="bg_metro">#FECDFF</color>
+    <color name="bg_deactive_tab">#80245295</color>
 
+
+
+
+    <color name="darkcolorPrimary">#102D39</color>
+    <color name="background">#F2F8FD</color>
 
     <color name="colorPrimaryLight70">#B3053c50</color>
     <color name="colorPrimaryLight40">#B3053c50</color>
@@ -24,8 +35,9 @@
     <color name="ten_colorPrimaryDark">#1A053c50</color>
     <color name="eighty_colorPrimaryDark">#CC053c50</color>
 
-    <color name="appbackcolor">@color/colorPrimary</color>
+    <color name="appbackcolor">@color/c_white</color>
     <color name="fontcoloreditext">#000000</color>
+
 
     <color name="fontcolortextview">#000000</color>
     <color name="fontcoloractionbar">#ffffff</color>
@@ -45,6 +57,8 @@
     <color name="fontcolordark">#000000</color>
 
     <color name="transparent">#00000000</color>
+    <color name="bg_login">#ffffff</color>
+    <color name="et_textcolor">#000000</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
@@ -83,11 +97,12 @@
     <color name="red_400">#EF5350</color>
     <color name="red_500">#F44336</color>
     <color name="red_600">#E53935</color>
+    <color name="red_700">#E53935</color>
     <color name="red_900">#B71C1C</color>
-    <color name="red_700">#D32F2F</color>
 
     <color name="green_500">#4CAF50</color>
     <color name="green_600">#43A047</color>
+    <color name="green_700">#388E3C</color>
     <color name="green_800">#2E7D32</color>
     <color name="green_900">#1B5E20</color>
 
@@ -95,7 +110,8 @@
 
     <color name="blue_900">#0D47A1</color>
 
-    <color name="orange_900">#E65100</color>
+    <!--    <color name="orange_900">#E65100</color>-->
+    <color name="orange_900">#F57F17</color>
 
     <color name="grey_300">#E0E0E0</color>
 
@@ -103,5 +119,8 @@
     <!--for random color generator -->
 
     <color name="fontcoloreditexthint">#BCBCBC</color>
-
+    <color name="rv_title">#0C3670</color>
+    <color name="bg_date">#1A245295</color>
+    <color name="spinner_item_textcolor">@color/black</color>
+    <color name="spinner_selecteditem_textcolor">@color/black</color>
 </resources>

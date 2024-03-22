@@ -591,12 +591,17 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="bg_btn">#245295</color>
+    <color name="bg_btn_stroke">#245295</color>
     <color name="bg_datacard">#D1FBFF</color>
+    <color name="bg_date">#1A245295</color>
     <color name="bg_deactive_tab">#80245295</color>
     <color name="bg_dth">#FFEBF0</color>
     <color name="bg_edittext">#F2F8FD</color>
+    <color name="bg_edittext_stroke">#CEDBEA</color>
     <color name="bg_fasttag">#B1F3BF</color>
     <color name="bg_landline">#FFE7C4</color>
+    <color name="bg_login">#ffffff</color>
     <color name="bg_metro">#FECDFF</color>
     <color name="bg_postpaid">#FFE7C4</color>
     <color name="bg_prepaid">#EAEAFF</color>
@@ -691,6 +696,7 @@
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
     <color name="error_stroke_color">#F27474</color>
+    <color name="et_textcolor">#000000</color>
     <color name="fb">#3B5998</color>
     <color name="five_colorPrimaryDark">#0D053c50</color>
     <color name="float_transparent">#00000000</color>
@@ -725,8 +731,12 @@
     <color name="grey_font">#ff9e9e9e</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="hintcolor">#245295</color>
     <color name="infoColor">#3F51B5</color>
+    <color name="intro">#EBBC00</color>
     <color name="light_font">#FBFBFB</color>
+    <color name="login_head1">#245295</color>
+    <color name="login_head2">#000000</color>
     <color name="m3_ref_palette_error0">#ff000000</color>
     <color name="m3_ref_palette_error10">#ff410e0b</color>
     <color name="m3_ref_palette_error100">#ffffffff</color>
@@ -897,6 +907,7 @@
     <color name="mtrl_textinput_filled_box_default_background_color">#0A000000</color>
     <color name="mtrl_textinput_focused_box_stroke_color">#00000000</color>
     <color name="mtrl_textinput_hovered_box_stroke_color">#DE000000</color>
+    <color name="newcolor">#ff4500</color>
     <color name="normalColor">#353A3E</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
@@ -915,16 +926,19 @@
     <color name="red_400">#EF5350</color>
     <color name="red_500">#F44336</color>
     <color name="red_600">#E53935</color>
-    <color name="red_700">#D32F2F</color>
+    <color name="red_700">#E53935</color>
     <color name="red_900">#B71C1C</color>
     <color name="red_btn_bg_color">#DD6B55</color>
     <color name="red_btn_bg_pressed_color">#CD5B55</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
+    <color name="rv_title">#0C3670</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="spinner_item_textcolor">@color/black</color>
+    <color name="spinner_selecteditem_textcolor">@color/black</color>
     <color name="successColor">#388E3C</color>
     <color name="success_stroke_color">#A5DC86</color>
     <color name="sweet_dialog_bg_color">#FFFFFF</color>
@@ -5393,7 +5407,7 @@
   </style>
     <style name="MyTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textColorHint">@color/colorAccent</item>
-        <item name="android:paddingTop">@dimen/dp_10</item>
+
     </style>
     <style name="PinWidget"/>
     <style name="PinWidget.PinView" parent="Widget.AppCompat.EditText">
@@ -8498,9 +8512,9 @@
     </style>
     <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
         <item name="android:textSize">@dimen/ts_fifteen</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/hintcolor</item>
         <item name="android:hint">Select Country</item>
-        <item name="color">@color/colorAccent</item>
+        <item name="color">@color/hintcolor</item>
     </style>
     <style name="ucrop_ImageViewWidgetIcon">
         <item name="android:layout_width">wrap_content</item>

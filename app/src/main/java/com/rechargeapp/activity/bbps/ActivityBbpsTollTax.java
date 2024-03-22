@@ -223,6 +223,7 @@ public class ActivityBbpsTollTax extends AppCompatActivity implements OnClickLis
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         //txtHeading.setText("BBPS Toll Tax");
         tv_heading.setText("BBPS Toll Tax");
+        tv_heading.setTextColor(getResources().getColor(R.color.hintcolor));
     }
 
 

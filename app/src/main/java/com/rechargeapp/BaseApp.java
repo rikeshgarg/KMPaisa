@@ -35,15 +35,13 @@ public class BaseApp extends Application {
 
     private void loadBaseUrl() {
         switch (BuildConfig.FLAVOR) {
-            case GlobalVariables.FLAVOR_SONIKAPAY:
-                GlobalVariables.PRE_URL_MAIN = "https://www.sonikapay.com/";
-//                GlobalVariables.PRE_URL_MAIN = "https://www.sonikapay.com/demo/";
-                GlobalVariables.PRE_URL = GlobalVariables.PRE_URL_MAIN + "appservice/auth/";
+            case GlobalVariables.FLAVOR_KMPAISA:
+                GlobalVariables.PRE_URL_MAIN = "https://www.kmpaisa.com/";
+                GlobalVariables.PRE_URL = GlobalVariables.PRE_URL_MAIN + "service/WebNew/";
                 break;
-            case GlobalVariables.FLAVOR_SONIKAPAY_CHILD:
-                GlobalVariables.PRE_URL_MAIN = "https://www.sonikapay.com/";
-//                GlobalVariables.PRE_URL_MAIN = "https://www.sonikapay.com/demo/";
-                GlobalVariables.PRE_URL = GlobalVariables.PRE_URL_MAIN + "appservice/auth/";
+            case GlobalVariables.FLAVOR_RECHARGETRADE:
+                GlobalVariables.PRE_URL_MAIN = "https://www.rechargetrade.online/";
+                GlobalVariables.PRE_URL = GlobalVariables.PRE_URL_MAIN + "service/WebNew/";
                 break;
         }
     }

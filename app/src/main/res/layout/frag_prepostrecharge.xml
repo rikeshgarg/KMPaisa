@@ -12,12 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/twohundred"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/recharge_footer"
-            android:visibility="gone" />
+
 
         <LinearLayout
             android:id="@+id/nested_scroll_view"
@@ -91,7 +86,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginStart="@dimen/ten"
                                 android:text="+91"
-                                android:textColor="@color/fontcoloreditext"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_seventeen" />
 
                             <EditText
@@ -106,10 +101,10 @@
                                 android:maxLength="10"
                                 android:background="@android:color/transparent"
                                 android:hint="Enter Mobile Number"
-                                android:textColor="@color/c_black"
+                                android:textColor="@color/et_textcolor"
                                 android:textCursorDrawable="@drawable/color_cursor"
                                 android:textSize="@dimen/ts_seventeen"
-                                app:hintTextColor="?attr/colorPrimary" />
+                                android:textColorHint="@color/hintcolor" />
 
                             <ImageView
                                 android:id="@+id/img_contacts"
@@ -119,7 +114,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginEnd="@dimen/seven"
                                 android:src="@drawable/ic_round_contacts_24"
-                                app:tint="@color/black" />
+                                app:tint="@color/hintcolor" />
 
                         </RelativeLayout>
 
@@ -177,6 +172,7 @@
                                         android:layout_gravity="center"
                                         android:layout_marginRight="@dimen/five"
                                         android:src="@drawable/ic_arrow_drop"
+                                        app:tint="@color/hintcolor"
                                          />
 
                                     <ProgressBar
@@ -233,7 +229,7 @@
                                         android:layout_toLeftOf="@+id/img_drop_2"
                                         android:text="Select Operator"
                                         android:paddingLeft="@dimen/dp_5"
-                                        android:textColor="@color/fontcolortextview"
+                                        android:textColor="@color/et_textcolor"
                                         android:textSize="@dimen/ts_seventeen" />
 
                                     <ImageView
@@ -287,7 +283,7 @@
                                 android:layout_marginLeft="@dimen/ten"
                                 android:gravity="center_vertical"
                                 android:text="@string/currency_symbol"
-                                android:textColor="@color/gray_dimtextcolor"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_twentyfive" />
 
                             <EditText
@@ -304,9 +300,9 @@
                                 android:maxLength="4"
                                 android:background="@android:color/transparent"
                                 android:paddingLeft="@dimen/five"
-                                android:textColor="@color/c_black"
+                                android:textColor="@color/et_textcolor"
                                 android:textCursorDrawable="@drawable/color_cursor"
-                                app:hintTextColor="?attr/colorPrimary" />
+                                android:textColorHint="@color/hintcolor" />
 
                             <TextView
                                 android:id="@+id/txt_viewallplans"
@@ -322,7 +318,6 @@
                                 android:paddingRight="@dimen/ten"
                                 android:paddingBottom="@dimen/five"
                                 android:text="View plans"
-                                android:backgroundTint="@color/colorPrimary"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/ts_fifteen"
                                 android:visibility="visible" />
@@ -348,7 +343,7 @@
                                 android:layout_alignParentRight="true"
                                 android:padding="@dimen/seven"
                                 android:text="Click for R Offers"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="@color/hintcolor"
                                 android:textSize="@dimen/ts_fifteen"
                                 android:visibility="visible" />
 

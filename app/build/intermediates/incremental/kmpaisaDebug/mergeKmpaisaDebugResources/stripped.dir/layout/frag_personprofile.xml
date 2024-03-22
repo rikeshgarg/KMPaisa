@@ -391,7 +391,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_4"
-                    android:background="@drawable/back_dash_menuone_inner"
                     android:orientation="vertical">
 
                     <TextView
@@ -403,7 +402,7 @@
                         android:gravity="left"
                         android:padding="@dimen/seven"
                         android:text="Profile"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/rv_title"
                         android:textSize="@dimen/ts_eighteen"
                         />
 

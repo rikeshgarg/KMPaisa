@@ -29,7 +29,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Operator"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -60,7 +60,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Code"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -71,7 +71,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -90,7 +90,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Type"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -120,7 +120,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Commision"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -131,7 +131,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -150,7 +150,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Is Flat?"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -161,7 +161,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -181,7 +181,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="IS Surcharge?"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -192,7 +192,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/black"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>

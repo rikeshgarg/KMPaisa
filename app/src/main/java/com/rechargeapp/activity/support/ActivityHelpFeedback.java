@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.commonutility.retrofit.ApiInterface;
 import com.commonutility.CheckValidation;
@@ -48,7 +50,9 @@ import java.util.List;
 
 public class ActivityHelpFeedback extends AppCompatActivity implements View.OnClickListener, WebServiceListener {
     private EditText edCompalintTitle, edCompalintDesc;
-    private Button btnsignUp, btnRemovePic, btnSelectPic;
+    private Button btnRemovePic, btnSelectPic;
+
+    AppCompatButton btnsignUp;
     private ImageView imgProfilePic, imgDrop;
     private TextView txtNoFile;
     public Uri imageUri = null;
@@ -81,7 +85,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         txtNoFile = (TextView) findViewById(R.id.nofile_aadharfront);
         edCompalintTitle = (EditText) findViewById(R.id.et_title);
         edCompalintDesc = (EditText) findViewById(R.id.et_desc);
-        btnsignUp = (Button) findViewById(R.id.submit_ticket);
+        btnsignUp = (AppCompatButton) findViewById(R.id.submit_ticket);
         imgProfilePic = (ImageView) findViewById(R.id.imgae_dp);
         btnRemovePic = findViewById(R.id.btn_removepic);
         btnSelectPic = findViewById(R.id.choose_aadharfront);
@@ -96,6 +100,8 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         lstUploadData = new LinkedList<>();
         lstUploadData.add(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINEDUSERID, ""));
         callWebService(ApiInterface.GETTICKETTYPELIST, lstUploadData);
+
+
 
     }
 
@@ -342,7 +348,7 @@ public class ActivityHelpFeedback extends AppCompatActivity implements View.OnCl
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             TextView textView = view.findViewById(R.id.txtitem);
-            textView.setTextColor(getResources().getColor(R.color.fontcoloreditext));
+            textView.setTextColor(getResources().getColor(R.color.et_textcolor));
         }
         @Override public void onNothingSelected(AdapterView<?> parent) { }
     };

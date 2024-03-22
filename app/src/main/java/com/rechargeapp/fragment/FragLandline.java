@@ -344,9 +344,9 @@ public class FragLandline extends Fragment implements OnClickListener, WebServic
                 if (str_status.equalsIgnoreCase("0")) {
                     customToast.showCustomToast(svContext, str_message, customToast.ToastyError);
                 } else {
-                    edCardNumber.setText("");
-                    edDthRechargeAmount.setText("");
-                    spinnerDthOperatorList.setSelection(0);
+//                    edCardNumber.setText("");
+//                    edDthRechargeAmount.setText("");
+//                    spinnerDthOperatorList.setSelection(0);
 
                     customToast.showCustomToast(svContext, str_message, customToast.ToastySuccess);
 

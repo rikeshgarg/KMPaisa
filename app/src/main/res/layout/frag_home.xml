@@ -83,7 +83,7 @@
                                         android:scrollHorizontally="true"
                                         android:singleLine="false"
                                         android:textAlignment="center"
-                                        android:textColor="#ff4500"
+                                        android:textColor="@color/newcolor"
                                         android:textSize="@dimen/ts_forteen" />
                                 </RelativeLayout>
 
@@ -485,7 +485,7 @@
                             android:gravity="left"
                             android:padding="@dimen/seven"
                             android:text="Recharge &amp; Bill Payments"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/rv_title"
                             android:textSize="@dimen/ts_eighteen"
                             />
 
@@ -515,7 +515,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dp_4"
-                        android:background="@drawable/back_dash_menuone_inner"
                         android:orientation="vertical">
 
                         <TextView
@@ -527,7 +526,7 @@
                             android:gravity="left"
                             android:padding="@dimen/seven"
                             android:text="Banking &amp; Financial Services"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/rv_title"
                             android:textSize="@dimen/ts_eighteen"
                             />
 
@@ -1170,6 +1169,7 @@
                     android:layout_height='120dp'
                     android:paddingStart='40dp'
                     android:paddingEnd='40dp'
+                    android:layout_marginBottom="@dimen/ten"
                     android:id='@+id/viewPagerImageSlider'/>
 
             </LinearLayout>

@@ -124,11 +124,11 @@
                                     android:background="@drawable/back_edittext_default">
 
                                     <Spinner
+                                        android:background="@android:color/transparent"
                                         android:id="@+id/spinner_countrylist"
                                         android:layout_width="fill_parent"
                                         android:layout_height="match_parent"
                                         android:gravity="center_vertical"
-                                        android:theme="@style/mySpinnerItemStyle"
                                         tools:listitem="@layout/item_spinner" />
 
                                     <ImageView
@@ -141,6 +141,7 @@
                                         android:layout_marginRight="@dimen/ten"
                                         android:padding="@dimen/two"
                                         android:src="@drawable/ic_arrow_drop"
+                                        app:tint="@color/hintcolor"
                                          />
                                 </RelativeLayout>
 
@@ -158,9 +159,8 @@
                                     android:maxLines="1"
                                     android:paddingLeft="15dp"
                                     android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
+                                    android:textColor="@color/et_textcolor"
+                                    android:textColorHint="@color/hintcolor"
                                     android:textSize="@dimen/ts_seventeen" />
 
                                 <EditText
@@ -182,9 +182,8 @@
                                     android:paddingTop="@dimen/twentyfive"
                                     android:paddingBottom="@dimen/ten"
                                     android:singleLine="true"
-                                    android:textColor="@color/c_black"
-                                    android:textColorHighlight="@color/white"
-                                    android:textColorHint="@color/c_gray2"
+                                    android:textColor="@color/et_textcolor"
+                                    android:textColorHint="@color/hintcolor"
                                     android:textSize="@dimen/ts_seventeen" />
 
                                 <ImageView
@@ -211,6 +210,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="No file chosen"
+                                        android:textColor="@color/et_textcolor"
                                         android:textSize="@dimen/seventeen" />
 
                                     <LinearLayout
@@ -240,6 +240,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="1dp"
                                         android:elevation="1dp"
+                                        android:textColor="@color/et_textcolor"
                                         android:text="@string/comp_imgdesc" />
 
                                     <TextView
@@ -248,11 +249,11 @@
                                         android:layout_marginTop="1dp"
                                         android:elevation="1dp"
                                         android:text="View documents"
-                                        android:textColor="@color/gray_46"
+                                        android:textColor="@color/et_textcolor"
                                         android:visibility="gone" />
                                 </LinearLayout>
 
-                                <Button
+                                <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/submit_ticket"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -262,7 +263,7 @@
                                     android:layout_gravity="center_horizontal"
                                     android:gravity="center"
                                     android:layout_marginBottom="@dimen/twenty"
-                                    android:background="@drawable/btn_rect_primary"
+                                    android:background="@drawable/blue_button_background"
                                     android:text="@string/comp_sbmtbtn"
                                     android:textColor="@android:color/white" />
                             </LinearLayout>

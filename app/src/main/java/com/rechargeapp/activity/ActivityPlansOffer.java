@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -141,6 +142,9 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
 
         TextView txtHeading = (TextView) findViewById(R.id.heading);
         txtHeading.setText(getString(R.string.app_name));
+        txtHeading.setTextColor(getResources().getColor(R.color.colorAccent));
+        imgToolBarBack.setColorFilter(ContextCompat.getColor(svContext, R.color.colorAccent), android.graphics.PorterDuff.Mode.MULTIPLY);
+
     }
 
     @Override
@@ -208,7 +212,7 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
                 customToast.showCustomToast(context, "Some error occured", customToast.ToastyError);
                 e.printStackTrace();
             }
-        } else if (url.contains(ApiInterface.CIRCLELIST)) {
+            } else if (url.contains(ApiInterface.CIRCLELIST)) {
             try {
                 listSpinnerCircleList = new ArrayList<>();
                 JSONObject json = new JSONObject(result);
@@ -455,6 +459,9 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
 
         spinnerOperatorList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                TextView textView = view.findViewById(R.id.txtitem);
+                textView.setTextColor(getResources().getColor(R.color.et_textcolor));
+
                 if (pos != 0 && pos != mLastOperatorPos) {
                     mLastOperatorPos = pos;
                     strSelectedOperator = (listSpinnerOperatorList.get(spinnerOperatorList.getSelectedItemPosition()).split("#:#")[0]);
@@ -486,6 +493,8 @@ public class ActivityPlansOffer extends AppCompatActivity implements View.OnClic
         }
         spinnerCircleList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                TextView textView = view.findViewById(R.id.txtitem);
+                textView.setTextColor(getResources().getColor(R.color.et_textcolor));
                 if (pos != 0 && pos != mLastCirclePos) {
                     mLastCirclePos = pos;
                     LoadOperatorList("Prepaid");

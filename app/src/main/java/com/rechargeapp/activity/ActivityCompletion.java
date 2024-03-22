@@ -81,6 +81,10 @@ public class ActivityCompletion extends AppCompatActivity implements View.OnClic
             Intent svIntent = new Intent(svContext, ActivityBbpsHistory.class);
             svContext.startActivity(svIntent);
             finish();
+        } else if(sessionId.equalsIgnoreCase("moneytransfer")){
+            Intent svIntent = new Intent(svContext, ActivityMoneyTransferHistory.class);
+            svContext.startActivity(svIntent);
+            finish();
         }
     }
 

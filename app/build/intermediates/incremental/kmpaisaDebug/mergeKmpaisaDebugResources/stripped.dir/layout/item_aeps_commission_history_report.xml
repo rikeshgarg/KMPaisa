@@ -31,7 +31,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Member Id"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -42,7 +42,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -61,7 +61,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Name"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -72,7 +72,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -91,7 +91,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Transaction Id"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -121,7 +121,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Transaction Type"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -132,7 +132,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -151,7 +151,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Amount"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -162,7 +162,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -181,7 +181,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Commission"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -192,7 +192,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -211,7 +211,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Type"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -222,7 +222,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -242,7 +242,7 @@
                 android:layout_centerVertical="true"
                 android:layout_weight="4"
                 android:text="Date Time"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_forteen"
                 android:textStyle="bold" />
 
@@ -253,7 +253,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="6"
-                android:textColor="@color/fontcolortextview"
+                android:textColor="@color/et_textcolor"
                 android:textSize="@dimen/ts_twelve"
                 android:textStyle="bold" />
         </LinearLayout>

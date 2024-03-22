@@ -4,7 +4,7 @@
     android:id="@+id/headlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +22,6 @@
             layout="@layout/include_actionbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3c3c3c"
             android:padding="@dimen/twenty" />
 
         <RelativeLayout
@@ -189,6 +188,7 @@
                     android:paddingRight="@dimen/fifteen"
                     android:background="@drawable/back_edittext_default"
                     android:gravity="center"
+                    android:textColor="@color/et_textcolor"
                     android:textSize="@dimen/ts_twenty" />
 
                 <androidx.appcompat.widget.AppCompatButton

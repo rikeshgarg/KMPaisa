@@ -25,12 +25,10 @@
             android:background="#3c3c3c"
             android:padding="@dimen/twenty" />
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/lay_actionbar">
+
 
             <RelativeLayout
+                android:layout_below="@+id/lay_actionbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -148,6 +146,6 @@
                     android:scrollbars="vertical"
                     android:scrollingCache="true" />
             </RelativeLayout>
-        </androidx.core.widget.NestedScrollView>
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

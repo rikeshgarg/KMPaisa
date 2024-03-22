@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 
 import com.commonutility.CheckInternet;
@@ -37,7 +38,7 @@ import java.util.LinkedList;
 
 public class ActivityLoginTransfer extends AppCompatActivity implements View.OnClickListener, WebServiceListener, MessageListener {
     private EditText edPhone;
-    private Button btnBack, btnRegister;
+    private AppCompatButton btnBack, btnRegister;
     private TextView tvregister;
 
     private View[] allViewWithClick = {btnBack, btnRegister, tvregister};

@@ -2,7 +2,15 @@
 <resources>
     <color name="colorPrimary">#EBBC00</color>
     <color name="colorAccent">#245295</color>
+    <color name="login_head1">#245295</color>
+    <color name="bg_btn">#245295</color>
+    <color name="bg_btn_stroke">#245295</color>
+    <color name="login_head2">#000000</color>
+    <color name="intro">#EBBC00</color>
     <color name="bg_edittext">#F2F8FD</color>
+    <color name="hintcolor">#245295</color>
+
+    <color name="bg_edittext_stroke">#CEDBEA</color>
 
     <color name="bg_prepaid">#EAEAFF</color>
     <color name="bg_postpaid">#FFE7C4</color>
@@ -51,6 +59,8 @@
     <color name="fontcolordark">#000000</color>
 
     <color name="transparent">#00000000</color>
+    <color name="bg_login">#ffffff</color>
+    <color name="et_textcolor">#000000</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
@@ -89,6 +99,7 @@
     <color name="red_400">#EF5350</color>
     <color name="red_500">#F44336</color>
     <color name="red_600">#E53935</color>
+    <color name="red_700">#E53935</color>
     <color name="red_900">#B71C1C</color>
 
     <color name="green_500">#4CAF50</color>
@@ -101,7 +112,7 @@
 
     <color name="blue_900">#0D47A1</color>
 
-<!--    <color name="orange_900">#E65100</color>-->
+    <!--    <color name="orange_900">#E65100</color>-->
     <color name="orange_900">#F57F17</color>
 
     <color name="grey_300">#E0E0E0</color>
@@ -111,4 +122,7 @@
 
     <color name="fontcoloreditexthint">#BCBCBC</color>
 
+
+    <color name="newcolor">#ff4500</color>
+    <color name="rv_title">#0C3670</color>
 </resources>

@@ -12,12 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/twohundred"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/recharge_footer"
-            android:visibility="gone" />
+
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nested_scroll_view"
@@ -75,7 +70,7 @@
                                     android:layout_toLeftOf="@+id/img_drop_2"
                                     android:text="Select Operator"
                                     android:paddingLeft="@dimen/dp_5"
-                                    android:textColor="@color/fontcolortextview"
+                                    android:textColor="@color/et_textcolor"
                                     android:textSize="@dimen/ts_seventeen" />
 
                                 <ImageView
@@ -180,8 +175,8 @@
                             android:singleLine="true"
                             android:background="@android:color/transparent"
                             android:hint="Enter DTH Account Number"
-                            android:textColor="@color/c_black"
-                            android:textColorHint="@color/c_gray2"
+                            android:textColor="@color/et_textcolor"
+                            android:textColorHint="@color/hintcolor"
                             android:textCursorDrawable="@drawable/color_cursor"
                             android:textSize="17dp" />
                     </LinearLayout>
@@ -213,7 +208,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="@dimen/ten"
                             android:text="@string/currency_symbol"
-                            android:textColor="@color/gray_dimtextcolor"
+                            android:textColor="@color/et_textcolor"
                             android:textSize="@dimen/ts_twentyfive" />
 
                         <EditText
@@ -226,10 +221,10 @@
                             android:inputType="number"
                             android:maxLength="4"
                             android:paddingLeft="@dimen/five"
-                            android:textColor="@color/c_black"
+                            android:textColor="@color/et_textcolor"
                             android:background="@android:color/transparent"
                             android:textCursorDrawable="@drawable/color_cursor"
-                            app:hintTextColor="?attr/colorPrimary" />
+                            android:textColorHint="@color/hintcolor" />
 
 
                         <TextView
@@ -271,7 +266,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/three"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/hintcolor"
                             android:textSize="@dimen/ts_fifteen" />
 
 
@@ -291,7 +286,7 @@
                             android:layout_alignParentRight="true"
                             android:padding="@dimen/five"
                             android:text="Fetch Custom Info"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/hintcolor"
                             android:textSize="@dimen/ts_fifteen"
                             android:visibility="visible" />
                     </RelativeLayout>

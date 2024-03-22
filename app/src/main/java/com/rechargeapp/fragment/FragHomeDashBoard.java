@@ -451,12 +451,15 @@ public class FragHomeDashBoard extends Fragment implements OnClickListener {
         ImageSlider sliderView = aiView.findViewById(R.id.image_slider);
         List<SlideModel> imageList = new ArrayList<>();
         List<SlideModel> imageListSlider = new ArrayList<>();
-
+        String imageUri = "drawable://" + R.drawable.banner1;
         if (FragHomeDashBoard.lstSlider != null && FragHomeDashBoard.lstSlider.size() > 0) {
             viewPager2.setVisibility(View.VISIBLE);
         } else {
-            viewPager2.setVisibility(View.GONE);
-            return;
+            lstSlider.add(new SliderModel("1",imageUri,"",R.drawable.banner1));
+            lstSlider.add(new SliderModel("2",imageUri,"",R.drawable.banner1));
+            lstSlider.add(new SliderModel("3",imageUri,"",R.drawable.banner1));
+            viewPager2.setVisibility(View.VISIBLE);
+            //return;
         }
         for (int j = 0; j < FragHomeDashBoard.lstSlider.size(); j++) {
             imageList.add(new SlideModel((FragHomeDashBoard.lstSlider.get(j).getBanner_img()).replaceAll("\\/", "/"), ScaleTypes.FIT));

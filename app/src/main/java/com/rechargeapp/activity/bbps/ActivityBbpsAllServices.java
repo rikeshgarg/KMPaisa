@@ -1,5 +1,6 @@
 package com.rechargeapp.activity.bbps;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -16,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.commonutility.retrofit.ApiInterface;
 import com.commonutility.spinner.ActivitySpinner;
@@ -47,7 +49,8 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
     LinkedList<String> lstUploadData = new LinkedList<>();
     public static final String TAG_AMOUNT = "amount";
     private String str_amount = "", str_customername = "";
-    private Button btnElectricRecharge, btnOtpVerify, btnCancelOtp,btnfetch;
+    private Button btnOtpVerify, btnCancelOtp,btnfetch;
+    AppCompatButton btnElectricRecharge;
     private ImageView imgDropOperator,img_serviceoperator;
     private TextView txtUserName;
     private static EditText edRechargeAmount;
@@ -194,7 +197,7 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
             });
         }
 
-        btnElectricRecharge = (Button) allViewWithClick[0];
+        btnElectricRecharge = (AppCompatButton) allViewWithClick[0];
         btnfetch = (Button) allViewWithClick[1];
         laySelectService = (RelativeLayout) allViewWithClick[5];
         laySelectOperator = (RelativeLayout) allViewWithClick[6];
@@ -307,8 +310,10 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
 
                     Intent svIntent = new Intent(svContext, ActivityCompletion.class);
                     svIntent.putExtra("from_act", "bbps");
-                    startActivity(svIntent);
-                    finish();
+                    svContext.startActivity(svIntent);
+                    ((Activity) svContext).finish();
+                    //startActivity(svIntent);
+                    //finish();
                 }
             } catch (JSONException e) {
                 customToast.showCustomToast(svContext, "Some error occured", customToast.ToastyError);
@@ -404,7 +409,8 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
 
             EditText edItem = (child).findViewById(R.id.param_name);
             edItem.setHint(lstParam.get(i).getParamName());
-
+            edItem.setTextColor(getResources().getColor(R.color.et_textcolor));
+            edItem.setHintTextColor(getResources().getColor(R.color.hintcolor));
             edItem.setId(i);
             edItem.setLayoutParams(lp);
             edItem.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -645,8 +651,10 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
                     selectedServiceSpinner = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
                     if (selectedServiceSpinner == null) {
                         txtSpinnerServiceList.setText("Select Service");
+                        txtSpinnerServiceList.setTextColor(getResources().getColor(R.color.et_textcolor));
                     } else {
                         txtSpinnerServiceList.setText(selectedServiceSpinner.getTitle());
+                        txtSpinnerServiceList.setTextColor(getResources().getColor(R.color.et_textcolor));
                         serviceId = selectedServiceSpinner.getId();
                         LoadOperatorList(serviceId);
                     }
@@ -656,8 +664,10 @@ public class ActivityBbpsAllServices extends AppCompatActivity implements OnClic
                     selectedOperatorSpinner = (SpinnerModel) intent.getSerializableExtra(ActivitySpinner.EXTRA_SPINNER_DATA);
                     if (selectedOperatorSpinner == null) {
                         txtSpinnerOperatorList.setText("Select Operator");
+                        txtSpinnerOperatorList.setTextColor(getResources().getColor(R.color.et_textcolor));
                     } else {
                         txtSpinnerOperatorList.setText(selectedOperatorSpinner.getTitle());
+                        txtSpinnerOperatorList.setTextColor(getResources().getColor(R.color.et_textcolor));
                         strOperatorCode = selectedOperatorSpinner.getId();
                         item.removeAllViews();
                         if (!strOperatorCode.equalsIgnoreCase("-1")) {

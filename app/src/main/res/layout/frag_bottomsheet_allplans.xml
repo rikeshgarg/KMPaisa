@@ -82,6 +82,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/five"
                     android:src="@drawable/ic_arrow_drop"
+                    app:tint="@color/hintcolor"
                     />
             </RelativeLayout>
 
@@ -111,6 +112,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/five"
                     android:src="@drawable/ic_arrow_drop"
+                    app:tint="@color/hintcolor"
                      />
             </RelativeLayout>
         </LinearLayout>

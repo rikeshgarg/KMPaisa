@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,7 +57,9 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
     private NoInternetScreen errrorScreen;
 
     private EditText edCurrentBal, edAmount, edDesc, edPhoneNumber,edt_avl_balance;
-    private Button btnProceed, btnOtpAuth;
+    private Button btnOtpAuth;
+
+    AppCompatButton btnProceed;
     private ImageView imgDrop, imgDropOne,imgDropTwo;
 
     private ImageView imgBack;
@@ -99,7 +103,7 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
         //listSpinnerCrDr.add("2#:#DR");
         SpinnerPopulateAdapter LegAdapter = new SpinnerPopulateAdapter(svContext, listSpinnerCrDr, true);
         spinnerCrDr.setAdapter(LegAdapter);
-
+        spinnerCrDr.setOnItemSelectedListener(onItemSelectedListener);
         ((EditText) findViewById(R.id.edtcurrentwalletbal)).setText(PreferenceConnector.readString(svContext, PreferenceConnector.EWALLETBAL, ""));
 
 //        spinnerMemberList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -188,6 +192,10 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
             lstUploadData.add("3");
         } else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("4")) {
             lstUploadData.add("4");
+        }else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("5")) {
+            lstUploadData.add("5");
+        }else if(PreferenceConnector.readString(svContext, PreferenceConnector.LOGINUSERTYPE, "").equals("8")) {
+            lstUploadData.add("8");
         }
 
         //lstUploadData.add("3");
@@ -508,4 +516,13 @@ public class ActivityEWalletTransfer extends AppCompatActivity implements View.O
             searchAdaper.filterList(filteredlist);
         }
     }
+
+    AdapterView.OnItemSelectedListener onItemSelectedListener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            TextView textView = view.findViewById(R.id.txtitem);
+            textView.setTextColor(getResources().getColor(R.color.et_textcolor));
+        }
+        @Override public void onNothingSelected(AdapterView<?> parent) { }
+    };
 }

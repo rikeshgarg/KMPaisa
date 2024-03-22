@@ -24,7 +24,7 @@
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/fifteen"
                 android:singleLine="true"
-                app:tint="@color/colorAccent"
+                app:tint="@color/hintcolor"
                 android:src="@drawable/ico_left" />
 
             <LinearLayout
@@ -64,7 +64,7 @@
                     android:layout_width="@dimen/thirtyfive"
                     android:layout_height="@dimen/thirty"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/rwallet" />
+                    />
 
                 <TextView
                     android:id="@+id/toolbar_txt_walletbal"
@@ -89,7 +89,7 @@
                     android:layout_width="@dimen/thirtyfive"
                     android:layout_height="@dimen/thirty"
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/ewallet" />
+                     />
 
                 <TextView
                     android:id="@+id/toolbar_txt_ewalletbal"
@@ -130,7 +130,7 @@
                         android:foregroundGravity="center|left"
                         android:gravity="left"
                         android:text="Mobile Recharge"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/hintcolor"
                         android:textSize="@dimen/ts_twenty"
                         />
 
@@ -172,7 +172,7 @@
                     android:layout_marginLeft="@dimen/dp_18"
                     android:layout_marginTop="@dimen/dp_10"
                     android:layout_marginRight="@dimen/dp_15"
-                    android:textColor="@color/black"
+                    android:textColor="@color/et_textcolor"
                     android:textSize="@dimen/sp_20"
                     >
 

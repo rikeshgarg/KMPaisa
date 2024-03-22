@@ -97,7 +97,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Sender Mobile Number"
-                                android:textColorHint="@color/colorAccent"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor"
                                 app:boxStrokeWidth="0dp"
                                 app:boxStrokeWidthFocused="0dp">
 
@@ -112,9 +113,8 @@
                                 android:paddingLeft="@dimen/fifteen"
                                 android:paddingRight="@dimen/fifteen"
                                 android:singleLine="true"
-                                android:textColor="@color/c_black"
-                                android:textColorHighlight="@color/white"
-                                android:textColorHint="@color/c_gray2"
+                                android:textColor="@color/et_textcolor"
+                                android:textColorHint="@color/hintcolor"
                                 android:textSize="@dimen/ts_seventeen" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -174,7 +174,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <Button
+                                <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/btn_loginIn"
                                     android:layout_width="0dp"
                                     android:layout_height="@dimen/fortyfive"
@@ -183,13 +183,12 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/blue_button_background"
-                                    android:backgroundTint="@color/c_orange"
                                     android:paddingLeft="15dp"
                                     android:paddingRight="15dp"
                                     android:text="Back"
                                     android:textColor="#ffffffff" />
 
-                                <Button
+                                <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/btnSignUp"
                                     android:layout_width="0dp"
                                     android:layout_height="@dimen/fortyfive"
@@ -198,7 +197,6 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     android:background="@drawable/blue_button_background"
-                                    android:backgroundTint="@color/them_color"
                                     android:paddingLeft="15dp"
                                     android:paddingRight="15dp"
                                     android:text="Submit"
@@ -229,7 +227,7 @@
                                     android:gravity="center"
                                     android:padding="@dimen/ten"
                                     android:text="New Sender Registration"
-                                    android:textColor="@color/colorAccent"
+                                    android:textColor="@color/hintcolor"
                                     android:textSize="@dimen/seventeen" />
 
                                 <TextView

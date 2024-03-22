@@ -78,13 +78,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+
             <TextView
                 android:layout_marginTop="@dimen/fifteen"
                 android:id="@+id/mobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:text="123456"
+                android:text=""
+                android:textSize="@dimen/sp_14"></TextView>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtmember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text=""
                 android:textSize="@dimen/sp_14"></TextView>
 
             <TextView

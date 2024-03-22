@@ -897,7 +897,9 @@ public interface ApiInterface {
                               @Field("mobile") String mobile,
                               @Field("operator") String operator,
                               @Field("circle") String circle,
-                              @Field("amount") String amount);
+                              @Field("amount") String amount,
+                              @Field("recharge_type") String recharge_type);
+
 
 
 

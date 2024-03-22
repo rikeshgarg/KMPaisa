@@ -51,7 +51,7 @@
                 android:id="@+id/dialog_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:layout_marginTop="@dimen/spacing_medium"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="@color/grey_60" />

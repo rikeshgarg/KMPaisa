@@ -51,7 +51,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:text="Current Balance"
-                            android:textColor="@color/black"
+                            android:textColor="@color/et_textcolor"
                             android:textSize="@dimen/ts_forteen" />
 
                         <LinearLayout
@@ -63,7 +63,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="@dimen/five"
                                 android:text="@string/currency_symbol"
-                                android:textColor="@color/black"
+                                android:textColor="@color/et_textcolor"
                                 android:textSize="@dimen/ts_seventeen"
                                 android:textStyle="bold" />
 
@@ -75,7 +75,7 @@
                                 android:maxLines="1"
                                 android:singleLine="true"
                                 android:text="75695476"
-                                android:textColor="@color/black"
+                                android:textColor="@color/et_textcolor"
                                 android:textStyle="bold"
                                 android:textSize="@dimen/ts_seventeen" />
                         </LinearLayout>
@@ -115,7 +115,7 @@
                         android:orientation="horizontal"
                         android:layout_width="0dp"
                         android:background="@drawable/blue_button_background"
-                        android:backgroundTint="#1A245295"
+                        android:backgroundTint="@color/bg_date"
                         android:layout_weight="1.1"
                         android:paddingLeft="@dimen/dp_5"
                         android:paddingRight="@dimen/dp_5"
@@ -130,7 +130,7 @@
                             android:gravity="center"
                             android:textSize="@dimen/sp_14"
                             android:text="Select from date"
-                            android:textColor="@color/colorAccent" />
+                            android:textColor="@color/hintcolor" />
 
                         <ImageView
                             android:layout_alignParentRight="true"
@@ -140,6 +140,7 @@
                             android:layout_marginLeft="@dimen/dp_2"
                             android:layout_marginRight="@dimen/dp_8"
                             android:src="@drawable/ic_calendar"
+                            app:tint="@color/hintcolor"
                             android:layout_centerVertical="true"
                             />
 
@@ -150,7 +151,7 @@
                         android:orientation="horizontal"
                         android:layout_width="0dp"
                         android:background="@drawable/blue_button_background"
-                        android:backgroundTint="#1A245295"
+                        android:backgroundTint="@color/bg_date"
                         android:layout_weight="1.1"
                         android:layout_marginLeft="@dimen/dp_5"
                         android:paddingLeft="@dimen/dp_5"
@@ -166,7 +167,7 @@
                             android:gravity="center"
                             android:textSize="@dimen/sp_14"
                             android:text="Select from date"
-                            android:textColor="@color/colorAccent" />
+                            android:textColor="@color/hintcolor" />
 
                         <ImageView
                             android:layout_alignParentRight="true"
@@ -176,6 +177,7 @@
                             android:layout_marginLeft="@dimen/dp_2"
                             android:layout_marginRight="@dimen/dp_8"
                             android:src="@drawable/ic_calendar"
+                            app:tint="@color/hintcolor"
                             android:layout_centerVertical="true"
                             />
 

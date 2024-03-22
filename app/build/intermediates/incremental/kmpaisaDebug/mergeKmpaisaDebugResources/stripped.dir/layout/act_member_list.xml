@@ -29,10 +29,12 @@
             android:layout_marginLeft="@dimen/fifteen"
             android:layout_marginRight="@dimen/fifteen"
             android:layout_marginTop="@dimen/ten"
+            android:layout_centerHorizontal="true"
             android:orientation="horizontal"
             >
 
             <LinearLayout
+                android:id="@+id/ll_image"
                 android:layout_centerVertical="true"
                 android:paddingTop="@dimen/ten"
                 android:paddingBottom="@dimen/ten"
@@ -51,9 +53,12 @@
             </LinearLayout>
 
             <Button
+                android:layout_toRightOf="@+id/ll_image"
                 android:id="@+id/btn_addmember"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/five"
+                android:layout_centerHorizontal="true"
                 android:layout_centerInParent="true"
                 android:background="@drawable/blue_button_background"
                 android:maxLines="1"

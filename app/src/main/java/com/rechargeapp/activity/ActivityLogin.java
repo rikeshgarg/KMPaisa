@@ -137,7 +137,7 @@ public class ActivityLogin extends AppCompatActivity implements WebServiceListen
         int response = 0;
         response = CheckValidation.emptyEditTextError(
                 edTexts,
-                new String[]{"Enter username", "Enter password"});
+                new String[]{"Enter Member Id", "Enter password"});
 
         if (response == 0) {
             lstUploadData = new LinkedList<>();

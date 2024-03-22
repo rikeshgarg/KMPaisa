@@ -54,7 +54,7 @@
                         android:textStyle="bold"
                         android:gravity="center_horizontal"
                         android:text="User name"
-                        android:textColor="@color/black"
+                        android:textColor="@color/et_textcolor"
                         android:textSize="@dimen/sp_17" />
 
                     <TextView
@@ -64,7 +64,7 @@
                         android:gravity="center_horizontal"
                         android:maxLines="1"
                         android:text="User memberid"
-                        android:textColor="@color/black"
+                        android:textColor="@color/et_textcolor"
                         android:textSize="@dimen/sp_15" />
                 </LinearLayout>
             </LinearLayout>

@@ -32,12 +32,12 @@
                 android:orientation="vertical"
                 android:paddingBottom="10dp">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/twohundred"
-                    android:layout_marginTop="@dimen/twenty"
-                    android:src="@drawable/change_pwd"
-                    android:visibility="gone" />
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/twohundred"-->
+<!--                    android:layout_marginTop="@dimen/twenty"-->
+<!--                    android:src="@drawable/change_pwd"-->
+<!--                    android:visibility="gone" />-->
 
                 <!--                    <com.mikhaellopez.circularimageview.CircularImageView-->
                 <!--                        android:id="@+id/avatar"-->
@@ -64,6 +64,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="70dp"
                     android:gravity="center_horizontal"
+                    android:textColor="@color/et_textcolor"
                     android:text="Click image to change photo" />
 
                 <View
@@ -106,14 +107,15 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
                                 android:src="@drawable/ic_user_name"
-                                app:tint="@color/colorAccent" />
+                                app:tint="@color/hintcolor" />
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_toRightOf="@+id/iv_name"
                                 android:hint="Enter user fullname"
-                                android:textColorHint="@color/colorAccent"
+                                app:hintTextColor="@color/hintcolor"
+                                android:textColorHint="@color/hintcolor"
                                 app:boxStrokeWidth="0dp"
                                 app:boxStrokeWidthFocused="0dp">
 
@@ -124,7 +126,7 @@
                                     android:background="@android:color/transparent"
                                     android:inputType="text"
                                     android:singleLine="true"
-                                    android:textColor="@color/black" />
+                                    android:textColor="@color/et_textcolor" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,14 +150,15 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
                                 android:src="@drawable/ic_mail"
-                                app:tint="@color/colorAccent" />
+                                app:tint="@color/hintcolor" />
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_toRightOf="@+id/iv_email"
                                 android:hint="Enter email address"
-                                android:textColorHint="@color/colorAccent"
+                                app:hintTextColor="@color/hintcolor"
+                                android:textColorHint="@color/hintcolor"
                                 app:boxStrokeWidth="0dp"
                                 app:boxStrokeWidthFocused="0dp">
 
@@ -167,7 +170,7 @@
                                     android:background="@android:color/transparent"
                                     android:inputType="textEmailAddress"
                                     android:singleLine="true"
-                                    android:textColor="@color/black" />
+                                    android:textColor="@color/et_textcolor" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -191,14 +194,15 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="@dimen/twenty"
                                 android:src="@drawable/ic_mobile"
-                                app:tint="@color/colorAccent" />
+                                app:tint="@color/hintcolor" />
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_toRightOf="@+id/iv_phone"
                                 android:hint="Enter mobile number"
-                                android:textColorHint="@color/colorAccent"
+                                app:hintTextColor="@color/hintcolor"
+                                android:textColorHint="@color/hintcolor"
                                 app:boxStrokeWidth="0dp"
                                 app:boxStrokeWidthFocused="0dp">
 
@@ -210,7 +214,7 @@
                                     android:background="@android:color/transparent"
                                     android:inputType="phone"
                                     android:singleLine="true"
-                                    android:textColor="@color/black" />
+                                    android:textColor="@color/et_textcolor" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -474,6 +478,7 @@
                                 android:layout_marginLeft="@dimen/thirty"
                                 android:layout_marginRight="@dimen/thirty"
                                 android:background="@drawable/blue_button_background"
+
                                 android:text="Update Profile"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/ts_seventeen" />

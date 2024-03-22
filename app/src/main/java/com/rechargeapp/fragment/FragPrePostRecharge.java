@@ -344,6 +344,7 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
         lstUploadData.add(selectedOperatorSpinner.getId());
         lstUploadData.add("");
         lstUploadData.add(edRechargeAmount.getText().toString().trim());
+        lstUploadData.add("1");
         callWebService(ApiInterface.RECHARGEAUTH, lstUploadData);
     }
 
@@ -549,8 +550,10 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
         this.selectedOperatorSpinner = spinnerModel;
         if (selectedOperatorSpinner == null) {
             txtSpinnerOperatorList.setText("Select Operator");
+            txtSpinnerOperatorList.setTextColor(getResources().getColor(R.color.et_textcolor));
         } else {
             txtSpinnerOperatorList.setText(selectedOperatorSpinner.getTitle());
+            txtSpinnerOperatorList.setTextColor(getResources().getColor(R.color.et_textcolor));
             strOperatorCode = selectedOperatorSpinner.getId();
         }
     }
@@ -568,6 +571,8 @@ public class FragPrePostRecharge extends Fragment implements WebServiceListener 
 
         spinnerCircleList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView textView = view.findViewById(R.id.txtitem);
+                textView.setTextColor(getResources().getColor(R.color.et_textcolor));
                 LoadOperator();
             }
 

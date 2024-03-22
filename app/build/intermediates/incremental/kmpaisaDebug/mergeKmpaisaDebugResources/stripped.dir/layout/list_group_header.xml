@@ -17,7 +17,6 @@
             android:background="@drawable/white_bg_corner"
             android:padding="10dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_main_wallet"
             android:visibility="gone"/>
 
         <LinearLayout
