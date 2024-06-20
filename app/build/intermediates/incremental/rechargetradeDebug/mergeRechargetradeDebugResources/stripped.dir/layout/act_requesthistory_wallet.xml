@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/headlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/include_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3c3c3c"
+            android:padding="@dimen/twenty" />
+
+        <include
+            android:id="@+id/lay_actionbar"
+            layout="@layout/include_actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3c3c3c"
+            android:padding="@dimen/twenty" />
+
+
+            <RelativeLayout
+                android:layout_below="@+id/lay_actionbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/fifteen"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginRight="@dimen/fifteen">
+
+                <RelativeLayout
+                    android:id="@+id/rl_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/bg_report_header"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_bal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Current Balance"
+                            android:textColor="@color/et_textcolor"
+                            android:textSize="@dimen/ts_forteen" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/five"
+                                android:text="@string/currency_symbol"
+                                android:textColor="@color/et_textcolor"
+                                android:textSize="@dimen/ts_seventeen"
+                                android:textStyle="bold" />
+
+
+                            <me.grantland.widget.AutofitTextView
+                                android:id="@+id/walletbal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="75695476"
+                                android:textColor="@color/et_textcolor"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/ts_seventeen" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_request"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/ll_bal"
+                        android:background="@drawable/blue_button_background"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp"
+                        android:text="Add Fund"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ts_forteen" />
+
+                </RelativeLayout>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:visibility="gone"
+                    android:id="@+id/card_wallbal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginRight="@dimen/ten"
+                    app:cardCornerRadius="@dimen/fifteen">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/five">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="15dp"
+                            android:layout_toStartOf="@+id/lay_btn"
+                            android:background="#ffffff"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Current Balance"
+                                android:textColor="@color/gray_dimtextcolor"
+                                android:textSize="@dimen/ts_forteen" />
+
+                            <LinearLayout
+                                android:layout_marginTop="@dimen/five"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/twenty"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/rupee" />
+
+                                <TextView
+                                    android:id="@+id/walletbal1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="--"
+                                    android:textColor="@color/fontcolortextview"
+                                    android:textSize="@dimen/ts_twenty" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lay_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/add_request1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:text="Add Fund Request"
+                                android:textColor="@color/c_white"
+                                android:textSize="@dimen/ts_twelve" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wallethistory_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_top"
+                    android:layout_marginTop="@dimen/ten"
+                    android:scrollbars="vertical"
+                    android:scrollingCache="true" />
+            </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

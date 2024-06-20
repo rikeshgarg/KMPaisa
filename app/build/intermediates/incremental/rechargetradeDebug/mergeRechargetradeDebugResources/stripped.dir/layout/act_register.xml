@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/headlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context="com.rechargeapp.activity.ActivityLogin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_20">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/twohundred"
+                    android:layout_height="@dimen/hundred"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/ten"
+                    android:src="@drawable/app_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="@dimen/twenty"
+                    android:text="Register"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/ts_twenty"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_top"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/twenty"
+            android:background="@drawable/bg_top_corner_white"
+            android:paddingTop="@dimen/dp_25">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layoutLogin"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_top_corner_white"
+                            android:foregroundGravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/dp_10">
+
+                            <TextView
+                                android:id="@+id/txt_loginerror"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginRight="@dimen/dp_20"
+                                android:layout_marginBottom="@dimen/dp_5"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="gone" />
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/referral_id"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edt_refercode"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_referral_id"-->
+                            <!--                                    android:inputType="text"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+
+                            <!--                            </LinearLayout>-->
+                            <RelativeLayout
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_refercode"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_refral_id" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_refercode"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edt_refercode"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/referral_id"
+                                        android:inputType="text"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15">
+
+                                <ProgressBar
+                                    android:id="@+id/progressbar_load_two"
+                                    android:layout_width="@dimen/dp_20"
+                                    android:layout_height="@dimen/dp_20"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_5"
+                                    android:layout_marginBottom="@dimen/dp_5"
+                                    android:indeterminateDrawable="@drawable/progress_icon"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/member_username"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_marginBottom="@dimen/dp_5"
+                                    android:textSize="@dimen/sp_14"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_name"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_user_name" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_name"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edt_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_full_name"
+                                        android:inputType="text"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginTop="@dimen/dp_20"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/full_name"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edt_name"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_full_name"-->
+                            <!--                                    android:inputType="text"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+                            <!--                            </LinearLayout>-->
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginTop="@dimen/dp_20"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/email"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edtEmail"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_email_address"-->
+                            <!--                                    android:inputType="text"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+                            <!--                            </LinearLayout>-->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_email"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_mail" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_email"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edtEmail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_email_address"
+                                        android:inputType="text"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginTop="@dimen/dp_20"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/mobile"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edtMobile"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_mobile"-->
+                            <!--                                    android:inputType="text"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+                            <!--                            </LinearLayout>-->
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_mobile"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_mobile" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_mobile"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edtMobile"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_mobile"
+                                        android:inputType="text"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginTop="@dimen/dp_20"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/pan"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edt_pancard"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_pan"-->
+                            <!--                                    android:inputType="text"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+                            <!--                            </LinearLayout>-->
+
+                            <RelativeLayout
+                                android:visibility="gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_pancard"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_pancard" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_pancard"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edt_pancard"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_pan"
+                                        android:inputType="text"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginTop="@dimen/dp_20"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/password"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edt_password"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_password"-->
+                            <!--                                    android:inputType="textPassword"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+
+                            <!--                            </LinearLayout>-->
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_password"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_password" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_password"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edt_password"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_password"
+                                        android:inputType="textPassword"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <!--                            <LinearLayout-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginLeft="@dimen/dp_15"-->
+                            <!--                                android:layout_marginTop="@dimen/dp_20"-->
+                            <!--                                android:layout_marginRight="@dimen/dp_15"-->
+                            <!--                                android:orientation="vertical">-->
+
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:text="@string/re_enter_password"-->
+                            <!--                                    android:textColor="@color/colorAccent" />-->
+
+                            <!--                                <EditText-->
+                            <!--                                    android:id="@+id/edt_repassword"-->
+                            <!--                                    android:layout_width="match_parent"-->
+                            <!--                                    android:layout_height="@dimen/dp_50"-->
+                            <!--                                    android:layout_marginTop="@dimen/dp_8"-->
+                            <!--                                    android:background="@drawable/back_edittext_default"-->
+                            <!--                                    android:hint="@string/enter_re_enter_password"-->
+                            <!--                                    android:inputType="textPassword"-->
+                            <!--                                    android:paddingLeft="@dimen/dp_15"-->
+                            <!--                                    android:singleLine="true"-->
+                            <!--                                    android:textColor="@color/grey_60"-->
+                            <!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+                            <!--                                    android:textSize="@dimen/sp_16" />-->
+
+                            <!--                            </LinearLayout>-->
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_repassword"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_password" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_repassword"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edt_repassword"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_re_enter_password"
+                                        android:inputType="textPassword"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="@dimen/dp_15"-->
+<!--                                android:layout_marginTop="@dimen/dp_20"-->
+<!--                                android:layout_marginRight="@dimen/dp_15"-->
+<!--                                android:orientation="vertical">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="@string/transaction_password_4"-->
+<!--                                    android:textColor="@color/colorAccent" />-->
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/edt_transaction_password"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="@dimen/dp_50"-->
+<!--                                    android:layout_marginTop="@dimen/dp_8"-->
+<!--                                    android:background="@drawable/back_edittext_default"-->
+<!--                                    android:hint="@string/enter_transaction_password"-->
+<!--                                    android:inputType="textPassword"-->
+<!--                                    android:maxLength="4"-->
+<!--                                    android:paddingLeft="@dimen/dp_15"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textColor="@color/grey_60"-->
+<!--                                    android:textColorHighlight="@color/ed_highlight_color"-->
+<!--                                    android:textSize="@dimen/sp_16" />-->
+
+<!--                            </LinearLayout>-->
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_15"
+                                android:background="@drawable/back_edittext_default">
+
+                                <ImageView
+                                    android:id="@+id/iv_trpassword"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/twenty"
+                                    android:src="@drawable/ic_password" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/five"
+                                    android:layout_toRightOf="@+id/iv_trpassword"
+                                    android:textColorHint="@color/colorAccent"
+                                    app:boxStrokeWidth="0dp"
+                                    app:boxStrokeWidthFocused="0dp">
+
+                                    <EditText
+                                        android:id="@+id/edt_transaction_password"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_transaction_password"
+                                        android:inputType="textPassword"
+                                        android:singleLine="true"
+                                        android:maxLength="4"
+                                        android:textColor="@color/black" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginLeft="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:layout_marginEnd="@dimen/dp_20"
+                                android:layout_marginRight="@dimen/dp_20"
+                                android:backgroundTint="@color/white"
+                                android:elevation="1dp"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_baseline_compare_arrows_24"
+                                    app:layout_constraintBottom_toBottomOf="@+id/spinner_member_position"
+                                    app:layout_constraintEnd_toStartOf="@+id/spinner_member_position"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/spinner_member_position"
+                                    app:tint="@color/colorPrimary" />
+
+                                <Spinner
+                                    android:id="@+id/spinner_member_position"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginStart="@dimen/dp_45"
+                                    android:layout_marginLeft="@dimen/dp_45"
+                                    android:layout_marginTop="@dimen/dp_9"
+                                    android:layout_marginRight="@dimen/dp_20"
+                                    android:theme="@style/mySpinnerItemStyle"
+                                    tools:ignore="MissingConstraints" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginRight="@dimen/dp_20"
+                                android:layout_marginBottom="@dimen/dp_3"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/btnSignUp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_45"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="left"
+                                    android:layout_marginEnd="@dimen/dp_4"
+                                    android:background="@drawable/blue_button_background"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:paddingLeft="@dimen/dp_20"
+                                    android:paddingRight="@dimen/dp_25"
+                                    android:text="@string/register"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp_10">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="Already Have an account? "
+                                    android:textSize="@dimen/sp_15"></TextView>
+
+                                <TextView
+                                    android:id="@+id/btn_loginIn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="Login"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/sp_15"
+                                    android:textStyle="bold"></TextView>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:padding="@dimen/ten"
+                                android:text="Already Have an account? Login"
+                                android:textColor="@color/colorPrimary"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layout_transactionpassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:visibility="gone"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_200"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dp_10"
+                            android:src="@drawable/logo_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:background="@drawable/bg_top_corner_white"
+                        android:id="@+id/ll_otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_15"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_15"
+                            android:background="@drawable/back_edittext_default">
+
+                            <ImageView
+                                android:id="@+id/iv_otp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/twenty"
+                                android:src="@drawable/ic_password" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/five"
+                                android:layout_toRightOf="@+id/iv_otp"
+                                android:hint="Enter OTP"
+                                android:textColorHint="@color/colorAccent"
+                                app:boxStrokeWidth="0dp"
+                                app:boxStrokeWidthFocused="0dp">
+
+                                <EditText
+                                    android:id="@+id/edt_transactionpassword"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:inputType="textPassword"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dp_15"
+                            android:layout_marginTop="@dimen/dp_30"
+                            android:layout_marginRight="@dimen/dp_15"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/edt_transactionpassword1"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_50"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:background="@drawable/back_edittext_default"
+                                android:hint="@string/enter_otp"
+                                android:inputType="numberPassword"
+                                android:paddingLeft="@dimen/dp_15"
+                                android:singleLine="true"
+                                android:textColor="@color/grey_60"
+                                android:textColorHighlight="@color/ed_highlight_color"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/otp"
+                                android:textColor="@color/colorAccent" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dp_30"
+                            android:layout_marginBottom="@dimen/dp_30"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/goback"
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:layout_marginRight="@dimen/dp_7"
+                                android:background="@drawable/blue_button_background"
+                                android:backgroundTint="@color/colorAccent"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dp_15"
+                                android:paddingRight="@dimen/dp_15"
+                                android:text="@string/cancel"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_14" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_transaction_password"
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_7"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:background="@drawable/blue_button_background"
+                                android:backgroundTint="@color/colorAccent"
+                                android:paddingLeft="@dimen/dp_15"
+                                android:paddingRight="@dimen/dp_15"
+                                android:text="@string/verify"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@+id/ll_otp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_alignParentBottom="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:background="@drawable/bg_login_bottom"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+
+        <include
+            layout="@layout/include_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_20" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

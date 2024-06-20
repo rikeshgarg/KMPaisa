@@ -1,3 +1,0 @@
-com.codunite.rechargeapp.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
